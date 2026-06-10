@@ -195,7 +195,7 @@
   <!-- ================= STREAMING_CHUNK: Rendering the sleek dynamic header ================= -->
   <!-- TOP NAVIGATION HEADER (Aesthetic responsive sizing to not invade view) -->
   <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-6 bg-transparent border-b border-transparent" id="main-header">
-    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-1.5 max-w-container-max mx-auto">
+    <div class="flex flex-col items-center justify-center gap-4 px-6 md:px-margin-desktop max-w-container-max mx-auto">
       <div class="flex items-center gap-4 cursor-pointer" onclick="navigateToPage('home')">
         <!-- Prominent logo setup referencing LLG.png -->
         <img id="header-logo" alt="Casa Buho Dorado Logo" class="h-16 md:h-24 w-auto object-contain transition-all duration-500 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
@@ -209,14 +209,17 @@
         <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300" id="nav-gallery">Galería</button>
         <button onclick="openBookingModal('General')" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300">Experiencias</button>
         <button onclick="toggleWhatsAppChat()" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300">Contacto</button>
-      </nav>
-
-      <!-- Action Button & Mobile Trigger -->
-      <div class="flex items-center gap-4">
-        <button onclick="openBookingModal('General')" class="bg-primary text-on-primary hover:bg-primary-container px-5 md:px-8 py-3 font-label-caps text-[11px] md:text-label-caps uppercase tracking-widest transition-all duration-300 shadow-md">
+        <button onclick="openBookingModal('General')" class="bg-primary text-on-primary hover:bg-primary-container px-6 py-2.5 font-label-caps text-[11px] uppercase tracking-widest transition-all duration-300 shadow-md">
           Book Now
         </button>
-        <button onclick="toggleMobileMenu()" class="lg:hidden text-primary p-2 focus:outline-none" aria-label="Menú">
+      </nav>
+
+      <!-- Mobile Trigger -->
+      <div class="lg:hidden flex items-center justify-between w-full">
+        <button onclick="openBookingModal('General')" class="bg-primary text-on-primary hover:bg-primary-container px-5 py-2 font-label-caps text-[10px] uppercase tracking-widest transition-all duration-300 shadow-md">
+          Book Now
+        </button>
+        <button onclick="toggleMobileMenu()" class="text-primary p-2 focus:outline-none" aria-label="Menú">
           <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
         </button>
       </div>
@@ -312,7 +315,7 @@
             <span class="text-secondary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Raíces Ancestrales</span>
             <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">¿Qué significa Akumal?</h2>
             <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
-              Akumal significa <span class="text-primary italic font-semibold">"Lugar de las Tortugas"</span> en la antigua lengua maya. Esta joya costera nació como una community consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.
+              Akumal significa <span class="text-primary italic font-semibold">"Lugar de las Tortugas"</span> en la antigua lengua maya. Esta joya costera nació como una comunidad consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.
             </p>
             <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
               En la actualidad, se mantiene como un paraíso reservado para el ecoturismo de lujo. Un universo donde la densa selva maya converge directamente con el vibrante Arrecife Mesoamericano.
@@ -644,7 +647,7 @@
                 <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Enfoque de la Experiencia</label>
                 <select id="ai-interest" class="w-full text-xs border-neutral-200 focus:border-primary focus:ring-primary p-3 rounded bg-white">
                   <option value="Aventura Salvaje (Cavernas, snorkel exclusivo, selva maya, kayak)">Aventura & Exploración</option>
-                  <option value="Quiet Luxury (Wellness, yoga, masajes frente al mar, meditación, silencio)">Sanación, Wellness & Paz</option>
+                  <option value="Quiet Luxury (Wellness, yoga, masajes frente al mar, meditación, silence)">Sanación, Wellness & Paz</option>
                   <option value="Gastronomía de Autor (Platillos de mar, catas de vino, cenas privadas con antorchas)">Gastronomía & Romance</option>
                   <option value="Inmersión Histórica (Zonas arqueológicas VIP, arqueología maya, costumbres)">Historia & Cultura Maya</option>
                 </select>
