@@ -1474,6 +1474,22 @@
       gsap.to(card, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" });
     }
 
+    // Direct WhatsApp redirect helper
+    function toggleWhatsAppChat() {
+      const targetPhone = "529841234567"; // Mock Riviera Maya prefix phone
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent('Hola Concierge de Casa Buho Dorado, me gustaría solicitar información.')}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // Request Service triggers directly pre-populating WhatsApp Concierge
+    function requestConciergeService(serviceName) {
+      const customMsg = `Hola Conserje de Casa Buho Dorado, me gustaría solicitar información y agendar el servicio de: *${serviceName}* para mi estadía.`;
+      const targetPhone = "529841234567";
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(customMsg)}`;
+      window.open(waUrl, '_blank');
+      showToastNotification(`Solicitud de ${serviceName} enviada con éxito`, 'concierge_bell');
+    }
+
     function closeBookingModal() {
       const modal = document.getElementById('booking-modal');
       const card = document.getElementById('booking-modal-card');
@@ -1549,22 +1565,6 @@
       });
     }
 
-    // Direct WhatsApp redirect helper
-    function toggleWhatsAppChat() {
-      const targetPhone = "529841234567"; // Mock Riviera Maya prefix phone
-      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent('Hola Concierge de Casa Buho Dorado, me gustaría solicitar información.')}`;
-      window.open(waUrl, '_blank');
-    }
-
-    // Request Service triggers directly pre-populating WhatsApp Concierge
-    function requestConciergeService(serviceName) {
-      const customMsg = `Hola Conserje de Casa Buho Dorado, me gustaría solicitar información y agendar el servicio de: *${serviceName}* para mi estadía.`;
-      const targetPhone = "529841234567";
-      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(customMsg)}`;
-      window.open(waUrl, '_blank');
-      showToastNotification(`Solicitud de ${serviceName} enviada con éxito`, 'concierge_bell');
-    }
-
     // 5. TOAST NOTIFICATION UTILITY
     function showToastNotification(text, iconName = 'info') {
       const toast = document.getElementById('toast-message');
@@ -1580,33 +1580,6 @@
       gsap.timeline()
         .to(toast, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" })
         .to(toast, { x: 300, opacity: 0, duration: 0.4, delay: 3.5, ease: "power2.in" });
-    }
-
-    // Cinematic Short Video Player controls
-    function toggleVideoMute() {
-      const video = document.getElementById('villa-video');
-      const icon = document.querySelector('#mute-btn-icon span');
-      if (video.muted) {
-        video.muted = false;
-        icon.textContent = 'volume_up';
-        showToastNotification("Audio cinemático activado", "volume_up");
-      } else {
-        video.muted = true;
-        icon.textContent = 'volume_off';
-        showToastNotification("Audio cinemático silenciado", "volume_off");
-      }
-    }
-
-    function toggleVideoPlay() {
-      const video = document.getElementById('villa-video');
-      const icon = document.querySelector('#play-btn-icon span');
-      if (video.paused) {
-        video.play();
-        icon.textContent = 'pause';
-      } else {
-        video.pause();
-        icon.textContent = 'play_arrow';
-      }
     }
 
     function subscribeNewsletter() {
