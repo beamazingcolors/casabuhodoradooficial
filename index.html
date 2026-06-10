@@ -1,1 +1,1669 @@
-<!doctype html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Keynote</title><meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,width=device-width"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body id="body" bgcolor="black"><div id="stageArea"><div id="stage" class="stage"></div><div id="hyperlinkPlane" class="stage"></div></div><div id="slideshowNavigator"></div><div id="slideNumberControl"></div><div id="slideNumberDisplay"></div><div id="helpPlacard"></div><div id="waitingIndicator"><div id="waitingSpinner"></div></div><script src="assets/player/main.js"></script></body></html>
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Akumal Villa | Portal de Lujo y Reservas Inteligentes</title>
+  
+  <!-- Tailwind CSS & Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-nav {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background-color: rgba(254, 249, 240, 0.85);
+    }
+    .ken-burns:hover img {
+      transform: scale(1.08);
+    }
+    .transition-slow {
+      transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    /* Hide scrollbars but keep functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Active navigation indicator */
+    .nav-active-line {
+      position: relative;
+    }
+    .nav-active-line::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #006972;
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    /* Smooth page heights */
+    .page-section {
+      min-height: 100vh;
+    }
+    /* Sparkle gradient background */
+    .ai-gradient {
+      background: linear-gradient(135deg, #fef9f0 0%, #edf9f6 50%, #fef9f0 100%);
+    }
+  </style>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error": "#ffffff",
+            "primary-container": "#00a3b1",
+            "tertiary-container": "#d37f3e",
+            "on-primary-fixed-variant": "#004f56",
+            "on-background": "#1d1c16",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#924c0b",
+            "surface": "#fef9f0",
+            "surface-container-high": "#ece8df",
+            "surface-bright": "#fef9f0",
+            "primary-fixed": "#8df2ff",
+            "background": "#fef9f0",
+            "primary": "#006972",
+            "on-tertiary-fixed": "#301400",
+            "on-secondary-container": "#3f6d38",
+            "surface-variant": "#e7e2d9",
+            "secondary-container": "#b9eeab",
+            "on-secondary-fixed": "#002201",
+            "surface-dim": "#ded9d1",
+            "secondary-fixed-dim": "#a1d494",
+            "surface-container": "#f2ede4",
+            "inverse-on-surface": "#f5f0e7",
+            "surface-container-highest": "#e7e2d9",
+            "on-primary-container": "#003237",
+            "surface-tint": "#006972",
+            "on-tertiary-container": "#492100",
+            "on-secondary-fixed-variant": "#23501e",
+            "on-surface": "#1d1c16",
+            "tertiary-fixed-dim": "#ffb784",
+            "on-tertiary-fixed-variant": "#713700",
+            "surface-container-low": "#f8f3ea",
+            "on-surface-variant": "#3d494b",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#bcf0ae",
+            "tertiary-fixed": "#ffdcc6",
+            "on-primary": "#ffffff",
+            "outline": "#6d797b",
+            "inverse-primary": "#5dd7e6",
+            "on-secondary": "#ffffff",
+            "secondary": "#3b6934",
+            "outline-variant": "#bcc9cb",
+            "inverse-surface": "#32302a",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#5dd7e6",
+            "on-primary-fixed": "#001f23",
+            "on-error-container": "#93000a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "container-max": "1280px",
+            "margin-mobile": "24px",
+            "unit": "8px",
+            "margin-desktop": "80px",
+            "section-gap": "120px",
+            "gutter": "32px"
+          },
+          fontFamily: {
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "label-caps": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "display-lg": ["Playfair Display", "serif"],
+            "display-lg-mobile": ["Playfair Display", "serif"]
+          },
+          fontSize: {
+            "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+  <!-- TOP NAVIGATION HEADER (Persistent) -->
+  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-4 bg-transparent border-b border-transparent" id="main-header">
+    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-2 max-w-container-max mx-auto">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="navigateToPage('home')">
+        <img alt="AKUMAL VILLA Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppl0ZPf8bf_4uNjuK_FkPtKtMM10zZVF4i5LKJZssApuwX-2TsxUiSWTe2CsTf8y08a3-YQ9jsSV5dbvOQsAyxqxA3egKSdYLxC1VopXVTwCg6bgKECh6q-oGPBx8Ac3aUT2vwnoShRYom2JAtPHfaOeUchSheusv3HVfq-n-mY4wOaEThsIFFp8iE5SL9H_oip92hfC2Ux7jNKXz6OXbbAoft8QKm8I8Ycg55Nx1MROWc445JMhNnomkwQxnypBLrTBMzbb2-Edb"/>
+        <span class="font-headline-md text-xl md:text-2xl text-primary tracking-widest uppercase font-medium">AKUMAL VILLA</span>
+      </div>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8">
+        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-label-caps text-primary nav-active-line transition-all duration-300" id="nav-home">La Villa</button>
+        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300" id="nav-services">Servicios Curados</button>
+        <button onclick="openBookingModal('General')" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300">Experiencias</button>
+        <button onclick="toggleWhatsAppChat()" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300">Contacto</button>
+      </nav>
+
+      <!-- Action Button & Mobile Trigger -->
+      <div class="flex items-center gap-4">
+        <button onclick="openBookingModal('General')" class="bg-primary text-on-primary hover:bg-primary-container px-5 md:px-8 py-3 font-label-caps text-[11px] md:text-label-caps uppercase tracking-widest transition-all duration-300 shadow-sm">
+          Book Now
+        </button>
+        <button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 focus:outline-none" aria-label="Menú">
+          <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-xl border-t border-outline-variant flex flex-col p-6 gap-6">
+      <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-primary">La Villa</button>
+      <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-on-surface">Servicios Curados</button>
+      <button onclick="openBookingModal('General'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-on-surface">Experiencias</button>
+      <button onclick="toggleWhatsAppChat(); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 text-on-surface">Contacto Directo</button>
+    </div>
+  </header>
+
+  <!-- MAIN MULTI-PAGE CONTAINER -->
+  <main class="pt-20">
+
+    <!-- ================= PAGE 1: HOME ================= -->
+    <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
+      
+      <!-- WebGL Animated Hero Header -->
+      <section class="relative h-[95vh] w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 w-full h-full z-0">
+          <canvas id="shader-canvas" class="block w-full h-full"></canvas>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20 z-[1]"></div>
+        
+        <div class="relative z-10 text-center px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
+          <span class="text-white/80 font-label-caps text-label-caps uppercase tracking-[0.3em] mb-4 block">Refugio Privado en Akumal</span>
+          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight drop-shadow-md">
+            Tu Santuario Caribeño Exclusivo
+          </h1>
+          <p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-sm font-light">
+            Vive la fusión perfecta entre la arquitectura orgánica de vanguardia y la majestuosidad de la fauna marina en la Riviera Maya.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button onclick="openBookingModal('General')" class="bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase hover:bg-primary-container hover:scale-105 transition-all shadow-lg w-full sm:w-auto">
+              Reservar Estadía
+            </button>
+            <button onclick="navigateToPage('services')" class="border border-white text-white px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase hover:bg-white hover:text-primary transition-all w-full sm:w-auto backdrop-blur-sm">
+              Ver Servicios Curados
+            </button>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 z-10">
+          <span class="font-label-caps text-[10px] uppercase tracking-widest text-white">Explorar</span>
+          <div class="w-px h-10 bg-white/40 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-white animate-bounce"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ancient Roots / Discover Section -->
+      <section class="bg-surface py-section-gap px-6 md:px-margin-desktop overflow-hidden">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div class="reveal-left">
+            <span class="text-secondary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Raíces Ancestrales</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">¿Qué significa Akumal?</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+              Akumal significa <span class="text-primary italic font-semibold">"Lugar de las Tortugas"</span> en la antigua lengua maya. Esta joya costera nació como una comunidad consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+              En la actualidad, se mantiene como un paraíso reservado para el ecoturismo de lujo. Un universo donde la densa selva maya converge directamente con el vibrante Arrecife Mesoamericano.
+            </p>
+            <div class="flex items-center gap-4 text-secondary">
+              <span class="material-symbols-outlined text-4xl">eco</span>
+              <span class="font-label-caps text-label-caps font-semibold">Vida Sustentable de Alto Diseño</span>
+            </div>
+          </div>
+          
+          <div class="relative reveal-right">
+            <div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-lg shadow-xl">
+              <img alt="Tortuga Marina en las aguas turquesas de Akumal" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-slow duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qC_mIeIm3zwfK1irNG7rUAlgmP0A1LBR8vLinAOapnoxPV1yrb31ZcFXVMl9Ia3SrR1KVm-XEMYn2jozkOZ0xAWH4D1t36YN8hSYBvSKUDR5Tzscb7PnekWHkA58ouIAcSo9VJh-2HVopKi-moS3TFNrQKMu_qKcXgDH-hPWpceOhvCev-qGqh9YZbXuiKbn2psbmX1lrFlXEZTYQMQNcQkLnVdcQxkm8JIoEI5w-i0rFd8DYfVYtjO0OSwsJHkHsA1jCyiNJ5Ku"/>
+            </div>
+            <div class="absolute -bottom-8 -left-8 bg-white p-8 shadow-2xl max-w-xs hidden md:block border border-neutral-100">
+              <p class="font-headline-md text-4xl text-primary mb-2 font-bold">98%</p>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Tasa de conservación exitosa en nuestra bahía privada certificada.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Positioning Interactive Map Simulation -->
+      <section class="bg-surface-container-low py-section-gap px-6 md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto">
+          <div class="text-center mb-16 reveal-up">
+            <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Ubicación Privilegiada</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">Conexión Inmediata</h2>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-gutter items-center">
+            
+            <div class="space-y-12 lg:pr-12 reveal-left">
+              <div class="group cursor-pointer">
+                <div class="flex justify-between items-end border-b border-outline-variant pb-4 group-hover:border-primary transition-all">
+                  <span class="font-headline-md text-2xl group-hover:text-primary transition-colors">Tulum</span>
+                  <span class="font-label-caps text-label-caps text-on-surface-variant">25 MINS</span>
+                </div>
+                <p class="mt-4 font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.</p>
+              </div>
+              <div class="group cursor-pointer">
+                <div class="flex justify-between items-end border-b border-outline-variant pb-4 group-hover:border-primary transition-all">
+                  <span class="font-headline-md text-2xl group-hover:text-primary transition-colors">Playa del Carmen</span>
+                  <span class="font-label-caps text-label-caps text-on-surface-variant">30 MINS</span>
+                </div>
+                <p class="mt-4 font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.</p>
+              </div>
+            </div>
+            
+            <div class="relative aspect-square reveal-up flex items-center justify-center">
+              <div class="absolute inset-0 rounded-full border border-primary/20 scale-105 animate-pulse"></div>
+              <div class="w-full h-full max-w-[360px] max-h-[360px] bg-white rounded-full flex items-center justify-center overflow-hidden border border-primary/10 shadow-2xl relative">
+                <!-- Decorative concentric circles -->
+                <div class="absolute inset-4 rounded-full border border-dashed border-primary/10"></div>
+                <div class="relative z-10 text-center p-6">
+                  <span class="material-symbols-outlined text-primary text-6xl mb-3 animate-bounce" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                  <p class="font-label-caps text-sm font-bold tracking-[0.25em] text-primary">AKUMAL VILLA</p>
+                  <p class="text-[11px] text-on-surface-variant mt-1 tracking-wider uppercase">Bahía de las Tortugas, MX</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="space-y-12 lg:pl-12 reveal-right">
+              <div class="group cursor-pointer">
+                <div class="flex justify-between items-end border-b border-outline-variant pb-4 group-hover:border-primary transition-all">
+                  <span class="font-headline-md text-2xl group-hover:text-primary transition-colors">Cenote Dos Ojos</span>
+                  <span class="font-label-caps text-label-caps text-on-surface-variant">15 MINS</span>
+                </div>
+                <p class="mt-4 font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">Un sistema de cavernas semi-inundadas sagradas con aguas turquesas para buceo de élite.</p>
+              </div>
+              <div class="group cursor-pointer">
+                <div class="flex justify-between items-end border-b border-outline-variant pb-4 group-hover:border-primary transition-all">
+                  <span class="font-headline-md text-2xl group-hover:text-primary transition-colors">Coba</span>
+                  <span class="font-label-caps text-label-caps text-on-surface-variant">50 MINS</span>
+                </div>
+                <p class="mt-4 font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">La majestuosa pirámide Nohoch Mul rodeada de selva indómita.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Bento-style Curated Destination Grid -->
+      <section class="bg-surface py-section-gap px-6 md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 reveal-up gap-4">
+            <div>
+              <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Maravillas Naturales</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface">Exploración Exclusiva</h2>
+            </div>
+            <button onclick="navigateToPage('services')" class="font-label-caps text-label-caps text-primary border-b border-primary hover:text-primary-container transition-all">
+              Ver Guía de Destino
+            </button>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-up-stagger">
+            <!-- Card 1 -->
+            <div class="group cursor-pointer ken-burns" onclick="openBookingModal('Tour Chichén Itzá')">
+              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md">
+                <img alt="Pirámide de Chichén Itzá bajo una luz dorada" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdxC6pOvN6V8a_ADMqkFy50Xz7IoLMypJs44Lh3LSijFWFOHEzG_LkpE4hEQRVAjlEKZ8sVD4P7QHOgZ4G68J2XW5fYq0imjtz0qV2GnrK_rXpXOhn801IL2QSc_WnRridakjXXI9czVVtZt7D3rCdk-M3JSr-_00mOIQk6Ko6aX1eUFDyZ_vPVUXm-X9CKFsjSzN8rfCaaAT7YosGZqMSBlxpKm3ENUnvez7OHoeb65nDshj2dkMLx77TEUXTVek8N1GgRXunwV0n"/>
+              </div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-headline-md text-xl">Chichén Itzá</h3>
+                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">2.5 HRS</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2">Visita privada a la Maravilla del Mundo.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="group cursor-pointer ken-burns" onclick="openBookingModal('Tour Cenotes')">
+              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md">
+                <img alt="Eterio Cenote Dos Ojos con aguas de zafiro iluminadas por rayos solares" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZgpbYKgPo5Dr0al3sFzgItl1vThy-0BM4uPcDuSauZd8SLzBRliP9y8483S2xAET8m7PboWA4DlK5Hr3SfybDDv8IfuiktdhqimO4EM7-AKgBnm2sDf60Q6f8QaXIGLSgxWxHNYrUT27Gd73Kch9KVHgomaje7fJAlOk29PEYqJOCot-Vy-AK8hXeITZUle3AshS-VScQtsyEGvQFe7VeKeE2XNkv0G5lvWHQhPBEfQx7msEQ42i4P3HImFAqFUnYzEeE_VcXpEFb"/>
+              </div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-headline-md text-xl">Dos Ojos</h3>
+                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">15 MINS</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2">Cavernas milenarias y buceo guiado.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="group cursor-pointer ken-burns" onclick="openBookingModal('Reserva de Snorkel')">
+              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md">
+                <img alt="Laguna Yal-Kú donde el agua del cenote se mezcla con el Caribe" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdpjMdgrDDBDa9Wfauzd2IGTcFTJ7FtSzotgcrICWNqI_Yz5jvvbAsWRPvlfZ_HOrCQr2UaCGa8jekVYMbSHPUojSq_CEs2zKDLj81F65h4kVhoc7Hjvrw110yXHxvUYgE2aplLBq4W3MXPcg6ASZsofoDApvhqqgbAgd43qGYBl0SpvwdQc2htJQPyDW4HjgmXQOExMgWoc1mQp_CaS7LOI2It-_fMLekWXjIj7eln-dpCxZDlmH6VcyJYH1cpj-YzuVE0O-HFbU9"/>
+              </div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-headline-md text-xl">Laguna Yal-Kú</h3>
+                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">5 MINS</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2">Un acuario natural privado a tu disposición.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="group cursor-pointer ken-burns" onclick="openBookingModal('General')">
+              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md">
+                <img alt="Amanecer en la prístina playa de Bahía de Akumal" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxZqxN0Y1mMiqKILt8QqyfKDh1QFpdloO0IgSze-kXPTIan1kete7yEvM0t3caXenqhQhLQlSaNXLkY8wnnOsyiDzct4bOHQDrjGQ5T3wG-qaddph43T6eNQgXK_yRQtYkck3HVqXHPidMxc1bDoYXZSBiG4V8PfgRF429w-F8qSz3uXNo_YsxJUZdNnUZsRwi8OP5wyX3SL8Ded9ubN9BvTP27NQUpR9bM7bfvF1tMIvh7cWsThjr65hCRaDtis0ESU5asxsZnrLC"/>
+              </div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-headline-md text-xl">Bahía de Akumal</h3>
+                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">A PASOS</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2">El umbral de tu santuario privado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Horizontal Drag/Scroll Estate Gallery -->
+      <section class="bg-surface-container-highest py-section-gap overflow-hidden">
+        <div class="px-6 md:px-margin-desktop max-w-container-max mx-auto mb-12 reveal-up">
+          <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">La Propiedad</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">Un Oasis de Serenidad</h2>
+        </div>
+        
+        <div class="flex gap-6 px-6 md:px-margin-desktop overflow-x-auto no-scrollbar pb-12 reveal-right-stagger" id="estate-slider">
+          
+          <div class="min-w-[85vw] md:min-w-[48vw] aspect-[16/9] bg-surface relative group overflow-hidden flex-shrink-0 rounded-md shadow-lg">
+            <img alt="Suite Master del Resort con ventanales de piso a techo frente al mar" class="absolute inset-0 w-full h-full object-cover transition-slow group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZgoGcib-lXeTUaY42131XGZYkBCkxI0GT6lJZkF1mKMNXiJjRtNRhZnM-hM3HfhUHGip8rqxabAYqiotkOo_gMaTa8XM4snOI9fNTANoMBAWNtKTIG1msTzIlWGx0K8kTCYKIxJTTOIvhpdin7gVQQO4vXnZDNGGgzDwyiJ8V7EVRknOP_rGPcSY218n7Ii__-8pvemfV9IO-7tc40HVfOkqqc7ZOSrh1Um94aOON2redXZIMEcYW4zhmNBVMqYY4POosfqV7V45O"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-all flex items-end p-8 md:p-12">
+              <div>
+                <span class="text-white font-headline-md text-2xl md:text-3xl block">The Master Suite</span>
+                <p class="text-white/80 text-xs md:text-sm font-light mt-1">Confort sublime frente a la brisa caribeña.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="min-w-[85vw] md:min-w-[48vw] aspect-[16/9] bg-surface relative group overflow-hidden flex-shrink-0 rounded-md shadow-lg">
+            <img alt="Alberca infinita que se funde con el horizonte del Caribe" class="absolute inset-0 w-full h-full object-cover transition-slow group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACXqWbaBOAFaxjlsYsHVr5KTcF_KEYSkuMMgxQ09QhwXn8yUci8xvVtbt6A-YcfU34yndbv-GpqGcHMso07eJ5N05brPgjJPkm9UyiNLd4QLnQh5CkBEWxWxKTbkPyahGcz9qqyc12cMbhcLRHzBiGcwZrWvNk-L2XFNK340OLlRAzpI1QuXYqD8mCYlere7dzg7fS-7n3qMLt--DBnUfrflJkT_jnwI9BG3vjftuBR75G6H3Ovwddlh4P6OV68KnzyrzIif3BI_ps"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-all flex items-end p-8 md:p-12">
+              <div>
+                <span class="text-white font-headline-md text-2xl md:text-3xl block">Alberca Infinita</span>
+                <p class="text-white/80 text-xs md:text-sm font-light mt-1">Donde las aguas místicas se funden con el horizonte.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="min-w-[85vw] md:min-w-[48vw] aspect-[16/9] bg-surface relative group overflow-hidden flex-shrink-0 rounded-md shadow-lg">
+            <img alt="Cocina gourmet de diseñador con isla de mármol masivo" class="absolute inset-0 w-full h-full object-cover transition-slow group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmctjebQNnRpeRqs3vdw9X9HZrTe0fH2R_qvckYmYJfdG6T1H1OsoWvPi6LK6Lmd3uehsWBXMqmbdxSaXPFohcReAOOXIlAOmgk9sRy9rAE_yHGuB8ukKQo3woGB32oPBtbvDMheYwtPUPETsJZW3JHJlDfFxYOG-dawSnl_l-ZxNZi-GrwOYv-OAcrv2c0HIHxvXnEe8Z9193nNPCbdjjJCK21KL8GHOK5xnwQRwvf6UsL9M1g7skLHWXZa9rZv-WsjBKkNioPxQ-"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-all flex items-end p-8 md:p-12">
+              <div>
+                <span class="text-white font-headline-md text-2xl md:text-3xl block">Cocina de Diseñador</span>
+                <p class="text-white/80 text-xs md:text-sm font-light mt-1">Plataforma ideal para banquetes de autor a cargo de nuestro chef.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="bg-surface py-24 px-6 md:px-margin-desktop">
+        <div class="max-w-3xl mx-auto text-center reveal-up">
+          <span class="material-symbols-outlined text-primary text-6xl mb-6">format_quote</span>
+          <p class="font-headline-md text-2xl md:text-3xl italic mb-8 leading-relaxed text-on-surface">
+            "Un refugio que redefine el descanso. La delicadeza del servicio privado y la mágica presencia de las tortugas en la orilla nos conmovió profundamente. Esto es la verdadera sofisticación del espacio."
+          </p>
+          <div class="flex items-center justify-center gap-4 flex-col sm:flex-row">
+            <div class="flex text-primary">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <span class="font-label-caps text-xs tracking-widest text-on-surface/80">— FAMILIA HENDERSON, LONDRES</span>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+
+    <!-- ================= PAGE 2: SERVICES (Curated Services) ================= -->
+    <section id="page-services" class="page-section hidden opacity-0 transition-opacity duration-300">
+      
+      <!-- Hero Header Section -->
+      <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <img alt="Vista aérea del resort Akumal Villa rodeada de selva exótica y agua turquesa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBABldInwUUjiTNzvAB7T2FHGDkawUysr-OAcjAVviG43rFsqIOXGko0AA_bk8djr8PWq17nAph-ILqeG9oZ8aFj3OCR24Dd9joR-dVQItPWQqkIN8ltSWFaH9r84ffjU-mEgAYyW7XR15qyjWGN9-lqEOVOeaoJvYsb1opCFVcyvwo3okezvnQR23OQTcMYb6xGKtEj19B1LXGloODGkznWQef7iUUQ6y9DbnLkBSNseiehhwpi78u7UTpxvSEOaswODTwM9Z6YHgg"/>
+          <div class="absolute inset-0 bg-black/35"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 mt-10">
+          <span class="font-label-caps text-label-caps text-white tracking-[0.4em] uppercase mb-4 block">Hospitalidad de Firma</span>
+          <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-white mb-6">Servicios a tu Medida</h1>
+          <p class="font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto font-light">
+            Desde transportación VIP hasta chefs privados y yates de exploración. Tu conserje personal asume el diseño de cada instante.
+          </p>
+        </div>
+      </section>
+
+      <!-- Concierge Intro -->
+      <section class="py-20 px-6 md:px-margin-desktop max-w-container-max mx-auto text-center reveal-up">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface">Tu Conserje Dedicado</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 font-light">
+            Toda estancia en Akumal Villa incluye los servicios de un Conserje Personal de enlace permanente. Arquitecto de itinerarios exclusivos, guardián de tus preferencias de confort y asistente 24/7 en la Riviera Maya.
+          </p>
+          <div class="w-16 h-0.5 bg-primary mx-auto"></div>
+        </div>
+      </section>
+
+      <!-- ================= DYNAMIC GEMINI-POWERED ITINERARY PLANNER ================= -->
+      <section class="py-16 px-6 md:px-margin-desktop bg-surface-container-low border-y border-outline-variant/30 reveal-up">
+        <div class="max-w-container-max mx-auto">
+          <div class="text-center mb-12">
+            <span class="text-primary font-label-caps text-xs tracking-widest uppercase block mb-2">Planificación de Lujo con Inteligencia Artificial</span>
+            <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">✨ Diseña tu Itinerario Personalizado ✨</h2>
+            <p class="text-on-surface-variant font-light text-sm max-w-lg mx-auto mt-3">
+              Combina tus intereses con el poder de nuestro motor generativo de Inteligencia Artificial para esculpir la escapada perfecta de quiet luxury.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 md:p-10 shadow-xl border border-neutral-100 ai-gradient grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Form Parameters -->
+            <div class="lg:col-span-4 space-y-6">
+              <div class="space-y-1">
+                <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Enfoque de la Experiencia</label>
+                <select id="ai-interest" class="w-full text-xs border-neutral-200 focus:border-primary focus:ring-primary p-3 rounded bg-white">
+                  <option value="Aventura Salvaje (Cavernas, snorkel exclusivo, selva maya, kayak)">Aventura & Exploración</option>
+                  <option value="Quiet Luxury (Wellness, yoga, masajes frente al mar, meditación, silencio)">Sanación, Wellness & Paz</option>
+                  <option value="Gastronomía de Autor (Platillos de mar, catas de vino, cenas privadas con antorchas)">Gastronomía & Romance</option>
+                  <option value="Inmersión Histórica (Zonas arqueológicas VIP, arqueología maya, costumbres)">Historia & Cultura Maya</option>
+                </select>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Duración de Estadía</label>
+                  <select id="ai-days" class="w-full text-xs border-neutral-200 focus:border-primary focus:ring-primary p-3 rounded bg-white">
+                    <option value="1">1 Día</option>
+                    <option value="3" selected>3 Días</option>
+                    <option value="5">5 Días</option>
+                  </select>
+                </div>
+                <div class="space-y-1">
+                  <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Ritmo Deseado</label>
+                  <select id="ai-tempo" class="w-full text-xs border-neutral-200 focus:border-primary focus:ring-primary p-3 rounded bg-white">
+                    <option value="Contemplativo y Relajado (Quiet Luxury)">Contemplativo</option>
+                    <option value="Equilibrado (Exploración matutina y tardes libres)">Equilibrado</option>
+                    <option value="Activo y Dinámico (Múltiples destinos diarios)">Explorador Activo</option>
+                  </select>
+                </div>
+              </div>
+
+              <button onclick="generateAILuxuryItinerary()" class="w-full bg-primary text-on-primary hover:bg-primary-container p-4 font-label-caps text-xs uppercase tracking-widest transition-all duration-300 shadow-md flex items-center justify-center gap-2">
+                <span>✨ Crear Itinerario de Ensueño ✨</span>
+              </button>
+            </div>
+
+            <!-- AI Output Result Card -->
+            <div class="lg:col-span-8 bg-white border border-neutral-100 rounded-lg p-6 min-h-[300px] flex flex-col justify-center relative overflow-hidden shadow-inner">
+              <!-- Default Placeholder -->
+              <div id="ai-itinerary-placeholder" class="text-center space-y-4 max-w-sm mx-auto transition-opacity duration-300">
+                <span class="material-symbols-outlined text-primary/40 text-5xl">auto_awesome</span>
+                <h4 class="font-headline-md text-xl text-primary">Tu Viaje de Ensueño Aguarda</h4>
+                <p class="text-xs text-on-surface-variant font-light">
+                  Selecciona tus preferencias a la izquierda y deja que nuestra Inteligencia Artificial trace un sendero único de lujo sensorial para ti.
+                </p>
+              </div>
+
+              <!-- Loading State -->
+              <div id="ai-itinerary-loading" class="hidden text-center space-y-4 max-w-sm mx-auto transition-opacity duration-300">
+                <div class="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin mx-auto"></div>
+                <h4 class="font-headline-md text-lg text-primary animate-pulse" id="ai-loading-text">Inspirando tu escape caribeño...</h4>
+                <p class="text-xs text-on-surface-variant/70 italic font-light">Conectando con Aura Concierge...</p>
+              </div>
+
+              <!-- Generated Itinerary Rich Text Area -->
+              <div id="ai-itinerary-result" class="hidden text-left space-y-4 overflow-y-auto max-h-[480px] pr-2 text-sm leading-relaxed prose prose-stone max-w-none">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dynamic Services Catalog with Interaction -->
+      <section class="px-6 md:px-margin-desktop max-w-container-max mx-auto space-y-16 pb-24 mt-16">
+        
+        <!-- Service Block 1: Transport & Tours -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal-up-stagger">
+          
+          <!-- Transp -->
+          <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md flex flex-col justify-between">
+            <div>
+              <div class="aspect-[16/10] overflow-hidden ken-burns">
+                <img alt="Camioneta de lujo de color negro de cortesía" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDRVdqTjjeUCqngM8COuL-9NjCs_MGXZRxgpEiApidG8jlvUT4Pw05by1jOCwcEYqdHt7eYwTfVTm6iJzgbc9GFhMD2vrbxo2-FZRu9aqBL4N2CRICnanl61XsMQDWxR07etRP0gSskyVvZHcsU28qrTP-TFPmuuoJIyk8K5ySIBc9jzYFRQI2lTDQyqXzCanz2K_-6hPyOHivXhRhaRBWGF2NFdJ7oGqJ4itVaviAkjoC1d0GLyRa2OAT_9NleDLeqnkFvPLGwwmp"/>
+              </div>
+              <div class="p-8">
+                <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">ESENCIALES</span>
+                <h3 class="font-headline-md text-2xl mb-4 text-on-surface">Transportación Privada VIP</h3>
+                <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                  Llegadas sin fricción. Choferes bilingües y camionetas Suburban de último modelo listos para traslados al aeropuerto de Cancún o Tulum, disponibles las 24 horas del día.
+                </p>
+              </div>
+            </div>
+            <div class="px-8 pb-8">
+              <button onclick="requestConciergeService('Transporte Premium')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest">
+                Solicitar Servicio
+              </button>
+            </div>
+          </div>
+
+          <!-- Tours -->
+          <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md flex flex-col justify-between">
+            <div>
+              <div class="aspect-[16/10] overflow-hidden ken-burns">
+                <img alt="Cenote cerrado natural" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcxcEAzKzDw0VYdwV_bohsbTLx82KeG_pFdIt7hW3w5BcL_gj_SQ_E91K4w-Und11x9VnHKh3MLetG5aPRaPK9O7kqmx4epI2hD82QNeRe0gfxkiIyVnFt5AbTDYelYIGw0ZB-Mc5867Y6-zATqqrTX0BhTEarqh8k6HLwVKEEUZz6Mfi1cKnXN-F8HUVUcxq5Ryp8SuRjUUQgTngsUe_IQafTUPR5OqUabrZK72faLDqReugpKpnchQGzDGyAjtFt-41YIEngiVi"/>
+              </div>
+              <div class="p-8">
+                <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">EXPLORACIÓN</span>
+                <h3 class="font-headline-md text-2xl mb-4 text-on-surface">Expediciones Arqueológicas</h3>
+                <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                  Descubre la herencia del misticismo maya. Acceso VIP exclusivo antes de la apertura al público a zonas sagradas guiados por historiadores certificados locales.
+                </p>
+              </div>
+            </div>
+            <div class="px-8 pb-8">
+              <button onclick="requestConciergeService('Expediciones Mayas')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest">
+                Reservar Experiencia
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Featured Large Block: Chef & Sommelier -->
+        <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md reveal-up">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto">
+              <img alt="Chef preparando pescados" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeRer4ppmtgek35KDl2S6OfsbaHckc5qBihF5IM27uG-S1BBV3FB3fS802Y31TgXUpnUq13rIYrduvJBpv0CJ0fLkNwbXRDnxnjKSZgF6ll-5-SRejoEWUoWPiZmTSApQF8YT2X0Zv1AC6t3ap3w5ePTQZzFVI7IVahOw3qxPD_xGGG3It--ceYoTt8Dr24bOmLN0WV78lWEnlGg0bwqs6EWVnSFDMJ7rRCDy8Mb_EiiII8Yj7tZoiUaMx89_5Uw6nDscvE6FIQyM3"/>
+            </div>
+            <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center">
+              <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">ALTA GASTRONOMÍA</span>
+              <h3 class="font-headline-md text-3xl mb-6 text-on-surface">Experiencia de Chef Privado</h3>
+              <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Transforma cada comida en un hito sensorial. Menús de degustación personalizados basados en mariscos frescos del día y cocina contemporánea de autor directamente en la villa.
+              </p>
+              
+              <div class="space-y-3 mb-8">
+                <div class="flex items-center gap-3 text-on-surface-variant text-sm">
+                  <span class="material-symbols-outlined text-primary text-xl">restaurant</span>
+                  <span class="font-label-caps text-[10px] tracking-widest uppercase">MENÚS DISEÑADOS PARA TI</span>
+                </div>
+                <div class="flex items-center gap-3 text-on-surface-variant text-sm">
+                  <span class="material-symbols-outlined text-primary text-xl">wine_bar</span>
+                  <span class="font-label-caps text-[10px] tracking-widest uppercase">MARIDAJE PREMIUM SELECCIONADO</span>
+                </div>
+              </div>
+              
+              <button onclick="requestConciergeService('Chef Privado Gourmet')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-4 font-label-caps text-xs hover:scale-102 transition-all uppercase tracking-widest text-center">
+                Reservar Chef Privado
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Block 2: Yacht & Wellness -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal-up-stagger">
+          
+          <!-- Yacht -->
+          <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md flex flex-col justify-between">
+            <div>
+              <div class="aspect-[16/10] overflow-hidden ken-burns">
+                <img alt="Yate navegando" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf51bqjYKNwP8RYhRtJdznZOSTitQJeFGUHNAxVeUEt3KziegJ6KjY3zoBjqmIGOdIDkjYuCbhdxJQs12Q1guMtp2jCvKJ0elqnNm6VC5paWoFRyHyDjgShlFBh5rH31UiubNJIpaF2boJuMmxBApIsiZ60RYhfpxXEQ2vSMN6wH_a9i-Du-iUCZT6zgcn-jN2Fm-JBpCPT0AQTVBL5nt3_ty8My0ZVMzwX14DIMLGKMAmfiDCND28H-P0VNSY-ixGFRCmb_gLIqbY"/>
+              </div>
+              <div class="p-8">
+                <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">NAUTICA</span>
+                <h3 class="font-headline-md text-2xl mb-4 text-on-surface">Charter de Yates Privados</h3>
+                <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                  Zarpa en un catamarán o yate de alta gama hacia arrecifes recónditos de la isla Cozumel o disfruta de la puesta de sol en alta mar con champaña y canapés de autor.
+                </p>
+              </div>
+            </div>
+            <div class="px-8 pb-8">
+              <button onclick="requestConciergeService('Yate Privado Catamarán')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest">
+                Consultar Flota
+              </button>
+            </div>
+          </div>
+
+          <!-- Wellness -->
+          <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md flex flex-col justify-between">
+            <div>
+              <div class="aspect-[16/10] overflow-hidden ken-burns">
+                <img alt="Cuidado corporal spa" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnWaU2VCoKC_7nXz3e8NBDrgsxKlMBUpJ9HUa2vqxjRlDF1ieh3PGToh4PP2Na_uq0rZ6gEyA1Sua3i1wjXPRaQCiFkx3eySz7PaYgGmh0CebcSBhYvcumtxBAFRoPtjwsIuEL7Haf3qn0ECdxhRXfT3cA-OTZ6DO4CUD55gLCM_4EaV6jMq9tJyzWAt5QyxppVRvOxSfeQ-7cgpfBuH3MuDJ8MqeStWvaASbjq4y1RkeExoLjMLO8RZMRjc0QuBs2mmZk57nFXMFb"/>
+              </div>
+              <div class="p-8">
+                <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">BIENESTAR</span>
+                <h3 class="font-headline-md text-2xl mb-4 text-on-surface">Terapia de Spa & Bienestar</h3>
+                <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                  Sanación holística en la intimidad de tu suite. Terapias mayas tradicionales, masajes descontracturantes de aromaterapia y sesiones matutinas de yoga guiadas en la playa.
+                </p>
+              </div>
+            </div>
+            <div class="px-8 pb-8">
+              <button onclick="requestConciergeService('Terapia de Spa')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest">
+                Agendar Sesión
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- ================= PERSISTENT FOOTER ================= -->
+  <footer class="bg-surface-container dark:bg-surface-container-highest w-full py-20 border-t border-outline-variant/30">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-6 md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="space-y-6">
+        <div class="flex items-center gap-3">
+          <img alt="Logo de Akumal Villa" class="h-10 w-auto grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppl0ZPf8bf_4uNjuK_FkPtKtMM10zZVF4i5LKJZssApuwX-2TsxUiSWTe2CsTf8y08a3-YQ9jsSV5dbvOQsAyxqxA3egKSdYLxC1VopXVTwCg6bgKECh6q-oGPBx8Ac3aUT2vwnoShRYom2JAtPHfaOeUchSheusv3HVfq-n-mY4wOaEThsIFFp8iE5SL9H_oip92hfC2Ux7jNKXz6OXbbAoft8QKm8I8Ycg55Nx1MROWc445JMhNnomkwQxnypBLrTBMzbb2-Edb"/>
+          <span class="font-headline-md text-xl text-primary tracking-widest">AKUMAL VILLA</span>
+        </div>
+        <p class="font-body-md text-sm text-on-surface-variant max-w-xs leading-relaxed">
+          Un portal diseñado para viajeros que aprecian la sofisticación arquitectónica, el respeto ecológico absoluto y el silencio caribeño.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h4 class="font-label-caps text-xs text-primary tracking-wider uppercase font-semibold">Explorar</h4>
+          <ul class="space-y-2">
+            <li><button onclick="navigateToPage('home')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">La Villa</button></li>
+            <li><button onclick="navigateToPage('services')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Servicios Curados</button></li>
+            <li><button onclick="openBookingModal('General')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Reservas</button></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-label-caps text-xs text-primary tracking-wider uppercase font-semibold">Sustentabilidad</h4>
+          <ul class="space-y-2">
+            <li><a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all block" href="#">Cuidado Tortugas</a></li>
+            <li><a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all block" href="#">Huella de Carbono</a></li>
+            <li><a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all block" href="#">Eco-Tecnologías</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-label-caps text-xs text-primary tracking-wider uppercase font-semibold">Newsletter Exclusivo</h4>
+        <div class="flex border-b border-outline-variant py-2 items-center">
+          <input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-sm placeholder:text-on-surface-variant/40" placeholder="Escribe tu correo" type="email" id="newsletter-email"/>
+          <button onclick="subscribeNewsletter()" class="material-symbols-outlined text-primary hover:translate-x-1 transition-transform">arrow_forward</button>
+        </div>
+        <p class="font-body-md text-xs text-on-surface-variant">© 2026 Akumal Villa - Lugar de las Tortugas. Desarrollado con excelencia.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================= FLOATING WHATSAPP CHAT WIDGET ================= -->
+  <div class="fixed bottom-6 right-6 z-[60] flex flex-col items-end">
+    
+    <!-- Premium Interactive Chat Panel with Aura AI Mode -->
+    <div id="whatsapp-panel" class="hidden w-[340px] bg-white rounded-xl shadow-2xl border border-neutral-100 overflow-hidden flex-col mb-4 transition-all duration-300 scale-95 origin-bottom-right">
+      <!-- Premium Tab Selection -->
+      <div class="bg-primary px-4 pt-4 pb-2 text-white flex flex-col gap-2">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-md">room_service</span>
+            <h4 class="font-label-caps text-xs tracking-wider uppercase font-bold">Conserjería Premium</h4>
+          </div>
+          <button onclick="toggleWhatsAppChat()" class="material-symbols-outlined text-white hover:rotate-90 transition-transform">close</button>
+        </div>
+        <!-- Selector Tab Buttons -->
+        <div class="grid grid-cols-2 bg-black/20 p-1 rounded-md text-[11px] font-label-caps tracking-widest mt-2">
+          <button id="tab-humano-btn" onclick="switchChatMode('humano')" class="bg-white/10 text-white rounded py-1 text-center font-semibold transition-all">HUMANO</button>
+          <button id="tab-ai-btn" onclick="switchChatMode('ai')" class="text-white/60 hover:text-white rounded py-1 text-center font-semibold transition-all">✨ AURA IA ✨</button>
+        </div>
+      </div>
+
+      <!-- Mode 1: Human Whatsapp Helper -->
+      <div id="panel-body-humano" class="flex flex-col">
+        <div class="p-4 bg-background max-h-[200px] overflow-y-auto space-y-3">
+          <div class="bg-[#e2f5ec] text-on-surface p-3 rounded-lg text-xs leading-relaxed max-w-[85%]">
+            ¡Hola! Estás en contacto con la Recepción de <strong>Akumal Villa</strong>. Si deseas, selecciona una pregunta rápida para enviárnosla directamente a WhatsApp:
+          </div>
+          <div class="space-y-1.5 flex flex-col items-start pt-1">
+            <button onclick="setWhatsAppMessage('Me gustaría consultar disponibilidad para reservar la villa en los próximos meses.')" class="text-[11px] text-primary border border-primary/30 hover:border-primary bg-white px-3 py-1.5 rounded-full transition-all text-left">
+              Consultar Disponibilidad
+            </button>
+            <button onclick="setWhatsAppMessage('Hola Concierge, me gustaría programar un chef privado gourmet en la villa.')" class="text-[11px] text-primary border border-primary/30 hover:border-primary bg-white px-3 py-1.5 rounded-full transition-all text-left">
+              Agendar Chef Privado
+            </button>
+          </div>
+        </div>
+        <div class="p-3 bg-white border-t border-outline-variant/30 flex gap-2">
+          <input type="text" id="wa-input-text" placeholder="Escribe tu mensaje..." class="w-full text-xs border border-outline-variant/50 rounded p-2 focus:ring-primary focus:border-primary outline-none"/>
+          <button onclick="sendWhatsAppDirect()" class="bg-[#25D366] text-white p-2 rounded hover:bg-[#20ba59] transition-colors flex items-center justify-center">
+            <svg fill="currentColor" class="w-5 h-5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.305 1.65zm6.59-4.807c1.42.955 3.033 1.464 4.693 1.465 5.034 0 9.127-4.093 9.129-9.127.001-2.438-.946-4.731-2.673-6.457-1.725-1.725-4.02-2.67-6.459-2.671-5.033 0-9.125 4.093-9.128 9.128-.001 1.761.503 3.456 1.462 4.954l-1.01 3.694 3.786-.987zm11.238-6.17c-.126-.21-.462-.336-.966-.588s-2.982-1.47-3.444-1.638c-.462-.168-.798-.252-1.134.252s-1.29 1.638-1.584 1.974-.588.378-1.092.126c-.504-.252-2.126-.783-4.05-2.501-1.497-1.335-2.508-2.984-2.802-3.488s-.031-.777.22-.1.504-.252.756-.504c.252-.252.336-.42.504-.756s.084-.63-.042-.882c-.126-.252-.134-1.29-.134-1.638 0-.348-.134-.798-.462-1.134s-1.134-.84-1.134-.84c-.336-.336-.672-.42-.966-.42s-.588-.042-.882-.042c-.294 0-.756.126-1.134.546s-1.47 1.428-1.47 3.486c0 2.058 1.512 4.074 1.722 4.368s2.953 4.546 7.154 6.355c.999.433 1.777.692 2.395.888 1.008.32 1.924.275 2.65.168.808-.12 2.478-.612 2.814-1.206s.336-1.104.24-1.206z"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode 2: Aura AI Interactive Assistant Chatbot -->
+      <div id="panel-body-ai" class="hidden flex-col">
+        <div id="ai-chat-box" class="p-4 bg-stone-50 max-h-[220px] overflow-y-auto space-y-3 flex flex-col text-xs">
+          <div class="bg-white border border-neutral-100 text-on-surface p-3 rounded-lg leading-relaxed max-w-[90%] self-start shadow-sm">
+            Hola, soy <strong>Aura</strong> ✨, tu conserje de Inteligencia Artificial para Akumal Villa. ¿En qué puedo ayudarte a planificar o descubrir hoy?
+          </div>
+        </div>
+        <!-- Typing indicator -->
+        <div id="ai-typing-indicator" class="hidden px-4 py-2 text-[10px] text-primary italic bg-stone-50 flex items-center gap-2">
+          <div class="flex gap-1">
+            <span class="w-1 h-1 bg-primary rounded-full animate-bounce"></span>
+            <span class="w-1 h-1 bg-primary rounded-full animate-bounce delay-100"></span>
+            <span class="w-1 h-1 bg-primary rounded-full animate-bounce delay-200"></span>
+          </div>
+          Aura está pensando en tu bienestar...
+        </div>
+        <div class="p-3 bg-white border-t border-outline-variant/30 flex gap-2">
+          <input type="text" id="ai-chat-input" onkeydown="handleAIChatKey(event)" placeholder="Pregúntale a Aura..." class="w-full text-xs border border-outline-variant/50 rounded p-2 focus:ring-primary focus:border-primary outline-none"/>
+          <button onclick="sendAIChatMessage()" class="bg-primary text-white p-2 rounded hover:bg-primary-container transition-colors flex items-center justify-center font-semibold px-3">
+            ✨
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Floating Green Button -->
+    <button onclick="toggleWhatsAppChat()" class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" aria-label="WhatsApp">
+      <svg fill="currentColor" class="w-8 h-8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.305 1.65zm6.59-4.807c1.42.955 3.033 1.464 4.693 1.465 5.034 0 9.127-4.093 9.129-9.127.001-2.438-.946-4.731-2.673-6.457-1.725-1.725-4.02-2.67-6.459-2.671-5.033 0-9.125 4.093-9.128 9.128-.001 1.761.503 3.456 1.462 4.954l-1.01 3.694 3.786-.987zm11.238-6.17c-.126-.21-.462-.336-.966-.588s-2.982-1.47-3.444-1.638c-.462-.168-.798-.252-1.134.252s-1.29 1.638-1.584 1.974-.588.378-1.092.126c-.504-.252-2.126-.783-4.05-2.501-1.497-1.335-2.508-2.984-2.802-3.488s-.031-.777.22-.1.504-.252.756-.504c.252-.252.336-.42.504-.756s.084-.63-.042-.882c-.126-.252-.134-1.29-.134-1.638 0-.348-.134-.798-.462-1.134s-1.134-.84-1.134-.84c-.336-.336-.672-.42-.966-.42s-.588-.042-.882-.042c-.294 0-.756.126-1.134.546s-1.47 1.428-1.47 3.486c0 2.058 1.512 4.074 1.722 4.368s2.953 4.546 7.154 6.355c.999.433 1.777.692 2.395.888 1.008.32 1.924.275 2.65.168.808-.12 2.478-.612 2.814-1.206s.336-1.104.24-1.206z"></path></svg>
+    </button>
+  </div>
+
+
+  <!-- ================= ULTRA-LUXURY BOOKING MODAL (Interactive Flow) ================= -->
+  <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md transition-opacity duration-300">
+    <div class="bg-white w-[90%] max-w-2xl overflow-hidden shadow-2xl relative border border-neutral-100 flex flex-col md:flex-row transition-all duration-500 scale-95 opacity-0" id="booking-modal-card">
+      
+      <!-- Side Decorative Information -->
+      <div class="bg-primary p-8 text-white w-full md:w-[40%] flex flex-col justify-between">
+        <div>
+          <span class="font-label-caps text-[10px] tracking-widest text-white/75 uppercase block mb-2">Exclusividad</span>
+          <h3 class="font-headline-md text-2xl mb-4">Planifica tu Estadía</h3>
+          <p class="text-xs text-white/85 font-light leading-relaxed mb-6">
+            Ingresa las fechas elegidas y el conserje estructurará los detalles de tu arribo al paraíso.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="border-t border-white/20 pt-4">
+            <span class="text-[10px] text-white/75 font-semibold uppercase block">Servicios Incluidos</span>
+            <p class="text-xs text-white/90 font-light mt-1">✓ Conserjería personal 24/7</p>
+            <p class="text-xs text-white/90 font-light">✓ Acceso a la playa de anidación</p>
+            <p class="text-xs text-white/90 font-light">✓ Desayuno de autor diario</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Booking Inputs -->
+      <div class="p-8 w-full md:w-[60%] flex flex-col justify-between relative" id="booking-form-area">
+        
+        <!-- Close Button -->
+        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+
+        <form id="booking-form" class="space-y-5" onsubmit="handleBookingSubmission(event)">
+          <div class="space-y-1">
+            <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="villa-selection">Selecciona la Villa</label>
+            <select id="villa-selection" class="w-full text-sm border-outline-variant rounded focus:border-primary focus:ring-primary p-2.5 bg-surface-container-low" onchange="calculateDynamicPricing()">
+              <option value="suite-tortuga" data-price="650">Master Suite Tortuga — $650 USD / Noche</option>
+              <option value="ocean-manor" data-price="1200">Oceanfront Manor — $1,200 USD / Noche</option>
+              <option value="jungle-sanctuary" data-price="1800">Jungle Nest Sanctuary — $1,800 USD / Noche</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="checkin-date">Llegada</label>
+              <input type="date" id="checkin-date" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2" required onchange="calculateDynamicPricing()"/>
+            </div>
+            <div class="space-y-1">
+              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="checkout-date">Salida</label>
+              <input type="date" id="checkout-date" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2" required onchange="calculateDynamicPricing()"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="guests-qty">Huéspedes</label>
+              <select id="guests-qty" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2">
+                <option value="1">1 Huésped</option>
+                <option value="2" selected>2 Huéspedes</option>
+                <option value="4">4 Huéspedes</option>
+                <option value="6">6 Huéspedes</option>
+              </select>
+            </div>
+            <div class="space-y-1">
+              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="promo-code">Cód. Promocional</label>
+              <input type="text" id="promo-code" placeholder="Opcional" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2"/>
+            </div>
+          </div>
+
+          <!-- Dynamic Rate Card -->
+          <div class="bg-surface-container p-4 rounded-lg flex justify-between items-center" id="price-display-wrapper">
+            <div>
+              <span class="text-[10px] font-semibold text-on-surface-variant tracking-wider uppercase block">Total Estimado</span>
+              <span id="price-details-nights" class="text-[11px] text-on-surface-variant/70 font-light block">Calculando noches...</span>
+            </div>
+            <div class="text-right">
+              <span id="price-total-tag" class="text-xl font-bold text-primary font-headline-md">$650 USD</span>
+            </div>
+          </div>
+
+          <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3.5 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg">
+            Confirmar Reserva
+          </button>
+        </form>
+
+      </div>
+
+      <!-- Simulated Success Step Panel -->
+      <div class="hidden p-8 w-full md:w-[60%] flex flex-col justify-center items-center text-center relative" id="booking-success-area">
+        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+        <span class="material-symbols-outlined text-6xl text-primary mb-4 animate-bounce">check_circle</span>
+        <h3 class="font-headline-md text-3xl text-on-surface mb-2">¡Reserva Recibida!</h3>
+        <p class="font-body-md text-sm text-on-surface-variant max-w-xs mb-6">
+          Un conserje de Akumal Villa se pondrá en contacto contigo en breve para coordinar tu transportación de cortesía y personalizar tu menú.
+        </p>
+        <div class="bg-surface-container p-3 rounded text-xs font-mono text-primary select-all mb-6">
+          CÓDIGO DE RESERVA: <strong id="booking-code-tag">AKM-8201</strong>
+        </div>
+        <button onclick="closeBookingModal()" class="border border-primary text-primary px-8 py-2.5 font-label-caps text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= NOTIFICATION TOAST BOX ================= -->
+  <div id="toast-message" class="fixed top-24 right-6 z-[100] bg-white border-l-4 border-primary p-4 shadow-2xl transition-all duration-300 translate-x-72 opacity-0 max-w-sm rounded">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-primary" id="toast-icon">info</span>
+      <div>
+        <p id="toast-text" class="text-xs text-on-surface font-medium"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= GLSL WEBGL SHADER LOGIC ================= -->
+  <script>
+    (function() {
+      const canvas = document.getElementById('shader-canvas');
+      
+      function syncSize() {
+        const w = canvas.clientWidth  || window.innerWidth;
+        const h = canvas.clientHeight || window.innerHeight;
+        if (canvas.width !== w || canvas.height !== h) {
+          canvas.width  = w;
+          canvas.height = h;
+        }
+      }
+      
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(syncSize).observe(canvas);
+      }
+      syncSize();
+
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) return;
+
+      const vs = `
+        attribute vec2 a_position;
+        varying vec2 v_texCoord;
+        void main() {
+          v_texCoord = a_position * 0.5 + 0.5;
+          gl_Position = vec4(a_position, 0.0, 1.0);
+        }
+      `;
+
+      const fs = `
+        precision highp float;
+        uniform float u_time;
+        uniform vec2 u_resolution;
+        uniform vec2 u_mouse;
+
+        float hash(vec2 p) {
+          return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+        }
+
+        float noise(vec2 p) {
+          vec2 i = floor(p);
+          vec2 f = fract(p);
+          f = f * f * (3.0 - 2.0 * f);
+          float a = hash(i);
+          float b = hash(i + vec2(1.0, 0.0));
+          float c = hash(i + vec2(0.0, 1.0));
+          float d = hash(i + vec2(1.0, 1.0));
+          return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+        }
+
+        float fbm(vec2 p) {
+          float v = 0.0;
+          float a = 0.5;
+          for (int i = 0; i < 5; i++) {
+            v += a * noise(p);
+            p *= 2.0;
+            a *= 0.5;
+          }
+          return v;
+        }
+
+        void main() {
+          vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+          vec2 uv_aspect = uv;
+          uv_aspect.x *= u_resolution.x / u_resolution.y;
+
+          // Advanced interactive ripple calculations using u_mouse positions
+          vec2 m = u_mouse / u_resolution;
+          m.x *= u_resolution.x / u_resolution.y;
+          float dist = distance(uv_aspect, m);
+          
+          // Realistic water wave ripple distortion factor
+          float wave = sin(dist * 16.0 - u_time * 4.0) * 0.05 * smoothstep(0.4, 0.0, dist);
+
+          vec2 p = uv_aspect * 2.8 + wave;
+          float n = fbm(p + u_time * 0.08);
+          
+          // Beautiful Deep Turquoise Caribbean Palette
+          vec3 color1 = vec3(0.0, 0.65, 0.70); // Turquoise
+          vec3 color2 = vec3(0.0, 0.42, 0.48); // Deep Caribbean Blue
+          vec3 color3 = vec3(0.98, 0.96, 0.88); // Soft Sand reflection
+
+          vec3 color = mix(color1, color2, n);
+          color = mix(color, color3, pow(n, 4.0) * 0.45); // Sun caustics reflections
+
+          // Cinematic vignette focus frame
+          float vignette = uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y);
+          vignette = clamp(pow(16.0 * vignette, 0.25), 0.0, 1.0);
+
+          gl_FragColor = vec4(color * (0.85 + 0.15 * sin(u_time * 0.15)) * vignette, 1.0);
+        }
+      `;
+
+      function compileShader(type, src) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src);
+        gl.compileShader(s);
+        return s;
+      }
+
+      const prog = gl.createProgram();
+      gl.attachShader(prog, compileShader(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, compileShader(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog);
+      gl.useProgram(prog);
+
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+
+      const pos = gl.getAttribLocation(prog, 'a_position');
+      gl.enableVertexAttribArray(pos);
+      gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+      const uTime = gl.getUniformLocation(prog, 'u_time');
+      const uRes = gl.getUniformLocation(prog, 'u_resolution');
+      const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+      let targetMouse = { x: canvas.width / 2, y: canvas.height / 2 };
+      let currentMouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+      window.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        if (rect.width && rect.height) {
+          const nx = (e.clientX - rect.left) / rect.width;
+          const ny = 1.0 - (e.clientY - rect.top) / rect.height;
+          targetMouse.x = nx * canvas.width;
+          targetMouse.y = ny * canvas.height;
+        }
+      });
+
+      // Touch events for responsive touch support
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches[0]) {
+          const rect = canvas.getBoundingClientRect();
+          const nx = (e.touches[0].clientX - rect.left) / rect.width;
+          const ny = 1.0 - (e.touches[0].clientY - rect.top) / rect.height;
+          targetMouse.x = nx * canvas.width;
+          targetMouse.y = ny * canvas.height;
+        }
+      });
+
+      function render(t) {
+        if (typeof ResizeObserver === 'undefined') syncSize();
+        gl.viewport(0, 0, canvas.width, canvas.height);
+
+        // Smooth mouse position easing
+        currentMouse.x += (targetMouse.x - currentMouse.x) * 0.08;
+        currentMouse.y += (targetMouse.y - currentMouse.y) * 0.08;
+
+        if (uTime) gl.uniform1f(uTime, t * 0.001);
+        if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+        if (uMouse) gl.uniform2f(uMouse, currentMouse.x, currentMouse.y);
+
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        requestAnimationFrame(render);
+      }
+      render(0);
+    })();
+  </script>
+
+
+  <!-- ================= SPA ROUTING & APP INTERACTIVE LOGIC ================= -->
+  <script>
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial setups for custom dates inside the booking modal (today & tomorrow as default)
+    document.addEventListener("DOMContentLoaded", () => {
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      document.getElementById('checkin-date').value = today.toISOString().split('T')[0];
+      document.getElementById('checkout-date').value = tomorrow.toISOString().split('T')[0];
+      calculateDynamicPricing();
+      
+      // Fire entrance animations for Hero text
+      gsap.to(".reveal-hero", {
+        opacity: 1,
+        y: 0,
+        duration: 1.6,
+        ease: "power4.out",
+        delay: 0.3
+      });
+      
+      // Initialize scroll animations
+      initScrollAnimations();
+    });
+
+    // 1. DYNAMIC NAVIGATION SWITCHING (Single-Page-App Flow)
+    function navigateToPage(pageId) {
+      const homePage = document.getElementById('page-home');
+      const servicesPage = document.getElementById('page-services');
+      const targetPage = document.getElementById(`page-${pageId}`);
+      
+      const pages = [homePage, servicesPage];
+      let activePage = null;
+
+      pages.forEach(p => {
+        if (!p.classList.contains('hidden')) {
+          activePage = p;
+        }
+      });
+
+      if (!activePage || !targetPage || activePage === targetPage) return;
+
+      // Unset old navigations
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('text-primary', 'nav-active-line');
+        link.classList.add('text-on-surface');
+      });
+
+      // Highlight new navigation menu links (Desktop)
+      const targetNavLink = document.getElementById(`nav-${pageId}`);
+      if (targetNavLink) {
+        targetNavLink.classList.remove('text-on-surface');
+        targetNavLink.classList.add('text-primary', 'nav-active-line');
+      }
+
+      // Transition animation execution
+      gsap.to(activePage, {
+        opacity: 0,
+        y: -15,
+        duration: 0.4,
+        onComplete: () => {
+          activePage.classList.add('hidden');
+          
+          targetPage.classList.remove('hidden');
+          window.scrollTo(0, 0);
+          
+          gsap.fromTo(targetPage, 
+            { opacity: 0, y: 15 },
+            { 
+              opacity: 1, 
+              y: 0, 
+              duration: 0.5, 
+              ease: "power2.out",
+              onComplete: () => {
+                // Force ScrollTrigger calculations update
+                ScrollTrigger.refresh();
+              }
+            }
+          );
+        }
+      });
+    }
+
+    // Header transformation logic on Scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 60) {
+        header.classList.add('glass-nav', 'shadow-md', 'py-2');
+        header.classList.remove('bg-transparent', 'border-b', 'border-transparent', 'py-4');
+        header.classList.add('border-b', 'border-outline-variant/30');
+      } else {
+        header.classList.remove('glass-nav', 'shadow-md', 'py-2', 'border-b', 'border-outline-variant/30');
+        header.classList.add('bg-transparent', 'border-b', 'border-transparent', 'py-4');
+      }
+    });
+
+    // 2. EXQUISITE GSAP SCROLL TRIGGERS UNIFICATION
+    function initScrollAnimations() {
+      // Setup default hiding properties before triggers kick in
+      const revealUp = gsap.utils.toArray(".reveal-up");
+      revealUp.forEach(el => {
+        gsap.set(el, { opacity: 0, y: 50 });
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        });
+      });
+
+      const revealLeft = gsap.utils.toArray(".reveal-left");
+      revealLeft.forEach(el => {
+        gsap.set(el, { opacity: 0, x: -50 });
+        gsap.to(el, {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        });
+      });
+
+      const revealRight = gsap.utils.toArray(".reveal-right");
+      revealRight.forEach(el => {
+        gsap.set(el, { opacity: 0, x: 50 });
+        gsap.to(el, {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        });
+      });
+
+      // Stagger animations
+      const staggers = gsap.utils.toArray(".reveal-up-stagger");
+      staggers.forEach(container => {
+        const children = container.children;
+        gsap.set(children, { opacity: 0, y: 30 });
+        gsap.to(children, {
+          opacity: 1,
+          y: 0,
+          duration: 1.0,
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: container,
+            start: "top 80%"
+          }
+        });
+      });
+    }
+
+    // Mobile menu navigation toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+        gsap.fromTo(menu, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
+      } else {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+      }
+    }
+
+    // 3. BOOKING MODAL INTERACTIVE FLOW
+    function openBookingModal(villaType = 'General') {
+      const modal = document.getElementById('booking-modal');
+      const card = document.getElementById('booking-modal-card');
+      const select = document.getElementById('villa-selection');
+
+      // Auto-set selected villa
+      if (villaType.includes('Tortuga')) {
+        select.value = 'suite-tortuga';
+      } else if (villaType.includes('Manor') || villaType.includes('Pool')) {
+        select.value = 'ocean-manor';
+      } else if (villaType.includes('Chef') || villaType.includes('Jungle')) {
+        select.value = 'jungle-sanctuary';
+      }
+
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      
+      calculateDynamicPricing();
+
+      gsap.to(modal, { opacity: 1, duration: 0.3 });
+      gsap.to(card, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" });
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      const card = document.getElementById('booking-modal-card');
+      
+      gsap.to(card, { opacity: 0, scale: 0.95, duration: 0.3 });
+      gsap.to(modal, { 
+        opacity: 0, 
+        duration: 0.3, 
+        onComplete: () => {
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+          // Reset forms steps
+          document.getElementById('booking-form-area').classList.remove('hidden');
+          document.getElementById('booking-success-area').classList.add('hidden');
+        }
+      });
+    }
+
+    // Dynamic rate calculation based on selections and nights
+    function calculateDynamicPricing() {
+      const checkinStr = document.getElementById('checkin-date').value;
+      const checkoutStr = document.getElementById('checkout-date').value;
+      const select = document.getElementById('villa-selection');
+      const selectedOption = select.options[select.selectedIndex];
+      const basePrice = parseFloat(selectedOption.getAttribute('data-price')) || 650;
+
+      const dateNightsWrapper = document.getElementById('price-details-nights');
+      const totalDisplay = document.getElementById('price-total-tag');
+
+      if (!checkinStr || !checkoutStr) {
+        dateNightsWrapper.textContent = "Por favor selecciona fechas válidas";
+        return;
+      }
+
+      const checkin = new Date(checkinStr);
+      const checkout = new Date(checkoutStr);
+
+      const diffTime = Math.abs(checkout - checkin);
+      let diffNights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      if (checkout <= checkin) {
+        dateNightsWrapper.textContent = "La salida debe ser después de la llegada";
+        totalDisplay.textContent = `$${basePrice} USD`;
+        return;
+      }
+
+      if (!diffNights || isNaN(diffNights)) diffNights = 1;
+
+      const finalTotal = basePrice * diffNights;
+      dateNightsWrapper.textContent = `${diffNights} Noche(s) x $${basePrice} USD`;
+      totalDisplay.textContent = `$${finalTotal.toLocaleString()} USD`;
+    }
+
+    function handleBookingSubmission(e) {
+      e.preventDefault();
+
+      // Show mock loader transitioning
+      const formArea = document.getElementById('booking-form-area');
+      const successArea = document.getElementById('booking-success-area');
+      
+      // Generate unique mock code
+      const randCode = "AKM-" + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('booking-code-tag').textContent = randCode;
+
+      gsap.to(formArea, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => {
+          formArea.classList.add('hidden');
+          successArea.classList.remove('hidden');
+          gsap.fromTo(successArea, { opacity: 0 }, { opacity: 1, duration: 0.4 });
+        }
+      });
+    }
+
+    // 4. INTERACTIVE WHATSAPP FLOATING CHATBOX HELPERS
+    function toggleWhatsAppChat() {
+      const panel = document.getElementById('whatsapp-panel');
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        panel.classList.add('flex');
+        gsap.fromTo(panel, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3 });
+      } else {
+        gsap.to(panel, { 
+          opacity: 0, 
+          scale: 0.9, 
+          duration: 0.2, 
+          onComplete: () => {
+            panel.classList.remove('flex');
+            panel.classList.add('hidden');
+          } 
+        });
+      }
+    }
+
+    function setWhatsAppMessage(msg) {
+      document.getElementById('wa-input-text').value = msg;
+    }
+
+    function sendWhatsAppDirect() {
+      const text = document.getElementById('wa-input-text').value || "Hola, me gustaría solicitar información sobre Akumal Villa.";
+      // Formatted WhatsApp redirect link (simulated recipient)
+      const targetPhone = "529841234567"; // Mock Riviera Maya prefix phone
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+      toggleWhatsAppChat();
+    }
+
+    // Request Service triggers directly pre-populating WhatsApp Concierge
+    function requestConciergeService(serviceName) {
+      const customMsg = `Hola Conserje de Akumal Villa, me gustaría solicitar información y agendar el servicio de: *${serviceName}* para mi estadía.`;
+      
+      // If we are in AI mode, let's feed it directly to AI chat. Otherwise, set to WhatsApp and notify.
+      const isAIMode = !document.getElementById('panel-body-ai').classList.contains('hidden');
+      if (isAIMode) {
+        document.getElementById('ai-chat-input').value = `Cuéntame sobre el servicio de ${serviceName} y cómo puedo reservarlo en la villa.`;
+        toggleWhatsAppChat();
+        sendAIChatMessage();
+      } else {
+        setWhatsAppMessage(customMsg);
+        toggleWhatsAppChat();
+        showToastNotification(`Solicitud de ${serviceName} lista en conserjería`, 'concierge_bell');
+      }
+    }
+
+    // 5. TOAST NOTIFICATION UTILITY
+    function showToastNotification(text, iconName = 'info') {
+      const toast = document.getElementById('toast-message');
+      const toastText = document.getElementById('toast-text');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastText.textContent = text;
+      toastIcon.textContent = iconName;
+
+      // Reset GSAP animation timelines safely
+      gsap.killTweensOf(toast);
+      
+      gsap.timeline()
+        .to(toast, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" })
+        .to(toast, { x: 300, opacity: 0, duration: 0.4, delay: 3.5, ease: "power2.in" });
+    }
+
+    function subscribeNewsletter() {
+      const email = document.getElementById('newsletter-email').value;
+      if (email && email.includes('@')) {
+        showToastNotification("Te has suscrito con éxito al Newsletter Privado", "mark_email_read");
+        document.getElementById('newsletter-email').value = "";
+      } else {
+        showToastNotification("Por favor introduce una dirección válida", "warning");
+      }
+    }
+
+    // Horizontal smooth wheel scroll helper for estate galleries
+    const slider = document.getElementById('estate-slider');
+    if (slider) {
+      slider.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+          e.preventDefault();
+          slider.scrollLeft += e.deltaY;
+        }
+      });
+    }
+
+    // =========================================================================
+    // ================== GEMINI API LLM INTEGRATION MODULE ==================
+    // =========================================================================
+
+    // Switching between Human WhatsApp contact panel and Aura AI assistant
+    function switchChatMode(mode) {
+      const btnHumano = document.getElementById('tab-humano-btn');
+      const btnAI = document.getElementById('tab-ai-btn');
+      const bodyHumano = document.getElementById('panel-body-humano');
+      const bodyAI = document.getElementById('panel-body-ai');
+
+      if (mode === 'humano') {
+        btnHumano.className = "bg-white/10 text-white rounded py-1 text-center font-semibold transition-all";
+        btnAI.className = "text-white/60 hover:text-white rounded py-1 text-center font-semibold transition-all";
+        bodyHumano.classList.remove('hidden');
+        bodyAI.classList.add('hidden');
+      } else {
+        btnAI.className = "bg-white/10 text-white rounded py-1 text-center font-semibold transition-all";
+        btnHumano.className = "text-white/60 hover:text-white rounded py-1 text-center font-semibold transition-all";
+        bodyHumano.classList.add('hidden');
+        bodyAI.classList.remove('hidden');
+      }
+    }
+
+    // Call the Gemini API utilizing exponential backoff as instructed
+    async function callGeminiAPI(userQuery, systemInstruction) {
+      const apiKey = ""; // The platform environment injects this key at runtime
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+      const payload = {
+        contents: [{
+          parts: [{ text: userQuery }]
+        }],
+        systemInstruction: {
+          parts: [{ text: systemInstruction }]
+        }
+      };
+
+      // Implement strict exponential backoff (retrying up to 5 times: 1s, 2s, 4s, 8s, 16s)
+      let delay = 1000;
+      for (let attempt = 0; attempt < 5; attempt++) {
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          if (response.ok) {
+            const result = await response.json();
+            const textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (textResponse) {
+              return textResponse;
+            }
+          }
+        } catch (error) {
+          // Strict rule: Do not log retries to console.
+        }
+
+        // Wait before retrying
+        await new Promise(resolve => setTimeout(resolve, delay));
+        delay *= 2; // exponential step scaling
+      }
+
+      throw new Error("Lo sentimos. El servicio de asistencia de IA está congestionado temporalmente. Por favor, intenta de nuevo en unos minutos.");
+    }
+
+    // Markdown Parser implementation to render HTML beautifully within the page container
+    function parseMarkdownToHTML(text) {
+      if (!text) return "";
+      let html = text;
+
+      // Escape HTML entities to prevent rendering breaks
+      html = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+      // Replace headers
+      html = html.replace(/^### (.*$)/gim, '<h4 class="font-headline-md text-lg text-primary mt-4 mb-2">$1</h4>');
+      html = html.replace(/^## (.*$)/gim, '<h3 class="font-headline-md text-xl text-primary mt-6 mb-3">$1</h3>');
+      html = html.replace(/^# (.*$)/gim, '<h2 class="font-headline-lg text-2xl text-primary mt-8 mb-4">$1</h2>');
+
+      // Replace bold text
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-primary">$1</strong>');
+      
+      // Replace italics text
+      html = html.replace(/\*(.*?)\*/g, '<em class="italic text-on-surface-variant">$1</em>');
+
+      // Replace list elements
+      html = html.replace(/^\s*-\s+(.*$)/gim, '<li class="ml-4 list-disc text-on-surface-variant my-1 font-light">$1</li>');
+      html = html.replace(/^\s*\*\s+(.*$)/gim, '<li class="ml-4 list-disc text-on-surface-variant my-1 font-light">$1</li>');
+
+      // Convert line breaks cleanly
+      html = html.replace(/\n/g, '<br>');
+
+      return html;
+    }
+
+    // AURA AI CHATBOX MODULE
+    async function sendAIChatMessage() {
+      const inputEl = document.getElementById('ai-chat-input');
+      const queryText = inputEl.value.trim();
+      if (!queryText) return;
+
+      const chatBox = document.getElementById('ai-chat-box');
+      const indicator = document.getElementById('ai-typing-indicator');
+
+      // Append User message to widget interface
+      const userMsgHtml = `
+        <div class="bg-primary/15 text-on-surface p-3 rounded-lg leading-relaxed max-w-[90%] self-end shadow-sm font-light">
+          ${queryText}
+        </div>
+      `;
+      chatBox.insertAdjacentHTML('beforeend', userMsgHtml);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // Clean input
+      inputEl.value = "";
+      
+      // Show typing indicator
+      indicator.classList.remove('hidden');
+
+      const auraSystemPrompt = "Eres Aura, la conserje de inteligencia artificial de ultra-lujo de Akumal Villa. Hablas con una elegancia impecable, calidez caribeña y un tono altamente personalizado y sofisticado (quiet luxury). Ofreces información precisa sobre la Riviera Maya, la fauna de Akumal (especialmente las tortugas marinas), el Arrecife Mesoamericano, y los servicios premium de la villa (chef privado, yates, masajes, transportación VIP). Responde de forma concisa pero evocadora, en español y utilizando emojis elegantes con sutileza.";
+
+      try {
+        const reply = await callGeminiAPI(queryText, auraSystemPrompt);
+        
+        // Append Aura AI Response
+        const aiMsgHtml = `
+          <div class="bg-white border border-neutral-100 text-on-surface p-3 rounded-lg leading-relaxed max-w-[90%] self-start shadow-sm font-light prose">
+            ${parseMarkdownToHTML(reply)}
+          </div>
+        `;
+        chatBox.insertAdjacentHTML('beforeend', aiMsgHtml);
+      } catch (error) {
+        const errMsgHtml = `
+          <div class="bg-red-50 border border-red-100 text-red-800 p-3 rounded-lg leading-relaxed max-w-[90%] self-start font-light">
+            ${error.message}
+          </div>
+        `;
+        chatBox.insertAdjacentHTML('beforeend', errMsgHtml);
+      } finally {
+        indicator.classList.add('hidden');
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+
+    function handleAIChatKey(event) {
+      if (event.key === 'Enter') {
+        sendAIChatMessage();
+      }
+    }
+
+    // DYNAMIC ITINERARY GENERATOR MODULE
+    async function generateAILuxuryItinerary() {
+      const interest = document.getElementById('ai-interest').value;
+      const days = document.getElementById('ai-days').value;
+      const tempo = document.getElementById('ai-tempo').value;
+
+      const placeholder = document.getElementById('ai-itinerary-placeholder');
+      const loading = document.getElementById('ai-itinerary-loading');
+      const resultArea = document.getElementById('ai-itinerary-result');
+      const loadingText = document.getElementById('ai-loading-text');
+
+      // Reset panels visibility
+      placeholder.classList.add('hidden');
+      resultArea.classList.add('hidden');
+      loading.classList.remove('hidden');
+
+      // Array of high-end concept phrases for cinematic loading feedback
+      const luxuryPhrases = [
+        "Sintonizando con el susurro del oleaje de Akumal...",
+        "Curando experiencias exclusivas con la marea...",
+        "Orquestando un menú de momentos memorables...",
+        "Diseñando tu sendero personalizado de quiet luxury..."
+      ];
+
+      let phraseIndex = 0;
+      const phraseInterval = setInterval(() => {
+        phraseIndex = (phraseIndex + 1) % luxuryPhrases.length;
+        loadingText.textContent = luxuryPhrases[phraseIndex];
+      }, 2500);
+
+      const itineraryPrompt = `Diseña un itinerario de ultra-lujo de exactamente ${days} días completos para mi estadía en Akumal Villa. Mi enfoque principal es: "${interest}" y deseo llevar un ritmo de viaje: "${tempo}".
+      Divide la respuesta día por día con subtítulos claros. Para cada día propone experiencias sensoriales y exclusivas que un hotel regular de cinco estrellas no podría conseguir (por ejemplo: amaneceres privados en canoa con biólogos para ver tortugas, catas privadas de mezcales ancestrales en la bodega privada, rituales de temazcal dirigidos por chamanes mayas en la selva, etc.). Explica brevemente cómo el equipo de conserjería asume los detalles de cada actividad. Muestra el itinerario de manera majestuosa e impecable.`;
+
+      const itinerarySystemPrompt = "Eres Aura, la planificadora experta de itinerarios de ultra-lujo de Akumal Villa. Tu objetivo es redactar itinerarios de ensueño, evocadores, poéticos, pero a la vez prácticos para el equipo de hospitalidad. Escribe en español de forma elegante y refinada, utilizando títulos hermosos.";
+
+      try {
+        const reply = await callGeminiAPI(itineraryPrompt, itinerarySystemPrompt);
+        
+        // Populate and fade in results
+        resultArea.innerHTML = parseMarkdownToHTML(reply);
+        
+        loading.classList.add('hidden');
+        resultArea.classList.remove('hidden');
+        
+        gsap.fromTo(resultArea, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6 });
+        showToastNotification("✨ Tu Itinerario Exclusivo ha sido trazado por la IA ✨", "auto_awesome");
+      } catch (error) {
+        loading.classList.add('hidden');
+        placeholder.classList.remove('hidden');
+        showToastNotification(error.message, "error");
+      } finally {
+        clearInterval(phraseInterval);
+      }
+    }
+  </script>
+
+</body>
+</html>
