@@ -192,17 +192,18 @@
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
-  <!-- ================= TOP NAVIGATION HEADER ================= -->
-  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-4 bg-transparent border-b border-transparent" id="main-header">
-    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-2 max-w-container-max mx-auto">
+  <!-- ================= STREAMING_CHUNK: Rendering the sleek dynamic header ================= -->
+  <!-- TOP NAVIGATION HEADER (Aesthetic responsive sizing to not invade view) -->
+  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-6 bg-transparent border-b border-transparent" id="main-header">
+    <div class="flex justify-between items-center px-6 md:px-margin-desktop py-1.5 max-w-container-max mx-auto">
       <div class="flex items-center gap-4 cursor-pointer" onclick="navigateToPage('home')">
         <!-- Prominent logo setup referencing LLG.png -->
-        <img alt="Casa Buho Dorado Logo" class="h-16 w-auto object-contain md:h-24 transition-all duration-500 scale-105 hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-        <span class="font-headline-md text-xl md:text-2xl text-primary tracking-widest uppercase font-medium">CASA BUHO DORADO</span>
+        <img id="header-logo" alt="Casa Buho Dorado Logo" class="h-16 md:h-24 w-auto object-contain transition-all duration-500 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+        <span id="header-title" class="font-headline-md text-xl md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500">CASA BUHO DORADO</span>
       </div>
       
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden lg:flex items-center gap-8">
         <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-label-caps text-primary nav-active-line transition-all duration-300" id="nav-home">La Villa</button>
         <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300" id="nav-services">Servicios Curados</button>
         <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-all duration-300" id="nav-gallery">Galería</button>
@@ -212,17 +213,17 @@
 
       <!-- Action Button & Mobile Trigger -->
       <div class="flex items-center gap-4">
-        <button onclick="openBookingModal('General')" class="bg-primary text-on-primary hover:bg-primary-container px-5 md:px-8 py-3 font-label-caps text-[11px] md:text-label-caps uppercase tracking-widest transition-all duration-300 shadow-sm">
+        <button onclick="openBookingModal('General')" class="bg-primary text-on-primary hover:bg-primary-container px-5 md:px-8 py-3 font-label-caps text-[11px] md:text-label-caps uppercase tracking-widest transition-all duration-300 shadow-md">
           Book Now
         </button>
-        <button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 focus:outline-none" aria-label="Menú">
+        <button onclick="toggleMobileMenu()" class="lg:hidden text-primary p-2 focus:outline-none" aria-label="Menú">
           <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-xl border-t border-outline-variant flex flex-col p-6 gap-6">
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-xl border-t border-outline-variant flex flex-col p-6 gap-6">
       <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-primary">La Villa</button>
       <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-on-surface">Servicios Curados</button>
       <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-on-surface">Galería</button>
@@ -237,29 +238,40 @@
     <!-- ================= PAGE 1: HOME ================= -->
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
-      <!-- WebGL Animated Hero Header with Magical Cloud Overlays -->
+      <!-- WebGL Animated Hero Header with Magical Cloud Overlays (Enhanced visibility & volumetrics) -->
       <section class="relative h-[95vh] w-full flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 w-full h-full z-0">
           <canvas id="shader-canvas" class="block w-full h-full"></canvas>
         </div>
         
-        <!-- Ambient Dreamlike Passing Clouds Layers -->
-        <div class="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden opacity-30 select-none">
+        <!-- Ambient Dreamlike Passing Clouds Layers (High contrast volume) -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden opacity-65 select-none">
+          <!-- Subtle White/Gold Cloud Gradients -->
+          <svg class="hidden">
+            <defs>
+              <linearGradient id="magicCloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.65"/>
+                <stop offset="50%" stop-color="#fef8ec" stop-opacity="0.45"/>
+                <stop offset="100%" stop-color="#ecd6b7" stop-opacity="0.05"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          
           <!-- Cloud Layer 1 -->
-          <svg class="absolute top-[10%] left-0 w-[450px] h-[180px] cloud-slow-1 fill-white/20 blur-xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 80 Q 25 50, 40 60 Q 55 40, 70 65 Q 85 55, 95 80 Z"/>
+          <svg class="absolute top-[8%] left-0 w-[550px] h-[220px] cloud-slow-1 fill-[url(#magicCloudGrad)] filter blur-md" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 80 C 20 50, 40 45, 55 60 C 65 35, 85 40, 92 65 C 97 50, 105 60, 100 80 Z"/>
           </svg>
           <!-- Cloud Layer 2 -->
-          <svg class="absolute top-[35%] right-0 w-[600px] h-[220px] cloud-slow-2 fill-white/15 blur-2xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 85 Q 20 40, 45 55 Q 60 30, 80 60 Q 95 50, 100 85 Z"/>
+          <svg class="absolute top-[30%] right-0 w-[700px] h-[260px] cloud-slow-2 fill-[url(#magicCloudGrad)] filter blur-lg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 85 C 15 35, 45 40, 55 55 C 65 20, 85 25, 95 60 C 98 45, 102 55, 100 85 Z"/>
           </svg>
           <!-- Cloud Layer 3 -->
-          <svg class="absolute bottom-[20%] left-0 w-[550px] h-[200px] cloud-slow-3 fill-white/10 blur-xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 90 Q 15 50, 35 65 Q 50 45, 65 70 Q 80 60, 95 90 Z"/>
+          <svg class="absolute bottom-[25%] left-0 w-[600px] h-[240px] cloud-slow-3 fill-[url(#magicCloudGrad)] filter blur-md" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 90 C 10 45, 30 50, 45 65 C 55 35, 75 40, 85 70 C 90 55, 98 65, 95 90 Z"/>
           </svg>
           <!-- Cloud Layer 4 (Soft Golden Mist) -->
-          <svg class="absolute top-[5%] right-[10%] w-[380px] h-[150px] cloud-slow-4 fill-primary-fixed/20 blur-3xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 75 Q 30 45, 45 55 Q 60 35, 75 60 Q 90 50, 100 75 Z"/>
+          <svg class="absolute top-[3%] right-[8%] w-[480px] h-[180px] cloud-slow-4 fill-[url(#magicCloudGrad)] filter blur-xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 75 C 25 35, 45 40, 55 55 C 65 30, 80 35, 90 60 C 95 45, 102 55, 100 75 Z"/>
           </svg>
         </div>
 
@@ -267,18 +279,18 @@
         
         <!-- Hero Text and CTA buttons -->
         <div class="relative z-10 text-center px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
-          <span class="text-white/80 font-label-caps text-label-caps uppercase tracking-[0.3em] mb-4 block">Refugio Privado en Akumal</span>
-          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight drop-shadow-md">
+          <span class="text-white/95 font-label-caps text-label-caps uppercase tracking-[0.3em] mb-4 block drop-shadow-md">Refugio Privado en Akumal</span>
+          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight drop-shadow-lg">
             Tu Santuario Caribeño Exclusivo
           </h1>
-          <p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-2xl mx-auto drop-shadow-sm font-light">
+          <p class="font-body-lg text-body-lg text-white/95 mb-10 max-w-2xl mx-auto drop-shadow-md font-light">
             Vive la fusión perfecta entre la arquitectura orgánica de vanguardia y la majestuosidad de la fauna marina en la Riviera Maya.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button onclick="openBookingModal('General')" class="bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase hover:bg-primary-container hover:scale-105 transition-all shadow-lg w-full sm:w-auto">
               Reservar Estadía
             </button>
-            <button onclick="navigateToPage('services')" class="border border-white text-white px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase hover:bg-white hover:text-primary transition-all w-full sm:w-auto backdrop-blur-sm">
+            <button onclick="navigateToPage('services')" class="border border-white text-white px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase hover:bg-white hover:text-primary transition-all w-full sm:w-auto backdrop-blur-sm shadow-md">
               Ver Servicios Curados
             </button>
           </div>
@@ -949,6 +961,7 @@
   </footer>
 
 
+  <!-- ================= STREAMING_CHUNK: Setup Interactive Reservation Modal ================= -->
   <!-- ================= ULTRA-LUXURY BOOKING MODAL (Interactive Flow) ================= -->
   <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md transition-opacity duration-300">
     <div class="bg-white w-[90%] max-w-2xl overflow-hidden shadow-2xl relative border border-neutral-100 flex flex-col md:flex-row transition-all duration-500 scale-95 opacity-0" id="booking-modal-card">
@@ -1068,6 +1081,7 @@
   </div>
 
 
+  <!-- ================= STREAMING_CHUNK: Instantiating WebGL golden fluid shader ================= -->
   <!-- ================= GLSL WEBGL SHADER LOGIC ================= -->
   <script>
     (function() {
@@ -1232,6 +1246,7 @@
   </script>
 
 
+  <!-- ================= STREAMING_CHUNK: Setup routing, scaling header events & dynamic pricing ================= -->
   <!-- ================= SPA ROUTING & APP INTERACTIVE LOGIC ================= -->
   <script>
     // Register GSAP plugins
@@ -1326,16 +1341,31 @@
       });
     }
 
-    // Header transformation logic on Scroll
+    // Header transformation logic on Scroll (Sleek scale-down to avoid invading space)
     window.addEventListener('scroll', () => {
       const header = document.getElementById('main-header');
-      if (window.scrollY > 60) {
+      const logo = document.getElementById('header-logo');
+      const title = document.getElementById('header-title');
+
+      if (window.scrollY > 40) {
         header.classList.add('glass-nav', 'shadow-md', 'py-2');
-        header.classList.remove('bg-transparent', 'border-b', 'border-transparent', 'py-4');
+        header.classList.remove('bg-transparent', 'border-b', 'border-transparent', 'py-6');
         header.classList.add('border-b', 'border-outline-variant/30');
+        
+        // Squeeze sizes elegantly
+        logo.classList.add('h-10', 'md:h-12');
+        logo.classList.remove('h-16', 'md:h-24');
+        title.classList.add('text-lg', 'md:text-xl');
+        title.classList.remove('text-xl', 'md:text-2xl');
       } else {
         header.classList.remove('glass-nav', 'shadow-md', 'py-2', 'border-b', 'border-outline-variant/30');
-        header.classList.add('bg-transparent', 'border-b', 'border-transparent', 'py-4');
+        header.classList.add('bg-transparent', 'border-b', 'border-transparent', 'py-6');
+        
+        // Restore majestic sizes
+        logo.classList.remove('h-10', 'md:h-12');
+        logo.classList.add('h-16', 'md:h-24');
+        title.classList.remove('text-lg', 'md:text-xl');
+        title.classList.add('text-xl', 'md:text-2xl');
       }
     });
 
