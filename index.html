@@ -65,6 +65,40 @@
     .ai-gradient {
       background: linear-gradient(135deg, #fef9f0 0%, #f7ebd7 50%, #fef9f0 100%);
     }
+
+    /* Cloud drifting animations for a three-dimensional parallax effect */
+    @keyframes drift-left-to-right {
+      0% {
+        transform: translateX(-120%) translateZ(0);
+      }
+      100% {
+        transform: translateX(120%) translateZ(0);
+      }
+    }
+    @keyframes drift-right-to-left {
+      0% {
+        transform: translateX(120%) translateZ(0);
+      }
+      100% {
+        transform: translateX(-120%) translateZ(0);
+      }
+    }
+
+    .cloud-slow-1 {
+      animation: drift-left-to-right 120s linear infinite;
+    }
+    .cloud-slow-2 {
+      animation: drift-right-to-left 150s linear infinite;
+      animation-delay: -35s;
+    }
+    .cloud-slow-3 {
+      animation: drift-left-to-right 180s linear infinite;
+      animation-delay: -75s;
+    }
+    .cloud-slow-4 {
+      animation: drift-right-to-left 90s linear infinite;
+      animation-delay: -15s;
+    }
   </style>
 
   <script id="tailwind-config">
@@ -158,11 +192,12 @@
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
-  <!-- TOP NAVIGATION HEADER (Persistent) -->
+  <!-- ================= TOP NAVIGATION HEADER ================= -->
   <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-4 bg-transparent border-b border-transparent" id="main-header">
     <div class="flex justify-between items-center px-6 md:px-margin-desktop py-2 max-w-container-max mx-auto">
-      <div class="flex items-center gap-3 cursor-pointer" onclick="navigateToPage('home')">
-        <img alt="Casa Buho Dorado Logo" class="h-12 w-auto object-contain md:h-16 transition-all duration-500" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+      <div class="flex items-center gap-4 cursor-pointer" onclick="navigateToPage('home')">
+        <!-- Prominent logo setup referencing LLG.png -->
+        <img alt="Casa Buho Dorado Logo" class="h-16 w-auto object-contain md:h-24 transition-all duration-500 scale-105 hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
         <span class="font-headline-md text-xl md:text-2xl text-primary tracking-widest uppercase font-medium">CASA BUHO DORADO</span>
       </div>
       
@@ -202,13 +237,35 @@
     <!-- ================= PAGE 1: HOME ================= -->
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
-      <!-- WebGL Animated Hero Header -->
+      <!-- WebGL Animated Hero Header with Magical Cloud Overlays -->
       <section class="relative h-[95vh] w-full flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 w-full h-full z-0">
           <canvas id="shader-canvas" class="block w-full h-full"></canvas>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20 z-[1]"></div>
         
+        <!-- Ambient Dreamlike Passing Clouds Layers -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden opacity-30 select-none">
+          <!-- Cloud Layer 1 -->
+          <svg class="absolute top-[10%] left-0 w-[450px] h-[180px] cloud-slow-1 fill-white/20 blur-xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 80 Q 25 50, 40 60 Q 55 40, 70 65 Q 85 55, 95 80 Z"/>
+          </svg>
+          <!-- Cloud Layer 2 -->
+          <svg class="absolute top-[35%] right-0 w-[600px] h-[220px] cloud-slow-2 fill-white/15 blur-2xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 85 Q 20 40, 45 55 Q 60 30, 80 60 Q 95 50, 100 85 Z"/>
+          </svg>
+          <!-- Cloud Layer 3 -->
+          <svg class="absolute bottom-[20%] left-0 w-[550px] h-[200px] cloud-slow-3 fill-white/10 blur-xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 90 Q 15 50, 35 65 Q 50 45, 65 70 Q 80 60, 95 90 Z"/>
+          </svg>
+          <!-- Cloud Layer 4 (Soft Golden Mist) -->
+          <svg class="absolute top-[5%] right-[10%] w-[380px] h-[150px] cloud-slow-4 fill-primary-fixed/20 blur-3xl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 75 Q 30 45, 45 55 Q 60 35, 75 60 Q 90 50, 100 75 Z"/>
+          </svg>
+        </div>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20 z-[2]"></div>
+        
+        <!-- Hero Text and CTA buttons -->
         <div class="relative z-10 text-center px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
           <span class="text-white/80 font-label-caps text-label-caps uppercase tracking-[0.3em] mb-4 block">Refugio Privado en Akumal</span>
           <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight drop-shadow-md">
@@ -892,86 +949,6 @@
   </footer>
 
 
-  <!-- ================= FLOATING WHATSAPP CHAT WIDGET ================= -->
-  <div class="fixed bottom-6 right-6 z-[60] flex flex-col items-end">
-    
-    <!-- Premium Interactive Chat Panel with Aura AI Mode -->
-    <div id="whatsapp-panel" class="hidden w-[340px] bg-white rounded-xl shadow-2xl border border-neutral-100 overflow-hidden flex-col mb-4 transition-all duration-300 scale-95 origin-bottom-right">
-      <!-- Premium Tab Selection -->
-      <div class="bg-primary px-4 pt-4 pb-2 text-white flex flex-col gap-2">
-        <div class="flex justify-between items-center">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-md">room_service</span>
-            <h4 class="font-label-caps text-xs tracking-wider uppercase font-bold">Conserjería Premium</h4>
-          </div>
-          <button onclick="toggleWhatsAppChat()" class="material-symbols-outlined text-white hover:rotate-90 transition-transform">close</button>
-        </div>
-        <!-- Selector Tab Buttons -->
-        <div class="grid grid-cols-2 bg-black/20 p-1 rounded-md text-[11px] font-label-caps tracking-widest mt-2">
-          <button id="tab-humano-btn" onclick="switchChatMode('humano')" class="bg-white/10 text-white rounded py-1 text-center font-semibold transition-all">HUMANO</button>
-          <button id="tab-ai-btn" onclick="switchChatMode('ai')" class="text-white/60 hover:text-white rounded py-1 text-center font-semibold transition-all">✨ AURA IA ✨</button>
-        </div>
-      </div>
-
-      <!-- Mode 1: Human Whatsapp Helper -->
-      <div id="panel-body-humano" class="flex flex-col">
-        <div class="p-4 bg-background max-h-[200px] overflow-y-auto space-y-3">
-          <div class="bg-[#e2f5ec] text-on-surface p-3 rounded-lg text-xs leading-relaxed max-w-[85%]">
-            ¡Hola! Estás en contacto con la Recepción de <strong>Casa Buho Dorado</strong>. Si deseas, selecciona una pregunta rápida para enviárnosla directamente a WhatsApp:
-          </div>
-          <div class="space-y-1.5 flex flex-col items-start pt-1">
-            <button onclick="setWhatsAppMessage('Me gustaría consultar disponibilidad para reservar la villa en los próximos meses.')" class="text-[11px] text-primary border border-primary/30 hover:border-primary bg-white px-3 py-1.5 rounded-full transition-all text-left">
-              Consultar Disponibilidad
-            </button>
-            <button onclick="setWhatsAppMessage('Hola Concierge, me gustaría programar un chef privado gourmet en la villa.')" class="text-[11px] text-primary border border-primary/30 hover:border-primary bg-white px-3 py-1.5 rounded-full transition-all text-left">
-              Agendar Chef Privado
-            </button>
-          </div>
-        </div>
-        <div class="p-3 bg-white border-t border-outline-variant/30 flex gap-2">
-          <input type="text" id="wa-input-text" placeholder="Escribe tu mensaje..." class="w-full text-xs border border-outline-variant/50 rounded p-2 focus:ring-primary focus:border-primary outline-none"/>
-          <button onclick="sendWhatsAppDirect()" class="bg-[#25D366] text-white p-2 rounded hover:bg-[#20ba59] transition-colors flex items-center justify-center">
-            <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.305 1.65zm6.59-4.807c1.42.955 3.033 1.464 4.693 1.465 5.034 0 9.127-4.093 9.129-9.127.001-2.438-.946-4.731-2.673-6.457-1.725-1.725-4.02-2.67-6.459-2.671-5.033 0-9.125 4.093-9.128 9.128-.001 1.761.503 3.456 1.462 4.954l-1.01 3.694 3.786-.987zm11.238-6.17c-.126-.21-.462-.336-.966-.588s-2.982-1.47-3.444-1.638c-.462-.168-.798-.252-1.134.252s-1.29 1.638-1.584 1.974-.588.378-1.092.126c-.504-.252-2.126-.783-4.05-2.501-1.497-1.335-2.508-2.984-2.802-3.488s-.031-.777.22-.1.504-.252.756-.504c.252-.252.336-.42.504-.756s.084-.63-.042-.882c-.126-.252-.134-1.29-.134-1.638 0-.348-.134-.798-.462-1.134s-1.134-.84-1.134-.84c-.336-.336-.672-.42-.966-.42s-.588-.042-.882-.042c-.294 0-.756.126-1.134.546s-1.47 1.428-1.47 3.486c0 2.058 1.512 4.074 1.722 4.368s2.953 4.546 7.154 6.355c.999.433 1.777.692 2.395.888 1.008.32 1.924.275 2.65.168.808-.12 2.478-.612 2.814-1.206s.336-1.104.24-1.206z"></path></svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mode 2: Aura AI Interactive Assistant Chatbot -->
-      <div id="panel-body-ai" class="hidden flex-col">
-        <div id="ai-chat-box" class="p-4 bg-stone-50 max-h-[220px] overflow-y-auto space-y-3 flex flex-col text-xs">
-          <div class="bg-white border border-neutral-100 text-on-surface p-3 rounded-lg leading-relaxed max-w-[90%] self-start shadow-sm">
-            Hola, soy <strong>Aura</strong> ✨, tu conserje de Inteligencia Artificial para Casa Buho Dorado. ¿En qué puedo ayudarte a planificar o descubrir hoy?
-          </div>
-        </div>
-        <!-- Typing indicator -->
-        <div id="ai-typing-indicator" class="hidden px-4 py-2 text-[10px] text-primary italic bg-stone-50 flex items-center gap-2">
-          <div class="flex gap-1">
-            <span class="w-1 h-1 bg-primary rounded-full animate-bounce"></span>
-            <span class="w-1 h-1 bg-primary rounded-full animate-bounce delay-100"></span>
-            <span class="w-1 h-1 bg-primary rounded-full animate-bounce delay-200"></span>
-          </div>
-          Aura está pensando en tu bienestar...
-        </div>
-        <div class="p-3 bg-white border-t border-outline-variant/30 flex gap-2">
-          <input type="text" id="ai-chat-input" onkeydown="handleAIChatKey(event)" placeholder="Pregúntale a Aura..." class="w-full text-xs border border-outline-variant/50 rounded p-2 focus:ring-primary focus:border-primary outline-none"/>
-          <button onclick="sendAIChatMessage()" class="bg-primary text-white p-2 rounded hover:bg-primary-container transition-colors flex items-center justify-center font-semibold px-3">
-            ✨
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Floating Green Button -->
-    <button onclick="toggleWhatsAppChat()" class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" aria-label="WhatsApp">
-      <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
-        <svg fill="currentColor" class="w-7 h-7 object-contain" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.305 1.65zm6.59-4.807c1.42.955 3.033 1.464 4.693 1.465 5.034 0 9.127-4.093 9.129-9.127.001-2.438-.946-4.731-2.673-6.457-1.725-1.725-4.02-2.67-6.459-2.671-5.033 0-9.125 4.093-9.128 9.128-.001 1.761.503 3.456 1.462 4.954l-1.01 3.694 3.786-.987zm11.238-6.17c-.126-.21-.462-.336-.966-.588s-2.982-1.47-3.444-1.638c-.462-.168-.798-.252-1.134.252s-1.29 1.638-1.584 1.974-.588.378-1.092.126c-.504-.252-2.126-.783-4.05-2.501-1.497-1.335-2.508-2.984-2.802-3.488s-.031-.777.22-.1.504-.252.756-.504c.252-.252.336-.42.504-.756s.084-.63-.042-.882c-.126-.252-.134-1.29-.134-1.638 0-.348-.134-.798-.462-1.134s-1.134-.84-1.134-.84c-.336-.336-.672-.42-.966-.42s-.588-.042-.882-.042c-.294 0-.756.126-1.134.546s-1.47 1.428-1.47 3.486c0 2.058 1.512 4.074 1.722 4.368s2.953 4.546 7.154 6.355c.999.433 1.777.692 2.395.888 1.008.32 1.924.275 2.65.168.808-.12 2.478-.612 2.814-1.206s.336-1.104.24-1.206z"></path>
-        </svg>
-      </div>
-    </button>
-  </div>
-
-
   <!-- ================= ULTRA-LUXURY BOOKING MODAL (Interactive Flow) ================= -->
   <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md transition-opacity duration-300">
     <div class="bg-white w-[90%] max-w-2xl overflow-hidden shadow-2xl relative border border-neutral-100 flex flex-col md:flex-row transition-all duration-500 scale-95 opacity-0" id="booking-modal-card">
@@ -1092,7 +1069,6 @@
 
 
   <!-- ================= GLSL WEBGL SHADER LOGIC ================= -->
-  <!-- -->
   <script>
     (function() {
       const canvas = document.getElementById('shader-canvas');
@@ -1257,7 +1233,6 @@
 
 
   <!-- ================= SPA ROUTING & APP INTERACTIVE LOGIC ================= -->
-  <!-- -->
   <script>
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
@@ -1288,24 +1263,6 @@
       document.getElementById('booking-modal').addEventListener('click', (e) => {
         if (e.target === document.getElementById('booking-modal')) {
           closeBookingModal();
-        }
-      });
-
-      // Click outside listener for closing the floating WhatsApp chatbox
-      document.addEventListener('click', (e) => {
-        const panel = document.getElementById('whatsapp-panel');
-        const triggerBtn = e.target.closest('button[onclick="toggleWhatsAppChat()"]');
-        const isInsidePanel = panel.contains(e.target);
-        if (!panel.classList.contains('hidden') && !isInsidePanel && !triggerBtn) {
-          gsap.to(panel, { 
-            opacity: 0, 
-            scale: 0.9, 
-            duration: 0.2, 
-            onComplete: () => {
-              panel.classList.remove('flex');
-              panel.classList.add('hidden');
-            } 
-          });
         }
       });
     });
@@ -1561,54 +1518,20 @@
       });
     }
 
-    // 4. INTERACTIVE WHATSAPP FLOATING CHATBOX HELPERS
+    // Direct WhatsApp redirect helper
     function toggleWhatsAppChat() {
-      const panel = document.getElementById('whatsapp-panel');
-      if (panel.classList.contains('hidden')) {
-        panel.classList.remove('hidden');
-        panel.classList.add('flex');
-        gsap.fromTo(panel, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3 });
-      } else {
-        gsap.to(panel, { 
-          opacity: 0, 
-          scale: 0.9, 
-          duration: 0.2, 
-          onComplete: () => {
-            panel.classList.remove('flex');
-            panel.classList.add('hidden');
-          } 
-        });
-      }
-    }
-
-    function setWhatsAppMessage(msg) {
-      document.getElementById('wa-input-text').value = msg;
-    }
-
-    function sendWhatsAppDirect() {
-      const text = document.getElementById('wa-input-text').value || "Hola, me gustaría solicitar información sobre Akumal Villa.";
-      // Formatted WhatsApp redirect link (simulated recipient)
       const targetPhone = "529841234567"; // Mock Riviera Maya prefix phone
-      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(text)}`;
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent('Hola Concierge de Casa Buho Dorado, me gustaría solicitar información.')}`;
       window.open(waUrl, '_blank');
-      toggleWhatsAppChat();
     }
 
     // Request Service triggers directly pre-populating WhatsApp Concierge
     function requestConciergeService(serviceName) {
       const customMsg = `Hola Conserje de Casa Buho Dorado, me gustaría solicitar información y agendar el servicio de: *${serviceName}* para mi estadía.`;
-      
-      // If we are in AI mode, let's feed it directly to AI chat. Otherwise, set to WhatsApp and notify.
-      const isAIMode = !document.getElementById('panel-body-ai').classList.contains('hidden');
-      if (isAIMode) {
-        document.getElementById('ai-chat-input').value = `Cuéntame sobre el servicio de ${serviceName} y cómo puedo reservarlo en la villa.`;
-        toggleWhatsAppChat();
-        sendAIChatMessage();
-      } else {
-        setWhatsAppMessage(customMsg);
-        toggleWhatsAppChat();
-        showToastNotification(`Solicitud de ${serviceName} lista en conserjería`, 'concierge_bell');
-      }
+      const targetPhone = "529841234567";
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(customMsg)}`;
+      window.open(waUrl, '_blank');
+      showToastNotification(`Solicitud de ${serviceName} enviada con éxito`, 'concierge_bell');
     }
 
     // 5. TOAST NOTIFICATION UTILITY
@@ -1679,26 +1602,6 @@
     // =========================================================================
     // ================== GEMINI API LLM INTEGRATION MODULE ==================
     // =========================================================================
-
-    // Switching between Human WhatsApp contact panel and Aura AI assistant
-    function switchChatMode(mode) {
-      const btnHumano = document.getElementById('tab-humano-btn');
-      const btnAI = document.getElementById('tab-ai-btn');
-      const bodyHumano = document.getElementById('panel-body-humano');
-      const bodyAI = document.getElementById('panel-body-ai');
-
-      if (mode === 'humano') {
-        btnHumano.className = "bg-white/10 text-white rounded py-1 text-center font-semibold transition-all";
-        btnAI.className = "text-white/60 hover:text-white rounded py-1 text-center font-semibold transition-all";
-        bodyHumano.classList.remove('hidden');
-        bodyAI.classList.add('hidden');
-      } else {
-        btnAI.className = "bg-white/10 text-white rounded py-1 text-center font-semibold transition-all";
-        btnHumano.className = "text-white/60 hover:text-white rounded py-1 text-center font-semibold transition-all";
-        bodyHumano.classList.add('hidden');
-        bodyAI.classList.remove('hidden');
-      }
-    }
 
     // Call the Gemini API utilizing exponential backoff as instructed
     async function callGeminiAPI(userQuery, systemInstruction) {
@@ -1774,61 +1677,6 @@
       return html;
     }
 
-    // AURA AI CHATBOX MODULE
-    async function sendAIChatMessage() {
-      const inputEl = document.getElementById('ai-chat-input');
-      const queryText = inputEl.value.trim();
-      if (!queryText) return;
-
-      const chatBox = document.getElementById('ai-chat-box');
-      const indicator = document.getElementById('ai-typing-indicator');
-
-      // Append User message to widget interface
-      const userMsgHtml = `
-        <div class="bg-primary/15 text-on-surface p-3 rounded-lg leading-relaxed max-w-[90%] self-end shadow-sm font-light">
-          ${queryText}
-        </div>
-      `;
-      chatBox.insertAdjacentHTML('beforeend', userMsgHtml);
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-      // Clean input
-      inputEl.value = "";
-      
-      // Show typing indicator
-      indicator.classList.remove('hidden');
-
-      const auraSystemPrompt = "Eres Aura, la conserje de inteligencia artificial de ultra-lujo de Casa Buho Dorado. Hablas con una elegancia impecable, calidez caribeña y un tono altamente personalizado y sofisticado (quiet luxury). Ofreces información precisa sobre la Riviera Maya, la fauna de Akumal (especialmente las tortugas marinas), el Arrecife Mesoamericano, y los servicios premium de la villa (chef privado, yates, masajes, transportación VIP). Responde de forma concisa pero evocadora, en español y utilizando emojis elegantes con sutileza.";
-
-      try {
-        const reply = await callGeminiAPI(queryText, auraSystemPrompt);
-        
-        // Append Aura AI Response
-        const aiMsgHtml = `
-          <div class="bg-white border border-neutral-100 text-on-surface p-3 rounded-lg leading-relaxed max-w-[90%] self-start shadow-sm font-light prose">
-            ${parseMarkdownToHTML(reply)}
-          </div>
-        `;
-        chatBox.insertAdjacentHTML('beforeend', aiMsgHtml);
-      } catch (error) {
-        const errMsgHtml = `
-          <div class="bg-red-50 border border-red-100 text-red-800 p-3 rounded-lg leading-relaxed max-w-[90%] self-start font-light">
-            ${error.message}
-          </div>
-        `;
-        chatBox.insertAdjacentHTML('beforeend', errMsgHtml);
-      } finally {
-        indicator.classList.add('hidden');
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-    }
-
-    function handleAIChatKey(event) {
-      if (event.key === 'Enter') {
-        sendAIChatMessage();
-      }
-    }
-
     // DYNAMIC ITINERARY GENERATOR MODULE
     async function generateAILuxuryItinerary() {
       const interest = document.getElementById('ai-interest').value;
@@ -1843,7 +1691,7 @@
       // Reset panels visibility
       placeholder.classList.add('hidden');
       resultArea.classList.add('hidden');
-      loading.remove('hidden'); // Fix loading class
+      loading.classList.remove('hidden');
 
       // Array of high-end concept phrases for cinematic loading feedback
       const luxuryPhrases = [
