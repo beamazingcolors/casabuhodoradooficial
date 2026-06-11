@@ -655,7 +655,7 @@
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block">La Filosofía</span>
           <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary mb-6">Sintonía con el Origen</h1>
           <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto font-light leading-relaxed">
-            Casa Buho Dorado no es simplemente un destino; es una invitación a restablecer el diálogo olvidado con la naturaleza en un entorno de sublime privacidad.
+            Casa Buho Dorado no es simplemente un destino; es una invitation a restablecer el diálogo olvidado con la naturaleza en un entorno de sublime privacidad.
           </p>
         </div>
 
@@ -1214,7 +1214,7 @@
             Ingresa las fechas elegidas y el conserje estructurará los detalles de tu arribo al paraíso.
           </p>
         </div>
-        <div class="space-y-4 hidden sm:block">
+        <div class="space-y-4">
           <div class="border-t border-white/20 pt-4">
             <span class="text-[10px] text-white/75 font-semibold uppercase block">Servicios Incluidos</span>
             <p class="text-xs text-white/90 font-light mt-1">✓ Conserjería personal 24/7</p>
@@ -1470,16 +1470,6 @@
         delay: 0.3
       });
 
-      // Animated "Aleteo" and landing settling sequence for Logo on Page Load
-      const logoTimeline = gsap.timeline();
-      logoTimeline.fromTo("#header-logo", 
-        { scale: 0.3, y: -60, rotation: -18, opacity: 0 },
-        { scale: 1, y: 0, rotation: 0, opacity: 1, duration: 1.5, ease: "back.out(1.8)" }
-      );
-      // Fast flutter scaling loop to replicate flapping wings landing smoothly on its key
-      logoTimeline.to("#header-logo", { scaleY: 0.75, duration: 0.1, yoyo: true, repeat: 7, ease: "power1.inOut" })
-                  .to("#header-logo", { scaleY: 1, duration: 0.25 });
-      
       // Render Initial Gallery images
       renderInteractiveGallery();
 
@@ -1536,9 +1526,9 @@
       bird.style.top = `${y}px`;
       bird.style.transform = `translate(-50%, -50%) scale(0.2)`;
       
-      // Flapping pure white bird SVG structure
+      // Flapping pure white bird SVG structure with improved shadow and styling
       bird.innerHTML = `
-        <svg class="w-8 h-8 text-white fill-current opacity-90 drop-shadow-[0_2px_6px_rgba(255,255,255,0.5)]" viewBox="0 0 80 40">
+        <svg class="w-8 h-8 text-white fill-current opacity-90 drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]" viewBox="0 0 80 40">
           <path class="bird-wing" d="M 0,20 Q 15,5 35,15 Q 40,0 45,15 Q 65,5 80,20 Q 40,12 0,20 Z" />
         </svg>
       `;
@@ -1546,22 +1536,29 @@
 
       // Random flight coordinates with dynamic wind drift vectors
       const angle = Math.random() * Math.PI * 2;
-      const distance = 80 + Math.random() * 120;
+      const distance = 100 + Math.random() * 150;
       const targetX = x + Math.cos(angle) * distance;
-      const targetY = y - (100 + Math.random() * 100); // Dispersing elegantly upwards
+      const targetY = y - (120 + Math.random() * 180); // Glide upwards gracefully
       const randomScale = 0.35 + Math.random() * 0.45;
 
-      gsap.to(bird, {
-        left: targetX,
-        top: targetY,
-        scale: randomScale,
-        opacity: 0,
-        duration: 1.5 + Math.random() * 1.0,
-        ease: "power2.out",
+      // Make birds last significantly longer with a slower, more graceful fade-out
+      const tl = gsap.timeline({
         onComplete: () => {
           bird.remove();
         }
       });
+
+      tl.to(bird, {
+        left: targetX,
+        top: targetY,
+        scale: randomScale,
+        duration: 4.0 + Math.random() * 2.0, // increased duration (4 to 6 seconds)
+        ease: "power1.out"
+      })
+      .to(bird, {
+        opacity: 0,
+        duration: 2.0, // long, graceful fade out at the end
+      }, "-=2.0"); // starts 2 seconds before the end of the animation
     }
 
     // ================= STREAMING_CHUNK: Formatting and building gallery renderer dynamically... =================
