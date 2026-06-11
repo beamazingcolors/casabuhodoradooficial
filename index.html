@@ -266,7 +266,7 @@
       <div class="flex items-center gap-2 md:gap-4 cursor-pointer" onclick="navigateToPage('home')">
         <!-- Prominent logo setup referencing LLG.png - Beautifully scaled down on mobile -->
         <img id="header-logo" alt="Casa Buho Dorado Logo" class="h-10 xs:h-12 sm:h-16 md:h-24 w-auto object-contain transition-all duration-500 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-        <span id="header-title" class="font-headline-md text-xs sm:text-lg md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 truncate max-w-[150px] xs:max-w-none">CASA BUHO DORADO</span>
+        <span id="header-title" class="font-headline-md text-[10px] xs:text-sm sm:text-lg md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 whitespace-nowrap">CASA BUHO DORADO</span>
       </div>
       
       <!-- Desktop Navigation Menu on the Perfect Right side -->
@@ -1726,19 +1726,19 @@
         header.classList.add('border-b', 'border-[#cfc4b4]/40');
         
         // Squeeze sizes elegantly
-        logo.classList.add('h-10', 'md:h-12');
-        logo.classList.remove('h-16', 'md:h-24');
-        title.classList.add('text-lg', 'md:text-xl');
-        title.classList.remove('text-xl', 'md:text-2xl');
+        logo.classList.add('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
+        logo.classList.remove('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
+        title.classList.add('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
+        title.classList.remove('text-[10px]', 'xs:text-sm', 'sm:text-lg', 'md:text-2xl');
       } else {
         header.classList.remove('glass-nav', 'shadow-md', 'py-2', 'border-b', 'border-[#cfc4b4]/40');
         header.classList.add('py-6');
         
         // Restore majestic sizes
-        logo.classList.remove('h-10', 'md:h-12');
-        logo.classList.add('h-16', 'md:h-24');
-        title.classList.remove('text-lg', 'md:text-xl');
-        title.classList.add('text-xl', 'md:text-2xl');
+        logo.classList.remove('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
+        logo.classList.add('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
+        title.classList.remove('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
+        title.classList.add('text-[10px]', 'xs:text-sm', 'sm:text-lg', 'md:text-2xl');
       }
     });
 
