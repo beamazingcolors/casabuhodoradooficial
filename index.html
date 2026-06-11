@@ -100,6 +100,17 @@
       animation-delay: -15s;
     }
 
+    /* Responsive Cloud and Bird Adjustments for Mobile Screens */
+    @media (max-w: 640px) {
+      .cloud-slow-1 { width: 280px !important; height: 110px !important; }
+      .cloud-slow-2 { width: 340px !important; height: 130px !important; }
+      .cloud-slow-3 { width: 300px !important; height: 120px !important; }
+      .cloud-slow-4 { width: 240px !important; height: 90px !important; }
+      .bird-1 { width: 28px !important; height: 28px !important; }
+      .bird-2 { width: 36px !important; height: 36px !important; }
+      .bird-3 { width: 24px !important; height: 24px !important; }
+    }
+
     /* Magical flying owls animations */
     @keyframes fly-path-1 {
       0% { transform: translate(-10%, 15vh) scale(0.35); }
@@ -239,12 +250,12 @@
 
   <!-- ================= STREAMING_CHUNK: Rendering the sleek dynamic header ================= -->
   <!-- TOP NAVIGATION HEADER (Aesthetic responsive sizing to not invade view) -->
-  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-6 bg-surface-container border-b border-transparent" id="main-header">
-    <div class="flex items-center justify-between px-6 md:px-margin-desktop max-w-container-max mx-auto w-full">
-      <div class="flex items-center gap-4 cursor-pointer" onclick="navigateToPage('home')">
-        <!-- Prominent logo setup referencing LLG.png -->
-        <img id="header-logo" alt="Casa Buho Dorado Logo" class="h-16 md:h-24 w-auto object-contain transition-all duration-500 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-        <span id="header-title" class="font-headline-md text-xl md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500">CASA BUHO DORADO</span>
+  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-4 md:py-6 bg-surface-container border-b border-transparent" id="main-header">
+    <div class="flex items-center justify-between px-4 md:px-margin-desktop max-w-container-max mx-auto w-full">
+      <div class="flex items-center gap-2 md:gap-4 cursor-pointer" onclick="navigateToPage('home')">
+        <!-- Prominent logo setup referencing LLG.png - Beautifully scaled down on mobile -->
+        <img id="header-logo" alt="Casa Buho Dorado Logo" class="h-10 xs:h-12 sm:h-16 md:h-24 w-auto object-contain transition-all duration-500 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+        <span id="header-title" class="font-headline-md text-xs sm:text-lg md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 truncate max-w-[150px] xs:max-w-none">CASA BUHO DORADO</span>
       </div>
       
       <!-- Desktop Navigation Menu on the Perfect Right side -->
@@ -277,14 +288,14 @@
   </header>
 
   <!-- MAIN MULTI-PAGE CONTAINER -->
-  <main class="pt-20">
+  <main class="pt-16 md:pt-20">
 
     <!-- ================= PAGE 1: HOME ================= -->
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
       <!-- ================= STREAMING_CHUNK: Instantiating Hero Image Background and Moving Clouds ================= -->
       <!-- Hero Header with CasasamuLifestyle-8.jpg and Magical Moving Clouds + Owls -->
-      <section class="relative h-[95vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-8.jpg');">
+      <section class="relative h-[85vh] sm:h-[95vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-8.jpg');">
         
         <!-- Ambient Dreamlike Passing Clouds Layers (High contrast white volume over blue sky) -->
         <div class="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden opacity-95 select-none">
@@ -300,19 +311,19 @@
           </svg>
           
           <!-- Cloud Layer 1 -->
-          <svg class="absolute top-[12%] left-0 w-[550px] h-[220px] cloud-slow-1 fill-[url(#magicCloudGrad)] filter blur-[4px] drop-shadow-md" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg class="absolute top-[12%] left-0 w-[300px] sm:w-[550px] h-[120px] sm:h-[220px] cloud-slow-1 fill-[url(#magicCloudGrad)] filter blur-[3px] sm:filter blur-[4px] drop-shadow-md" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 80 C 20 50, 40 45, 55 60 C 65 35, 85 40, 92 65 C 97 50, 105 60, 100 80 Z"/>
           </svg>
           <!-- Cloud Layer 2 -->
-          <svg class="absolute top-[28%] right-0 w-[700px] h-[260px] cloud-slow-2 fill-[url(#magicCloudGrad)] filter blur-[6px] drop-shadow-md" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg class="absolute top-[28%] right-0 w-[400px] sm:w-[700px] h-[150px] sm:h-[260px] cloud-slow-2 fill-[url(#magicCloudGrad)] filter blur-[4px] sm:filter blur-[6px] drop-shadow-md" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <path d="M5 85 C 15 35, 45 40, 55 55 C 65 20, 85 25, 95 60 C 98 45, 102 55, 100 85 Z"/>
           </svg>
           <!-- Cloud Layer 3 -->
-          <svg class="absolute bottom-[20%] left-0 w-[600px] h-[240px] cloud-slow-3 fill-[url(#magicCloudGrad)] filter blur-[5px] drop-shadow-sm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg class="absolute bottom-[20%] left-0 w-[350px] sm:w-[600px] h-[130px] sm:h-[240px] cloud-slow-3 fill-[url(#magicCloudGrad)] filter blur-[3px] sm:filter blur-[5px] drop-shadow-sm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 90 C 10 45, 30 50, 45 65 C 55 35, 75 40, 85 70 C 90 55, 98 65, 95 90 Z"/>
           </svg>
           <!-- Cloud Layer 4 (Soft Gold Mist) -->
-          <svg class="absolute top-[4%] right-[8%] w-[480px] h-[180px] cloud-slow-4 fill-[url(#magicCloudGrad)] filter blur-[8px]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <svg class="absolute top-[4%] right-[8%] w-[250px] sm:w-[480px] h-[100px] sm:h-[180px] cloud-slow-4 fill-[url(#magicCloudGrad)] filter blur-[5px] sm:filter blur-[8px]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 75 C 25 35, 45 40, 55 55 C 65 30, 80 35, 90 60 C 95 45, 102 55, 100 75 Z"/>
           </svg>
         </div>
@@ -320,16 +331,16 @@
         <!-- MAGICAL OWLS & BIRDS FLYING IN THE SKY -->
         <div class="bird-container">
           <!-- Owl silhouette 1 -->
-          <svg class="bird-1 absolute text-[#e3dbcc]/80 fill-current w-12 h-12" viewBox="0 0 80 40">
+          <svg class="bird-1 absolute text-[#e3dbcc]/80 fill-current w-8 h-8 sm:w-12 sm:h-12" viewBox="0 0 80 40">
             <!-- Broad-winged owl layout with tufts -->
             <path class="bird-wing" d="M 0,20 Q 15,5 35,15 Q 40,0 45,15 Q 65,5 80,20 Q 40,12 0,20 Z" />
           </svg>
           <!-- Owl silhouette 2 -->
-          <svg class="bird-2 absolute text-[#fff]/70 fill-current w-16 h-16" viewBox="0 0 80 40">
+          <svg class="bird-2 absolute text-[#fff]/70 fill-current w-12 h-12 sm:w-16 sm:h-16" viewBox="0 0 80 40">
             <path class="bird-wing" d="M 0,20 Q 15,5 35,15 Q 40,0 45,15 Q 65,5 80,20 Q 40,12 0,20 Z" />
           </svg>
           <!-- Majestic Owl 3 -->
-          <svg class="bird-3 absolute text-[#ede6da]/90 fill-current w-10 h-10" viewBox="0 0 80 40">
+          <svg class="bird-3 absolute text-[#ede6da]/90 fill-current w-7 h-7 sm:w-10 sm:h-10" viewBox="0 0 80 40">
             <path class="bird-wing" d="M 0,20 Q 15,5 35,15 Q 40,0 45,15 Q 65,5 80,20 Q 40,12 0,20 Z" />
           </svg>
         </div>
@@ -338,12 +349,12 @@
         <div class="absolute inset-0 bg-gradient-to-t from-background via-black/25 to-black/35 z-[2]"></div>
         
         <!-- Hero Text and CTA buttons -->
-        <div class="relative z-10 text-center px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
-          <span class="text-white/95 font-label-caps text-label-caps uppercase tracking-[0.3em] mb-4 block drop-shadow-md">Refugio Privado en Akumal</span>
-          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight drop-shadow-lg">
+        <div class="relative z-10 text-center px-4 sm:px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
+          <span class="text-white/95 font-label-caps text-[10px] sm:text-label-caps uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-3 sm:mb-4 block drop-shadow-md">Refugio Privado en Akumal</span>
+          <h1 class="font-display-lg text-3xl sm:text-display-lg-mobile md:text-display-lg text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
             We are not hosts, we are memory makers.
           </h1>
-          <p class="font-body-lg text-body-lg text-white/95 mb-10 max-w-2xl mx-auto drop-shadow-md font-light">
+          <p class="font-body-lg text-sm sm:text-body-lg text-white/95 mb-6 sm:mb-10 max-w-2xl mx-auto drop-shadow-md font-light">
             Vive la fusión perfecta entre la arquitectura orgánica de vanguardia y la majestuosidad de la fauna marina en la Riviera Maya.
           </p>
         </div>
@@ -380,28 +391,28 @@
 
       <!-- ================= STREAMING_CHUNK: Rendering the location and interactive maps ================= -->
       <!-- Positioning Interactive Map Simulation -->
-      <section class="bg-surface-container-low py-section-gap px-6 md:px-margin-desktop">
+      <section class="bg-surface-container-low py-16 md:py-section-gap px-4 md:px-margin-desktop">
         <div class="max-w-container-max mx-auto">
-          <div class="text-center mb-16 reveal-up">
-            <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Ubicación Privilegiada</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface">Conexión Inmediata</h2>
+          <div class="text-center mb-10 md:mb-16 reveal-up">
+            <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-2 md:mb-4 block">Ubicación Privilegiada</span>
+            <h2 class="font-headline-lg text-3xl md:text-headline-lg text-on-surface">Conexión Inmediata</h2>
           </div>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-gutter items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-gutter items-center">
             
-            <div class="space-y-8 lg:pr-6 reveal-left">
+            <div class="space-y-6 md:space-y-8 lg:pr-6 reveal-left">
               <!-- Tulum Card -->
               <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-44 overflow-hidden">
+                <div class="relative h-40 sm:h-44 overflow-hidden">
                   <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
                   <img alt="Tulum Riviera Maya" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/tlm.png" onerror="this.src='tlm.png'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1504730030853-eff311f57d3c?q=80&w=600&auto=format&fit=crop'}"/>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-2xl font-medium tracking-wide">Tulum</span>
-                    <span class="font-label-caps text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">25 MINS</span>
+                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Tulum</span>
+                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">25 MINS</span>
                   </div>
                 </div>
-                <div class="p-5">
-                  <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                <div class="p-4 sm:p-5">
+                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.
                   </p>
                 </div>
@@ -409,26 +420,26 @@
 
               <!-- Playa del Carmen Card with PLT.png from repo -->
               <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-44 overflow-hidden">
+                <div class="relative h-40 sm:h-44 overflow-hidden">
                   <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
                   <img alt="Playa del Carmen" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/PLT.png" onerror="this.src='PLT.png'"/>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-2xl font-medium tracking-wide">Playa del Carmen</span>
-                    <span class="font-label-caps text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">30 MINS</span>
+                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Playa del Carmen</span>
+                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">30 MINS</span>
                   </div>
                 </div>
-                <div class="p-5">
-                  <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                <div class="p-4 sm:p-5">
+                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.
                   </p>
                 </div>
               </div>
             </div>
             
-            <div class="relative aspect-square reveal-up flex items-center justify-center">
-              <div class="absolute inset-0 rounded-full border border-primary/20 scale-105 animate-pulse"></div>
-              <div class="w-full h-full max-w-[360px] max-h-[360px] bg-white rounded-full overflow-hidden border border-primary/10 shadow-2xl relative">
+            <div class="relative aspect-square reveal-up flex items-center justify-center py-6">
+              <div class="absolute inset-0 rounded-full border border-primary/20 scale-105 animate-pulse hidden lg:block"></div>
+              <div class="w-full h-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] aspect-square bg-white rounded-full overflow-hidden border border-primary/10 shadow-2xl relative">
                 <!-- Google Maps Interactive Iframe Frame linked directly to user reference -->
                 <iframe 
                   title="Ubicación Casa Buho Dorado"
@@ -445,20 +456,20 @@
               </div>
             </div>
             
-            <div class="space-y-8 lg:pl-6 reveal-right">
+            <div class="space-y-6 md:space-y-8 lg:pl-6 reveal-right">
               <!-- Cenote Dos Ojos Card with CNE.png from repo -->
               <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-44 overflow-hidden">
+                <div class="relative h-40 sm:h-44 overflow-hidden">
                   <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
                   <img alt="Cenote Dos Ojos" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CNE.png" onerror="this.src='CNE.png'"/>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-2xl font-medium tracking-wide">Cenote Dos Ojos</span>
-                    <span class="font-label-caps text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">15 MINS</span>
+                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Cenote Dos Ojos</span>
+                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">15 MINS</span>
                   </div>
                 </div>
-                <div class="p-5">
-                  <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                <div class="p-4 sm:p-5">
+                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Un sistema de cavernas semi-inundadas sagradas con aguas turquesas para buceo de élite.
                   </p>
                 </div>
@@ -466,17 +477,17 @@
 
               <!-- Coba Card with CB.png from repo -->
               <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-44 overflow-hidden">
+                <div class="relative h-40 sm:h-44 overflow-hidden">
                   <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
                   <img alt="Coba Quintana Roo" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CB.png" onerror="this.src='CB.png'"/>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-2xl font-medium tracking-wide">Coba</span>
-                    <span class="font-label-caps text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">50 MINS</span>
+                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Coba</span>
+                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">50 MINS</span>
                   </div>
                 </div>
-                <div class="p-5">
-                  <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                <div class="p-4 sm:p-5">
+                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     La majestuosa pirámide Nohoch Mul rodeada de selva indómita.
                   </p>
                 </div>
@@ -1144,8 +1155,8 @@
     <span class="material-symbols-outlined text-3xl">calendar_month</span>
   </button>
 
-  <!-- QUICK CONTACT FLOATING PANEL -->
-  <div id="quick-contact-panel" class="hidden fixed bottom-24 right-6 w-[340px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-neutral-100 flex-col overflow-hidden transition-all duration-300 scale-95 origin-bottom-right z-[90] font-sans text-stone-800">
+  <!-- QUICK CONTACT FLOATING PANEL - Adaptive Width for Tiny Mobile Screens -->
+  <div id="quick-contact-panel" class="hidden fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-32px)] sm:w-[340px] max-w-[340px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-neutral-100 flex-col overflow-hidden transition-all duration-300 scale-95 origin-bottom-right z-[90] font-sans text-stone-800">
     <div class="bg-primary p-4 text-white flex justify-between items-center">
       <div class="flex items-center gap-2">
         <span class="material-symbols-outlined">edit_calendar</span>
@@ -1179,20 +1190,20 @@
   </div>
 
 
-  <!-- ================= ULTRA-LUXURY BOOKING MODAL (Interactive Flow) ================= -->
-  <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md transition-opacity duration-300">
-    <div class="bg-white w-[90%] max-w-2xl overflow-hidden shadow-2xl relative border border-neutral-100 flex flex-col md:flex-row transition-all duration-500 scale-95 opacity-0" id="booking-modal-card">
+  <!-- ================= ULTRA-LUXURY BOOKING MODAL (Interactive Flow) - Scrollable on Mobile Viewports ================= -->
+  <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-4 transition-opacity duration-300">
+    <div class="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto sm:overflow-hidden shadow-2xl relative border border-neutral-100 flex flex-col md:flex-row transition-all duration-500 scale-95 opacity-0" id="booking-modal-card">
       
       <!-- Side Decorative Information -->
-      <div class="bg-primary p-8 text-white w-full md:w-[40%] flex flex-col justify-between">
+      <div class="bg-primary p-6 sm:p-8 text-white w-full md:w-[40%] flex flex-col justify-between">
         <div>
           <span class="font-label-caps text-[10px] tracking-widest text-white/75 uppercase block mb-2">Exclusividad</span>
-          <h3 class="font-headline-md text-2xl mb-4">Planifica tu Estadía</h3>
-          <p class="text-xs text-white/85 font-light leading-relaxed mb-6">
-            Ingresa las fechas elegidas and el conserje estructurará los detalles de tu arribo al paraíso.
+          <h3 class="font-headline-md text-2xl mb-2 sm:mb-4">Planifica tu Estadía</h3>
+          <p class="text-xs text-white/85 font-light leading-relaxed mb-4 sm:mb-6">
+            Ingresa las fechas elegidas y el conserje estructurará los detalles de tu arribo al paraíso.
           </p>
         </div>
-        <div class="space-y-4">
+        <div class="space-y-4 hidden sm:block">
           <div class="border-t border-white/20 pt-4">
             <span class="text-[10px] text-white/75 font-semibold uppercase block">Servicios Incluidos</span>
             <p class="text-xs text-white/90 font-light mt-1">✓ Conserjería personal 24/7</p>
@@ -1203,14 +1214,14 @@
       </div>
 
       <!-- Main Booking Inputs -->
-      <div class="p-8 w-full md:w-[60%] flex flex-col justify-between relative font-sans text-stone-800" id="booking-form-area">
+      <div class="p-6 sm:p-8 w-full md:w-[60%] flex flex-col justify-between relative font-sans text-stone-800" id="booking-form-area">
         
         <!-- Close Button -->
         <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
 
-        <form id="booking-form" class="space-y-5" onsubmit="handleBookingSubmission(event)">
+        <form id="booking-form" class="space-y-4 sm:space-y-5" onsubmit="handleBookingSubmission(event)">
           <div class="space-y-1">
             <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="villa-selection">Selecciona la Villa</label>
             <select id="villa-selection" class="w-full text-sm border-outline-variant rounded focus:border-primary focus:ring-primary p-2.5 bg-surface-container-low" onchange="calculateDynamicPricing()">
@@ -1254,11 +1265,11 @@
               <span id="price-details-nights" class="text-[11px] text-on-surface-variant/70 font-light block">Calculando noches...</span>
             </div>
             <div class="text-right">
-              <span id="price-total-tag" class="text-xl font-bold text-primary font-headline-md">$650 USD</span>
+              <span id="price-total-tag" class="text-lg sm:text-xl font-bold text-primary font-headline-md">$650 USD</span>
             </div>
           </div>
 
-          <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3.5 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg">
+          <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg">
             Confirmar Reserva
           </button>
         </form>
@@ -1266,16 +1277,16 @@
       </div>
 
       <!-- Simulated Success Step Panel -->
-      <div class="hidden p-8 w-full md:w-[60%] flex flex-col justify-center items-center text-center relative" id="booking-success-area">
+      <div class="hidden p-6 sm:p-8 w-full md:w-[60%] flex flex-col justify-center items-center text-center relative" id="booking-success-area">
         <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
         <span class="material-symbols-outlined text-6xl text-primary mb-4 animate-bounce">check_circle</span>
-        <h3 class="font-headline-md text-3xl text-on-surface mb-2">¡Reserva Recibida!</h3>
-        <p class="font-body-md text-sm text-on-surface-variant max-w-xs mb-6">
+        <h3 class="font-headline-md text-2xl sm:text-3xl text-on-surface mb-2">¡Reserva Recibida!</h3>
+        <p class="font-body-md text-xs sm:text-sm text-on-surface-variant max-w-xs mb-4 sm:mb-6">
           Un conserje de Akumal Villa se pondrá en contacto contigo en breve para coordinar tu transportación de cortesía y personalizar tu menú.
         </p>
-        <div class="bg-surface-container p-3 rounded text-xs font-mono text-primary select-all mb-6">
+        <div class="bg-surface-container p-3 rounded text-xs font-mono text-primary select-all mb-4 sm:mb-6">
           CÓDIGO DE RESERVA: <strong id="booking-code-tag">AKM-8201</strong>
         </div>
         <button onclick="closeBookingModal()" class="border border-primary text-primary px-8 py-2.5 font-label-caps text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">
