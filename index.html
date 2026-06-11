@@ -1345,7 +1345,7 @@
     // Repository absolute base URI path configuration
     const repoBaseUri = "https://beamazingcolors.github.io/casabuhodoradooficial/";
 
-    // deduplicated collection of all 71 images requested from the user repository
+    // Collection of all 72 unique images requested from your repository
     const allUniqueImages = [
       "CasasamuLifestyle-44.jpg",
       "CasasamuLifestyle-7.jpg",
@@ -1421,23 +1421,13 @@
       "Samuyvaler8(2).png"
     ];
 
-    // High quality luxury beach/resort stock images to substitute missing images gracefully
-    const fallbackStockImages = [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop"
-    ];
-    let fallbackIndex = 0;
-
-    // Elegant error handler to substitute any 404/broken images automatically with stunning beach/villa content
+    // Elegant handler to hide the image card completely if the repository file doesn't exist on GitHub
     function handleGalleryImageError(img, originalName) {
-      img.onerror = null; // Prevent infinite loop if fallback fails
-      img.src = fallbackStockImages[fallbackIndex % fallbackStockImages.length];
-      fallbackIndex++;
+      img.onerror = null; // Prevent infinite loops
+      const item = img.closest('.gallery-item');
+      if (item) {
+        item.style.display = 'none'; // Hide the entire element cleanly from the grid
+      }
     }
 
     // Current page status and lightbox indices
