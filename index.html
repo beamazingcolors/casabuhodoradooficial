@@ -272,7 +272,7 @@
       <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Galería</button>
       <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Servicio</button>
       <button onclick="navigateToPage('experiences'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Experiencias</button>
-      <button onclick="navigateToPage('contact'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 text-[#1d1c16]">Contacto</button>
+      <button onclick="toggleMobileMenu(); navigateToPage('contact')" class="text-left font-label-caps text-lg py-2 text-[#1d1c16]">Contacto</button>
     </div>
   </header>
 
@@ -649,8 +649,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 font-sans">
           <div class="space-y-8 reveal-left">
             <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">Los Beneficios del Silencio Orgánico</h2>
-            <p class="font-body-md text-on-surface-variant leading-relaxed">
-              Enclavada entre la densa e indómita selva maya y la apacible Bahía de Akumal, la propiedad está diseñada arquitectónicamente para disolver las barreras entre el interior y el exterior. Vivir aquí es respirar el aliento del arrecife y arrullarse con el rumor constante del oleaje.
+            <p class="font-body-md text-on-surface-variant leading-relaxed text-justify">
+              Enclavada entre la densa e indómita selva maya y la apacible Bahía de Akumal, la propiedad está diseñada arquitectónicamente para disolver las barreras entre el interior y el exterior. Vivir aquí es respirar el aliento del arrecife y arrullarse con el rumor constante del oleaje. Nuestro ecosistema favorece la reconexión total, disminuyendo de forma natural el estrés diario mediante la contemplación de un entorno protegido.
             </p>
             
             <div class="space-y-6">
@@ -710,72 +710,34 @@
     </section>
 
     <!-- ================= PAGE 3: GALLERY (Bento Masonry Grid) ================= -->
+    <!-- ================= STREAMING_CHUNK: Injecting dynamic photo gallery from repository... ================= -->
     <section id="page-gallery" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-12 px-6 md:px-margin-desktop">
-      <div class="max-w-container-max mx-auto mt-8 mb-16 text-center reveal-up">
+      <div class="max-w-container-max mx-auto mt-8 mb-12 text-center reveal-up">
         <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block">Portafolio Visual</span>
         <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary mb-6">Galería de Ensueño</h1>
         <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
-          Un viaje sensorial a través de la arquitectura de la propiedad. Haz clic en cualquier imagen para ampliarla y explorarla.
+          Nuestra colección de fotografía completa sin distracciones. Haz clic en las imágenes para sumergirte en el lujo de Casa Buho Dorado mediante zoom cinemático.
         </p>
+
+        <!-- Category Filters for Enhanced Interactivity -->
+        <div class="flex flex-wrap justify-center gap-2 mt-8 max-w-xl mx-auto font-sans">
+          <button onclick="filterGallery('todos')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary text-white transition-all shadow-sm" data-category="todos">Todos</button>
+          <button onclick="filterGallery('residencia')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all" data-category="residencia">Residencia</button>
+          <button onclick="filterGallery('exteriores')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all" data-category="exteriores">Exteriores</button>
+          <button onclick="filterGallery('detalles')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all" data-category="detalles">Estilo y Detalles</button>
+        </div>
       </div>
 
-      <!-- Bento-inspired grid design with randomized images, overlay texts and titles removed entirely -->
-      <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[320px] reveal-up-stagger">
-        
-        <!-- Bento item 1 -->
-        <div class="lg:col-span-2 row-span-1 group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-44.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Casa Buho Dorado Exterior" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-44.jpg" />
-        </div>
+      <!-- Bento-inspired grid design featuring all unique repository photos with automated branding -->
+      <div class="max-w-container-max mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 reveal-up-stagger" id="dynamic-gallery-grid">
+        <!-- Rendered Dynamically by JavaScript with watermarks on each image -->
+      </div>
 
-        <!-- Bento item 2 -->
-        <div class="lg:col-span-1 row-span-2 group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-7.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Santuario Interior" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-7.jpg" />
-        </div>
-
-        <!-- Bento item 3 -->
-        <div class="group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-8.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Santuario Vista General" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-8.jpg" />
-        </div>
-
-        <!-- Bento item 4 -->
-        <div class="group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-9.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Mayan Sanctuary Interior" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-9.jpg" />
-        </div>
-
-        <!-- Bento item 5 -->
-        <div class="lg:col-span-2 row-span-1 group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-10.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Exterior y Selva" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-10.jpg" />
-        </div>
-
-        <!-- Bento item 6 -->
-        <div class="lg:col-span-1 row-span-1 group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-11.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Detalle Arquitectónico" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-11.jpg" />
-        </div>
-
-        <!-- Bento item 7 -->
-        <div class="group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-14.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Detalle de Piscina" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-14.jpg" />
-        </div>
-
-        <!-- Bento item 8 -->
-        <div class="group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-15.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Terraza de Ensueño" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-15.jpg" />
-        </div>
-
-        <!-- Bento item 9 -->
-        <div class="lg:col-span-1 row-span-1 group relative overflow-hidden rounded shadow-md cursor-pointer ken-burns" onclick="openLightbox('https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-16.jpg')">
-          <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-          <img alt="Habitaciones de Autor" class="w-full h-full object-cover transition-slow duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-16.jpg" />
-        </div>
-
+      <!-- Pagination / Load More interactive feature -->
+      <div class="text-center mt-12 mb-16">
+        <button id="gallery-load-more" onclick="showAllGalleryImages()" class="bg-primary text-on-primary hover:bg-primary-container px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase transition-all shadow-lg inline-block">
+          Mostrar Colección Completa
+        </button>
       </div>
     </section>
 
@@ -865,7 +827,7 @@
         <!-- Featured Large Block 1: Chef & Sommelier -->
         <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md reveal-up">
           <div class="grid grid-cols-1 lg:grid-cols-12">
-            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
+            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative font-sans">
               <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
               <img alt="Chef preparando pescados" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeRer4ppmtgek35KDl2S6OfsbaHckc5qBihF5IM27uG-S1BBV3FB3fS802Y31TgXUpnUq13rIYrduvJBpv0CJ0fLkNwbXRDnxnjKSZgF6ll-5-SRejoEWUoWPiZmTSApQF8YT2X0Zv1AC6t3ap3w5ePTQZzFVI7IVahOw3qxPD_xGGG3It--ceYoTt8Dr24bOmLN0WV78lWEnlGg0bwqs6EWVnSFDMJ7rRCDy8Mb_EiiII8Yj7tZoiUaMx89_5Uw6nDscvE6FIQyM3"/>
             </div>
@@ -895,9 +857,10 @@
         </div>
 
         <!-- Featured Large Block 2: Yacht Charter (Resized to match the exact premium featured layout as Chef Experience) -->
+        <!-- ================= STREAMING_CHUNK: Designing the matching Yacht Charter layout... ================= -->
         <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md reveal-up">
           <div class="grid grid-cols-1 lg:grid-cols-12">
-            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
+            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative font-sans">
               <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
               <img alt="Yate de lujo navegando por el Caribe" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf51bqjYKNwP8RYhRtJdznZOSTitQJeFGUHNAxVeUEt3KziegJ6KjY3zoBjqmIGOdIDkjYuCbhdxJQs12Q1guMtp2jCvKJ0elqnNm6VC5paWoFRyHyDjgShlFBh5rH31UiubNJIpaF2boJuMmxBApIsiZ60RYhfpxXEQ2vSMN6wH_a9i-Du-iUCZT6zgcn-jN2Fm-JBpCPT0AQTVBL5nt3_ty8My0ZVMzwX14DIMLGKMAmfiDCND28H-P0VNSY-ixGFRCmb_gLIqbY"/>
             </div>
@@ -991,6 +954,7 @@
             </div>
 
             <!-- AI Output Result Card (Styled with casasamuyvale-5.jpg background) -->
+            <!-- ================= STREAMING_CHUNK: Integrating the background image and glass backdrop... ================= -->
             <div class="lg:col-span-8 border border-neutral-100 rounded-lg p-6 min-h-[300px] flex flex-col justify-center relative overflow-hidden shadow-inner bg-cover bg-center" style="background-image: url('https://beamazingcolors.github.io/casabuhodoradooficial/casasamuyvale-5.jpg');">
               <!-- Watermark Logo Overlay in top-left -->
               <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
@@ -1070,6 +1034,7 @@
           </div>
 
           <!-- Contact Form -->
+          <!-- ================= STREAMING_CHUNK: Processing reservation forms via email and WhatsApp... ================= -->
           <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-xl shadow-xl border border-neutral-100 reveal-right font-sans">
             <form id="contact-booking-form" class="space-y-6" onsubmit="handleContactSubmission(event)">
               
@@ -1182,6 +1147,7 @@
 
 
   <!-- ================= FLOATING CONTACT WIDGET (REPLACES WHATSAPP ICON) ================= -->
+  <!-- ================= STREAMING_CHUNK: Setting up the Floating Reservation Panel & UI trigger... ================= -->
   <button onclick="toggleQuickContact()" class="fixed bottom-6 right-6 z-[90] bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Contactar">
     <span class="material-symbols-outlined text-3xl">calendar_month</span>
   </button>
@@ -1330,15 +1296,28 @@
 
 
   <!-- ================= LIGHTBOX ZOOM MODAL FOR GALLERY ================= -->
+  <!-- ================= STREAMING_CHUNK: Integrating the image lightbox zoom frame... ================= -->
   <div id="lightbox-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300" onclick="closeLightbox()">
     <div class="relative max-w-4xl max-h-[85vh] w-[90%] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+      <!-- Close Button -->
       <button class="absolute -top-12 right-0 text-white hover:text-primary-container flex items-center gap-1 font-label-caps text-xs tracking-widest" onclick="closeLightbox()">
         <span class="material-symbols-outlined">close</span> CERRAR
       </button>
+
+      <!-- Lightbox Navigation Prev/Next -->
+      <button onclick="navigateLightbox(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-container p-3 rounded-full bg-black/40 hover:bg-black/80 transition-all z-20">
+        <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+      </button>
+      <button onclick="navigateLightbox(1)" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-container p-3 rounded-full bg-black/40 hover:bg-black/80 transition-all z-20">
+        <span class="material-symbols-outlined text-3xl font-bold">arrow_forward_ios</span>
+      </button>
+
       <div class="overflow-hidden rounded-lg shadow-2xl relative select-none">
         <img id="lightbox-img" class="max-w-full max-h-[75vh] object-contain transition-transform duration-500 ease-out cursor-zoom-in" onclick="toggleImageZoom(this)" src="" alt="Ampliación"/>
       </div>
-      <p class="text-white/60 text-xs mt-3 font-light tracking-wide italic">Haz clic en la imagen para hacer zoom interactivo</p>
+      <p class="text-white/60 text-xs mt-4 font-light tracking-wide italic text-center">
+        Usa las flechas laterales para navegar | Haz clic en la foto para hacer zoom interactivo
+      </p>
     </div>
   </div>
 
@@ -1359,6 +1338,90 @@
   <script>
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
+
+    // Repository absolute base URI path configuration
+    const repoBaseUri = "https://beamazingcolors.github.io/casabuhodoradooficial/";
+
+    // deduplicated collection of all 71 images requested from the user repository
+    const allUniqueImages = [
+      "CasasamuLifestyle-44.jpg",
+      "CasasamuLifestyle-7.jpg",
+      "CasasamuLifestyle-8.jpg",
+      "CasasamuLifestyle-9.jpg",
+      "CasasamuLifestyle-10.jpg",
+      "CasasamuLifestyle-11.jpg",
+      "CasasamuLifestyle-14.jpg",
+      "CasasamuLifestyle-15.jpg",
+      "CasasamuLifestyle-16.jpg",
+      "CasasamuLifestyle-17.jpg",
+      "CasasamuLifestyle-18.jpg",
+      "CasasamuLifestyle-19.jpg",
+      "CasasamuLifestyle-21.jpg",
+      "CasasamuLifestyle-22.jpg",
+      "CasasamuLifestyle-24.jpg",
+      "CasasamuLifestyle-25.jpg",
+      "CasasamuLifestyle-28.jpg",
+      "CasasamuLifestyle-29.jpg",
+      "CasasamuLifestyle-34.jpg",
+      "CasasamuLifestyle-35.jpg",
+      "CasasamuLifestyle-40.jpg",
+      "CasasamuLifestyle-41.jpg",
+      "CasasamuLifestyle-45.jpg",
+      "CasasamuLifestyle-46.jpg",
+      "CasasamuLifestyle-47.jpg",
+      "CasasamuLifestyle-48.jpg",
+      "CasasamuLifestyle-49.jpg",
+      "CasasamuLifestyle.jpg",
+      "CasasamuLifestyleultimas-3.jpg",
+      "CasasamuLifestyleultimas.jpg",
+      "casasamuyvale-2.jpg",
+      "casasamuyvale-5.jpg",
+      "casasamuyvale-6.jpg",
+      "casasamuyvale-8.jpg",
+      "casasamuyvale-12.jpg",
+      "casasamuyvale-14.jpg",
+      "casasamuyvale-16.jpg",
+      "casasamuyvale-18.jpg",
+      "casasamuyvale-19.jpg",
+      "casasamuyvale-20.jpg",
+      "casasamuyvale-21.jpg",
+      "casasamuyvale-22.jpg",
+      "casasamuyvale-23.jpg",
+      "casasamuyvale-25.jpg",
+      "casasamuyvale-28.jpg",
+      "casasamuyvale-29.jpg",
+      "casasamuyvale-35.jpg",
+      "casasamuyvale-36.jpg",
+      "casasamuyvale-37.jpg",
+      "casasamuyvale-46.jpg",
+      "casasamuyvale-53.jpg",
+      "casasamuyvale-57.jpg",
+      "casasamuyvale-58.jpg",
+      "casasamuyvale-59.jpg",
+      "casasamuyvale-60.jpg",
+      "casasamuyvale-61.jpg",
+      "casasamuyvale-62.jpg",
+      "casasamuyvale-65.jpg",
+      "casasamuyvale-67.jpg",
+      "casasamuyvaler8vertical(1).jpg",
+      "casasamuyvaler8vertical(2).jpg",
+      "casasamuyvaler8vertical(3).jpg",
+      "casasamuyvaler8vertical(4).jpg",
+      "casasamuyvaler82-2.jpg",
+      "casasamuyvaler82-4.jpg",
+      "casasamuyvaler82-5.jpg",
+      "casasamuyvaler82-6.jpg",
+      "casasamuyvaler82-9.jpg",
+      "casasamuyvaler82-10.jpg",
+      "casasamuyvaler82.jpg",
+      "Samuyvaler8(1).png",
+      "Samuyvaler8(2).png"
+    ];
+
+    // Current page status and lightbox indices
+    let activeFilter = 'todos';
+    let loadedCount = 16; // default visual pagination step
+    let activeLightboxIndex = 0;
 
     // Initial setups for custom dates inside the booking modal (today & tomorrow as default)
     document.addEventListener("DOMContentLoaded", () => {
@@ -1384,6 +1447,9 @@
         delay: 0.3
       });
       
+      // Render Initial Gallery images
+      renderInteractiveGallery();
+
       // Initialize scroll animations
       initScrollAnimations();
 
@@ -1403,6 +1469,89 @@
       });
     });
 
+    // ================= STREAMING_CHUNK: Formatting and building gallery renderer dynamically... =================
+    // Interactive Dynamic Gallery Builder
+    function renderInteractiveGallery() {
+      const grid = document.getElementById('dynamic-gallery-grid');
+      if (!grid) return;
+
+      grid.innerHTML = ""; // Clear existing
+
+      // Filter images elegantly based on keywords in their names
+      let filtered = allUniqueImages;
+      if (activeFilter === 'residencia') {
+        filtered = allUniqueImages.filter(img => img.toLowerCase().includes('vale') || img.toLowerCase().includes('lifestyle-7') || img.toLowerCase().includes('lifestyle-8') || img.toLowerCase().includes('lifestyle-9'));
+      } else if (activeFilter === 'exteriores') {
+        filtered = allUniqueImages.filter(img => img.toLowerCase().includes('ultimas') || img.toLowerCase().includes('vertical') || img.toLowerCase().includes('14') || img.toLowerCase().includes('15') || img.toLowerCase().includes('16'));
+      } else if (activeFilter === 'detalles') {
+        filtered = allUniqueImages.filter(img => img.toLowerCase().includes('lifestyle-10') || img.toLowerCase().includes('lifestyle-11') || img.toLowerCase().includes('samu') && !img.toLowerCase().includes('ultimas'));
+      }
+
+      // Check if we need to show the Load More button
+      const loadMoreBtn = document.getElementById('gallery-load-more');
+      if (loadedCount >= filtered.length) {
+        if (loadMoreBtn) loadMoreBtn.classList.add('hidden');
+      } else {
+        if (loadMoreBtn) loadMoreBtn.classList.remove('hidden');
+      }
+
+      // Slice the filtered list according to loaded count
+      const toShow = filtered.slice(0, loadedCount);
+
+      toShow.forEach((img, idx) => {
+        const absoluteUrl = repoBaseUri + img;
+        
+        // Dynamic HTML card structure with watermark included automatically
+        const cardHtml = `
+          <div class="gallery-item group relative overflow-hidden rounded-md shadow-md bg-surface-container cursor-pointer transition-all duration-500 break-inside-avoid mb-4" 
+               onclick="openLightboxFromGallery('${img}')">
+            <!-- Absolute Top Left Gold Watermark logo -->
+            <img alt="Casa Buho Dorado Logo Watermark" 
+                 class="absolute top-3 left-3 h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-80 group-hover:opacity-100 transition-opacity" 
+                 src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
+                 
+            <!-- Actual image with scale transitions -->
+            <img alt="Casa Buho Dorado Captura" 
+                 loading="lazy" 
+                 class="w-full h-auto object-cover transition-slow duration-700 group-hover:scale-105" 
+                 src="${absoluteUrl}" />
+                 
+            <!-- Clean overlay indicator on hover -->
+            <div class="absolute inset-0 bg-black/15 group-hover:bg-black/0 transition-colors duration-300"></div>
+          </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', cardHtml);
+      });
+
+      // Animate entry of newly created elements
+      gsap.fromTo(".gallery-item", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "power2.out" });
+    }
+
+    function filterGallery(category) {
+      activeFilter = mode = category;
+      loadedCount = 16; // Reset page items
+      
+      // Update filter pills active look
+      document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.classList.remove('bg-surface-container', 'text-[#1d1c16]');
+          btn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+        } else {
+          btn.classList.add('bg-surface-container', 'text-[#1d1c16]');
+          btn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+        }
+      });
+
+      renderInteractiveGallery();
+    }
+
+    function showAllGalleryImages() {
+      loadedCount = allUniqueImages.length;
+      renderInteractiveGallery();
+      showToastNotification("✨ Cargando colección fotográfica completa ✨", "photo_library");
+    }
+
+    // ================= STREAMING_CHUNK: Configuring SPA transitions and active navigation styling... =================
     // 1. DYNAMIC NAVIGATION SWITCHING (Single-Page-App Flow)
     function navigateToPage(pageId) {
       const homePage = document.getElementById('page-home');
@@ -1757,7 +1906,17 @@
       document.getElementById('contact-checkout').value = checkout;
     }
 
+    // ================= STREAMING_CHUNK: Lightbox navigation index management... =================
     // 5. GALLERY LIGHTBOX & INTERACTIVE ZOOM
+    function openLightboxFromGallery(imageName) {
+      // Find the index of this image in the current list
+      const idx = allUniqueImages.indexOf(imageName);
+      if (idx !== -1) {
+        activeLightboxIndex = idx;
+      }
+      openLightbox(repoBaseUri + imageName);
+    }
+
     function openLightbox(imgUrl) {
       const modal = document.getElementById('lightbox-modal');
       const img = document.getElementById('lightbox-img');
@@ -1770,6 +1929,31 @@
       modal.classList.add('flex');
       gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.3 });
       document.body.classList.add('overflow-hidden');
+    }
+
+    // Sweep through photos inside lightbox
+    function navigateLightbox(dir) {
+      let nextIdx = activeLightboxIndex + dir;
+      if (nextIdx < 0) nextIdx = allUniqueImages.length - 1;
+      if (nextIdx >= allUniqueImages.length) nextIdx = 0;
+
+      activeLightboxIndex = nextIdx;
+      const nextImgName = allUniqueImages[activeLightboxIndex];
+      
+      const img = document.getElementById('lightbox-img');
+      img.classList.remove('scale-150'); // Reset zoom on transition
+      img.classList.add('cursor-zoom-in');
+      img.classList.remove('cursor-zoom-out');
+      
+      // Fade transition between images
+      gsap.to(img, {
+        opacity: 0.3,
+        duration: 0.15,
+        onComplete: () => {
+          img.src = repoBaseUri + nextImgName;
+          gsap.to(img, { opacity: 1, duration: 0.25 });
+        }
+      });
     }
 
     // Toggle image size dynamically with responsive zoom coordinates
