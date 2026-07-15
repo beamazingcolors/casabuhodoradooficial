@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
-  <title>Casa Buho Dorado | Portal de Lujo y Reservas Inteligentes</title>
+  <title>Casa Buho Dorado | Portal de Lujo y Reservas</title>
   
   <link rel="icon" type="image/png" href="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.href='LLG.png'"/>
   
@@ -67,10 +67,6 @@
     /* Smooth page heights */
     .page-section {
       min-height: 100vh;
-    }
-    /* Sparkle gold gradient background */
-    .ai-gradient {
-      background: linear-gradient(135deg, #fef9f0 0%, #f7ebd7 50%, #fef9f0 100%);
     }
 
     /* Cloud drifting animations for a three-dimensional parallax effect */
@@ -568,7 +564,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-all flex items-end p-8 md:p-12">
               <div>
                 <span class="text-white font-headline-md text-2xl md:text-3xl block">Cocina de Diseñador</span>
-                <p class="text-white/80 text-xs md:text-sm font-light mt-1">Plataforma ideal para banquetes de autor a cargo of nuestro chef.</p>
+                <p class="text-white/80 text-xs md:text-sm font-light mt-1">Plataforma ideal para banquetes de autor a cargo de nuestro chef.</p>
               </div>
             </div>
           </div>
@@ -686,7 +682,7 @@
       </div>
 
       <div class="max-w-container-max mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 reveal-up-stagger" id="dynamic-gallery-grid">
-        </div>
+      </div>
 
       <div class="text-center mt-12 mb-16">
         <button id="gallery-load-more" onclick="showAllGalleryImages()" class="bg-primary text-on-primary hover:bg-primary-container px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase transition-all shadow-lg inline-block">
@@ -716,7 +712,7 @@
         <div class="max-w-3xl mx-auto">
           <h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface">Tu Conserje Dedicado</h2>
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 font-light">
-            Toda estancia en Akumal Villa incluye los servicios de un Conserje Personal de enlace permanente. Enlace continuo con Aura Concierge para tus preferences de confort y asistente 24/7 en la Riviera Maya.
+            Toda estancia en Akumal Villa incluye los servicios de un Conserje Personal de enlace permanente. Enlace continuo con nuestro conserje para tus preferencias de confort y asistente 24/7 en la Riviera Maya.
           </p>
           <div class="w-16 h-0.5 bg-primary mx-auto"></div>
         </div>
@@ -847,72 +843,27 @@
           </p>
         </div>
 
-        <div class="py-4 bg-surface-container-low border border-outline-variant/30 rounded-2xl shadow-xl p-6 md:p-10 mb-20 reveal-up">
-          <div class="text-center mb-10">
-            <span class="text-primary font-label-caps text-xs tracking-widest uppercase block mb-2">Planificación de Lujo con Inteligencia Artificial</span>
-            <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">✨ Diseña tu Itinerario Personalizado ✨</h2>
-            <p class="text-on-surface-variant font-light text-sm max-w-lg mx-auto mt-3">
-              Combina tus intereses con el poder de nuestro motor generativo de Inteligencia Artificial para esculpir la escapada perfecta de quiet luxury.
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 font-sans">
+          <div class="bg-surface-container-low p-8 border border-neutral-100 rounded shadow-md text-center">
+            <span class="material-symbols-outlined text-primary text-5xl mb-4">sailing</span>
+            <h3 class="font-headline-md text-xl mb-3 text-on-surface">Experiencias Náuticas</h3>
+            <p class="text-sm text-on-surface-variant font-light leading-relaxed">
+              Zarpa en catamaranes privados y explora arrecifes vírgenes y playas secretas de la Riviera Maya.
             </p>
           </div>
-
-          <div class="bg-white rounded-lg p-6 md:p-8 border border-neutral-100 ai-gradient grid grid-cols-1 lg:grid-cols-12 gap-8 font-sans">
-            <div class="lg:col-span-4 space-y-6">
-              <div class="space-y-1">
-                <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Enfoque de la Experiencia</label>
-                <select id="ai-interest" class="w-full text-xs border-neutral-200 focus:border-primary focus:ring-primary p-3 rounded bg-white">
-                  <option value="Aventura Salvaje (Cavernas, snorkel exclusivo, selva maya, kayak)">Aventura & Exploración</option>
-                  <option value="Quiet Luxury (Wellness, yoga, masajes frente al mar, meditación, silencio)">Sanación, Wellness & Paz</option>
-                  <option value="Gastronomía de Autor (Platillos de mar, catas de vino, cenas privadas con antorchas)">Gastronomía & Romance</option>
-                  <option value="Inmersión Histórica (Zonas arqueológicas VIP, arqueología maya, costumbres)">Historia & Cultura Maya</option>
-                </select>
-              </div>
-
-              <div class="grid grid-cols-2 gap-4">
-                <div class="space-y-1">
-                  <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Duración de Estadía</label>
-                  <select id="ai-days" class="w-full text-xs border-neutral-200 focus:border-primary focus:ring-primary p-3 rounded bg-white">
-                    <option value="1">1 Día</option>
-                    <option value="3" selected>3 Días</option>
-                    <option value="5">5 Días</option>
-                  </select>
-                </div>
-                <div class="space-y-1">
-                  <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Ritmo Deseado</label>
-                  <select id="ai-tempo" class="w-full text-xs border-neutral-200 focus:border-primary focus:ring-primary p-3 rounded bg-white">
-                    <option value="Contemplativo y Relajado (Quiet Luxury)">Contemplativo</option>
-                    <option value="Equilibrado (Exploración matutina y tardes libres)">Equilibrado</option>
-                    <option value="Activo y Dinámico (Múltiples destinos diarios)">Explorador Activo</option>
-                  </select>
-                </div>
-              </div>
-
-              <button onclick="generateAILuxuryItinerary()" class="w-full bg-primary text-on-primary hover:bg-primary-container p-4 font-label-caps text-xs uppercase tracking-widest transition-all duration-300 shadow-md flex items-center justify-center gap-2">
-                <span>✨ Crear Itinerario de Ensueño ✨</span>
-              </button>
-            </div>
-
-            <div class="lg:col-span-8 border border-neutral-100 rounded-lg p-6 min-h-[300px] flex flex-col justify-center relative overflow-hidden shadow-inner bg-cover bg-center" style="background-image: url('https://beamazingcolors.github.io/casabuhodoradooficial/casasamuyvale-5.jpg');">
-              <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-              <div class="absolute inset-0 bg-black/65 backdrop-blur-sm z-0"></div>
-
-              <div id="ai-itinerary-placeholder" class="relative z-10 text-center space-y-4 max-w-sm mx-auto transition-opacity duration-300 text-white">
-                <span class="material-symbols-outlined text-primary-container text-5xl">auto_awesome</span>
-                <h4 class="font-headline-md text-2xl text-primary-container font-semibold">Tu Viaje de Ensueño Aguarda</h4>
-                <p class="text-xs text-white/95 font-light leading-relaxed">
-                  Selecciona tus preferences a la izquierda y deja que nuestra Inteligencia Artificial trace un sendero único de lujo sensorial para ti, con el respaldo y excelencia de nuestro equipo de concierge.
-                </p>
-              </div>
-
-              <div id="ai-itinerary-loading" class="hidden relative z-10 text-center space-y-4 max-w-sm mx-auto transition-opacity duration-300 text-white">
-                <div class="w-12 h-12 border-4 border-primary-container/20 border-t-primary-container rounded-full animate-spin mx-auto"></div>
-                <h4 class="font-headline-md text-lg text-primary-container animate-pulse" id="ai-loading-text">Inspirando tu escape caribeño...</h4>
-                <p class="text-xs text-white/70 italic font-light">Conectando con Aura Concierge...</p>
-              </div>
-
-              <div id="ai-itinerary-result" class="hidden relative z-10 text-left space-y-4 overflow-y-auto max-h-[480px] pr-2 text-sm leading-relaxed prose prose-stone max-w-none text-white/95">
-                </div>
-            </div>
+          <div class="bg-surface-container-low p-8 border border-neutral-100 rounded shadow-md text-center">
+            <span class="material-symbols-outlined text-primary text-5xl mb-4">spa</span>
+            <h3 class="font-headline-md text-xl mb-3 text-on-surface">Wellness & Bienestar</h3>
+            <p class="text-sm text-on-surface-variant font-light leading-relaxed">
+              Terapias ancestrales de spa, yoga al amanecer y masajes relajantes con la brisa del Caribe.
+            </p>
+          </div>
+          <div class="bg-surface-container-low p-8 border border-neutral-100 rounded shadow-md text-center">
+            <span class="material-symbols-outlined text-primary text-5xl mb-4">restaurant_menu</span>
+            <h3 class="font-headline-md text-xl mb-3 text-on-surface">Gastronomía Exclusiva</h3>
+            <p class="text-sm text-on-surface-variant font-light leading-relaxed">
+              Menús de degustación de chef privado y cenas románticas iluminadas con antorchas en la costa.
+            </p>
           </div>
         </div>
 
@@ -957,7 +908,7 @@
               <span class="font-label-caps text-[10px] tracking-widest text-primary uppercase block mb-1">Beneficios Exclusivos</span>
               <p class="text-xs text-on-surface-variant font-light mt-1">✓ Coordinación de Traslados VIP</p>
               <p class="text-xs text-on-surface-variant font-light">✓ Personalización de Menú de Chef</p>
-              <p class="text-xs text-on-surface-variant font-light">✓ Coordinación con Aura Concierge</p>
+              <p class="text-xs text-on-surface-variant font-light">✓ Coordinación con Concierge Privado</p>
             </div>
           </div>
 
@@ -1069,7 +1020,6 @@
     </div>
   </footer>
 
-
   <button onclick="toggleQuickContact()" class="fixed bottom-6 right-6 z-[90] bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Contactar">
     <span class="material-symbols-outlined text-3xl">calendar_month</span>
   </button>
@@ -1106,7 +1056,6 @@
       </button>
     </form>
   </div>
-
 
   <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-4 transition-opacity duration-300">
     <div class="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto sm:overflow-hidden shadow-2xl relative border border-neutral-100 flex flex-col md:flex-row transition-all duration-500 scale-95 opacity-0" id="booking-modal-card">
@@ -1209,7 +1158,6 @@
     </div>
   </div>
 
-
   <div id="lightbox-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300" onclick="closeLightbox()">
     <div class="relative max-w-4xl max-h-[85vh] w-[90%] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
       <button class="absolute -top-12 right-0 text-white hover:text-primary-container flex items-center gap-1 font-label-caps text-xs tracking-widest" onclick="closeLightbox()">
@@ -1232,7 +1180,6 @@
     </div>
   </div>
 
-
   <div id="toast-message" class="fixed top-24 right-6 z-[100] bg-white border-l-4 border-primary p-4 shadow-2xl transition-all duration-300 translate-x-72 opacity-0 max-w-sm rounded">
     <div class="flex items-center gap-3">
       <span class="material-symbols-outlined text-primary" id="toast-icon">info</span>
@@ -1241,7 +1188,6 @@
       </div>
     </div>
   </div>
-
 
   <script>
     // Register GSAP plugins
@@ -1386,26 +1332,26 @@
       });
     });
 
-    // ================= STREAMING_CHUNK: Setup Interactive White Birds Spawning on Desktop Cursor & Mobile Swipes =================
-    let lastBirdX = 0;
-    let lastBirdY = 0;
-    const spawnDistance = 45; // Spawn a white bird every 45px traveled
+    // ================= TRACKING CURSOR - GENERAR IMAGEN DESDE GITHUB (LLG.png) =================
+    let lastImageX = 0;
+    let lastImageY = 0;
+    const spawnDistance = 40; // Espaciado mínimo en píxeles antes de spawnear otra imagen
 
     function handlePointerMove(clientX, clientY, pageX, pageY) {
-      const dist = Math.hypot(pageX - lastBirdX, pageY - lastBirdY);
+      const dist = Math.hypot(pageX - lastImageX, pageY - lastImageY);
       if (dist > spawnDistance) {
-        spawnMagicWhiteBird(pageX, pageY);
-        lastBirdX = pageX;
-        lastBirdY = pageY;
+        spawnCursorImage(pageX, pageY);
+        lastImageX = pageX;
+        lastImageY = pageY;
       }
     }
 
-    // Desktop Spawning Event
+    // Evento para computadoras
     window.addEventListener('mousemove', (e) => {
       handlePointerMove(e.clientX, e.clientY, e.pageX, e.pageY);
     });
 
-    // Mobile Swipe Touchmove Event
+    // Evento táctil para dispositivos móviles
     window.addEventListener('touchmove', (e) => {
       if (e.touches && e.touches[0]) {
         const touch = e.touches[0];
@@ -1413,49 +1359,48 @@
       }
     }, { passive: true });
 
-    function spawnMagicWhiteBird(x, y) {
-      const bird = document.createElement('div');
-      bird.className = "absolute pointer-events-none z-[80]";
-      bird.style.left = `${x}px`;
-      bird.style.top = `${y}px`;
-      bird.style.transform = `translate(-50%, -50%) scale(0.2)`;
+    // Función para crear la imagen que sigue al cursor y animarla
+    function spawnCursorImage(x, y) {
+      const imgContainer = document.createElement('div');
+      imgContainer.className = "absolute pointer-events-none z-[80]";
+      imgContainer.style.left = `${x}px`;
+      imgContainer.style.top = `${y}px`;
+      imgContainer.style.transform = `translate(-50%, -50%) scale(0.15)`;
       
-      // Flapping pure white bird SVG structure with improved shadow and styling
-      bird.innerHTML = `
-        <svg class="w-8 h-8 text-white fill-current opacity-90 drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]" viewBox="0 0 80 40">
-          <path class="bird-wing" d="M 0,20 Q 15,5 35,15 Q 40,0 45,15 Q 65,5 80,20 Q 40,12 0,20 Z" />
-        </svg>
+      // Estructura de la imagen cargada directamente desde el repositorio configurado
+      imgContainer.innerHTML = `
+        <img src="${repoBaseUri}LLG.png" 
+             class="w-12 h-12 object-contain opacity-90 drop-shadow-[0_4px_12px_rgba(181,138,61,0.5)]" 
+             onerror="this.style.display='none';" />
       `;
-      document.body.appendChild(bird);
+      document.body.appendChild(imgContainer);
 
-      // Random flight coordinates with dynamic wind drift vectors
+      // Desplazamiento aleatorio sutil para un efecto orgánico flotante
       const angle = Math.random() * Math.PI * 2;
-      const distance = 100 + Math.random() * 150;
+      const distance = 30 + Math.random() * 50;
       const targetX = x + Math.cos(angle) * distance;
-      const targetY = y - (120 + Math.random() * 180); // Glide upwards gracefully
-      const randomScale = 0.35 + Math.random() * 0.45;
+      const targetY = y - (40 + Math.random() * 65); // El elemento flota levemente hacia arriba
+      const randomScale = 0.5 + Math.random() * 0.5;
 
-      // Make birds last significantly longer with a slower, more graceful fade-out
       const tl = gsap.timeline({
         onComplete: () => {
-          bird.remove();
+          imgContainer.remove();
         }
       });
 
-      tl.to(bird, {
+      tl.to(imgContainer, {
         left: targetX,
         top: targetY,
         scale: randomScale,
-        duration: 4.0 + Math.random() * 2.0, // increased duration (4 to 6 seconds)
+        duration: 1.8 + Math.random() * 0.8,
         ease: "power1.out"
       })
-      .to(bird, {
+      .to(imgContainer, {
         opacity: 0,
-        duration: 2.0, // long, graceful fade out at the end
-      }, "-=2.0"); // starts 2 seconds before the end of the animation
+        duration: 0.8
+      }, "-=0.8");
     }
 
-    // ================= STREAMING_CHUNK: Formatting and building gallery renderer dynamically... =================
     // Interactive Dynamic Gallery Builder
     function renderInteractiveGallery() {
       const grid = document.getElementById('dynamic-gallery-grid');
@@ -1535,7 +1480,6 @@
       showToastNotification("✨ Cargando colección fotográfica completa ✨", "photo_library");
     }
 
-    // ================= STREAMING_CHUNK: Configuring SPA transitions and active navigation styling... =================
     // 1. DYNAMIC NAVIGATION SWITCHING (Single-Page-App Flow)
     function navigateToPage(pageId) {
       const homePage = document.getElementById('page-home');
@@ -1894,7 +1838,6 @@
       }, 800);
     }
 
-    // ================= STREAMING_CHUNK: Lightbox navigation index management... =================
     // 5. GALLERY LIGHTBOX
     function openLightboxFromGallery(imageName) {
       // Find the index of this image in the current list
@@ -1998,139 +1941,6 @@
       });
       
       startAutoplay();
-    }
-
-    // =========================================================================
-    // ================== GEMINI API LLM INTEGRATION MODULE ==================
-    // =========================================================================
-
-    // Call the Gemini API utilizing exponential backoff as instructed
-    async function callGeminiAPI(userQuery, systemInstruction) {
-      const apiKey = ""; // The platform environment injects this key at runtime
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-      const payload = {
-        contents: [{
-          parts: [{ text: userQuery }]
-        }],
-        systemInstruction: {
-          parts: [{ text: systemInstruction }]
-        }
-      };
-
-      // Implement exponential backoff
-      let delay = 1000;
-      for (let attempt = 0; attempt < 5; attempt++) {
-        try {
-          const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-          });
-
-          if (response.ok) {
-            const result = await response.json();
-            const textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (textResponse) {
-              return textResponse;
-            }
-          }
-        } catch (error) {
-          // Strict rule: Do not log retries to console.
-        }
-
-        // Wait before retrying
-        await new Promise(resolve => setTimeout(resolve, delay));
-        delay *= 2; // exponential step scaling
-      }
-
-      throw new Error("Lo sentimos. El servicio de asistencia de IA está congestionado temporalmente. Por favor, intenta de nuevo en unos minutos.");
-    }
-
-    // Markdown Parser implementation to render HTML beautifully within the page container
-    function parseMarkdownToHTML(text) {
-      if (!text) return "";
-      let html = text;
-
-      // Escape HTML entities to prevent rendering breaks
-      html = html.replace(/</g, "<").replace(/>/g, ">");
-
-      // Replace headers
-      html = html.replace(/^### (.*$)/gim, '<h4 class="font-headline-md text-lg text-primary mt-4 mb-2">$1</h4>');
-      html = html.replace(/^## (.*$)/gim, '<h3 class="font-headline-md text-xl text-primary mt-6 mb-3">$1</h3>');
-      html = html.replace(/^# (.*$)/gim, '<h2 class="font-headline-lg text-2xl text-primary mt-8 mb-4">$1</h2>');
-
-      // Replace bold text
-      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-primary">$1</strong>');
-      
-      // Replace italics text
-      html = html.replace(/\*(.*?)\*/g, '<em class="italic text-on-surface-variant">$1</em>');
-
-      // Replace list elements
-      html = html.replace(/^\s*-\s+(.*$)/gim, '<li class="ml-4 list-disc text-on-surface-variant my-1 font-light">$1</li>');
-      html = html.replace(/^\s*\*\s+(.*$)/gim, '<li class="ml-4 list-disc text-on-surface-variant my-1 font-light">$1</li>');
-
-      // Convert line breaks cleanly
-      html = html.replace(/\n/g, '<br>');
-
-      return html;
-    }
-
-    // DYNAMIC ITINERARY GENERATOR MODULE
-    async function generateAILuxuryItinerary() {
-      const interest = document.getElementById('ai-interest').value;
-      const days = document.getElementById('ai-days').value;
-      const tempo = document.getElementById('ai-tempo').value;
-
-      const placeholder = document.getElementById('ai-itinerary-placeholder');
-      const loading = document.getElementById('ai-itinerary-loading');
-      const resultArea = document.getElementById('ai-itinerary-result');
-      const loadingText = document.getElementById('ai-loading-text');
-
-      // Reset panels visibility
-      placeholder.classList.add('hidden');
-      resultArea.classList.add('hidden');
-      loading.classList.remove('hidden');
-
-      // Array of high-end concept phrases for cinematic loading feedback
-      const luxuryPhrases = [
-        "Sintonizando con el susurro del oleaje de Akumal...",
-        "Curando experiencias exclusivas con la marea...",
-        "Orquestando un menú de momentos memorables...",
-        "Diseñando tu sendero personalizado de quiet luxury..."
-      ];
-
-      let phraseIndex = 0;
-      const phraseInterval = setInterval(() => {
-        phraseIndex = (phraseIndex + 1) % luxuryPhrases.length;
-        loadingText.textContent = luxuryPhrases[phraseIndex];
-      }, 2500);
-
-      const itineraryPrompt = `Diseña un itinerario de ultra-lujo de exactamente ${days} días completos para mi estadía en Casa Buho Dorado. Mi enfoque principal es: "${interest}" y deseo llevar un ritmo de viaje: "${tempo}".
-      Divide la respuesta día por día con subtítulos claros. Para cada día propone experiencias sensoriales y exclusivas que un hotel regular de cinco estrellas no podría conseguir (por ejemplo: amaneceres privados en canoa con biólogos para ver tortugas, catas privadas de mezcales ancestrales en la bodega privada, rituales de temazcal dirigidos por chamanes mayas en la selva, etc.). Explica brevemente cómo el equipo de conserjería asume los detalles de cada actividad. Muestra el itinerario de manera majestuosa e impecable.`;
-
-      const itinerarySystemPrompt = "Eres Aura, la planificadora experta de itinerarios de ultra-lujo de Casa Buho Dorado. Tu objetivo es redactar itinerarios de de ensueño, evocadores, poéticos, pero a la vez prácticos para el equipo de hospitalidad. Escribe en español de forma elegante y refinada, utilizando títulos hermosos.";
-
-      try {
-        const reply = await callGeminiAPI(itineraryPrompt, itinerarySystemPrompt);
-        
-        // Populate and fade in results
-        resultArea.innerHTML = parseMarkdownToHTML(reply);
-        
-        loading.classList.add('hidden');
-        resultArea.classList.remove('hidden');
-        
-        gsap.fromTo(resultArea, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6 });
-        showToastNotification("✨ Tu Itinerario Exclusivo ha sido trazado por la IA ✨", "auto_awesome");
-      } catch (error) {
-        loading.classList.add('hidden');
-        placeholder.classList.remove('hidden');
-        showToastNotification(error.message, "error");
-      } finally {
-        clearInterval(phraseInterval);
-      }
     }
 
     function closeLightbox() {
