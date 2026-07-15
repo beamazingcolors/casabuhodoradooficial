@@ -258,11 +258,12 @@
         <span id="header-title" class="font-headline-md text-[10px] xs:text-sm sm:text-lg md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 whitespace-nowrap">CASA BUHO DORADO</span>
       </div>
       
+      <!-- SPA Menu ordered strictly per requirements -->
       <nav class="hidden lg:flex items-center gap-8">
         <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-label-caps text-primary nav-active-line transition-all duration-300" id="nav-home">Inicio</button>
-        <button onclick="navigateToPage('nosotros')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-nosotros">Nosotros</button>
         <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-gallery">Galería</button>
-        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-services">Servicio</button>
+        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-ubicacion">Ubicación</button>
+        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-services">Servicios</button>
         <button onclick="navigateToPage('experiences')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-experiences">Experiencias</button>
         <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-contact">Contacto</button>
       </nav>
@@ -274,13 +275,14 @@
       </div>
     </div>
 
+    <!-- Mobile menu reordered strictly per requirements -->
     <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-xl border-t border-outline-variant flex flex-col p-6 gap-6">
       <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-primary">Inicio</button>
-      <button onclick="navigateToPage('nosotros'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Nosotros</button>
       <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Galería</button>
-      <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Servicio</button>
+      <button onclick="navigateToPage('ubicacion'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Ubicación</button>
+      <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Servicios</button>
       <button onclick="navigateToPage('experiences'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Experiencias</button>
-      <button onclick="toggleMobileMenu(); navigateToPage('contact')" class="text-left font-label-caps text-lg py-2 text-[#1d1c16]">Contacto</button>
+      <button onclick="navigateToPage('contact'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 text-[#1d1c16]">Contacto</button>
     </div>
   </header>
 
@@ -366,108 +368,7 @@
         </div>
       </section>
 
-      <section class="bg-surface-container-low py-16 md:py-section-gap px-4 md:px-margin-desktop">
-        <div class="max-w-container-max mx-auto">
-          <div class="text-center mb-10 md:mb-16 reveal-up">
-            <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-2 md:mb-4 block">Ubicación Privilegiada</span>
-            <h2 class="font-headline-lg text-3xl md:text-headline-lg text-on-surface">Conexión Inmediata</h2>
-          </div>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-gutter items-center">
-            
-            <div class="space-y-6 md:space-y-8 lg:pr-6 reveal-left">
-              <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-40 sm:h-44 overflow-hidden">
-                  <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                  <img alt="Tulum Riviera Maya" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/tlm.png" onerror="this.src='tlm.png'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1504730030853-eff311f57d3c?q=80&w=600&auto=format&fit=crop'}"/>
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Tulum</span>
-                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">25 MINS</span>
-                  </div>
-                </div>
-                <div class="p-4 sm:p-5">
-                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-                    Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.
-                  </p>
-                </div>
-              </div>
-
-              <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-40 sm:h-44 overflow-hidden">
-                  <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                  <img alt="Playa del Carmen" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/PLT.png" onerror="this.src='PLT.png'"/>
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Playa del Carmen</span>
-                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">30 MINS</span>
-                  </div>
-                </div>
-                <div class="p-4 sm:p-5">
-                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-                    Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="relative aspect-square reveal-up flex items-center justify-center py-6">
-              <div class="absolute inset-0 rounded-full border border-primary/20 scale-105 animate-pulse hidden lg:block"></div>
-              <div class="w-full h-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] aspect-square bg-white rounded-full overflow-hidden border border-primary/10 shadow-2xl relative">
-                <iframe 
-                  title="Ubicación Casa Buho Dorado"
-                  src="https://maps.google.com/maps?q=Akumal%20Bay,%20Quintana%20Roo,%20Mexico&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                  class="w-full h-full border-0 absolute inset-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
-                  allowfullscreen="" 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-primary/10 shadow-md text-center pointer-events-none z-10">
-                  <p class="font-label-caps text-[9px] tracking-widest text-primary font-bold uppercase">CASA BUHO DORADO</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="space-y-6 md:space-y-8 lg:pl-6 reveal-right">
-              <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-40 sm:h-44 overflow-hidden">
-                  <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                  <img alt="Cenote Dos Ojos" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CNE.png" onerror="this.src='CNE.png'"/>
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Cenote Dos Ojos</span>
-                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">15 MINS</span>
-                  </div>
-                </div>
-                <div class="p-4 sm:p-5">
-                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-                    Un sistema de cavernas semi-inundadas sagradas con aguas turquesas para buceo de élite.
-                  </p>
-                </div>
-              </div>
-
-              <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
-                <div class="relative h-40 sm:h-44 overflow-hidden">
-                  <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                  <img alt="Coba Quintana Roo" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CB.png" onerror="this.src='CB.png'"/>
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Coba</span>
-                    <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">50 MINS</span>
-                  </div>
-                </div>
-                <div class="p-4 sm:p-5">
-                  <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-                    La majestuosa pirámide Nohoch Mul rodeada de selva indómita.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-surface py-section-gap px-6 md:px-margin-desktop">
+      <section class="bg-surface py-section-gap px-6 md:px-margin-desktop border-t border-neutral-100">
         <div class="max-w-container-max mx-auto">
           <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 reveal-up gap-4">
             <div>
@@ -593,78 +494,6 @@
 
     </section>
 
-    <section id="page-nosotros" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
-      <div class="max-w-container-max mx-auto mt-8">
-        
-        <div class="text-center mb-16 reveal-up">
-          <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block">La Filosofía</span>
-          <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary mb-6">Sintonía con el Origen</h1>
-          <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto font-light leading-relaxed">
-            Casa Buho Dorado no es simplemente un destino; es una invitación a restablecer el diálogo olvidado con la naturaleza en un entorno de sublime privacidad.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 font-sans">
-          <div class="space-y-8 reveal-left">
-            <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">Los Beneficios del Silencio Orgánico</h2>
-            <p class="font-body-md text-on-surface-variant leading-relaxed text-justify">
-              Enclavada entre la densa e indómita selva maya y la apacible Bahía de Akumal, la propiedad está diseñada arquitectónicamente para disolver las barreras entre el interior y el exterior. Vivir aquí es respirar el aliento del arrecife y arrullarse con el rumor constante del oleaje. Nuestro ecosistema favorece la reconexión total, disminuyendo de forma natural el estrés diario mediante la contemplación de un entorno protegido.
-            </p>
-            
-            <div class="space-y-6">
-              <div class="flex gap-4">
-                <span class="material-symbols-outlined text-primary text-3xl flex-shrink-0">self_improvement</span>
-                <div>
-                  <h3 class="font-headline-md text-lg text-primary mb-1">Restauración y Paz Mental</h3>
-                  <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
-                    Estudios confirman que la proximidad constante al mar reduce significativamente el cortisol. Nuestro santuario ofrece una terapia de quietud constante.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <span class="material-symbols-outlined text-primary text-3xl flex-shrink-0">nature</span>
-                <div>
-                  <h3 class="font-headline-md text-lg text-primary mb-1">Comunión con la Fauna Silvestre</h3>
-                  <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
-                    Despertar y ver el paso pausado de las tortugas marinas en su hábitat protegido. Una experiencia biológica que asombra y sensibiliza el alma.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <span class="material-symbols-outlined text-primary text-3xl flex-shrink-0">filter_vintage</span>
-                <div>
-                  <h3 class="font-headline-md text-lg text-primary mb-1">Aire y Vegetación Medicinal</h3>
-                  <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
-                    La brisa marina cargada de iones negativos combinada con los aromas exóticos de la selva purifican las vías respiratorias y revitalizan tu energía vital.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-6 border-t border-primary/20 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <div>
-                <h4 class="font-headline-md text-lg text-primary font-semibold">¿Listo para reconectar?</h4>
-                <p class="text-xs text-on-surface-variant">Inicie un diálogo directo con nuestro conserje personal.</p>
-              </div>
-              <button onclick="navigateToPage('contact')" class="bg-primary text-on-primary hover:bg-primary-container px-6 py-3 font-label-caps text-[10px] tracking-widest uppercase transition-all shadow-md">
-                Planificar Estadía
-              </button>
-            </div>
-          </div>
-
-          <div class="relative reveal-right">
-            <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-surface-container relative">
-              <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-              <img alt="Santuario natural en la selva con piscina orgánica" class="w-full h-full object-cover" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-41.jpg"/>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     <section id="page-gallery" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-12 px-6 md:px-margin-desktop">
       <div class="max-w-container-max mx-auto mt-8 mb-12 text-center reveal-up">
         <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block">Portafolio Visual</span>
@@ -691,6 +520,112 @@
       </div>
     </section>
 
+    <section id="page-ubicacion" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-16 px-4 md:px-margin-desktop">
+      <div class="max-w-container-max mx-auto mt-8">
+        
+        <div class="text-center mb-12 md:mb-16 reveal-up">
+          <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block">Ubicación Privilegiada</span>
+          <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary mb-6">Conexión Inmediata</h1>
+          <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto font-light leading-relaxed mt-4">
+            Ubicada estratégicamente en la idílica Bahía de Akumal, Casa Buho Dorado ofrece un acceso inigualable a los destinos más icónicos, playas místicas y zonas arqueológicas de la Riviera Maya.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-gutter items-center">
+          
+          <div class="space-y-6 md:space-y-8 lg:pr-6 reveal-left">
+            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
+              <div class="relative h-40 sm:h-44 overflow-hidden">
+                <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                <img alt="Tulum Riviera Maya" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/tlm.png" onerror="this.src='tlm.png'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1504730030853-eff311f57d3c?q=80&w=600&auto=format&fit=crop'}"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Tulum</span>
+                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">25 MINS</span>
+                </div>
+              </div>
+              <div class="p-4 sm:p-5 font-sans">
+                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.
+                </p>
+              </div>
+            </div>
+
+            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
+              <div class="relative h-40 sm:h-44 overflow-hidden">
+                <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                <img alt="Playa del Carmen" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/PLT.png" onerror="this.src='PLT.png'"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Playa del Carmen</span>
+                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">30 MINS</span>
+                </div>
+              </div>
+              <div class="p-4 sm:p-5 font-sans">
+                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative aspect-square reveal-up flex items-center justify-center py-6">
+            <div class="absolute inset-0 rounded-full border border-primary/20 scale-105 animate-pulse hidden lg:block"></div>
+            <div class="w-full h-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] aspect-square bg-white rounded-full overflow-hidden border border-primary/10 shadow-2xl relative">
+              <iframe 
+                title="Ubicación Casa Buho Dorado"
+                src="https://maps.google.com/maps?q=Akumal%20Bay,%20Quintana%20Roo,%20Mexico&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                class="w-full h-full border-0 absolute inset-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-primary/10 shadow-md text-center pointer-events-none z-10">
+                <p class="font-label-caps text-[9px] tracking-widest text-primary font-bold uppercase">CASA BUHO DORADO</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-6 md:space-y-8 lg:pl-6 reveal-right">
+            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
+              <div class="relative h-40 sm:h-44 overflow-hidden">
+                <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                <img alt="Cenote Dos Ojos" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CNE.png" onerror="this.src='CNE.png'"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Cenote Dos Ojos</span>
+                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">15 MINS</span>
+                </div>
+              </div>
+              <div class="p-4 sm:p-5 font-sans">
+                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Un sistema de cavernas semi-inundadas sagradas con aguas turquesas para buceo de élite.
+                </p>
+              </div>
+            </div>
+
+            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500">
+              <div class="relative h-40 sm:h-44 overflow-hidden">
+                <img alt="Logo Casa Buho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                <img alt="Coba Quintana Roo" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CB.png" onerror="this.src='CB.png'"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Coba</span>
+                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold">50 MINS</span>
+                </div>
+              </div>
+              <div class="p-4 sm:p-5 font-sans">
+                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  La majestuosa pirámide Nohoch Mul rodeada de selva indómita.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <section id="page-services" class="page-section hidden opacity-0 transition-opacity duration-300">
       
       <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
@@ -708,7 +643,7 @@
         </div>
       </section>
 
-      <section class="py-20 px-6 md:px-margin-desktop max-w-container-max mx-auto text-center reveal-up">
+      <section class="py-20 px-6 md:px-margin-desktop max-w-container-max mx-auto text-center reveal-up bg-surface">
         <div class="max-w-3xl mx-auto">
           <h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface">Tu Conserje Dedicado</h2>
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 font-light">
@@ -728,7 +663,7 @@
                 <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
                 <img alt="Camioneta de lujo de color negro de cortesía" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDRVdqTjjeUCqngM8COuL-9NjCs_MGXZRxgpEiApidG8jlvUT4Pw05by1jOCwcEYqdHt7eYwTfVTm6iJzgbc9GFhMD2vrbxo2-FZRu9aqBL4N2CRICnanl61XsMQDWxR07etRP0gSskyVvZHcsU28qrTP-TFPmuuoJIyk8K5ySIBc9jzYFRQI2lTDQyqXzCanz2K_-6hPyOHivXhRhaRBWGF2NFdJ7oGqJ4itVaviAkjoC1d0GLyRa2OAT_9NleDLeqnkFvPLGwwmp"/>
               </div>
-              <div class="p-8">
+              <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">ESENCIALES</span>
                 <h3 class="font-headline-md text-2xl mb-4 text-on-surface">Transportación Privada VIP</h3>
                 <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
@@ -736,7 +671,7 @@
                 </p>
               </div>
             </div>
-            <div class="px-8 pb-8">
+            <div class="px-8 pb-8 font-sans">
               <button onclick="requestConciergeService('Transporte Premium')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest">
                 Solicitar Servicio
               </button>
@@ -749,7 +684,7 @@
                 <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
                 <img alt="Cenote cerrado natural" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcxcEAzKzDw0VYdwV_bohsbTLx82KeG_pFdIt7hW3w5BcL_gj_SQ_E91K4w-Und11x9VnHKh3MLetG5aPRaPK9O7kqmx4epI2hD82QNeRe0gfxkiIyVnFt5AbTDYelYIGw0ZB-Mc5867Y6-zATqqrTX0BhTEarqh8k6HLwVKEEUZz6Mfi1cKnXN-F8HUVUcxq5Ryp8SuRjUUQgTngsUe_IQafTUPR5OqUabrZK72faLDqReugpKpnchQGzDGyAjtFt-41YIEngiVi"/>
               </div>
-              <div class="p-8">
+              <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">EXPLORACIÓN</span>
                 <h3 class="font-headline-md text-2xl mb-4 text-on-surface">Expediciones Arqueológicas</h3>
                 <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
@@ -757,7 +692,7 @@
                 </p>
               </div>
             </div>
-            <div class="px-8 pb-8">
+            <div class="px-8 pb-8 font-sans">
               <button onclick="requestConciergeService('Expediciones Mayas')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest">
                 Reservar Experiencia
               </button>
@@ -766,9 +701,9 @@
 
         </div>
 
-        <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md reveal-up">
+        <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md reveal-up font-sans">
           <div class="grid grid-cols-1 lg:grid-cols-12">
-            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative font-sans">
+            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
               <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
               <img alt="Chef preparando pescados" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeRer4ppmtgek35KDl2S6OfsbaHckc5qBihF5IM27uG-S1BBV3FB3fS802Y31TgXUpnUq13rIYrduvJBpv0CJ0fLkNwbXRDnxnjKSZgF6ll-5-SRejoEWUoWPiZmTSApQF8YT2X0Zv1AC6t3ap3w5ePTQZzFVI7IVahOw3qxPD_xGGG3It--ceYoTt8Dr24bOmLN0WV78lWEnlGg0bwqs6EWVnSFDMJ7rRCDy8Mb_EiiII8Yj7tZoiUaMx89_5Uw6nDscvE6FIQyM3"/>
             </div>
@@ -797,9 +732,9 @@
           </div>
         </div>
 
-        <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md reveal-up">
+        <div class="group relative overflow-hidden bg-surface-container-low border border-neutral-100 rounded shadow-md reveal-up font-sans">
           <div class="grid grid-cols-1 lg:grid-cols-12">
-            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative font-sans">
+            <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
               <img alt="Logo Casa Buho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
               <img alt="Yate de lujo navegando por el Caribe" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf51bqjYKNwP8RYhRtJdznZOSTitQJeFGUHNAxVeUEt3KziegJ6KjY3zoBjqmIGOdIDkjYuCbhdxJQs12Q1guMtp2jCvKJ0elqnNm6VC5paWoFRyHyDjgShlFBh5rH31UiubNJIpaF2boJuMmxBApIsiZ60RYhfpxXEQ2vSMN6wH_a9i-Du-iUCZT6zgcn-jN2Fm-JBpCPT0AQTVBL5nt3_ty8My0ZVMzwX14DIMLGKMAmfiDCND28H-P0VNSY-ixGFRCmb_gLIqbY"/>
             </div>
@@ -883,7 +818,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          <div class="lg:col-span-5 space-y-8 reveal-left bg-surface-container p-8 rounded-xl border border-primary/10">
+          <div class="lg:col-span-5 space-y-8 reveal-left bg-surface-container p-8 rounded-xl border border-primary/10 font-sans text-stone-800">
             <h2 class="font-headline-lg text-2xl text-primary">Información Directa</h2>
             <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
               Para respuestas inmediatas sobre charters de yates o solicitudes especiales, nuestro canal de atención premium se encuentra activo 24/7.
@@ -908,17 +843,18 @@
               <span class="font-label-caps text-[10px] tracking-widest text-primary uppercase block mb-1">Beneficios Exclusivos</span>
               <p class="text-xs text-on-surface-variant font-light mt-1">✓ Coordinación de Traslados VIP</p>
               <p class="text-xs text-on-surface-variant font-light">✓ Personalización de Menú de Chef</p>
-              <p class="text-xs text-on-surface-variant font-light">✓ Coordinación con Concierge Privado</p>
+              <p class="text-xs text-on-surface-variant font-light">✓ Coordinación con Concierge Privado (Aforo máx. 8)</p>
             </div>
           </div>
 
           <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-xl shadow-xl border border-neutral-100 reveal-right font-sans">
+            <!-- Form updated to fulfill requirements (max 8 check, removed select villa dropdown) -->
             <form id="contact-booking-form" class="space-y-6" onsubmit="handleContactSubmission(event)">
               
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Nombre Completo</label>
-                  <input type="text" id="contact-name" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="Ingresa tu nombre" required/>
+                  <input type="text" id="contact-name" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="Ingresa tu nombre completo" required/>
                 </div>
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Correo Electrónico</label>
@@ -928,16 +864,38 @@
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-1">
-                  <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Teléfono / WhatsApp</label>
-                  <input type="tel" id="contact-phone" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="+52 1 984 125 8758" required/>
+                  <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Número de Teléfono / WhatsApp</label>
+                  <input type="tel" id="contact-phone" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="Ingresa tu número de teléfono" required/>
                 </div>
-                <div class="space-y-1">
-                  <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Seleccionar la Villa</label>
-                  <select id="contact-villa" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white">
-                    <option value="Suite Tortuga">Master Suite Tortuga — $650 USD</option>
-                    <option value="Oceanfront Manor">Oceanfront Manor — $1,200 USD</option>
-                    <option value="Jungle Nest">Jungle Nest Sanctuary — $1,800 USD</option>
-                  </select>
+                <!-- Adults and Children selectors side-by-side with automatic sum limit constraints -->
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1">
+                    <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Adultos</label>
+                    <select id="contact-adults" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" onchange="validateContactGuestsCapacity()">
+                      <option value="1" selected>1 Adulto</option>
+                      <option value="2">2 Adultos</option>
+                      <option value="3">3 Adultos</option>
+                      <option value="4">4 Adultos</option>
+                      <option value="5">5 Adultos</option>
+                      <option value="6">6 Adultos</option>
+                      <option value="7">7 Adultos</option>
+                      <option value="8">8 Adultos</option>
+                    </select>
+                  </div>
+                  <div class="space-y-1">
+                    <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Niños</label>
+                    <select id="contact-children" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" onchange="validateContactGuestsCapacity()">
+                      <option value="0" selected>0 Niños</option>
+                      <option value="1">1 Niño</option>
+                      <option value="2">2 Niños</option>
+                      <option value="3">3 Niños</option>
+                      <option value="4">4 Niños</option>
+                      <option value="5">5 Niños</option>
+                      <option value="6">6 Niños</option>
+                      <option value="7">7 Niños</option>
+                      <option value="8">8 Niños</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
@@ -1000,11 +958,12 @@
       <div class="flex flex-col justify-between space-y-12 md:space-y-0 md:pl-12">
         <div class="space-y-4">
           <h4 class="font-label-caps text-xs text-primary tracking-wider uppercase font-semibold">La Villa</h4>
-          <ul class="space-y-3">
+          <!-- Footer links reordered strictly per requirements -->
+          <ul class="space-y-3 font-sans">
             <li><button onclick="navigateToPage('home')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Inicio</button></li>
-            <li><button onclick="navigateToPage('nosotros')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Nosotros</button></li>
             <li><button onclick="navigateToPage('gallery')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Galería</button></li>
-            <li><button onclick="navigateToPage('services')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Servicio</button></li>
+            <li><button onclick="navigateToPage('ubicacion')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Ubicación</button></li>
+            <li><button onclick="navigateToPage('services')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Servicios</button></li>
             <li><button onclick="navigateToPage('experiences')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Experiencias</button></li>
             <li><button onclick="navigateToPage('contact')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Contacto</button></li>
           </ul>
@@ -1020,6 +979,7 @@
     </div>
   </footer>
 
+  <!-- Trigger Floating Button -->
   <button onclick="toggleQuickContact()" class="fixed bottom-6 right-6 z-[90] bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Contactar">
     <span class="material-symbols-outlined text-3xl">calendar_month</span>
   </button>
@@ -1032,15 +992,50 @@
       </div>
       <button onclick="toggleQuickContact()" class="material-symbols-outlined text-white hover:rotate-90 transition-transform">close</button>
     </div>
+    
+    <!-- Quick Contact Form matching requested parameters (Nombre completo, Numero de Teléfono, Adultos (dropdown máx 8), Niños (dropdown máx 8) with sum limit validation) -->
     <form class="p-5 space-y-4" onsubmit="handleQuickContactSubmit(event)">
       <div class="space-y-1">
         <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold">Nombre Completo</label>
-        <input type="text" id="quick-name" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary" placeholder="Tu nombre" required/>
+        <input type="text" id="quick-name" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary" placeholder="Ingresa tu nombre completo" required/>
       </div>
+      
       <div class="space-y-1">
         <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold">Número de Teléfono</label>
-        <input type="tel" id="quick-phone" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary" placeholder="Tu teléfono" required/>
+        <input type="tel" id="quick-phone" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary" placeholder="Ingresa tu número de teléfono" required/>
       </div>
+
+      <!-- Sum-constrained guest selector -->
+      <div class="grid grid-cols-2 gap-3">
+        <div class="space-y-1">
+          <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold">Adultos</label>
+          <select id="quick-adults" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white" onchange="validateQuickGuestsCapacity()">
+            <option value="1" selected>1 Adulto</option>
+            <option value="2">2 Adultos</option>
+            <option value="3">3 Adultos</option>
+            <option value="4">4 Adultos</option>
+            <option value="5">5 Adultos</option>
+            <option value="6">6 Adultos</option>
+            <option value="7">7 Adultos</option>
+            <option value="8">8 Adultos</option>
+          </select>
+        </div>
+        <div class="space-y-1">
+          <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold">Niños</label>
+          <select id="quick-children" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white" onchange="validateQuickGuestsCapacity()">
+            <option value="0" selected>0 Niños</option>
+            <option value="1">1 Niño</option>
+            <option value="2">2 Niños</option>
+            <option value="3">3 Niños</option>
+            <option value="4">4 Niños</option>
+            <option value="5">5 Niños</option>
+            <option value="6">6 Niños</option>
+            <option value="7">7 Niños</option>
+            <option value="8">8 Niños</option>
+          </select>
+        </div>
+      </div>
+
       <div class="grid grid-cols-2 gap-3">
         <div class="space-y-1">
           <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold">Entrada</label>
@@ -1051,6 +1046,7 @@
           <input type="date" id="quick-checkout" class="w-full text-[10px] border-neutral-200 rounded p-1.5 focus:border-primary focus:ring-primary" required/>
         </div>
       </div>
+      
       <button type="submit" class="w-full bg-primary text-on-primary hover:bg-primary-container p-3 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md">
         Solicitar Información
       </button>
@@ -1069,7 +1065,7 @@
           </p>
         </div>
         <div class="space-y-4">
-          <div class="border-t border-white/20 pt-4">
+          <div class="border-t border-white/20 pt-4 font-sans">
             <span class="text-[10px] text-white/75 font-semibold uppercase block">Servicios Incluidos</span>
             <p class="text-xs text-white/90 font-light mt-1">✓ Conserjería personal 24/7</p>
             <p class="text-xs text-white/90 font-light">✓ Acceso a la playa de anidación</p>
@@ -1105,18 +1101,37 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
+          <!-- Quick modal booking matching 8-person sum constraint rules -->
+          <div class="grid grid-cols-3 gap-2">
             <div class="space-y-1">
-              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="guests-qty">Huéspedes</label>
-              <select id="guests-qty" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2">
-                <option value="1">1 Huésped</option>
-                <option value="2" selected>2 Huéspedes</option>
-                <option value="4">4 Huéspedes</option>
-                <option value="6">6 Huéspedes</option>
+              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="booking-adults">Adultos</label>
+              <select id="booking-adults" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white" onchange="validateBookingGuestsCapacity()">
+                <option value="1" selected>1 Adulto</option>
+                <option value="2">2 Adultos</option>
+                <option value="3">3 Adultos</option>
+                <option value="4">4 Adultos</option>
+                <option value="5">5 Adultos</option>
+                <option value="6">6 Adultos</option>
+                <option value="7">7 Adultos</option>
+                <option value="8">8 Adultos</option>
               </select>
             </div>
             <div class="space-y-1">
-              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="promo-code">Cód. Promocional</label>
+              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="booking-children">Niños</label>
+              <select id="booking-children" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white" onchange="validateBookingGuestsCapacity()">
+                <option value="0" selected>0 Niños</option>
+                <option value="1">1 Niño</option>
+                <option value="2">2 Niños</option>
+                <option value="3">3 Niños</option>
+                <option value="4">4 Niños</option>
+                <option value="5">5 Niños</option>
+                <option value="6">6 Niños</option>
+                <option value="7">7 Niños</option>
+                <option value="8">8 Niños</option>
+              </select>
+            </div>
+            <div class="space-y-1">
+              <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="promo-code">Código</label>
               <input type="text" id="promo-code" placeholder="Opcional" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2"/>
             </div>
           </div>
@@ -1158,6 +1173,7 @@
     </div>
   </div>
 
+  <!-- Lightbox Modal for Gallery and Parallax -->
   <div id="lightbox-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300" onclick="closeLightbox()">
     <div class="relative max-w-4xl max-h-[85vh] w-[90%] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
       <button class="absolute -top-12 right-0 text-white hover:text-primary-container flex items-center gap-1 font-label-caps text-xs tracking-widest" onclick="closeLightbox()">
@@ -1180,6 +1196,7 @@
     </div>
   </div>
 
+  <!-- Toast Notification Bar -->
   <div id="toast-message" class="fixed top-24 right-6 z-[100] bg-white border-l-4 border-primary p-4 shadow-2xl transition-all duration-300 translate-x-72 opacity-0 max-w-sm rounded">
     <div class="flex items-center gap-3">
       <span class="material-symbols-outlined text-primary" id="toast-icon">info</span>
@@ -1274,19 +1291,18 @@
 
     // Elegant handler to hide the image card completely if the repository file doesn't exist on GitHub
     function handleGalleryImageError(img, originalName) {
-      img.onerror = null; // Prevent infinite loops
+      img.onerror = null; 
       const item = img.closest('.gallery-item');
       if (item) {
-        item.style.display = 'none'; // Hide the entire element cleanly from the grid
+        item.style.display = 'none'; 
       }
     }
 
     // Current page status and lightbox indices
     let activeFilter = 'todos';
-    let loadedCount = 16; // default visual pagination step
+    let loadedCount = 16; 
     let activeLightboxIndex = 0;
 
-    // Initial setups for custom dates inside the booking modal (today & tomorrow as default)
     document.addEventListener("DOMContentLoaded", () => {
       const today = new Date();
       const tomorrow = new Date(today);
@@ -1332,10 +1348,10 @@
       });
     });
 
-    // ================= TRACKING CURSOR - GENERAR IMAGEN DESDE GITHUB (LLG.png) =================
+    // ================= STREAMING_CHUNK: Tracking cursor trail with LLG.png image... =================
     let lastImageX = 0;
     let lastImageY = 0;
-    const spawnDistance = 40; // Espaciado mínimo en píxeles antes de spawnear otra imagen
+    const spawnDistance = 42; 
 
     function handlePointerMove(clientX, clientY, pageX, pageY) {
       const dist = Math.hypot(pageX - lastImageX, pageY - lastImageY);
@@ -1346,12 +1362,11 @@
       }
     }
 
-    // Evento para computadoras
+    // Event listeners for tracking
     window.addEventListener('mousemove', (e) => {
       handlePointerMove(e.clientX, e.clientY, e.pageX, e.pageY);
     });
 
-    // Evento táctil para dispositivos móviles
     window.addEventListener('touchmove', (e) => {
       if (e.touches && e.touches[0]) {
         const touch = e.touches[0];
@@ -1359,15 +1374,14 @@
       }
     }, { passive: true });
 
-    // Función para crear la imagen que sigue al cursor y animarla
+    // Spawn the luxury LLG.png logo icon on cursor movement trail
     function spawnCursorImage(x, y) {
       const imgContainer = document.createElement('div');
       imgContainer.className = "absolute pointer-events-none z-[80]";
       imgContainer.style.left = `${x}px`;
       imgContainer.style.top = `${y}px`;
-      imgContainer.style.transform = `translate(-50%, -50%) scale(0.15)`;
+      imgContainer.style.transform = `translate(-50%, -50%) scale(0.12)`;
       
-      // Estructura de la imagen cargada directamente desde el repositorio configurado
       imgContainer.innerHTML = `
         <img src="${repoBaseUri}LLG.png" 
              class="w-12 h-12 object-contain opacity-90 drop-shadow-[0_4px_12px_rgba(181,138,61,0.5)]" 
@@ -1375,12 +1389,11 @@
       `;
       document.body.appendChild(imgContainer);
 
-      // Desplazamiento aleatorio sutil para un efecto orgánico flotante
       const angle = Math.random() * Math.PI * 2;
       const distance = 30 + Math.random() * 50;
       const targetX = x + Math.cos(angle) * distance;
-      const targetY = y - (40 + Math.random() * 65); // El elemento flota levemente hacia arriba
-      const randomScale = 0.5 + Math.random() * 0.5;
+      const targetY = y - (40 + Math.random() * 65); 
+      const randomScale = 0.4 + Math.random() * 0.4;
 
       const tl = gsap.timeline({
         onComplete: () => {
@@ -1401,14 +1414,13 @@
       }, "-=0.8");
     }
 
-    // Interactive Dynamic Gallery Builder
+    // ================= STREAMING_CHUNK: Filtering and rendering gallery dynamically... =================
     function renderInteractiveGallery() {
       const grid = document.getElementById('dynamic-gallery-grid');
       if (!grid) return;
 
-      grid.innerHTML = ""; // Clear existing
+      grid.innerHTML = ""; 
 
-      // Filter images elegantly based on keywords in their names
       let filtered = allUniqueImages;
       if (activeFilter === 'residencia') {
         filtered = allUniqueImages.filter(img => img.toLowerCase().includes('vale') || img.toLowerCase().includes('lifestyle-7') || img.toLowerCase().includes('lifestyle-8') || img.toLowerCase().includes('lifestyle-9'));
@@ -1418,7 +1430,6 @@
         filtered = allUniqueImages.filter(img => img.toLowerCase().includes('lifestyle-10') || img.toLowerCase().includes('lifestyle-11') || img.toLowerCase().includes('samu') && !img.toLowerCase().includes('ultimas'));
       }
 
-      // Check if we need to show the Load More button
       const loadMoreBtn = document.getElementById('gallery-load-more');
       if (loadedCount >= filtered.length) {
         if (loadMoreBtn) loadMoreBtn.classList.add('hidden');
@@ -1426,13 +1437,11 @@
         if (loadMoreBtn) loadMoreBtn.classList.remove('hidden');
       }
 
-      // Slice the filtered list according to loaded count
       const toShow = filtered.slice(0, loadedCount);
 
       toShow.forEach((img, idx) => {
         const absoluteUrl = repoBaseUri + img;
         
-        // Dynamic HTML card structure with watermarks on each image and custom onerror support
         const cardHtml = `
           <div class="gallery-item group relative overflow-hidden rounded-md shadow-md bg-surface-container cursor-pointer transition-all duration-500 break-inside-avoid mb-4" 
                onclick="openLightboxFromGallery('${img}')">
@@ -1452,15 +1461,13 @@
         grid.insertAdjacentHTML('beforeend', cardHtml);
       });
 
-      // Animate entry of newly created elements
       gsap.fromTo(".gallery-item", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "power2.out" });
     }
 
     function filterGallery(category) {
       activeFilter = category;
-      loadedCount = 16; // Reset page items
+      loadedCount = 16; 
       
-      // Update filter pills active look
       document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
         if (btn.getAttribute('data-category') === category) {
           btn.classList.remove('bg-surface-container', 'text-[#1d1c16]');
@@ -1480,16 +1487,45 @@
       showToastNotification("✨ Cargando colección fotográfica completa ✨", "photo_library");
     }
 
-    // 1. DYNAMIC NAVIGATION SWITCHING (Single-Page-App Flow)
+    // ================= STREAMING_CHUNK: Defining guest limits and validation... =================
+    // Automatic Real-Time checks to keep total villa count <= 8 (Sum of adults + children)
+    function validateContactGuestsCapacity() {
+      const adults = parseInt(document.getElementById('contact-adults').value) || 0;
+      const children = parseInt(document.getElementById('contact-children').value) || 0;
+      if (adults + children > 8) {
+        showToastNotification("⚠️ La capacidad máxima de la villa es de 8 personas en total (adultos + niños).", "warning");
+        document.getElementById('contact-children').value = 8 - adults;
+      }
+    }
+
+    function validateQuickGuestsCapacity() {
+      const adults = parseInt(document.getElementById('quick-adults').value) || 0;
+      const children = parseInt(document.getElementById('quick-children').value) || 0;
+      if (adults + children > 8) {
+        showToastNotification("⚠️ La capacidad máxima de la villa es de 8 personas en total (adultos + niños).", "warning");
+        document.getElementById('quick-children').value = 8 - adults;
+      }
+    }
+
+    function validateBookingGuestsCapacity() {
+      const adults = parseInt(document.getElementById('booking-adults').value) || 0;
+      const children = parseInt(document.getElementById('booking-children').value) || 0;
+      if (adults + children > 8) {
+        showToastNotification("⚠️ La capacidad máxima de la villa es de 8 personas en total (adultos + niños).", "warning");
+        document.getElementById('booking-children').value = 8 - adults;
+      }
+    }
+
+    // ================= STREAMING_CHUNK: Managing Single-Page SPA transition logic... =================
     function navigateToPage(pageId) {
       const homePage = document.getElementById('page-home');
-      const nosotrosPage = document.getElementById('page-nosotros');
       const galleryPage = document.getElementById('page-gallery');
+      const ubicacionPage = document.getElementById('page-ubicacion');
       const servicesPage = document.getElementById('page-services');
       const experiencesPage = document.getElementById('page-experiences');
       const contactPage = document.getElementById('page-contact');
       
-      const pages = [homePage, nosotrosPage, galleryPage, servicesPage, experiencesPage, contactPage];
+      const pages = [homePage, galleryPage, ubicacionPage, servicesPage, experiencesPage, contactPage];
       let activePage = null;
 
       pages.forEach(p => {
@@ -1501,27 +1537,23 @@
       const targetPage = document.getElementById(`page-${pageId}`);
       if (!activePage || !targetPage || activePage === targetPage) return;
 
-      // UNSELECT old navigations & return them to strict pitch black
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('text-primary', 'nav-active-line');
         link.classList.add('text-[#1d1c16]');
       });
 
-      // Highlight new navigation menu links (Desktop)
       const targetNavLink = document.getElementById(`nav-${pageId}`);
       if (targetNavLink) {
         targetNavLink.classList.remove('text-[#1d1c16]');
         targetNavLink.classList.add('text-primary', 'nav-active-line');
       }
 
-      // Transition animation execution
       gsap.to(activePage, {
         opacity: 0,
         y: -15,
         duration: 0.4,
         onComplete: () => {
           activePage.classList.add('hidden');
-          
           targetPage.classList.remove('hidden');
           window.scrollTo(0, 0);
           
@@ -1533,14 +1565,11 @@
               duration: 0.5, 
               ease: "power2.out",
               onComplete: () => {
-                // Force ScrollTrigger calculations update
                 ScrollTrigger.refresh();
-                
-                // Epic staggered entrance animation specifically for Nosotros
-                if (pageId === 'nosotros') {
-                  gsap.fromTo("#page-nosotros .reveal-up", {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "power3.out"});
-                  gsap.fromTo("#page-nosotros .reveal-left", {opacity: 0, x: -50}, {opacity: 1, x: 0, duration: 1.2, ease: "power3.out"});
-                  gsap.fromTo("#page-nosotros .reveal-right", {opacity: 0, x: 50}, {opacity: 1, x: 0, duration: 1.2, ease: "power3.out"});
+                if (pageId === 'ubicacion') {
+                  gsap.fromTo("#page-ubicacion .reveal-up", {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "power3.out"});
+                  gsap.fromTo("#page-ubicacion .reveal-left", {opacity: 0, x: -50}, {opacity: 1, x: 0, duration: 1.2, ease: "power3.out"});
+                  gsap.fromTo("#page-ubicacion .reveal-right", {opacity: 0, x: 50}, {opacity: 1, x: 0, duration: 1.2, ease: "power3.out"});
                 }
               }
             }
@@ -1560,7 +1589,6 @@
         header.classList.remove('py-6');
         header.classList.add('border-b', 'border-[#cfc4b4]/40');
         
-        // Squeeze sizes elegantly
         logo.classList.add('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
         logo.classList.remove('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
         title.classList.add('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
@@ -1569,7 +1597,6 @@
         header.classList.remove('glass-nav', 'shadow-md', 'py-2', 'border-b', 'border-[#cfc4b4]/40');
         header.classList.add('py-6');
         
-        // Restore majestic sizes
         logo.classList.remove('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
         logo.classList.add('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
         title.classList.remove('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
@@ -1577,9 +1604,8 @@
       }
     });
 
-    // 2. EXQUISITE GSAP SCROLL TRIGGERS UNIFICATION
+    // ================= STREAMING_CHUNK: Designing Scroll triggers and staggers... =================
     function initScrollAnimations() {
-      // Setup default hiding properties before triggers kick in
       const revealUp = gsap.utils.toArray(".reveal-up");
       revealUp.forEach(el => {
         gsap.set(el, { opacity: 0, y: 50 });
@@ -1625,7 +1651,6 @@
         });
       });
 
-      // Stagger animations
       const staggers = gsap.utils.toArray(".reveal-up-stagger");
       staggers.forEach(container => {
         const children = container.children;
@@ -1657,13 +1682,12 @@
       }
     }
 
-    // 3. BOOKING MODAL INTERACTIVE FLOW
+    // ================= STREAMING_CHUNK: Implementing modal and pricing logic... =================
     function openBookingModal(villaType = 'General') {
       const modal = document.getElementById('booking-modal');
       const card = document.getElementById('booking-modal-card');
       const select = document.getElementById('villa-selection');
 
-      // Auto-set selected villa
       if (villaType.includes('Tortuga')) {
         select.value = 'suite-tortuga';
       } else if (villaType.includes('Manor') || villaType.includes('Pool') || villaType.includes('Alberca')) {
@@ -1681,14 +1705,12 @@
       gsap.to(card, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" });
     }
 
-    // Request Service triggers directly pre-populating contact fields
     function requestConciergeService(serviceName) {
       showToastNotification(`Solicitud de ${serviceName} iniciada`, 'concierge_bell');
       navigateToPage('contact');
       document.getElementById('contact-message').value = `Hola. Me gustaría agendar el servicio de: ${serviceName} para mi próxima estadía. Por favor envíenme cotización.`;
     }
 
-    // Close Modal when trigger completes
     function closeBookingModal() {
       const modal = document.getElementById('booking-modal');
       const card = document.getElementById('booking-modal-card');
@@ -1700,14 +1722,12 @@
         onComplete: () => {
           modal.classList.add('hidden');
           document.body.classList.remove('overflow-hidden');
-          // Reset forms steps
           document.getElementById('booking-form-area').classList.remove('hidden');
           document.getElementById('booking-success-area').classList.add('hidden');
         }
       });
     }
 
-    // Dynamic rate calculation based on selections and nights
     function calculateDynamicPricing() {
       const checkinStr = document.getElementById('checkin-date').value;
       const checkoutStr = document.getElementById('checkout-date').value;
@@ -1742,14 +1762,20 @@
       totalDisplay.textContent = `$${finalTotal.toLocaleString()} USD`;
     }
 
+    // ================= STREAMING_CHUNK: Finalizing form submissions and validations... =================
     function handleBookingSubmission(e) {
       e.preventDefault();
 
-      // Show mock loader transitioning
+      const adults = parseInt(document.getElementById('booking-adults').value) || 0;
+      const children = parseInt(document.getElementById('booking-children').value) || 0;
+      if (adults + children > 8) {
+        showToastNotification("⚠️ El límite máximo permitido es de 8 personas en total.", "warning");
+        return;
+      }
+
       const formArea = document.getElementById('booking-form-area');
       const successArea = document.getElementById('booking-success-area');
       
-      // Generate unique mock code
       const randCode = "AKM-" + Math.floor(1000 + Math.random() * 9000);
       document.getElementById('booking-code-tag').textContent = randCode;
 
@@ -1764,7 +1790,6 @@
       });
     }
 
-    // Interactive Reservation Contact Form Submission Logic (Direct to WhatsApp +52 1 984 125 8758)
     function handleContactSubmission(e) {
       e.preventDefault();
       sendContactRequest('whatsapp');
@@ -1774,7 +1799,8 @@
       const name = document.getElementById('contact-name').value;
       const email = document.getElementById('contact-email').value;
       const phone = document.getElementById('contact-phone').value;
-      const villa = document.getElementById('contact-villa').value;
+      const adults = document.getElementById('contact-adults').value;
+      const children = document.getElementById('contact-children').value;
       const checkin = document.getElementById('contact-checkin').value;
       const checkout = document.getElementById('contact-checkout').value;
       const customMsg = document.getElementById('contact-message').value;
@@ -1784,7 +1810,13 @@
         return;
       }
 
-      const rawTextMsg = `Hola Concierge de Casa Buho Dorado!\n\nMe gustaría realizar una solicitud de reservación:\n• Nombre: ${name}\n• Correo: ${email}\n• WhatsApp: ${phone}\n• Villa Seleccionada: ${villa}\n• Arribo: ${checkin}\n• Salida: ${checkout}\n• Mensaje: ${customMsg}`;
+      const totalGuests = parseInt(adults) + parseInt(children);
+      if (totalGuests > 8) {
+        showToastNotification("⚠️ El límite máximo es de 8 personas en total (adultos + niños).", "warning");
+        return;
+      }
+
+      const rawTextMsg = `Hola Concierge de Casa Buho Dorado!\n\nMe gustaría realizar una solicitud de reservación:\n• Nombre: ${name}\n• Correo: ${email}\n• WhatsApp: ${phone}\n• Huéspedes: ${adults} Adultos, ${children} Niños\n• Arribo: ${checkin}\n• Salida: ${checkout}\n• Mensaje: ${customMsg}`;
 
       const targetPhone = "5219841258758";
       const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(rawTextMsg)}`;
@@ -1796,7 +1828,6 @@
       }, 800);
     }
 
-    // 4. FLOATING QUICK CONTACT PANEL LOGIC
     function toggleQuickContact() {
       const panel = document.getElementById('quick-contact-panel');
       if (panel.classList.contains('hidden')) {
@@ -1817,15 +1848,22 @@
       }
     }
 
-    // Sube quick contact panel directly as structured text to +52 1 984 125 8758 on WhatsApp
     function handleQuickContactSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('quick-name').value;
       const phone = document.getElementById('quick-phone').value;
+      const adults = document.getElementById('quick-adults').value;
+      const children = document.getElementById('quick-children').value;
       const checkin = document.getElementById('quick-checkin').value;
       const checkout = document.getElementById('quick-checkout').value;
 
-      const rawTextMsg = `Hola Concierge de Casa Buho Dorado!\n\nMe gustaría realizar una consulta rápida de reserva:\n• Nombre: ${name}\n• Teléfono: ${phone}\n• Entrada: ${checkin}\n• Salida: ${checkout}`;
+      const totalGuests = parseInt(adults) + parseInt(children);
+      if (totalGuests > 8) {
+        showToastNotification("⚠️ El límite máximo es de 8 personas en total.", "warning");
+        return;
+      }
+
+      const rawTextMsg = `Hola Concierge de Casa Buho Dorado!\n\nMe gustaría realizar una consulta rápida de reserva:\n• Nombre: ${name}\n• Teléfono: ${phone}\n• Entrada: ${checkin}\n• Salida: ${checkout}\n• Huéspedes: ${adults} Adultos, ${children} Niños`;
       
       const targetPhone = "5219841258758";
       const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(rawTextMsg)}`;
@@ -1838,9 +1876,8 @@
       }, 800);
     }
 
-    // 5. GALLERY LIGHTBOX
+    // ================= STREAMING_CHUNK: Integrating lightbox and slideshow... =================
     function openLightboxFromGallery(imageName) {
-      // Find the index of this image in the current list
       const idx = allUniqueImages.indexOf(imageName);
       if (idx !== -1) {
         activeLightboxIndex = idx;
@@ -1859,7 +1896,6 @@
       document.body.classList.add('overflow-hidden');
     }
 
-    // Sweep through photos inside lightbox
     function navigateLightbox(dir) {
       let nextIdx = activeLightboxIndex + dir;
       if (nextIdx < 0) nextIdx = allUniqueImages.length - 1;
@@ -1870,7 +1906,6 @@
       
       const img = document.getElementById('lightbox-img');
       
-      // Fade transition between images
       gsap.to(img, {
         opacity: 0.3,
         duration: 0.15,
@@ -1881,7 +1916,6 @@
       });
     }
 
-    // 6. TOAST NOTIFICATION UTILITY
     function showToastNotification(text, iconName = 'info') {
       const toast = document.getElementById('toast-message');
       const toastText = document.getElementById('toast-text');
@@ -1907,7 +1941,6 @@
       }
     }
 
-    // Horizontal smooth wheel scroll helper with autoplay and fluid navigation
     const slider = document.getElementById('estate-slider');
     let autoplayInterval;
 
@@ -1923,7 +1956,6 @@
       }, 3500);
     }
 
-    // Stop slider rotation
     function stopAutoplay() {
       clearInterval(autoplayInterval);
     }
