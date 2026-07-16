@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
   <title>Casa Búho Dorado | Portal de Lujo y Reservas</title>
   
-  <!-- Favicon Premium de Ultra Alta Resolución (Chrome, Safari, iOS, Android) -->
+  <!-- Apple and Multi-device High Definition Icons -->
   <link rel="icon" type="image/png" sizes="512x512" href="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png"/>
   <link rel="icon" type="image/png" sizes="192x192" href="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png"/>
   <link rel="icon" type="image/png" sizes="96x96" href="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png"/>
@@ -24,7 +24,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <style>
-    /* Evitar desbordamiento en dispositivos móviles */
     html, body {
       max-width: 100vw !important;
       width: 100% !important;
@@ -75,7 +74,6 @@
       min-height: 100vh;
     }
 
-    /* Animaciones tridimensionales de nubes */
     @keyframes drift-left-to-right {
       0% { transform: translateX(-120%) translateZ(0); }
       100% { transform: translateX(120%) translateZ(0); }
@@ -100,7 +98,6 @@
       .bird-3 { width: 24px !important; height: 24px !important; }
     }
 
-    /* Vuelo cinemático de aves */
     @keyframes fly-path-1 {
       0% { transform: translate(-10%, 15vh) scale(0.35); }
       50% { transform: translate(50vw, 8vh) scale(0.55); }
@@ -135,7 +132,6 @@
     .bird-wing { transform-origin: center; animation: flap 0.65s ease-in-out infinite; }
   </style>
 
-  <!-- Configuración de colores corporativos mediante Tailwind -->
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -234,7 +230,6 @@
         <span id="header-title" class="font-headline-md text-[10px] xs:text-sm sm:text-lg md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 whitespace-nowrap">CASA BÚHO DORADO</span>
       </div>
       
-      <!-- SPA Menu ordenado estrictamente según tus requerimientos -->
       <nav class="hidden lg:flex items-center gap-8">
         <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-label-caps text-primary nav-active-line transition-all duration-300" id="nav-home">Inicio</button>
         <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-gallery">Galería</button>
@@ -251,7 +246,7 @@
       </div>
     </div>
 
-    <!-- Menú móvil con orden idéntico -->
+    <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-xl border-t border-outline-variant flex flex-col p-6 gap-6">
       <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-primary">Inicio</button>
       <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]">Galería</button>
@@ -267,9 +262,9 @@
     <!-- ================= SECCIÓN: INICIO ================= -->
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
-      <!-- HERO PRINCIPAL CON EFECTO DORADO RESPLANDECIENTE Y IMAGEN PORTADA.PNG -->
       <section class="relative h-[85vh] sm:h-[95vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://beamazingcolors.github.io/casabuhodoradooficial/portada.png');">
         
+        <!-- Drifting Clouds Parallax -->
         <div class="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden opacity-95 select-none">
           <svg class="hidden">
             <defs>
@@ -295,6 +290,7 @@
           </svg>
         </div>
 
+        <!-- Flying birds overlay -->
         <div class="bird-container">
           <svg class="bird-1 absolute text-[#e3dbcc]/80 fill-current w-8 h-8 sm:w-12 sm:h-12" viewBox="0 0 80 40">
             <path class="bird-wing" d="M 0,20 Q 15,5 35,15 Q 40,0 45,15 Q 65,5 80,20 Q 40,12 0,20 Z" />
@@ -311,7 +307,6 @@
         
         <div class="relative z-10 text-center px-4 sm:px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
           <span class="text-white/95 font-label-caps text-[10px] sm:text-label-caps uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-3 sm:mb-4 block drop-shadow-md">Refugio Privado en Akumal</span>
-          <!-- Frase unificada en dorado con efecto de relieve de alta legibilidad -->
           <h1 class="font-display-lg text-3xl sm:text-display-lg-mobile md:text-display-lg text-primary mb-4 sm:mb-6 leading-tight drop-shadow-2xl font-semibold [text-shadow:_0_2px_12px_rgba(0,0,0,0.85),_0_4px_30px_rgba(181,138,61,0.6)]">
             We are not hosts, we are memory makers.
           </h1>
@@ -321,7 +316,6 @@
         </div>
       </section>
 
-      <!-- SECCIÓN: HISTORIA DE CASA BÚHO DORADO -->
       <section class="bg-surface py-section-gap px-6 md:px-margin-desktop overflow-hidden border-b border-stone-100">
         <div class="max-w-container-max mx-auto">
           
@@ -333,7 +327,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
             
             <div class="lg:col-span-7 space-y-6 reveal-left">
-              <div class="space-y-4 text-on-surface-variant font-body-md text-justify leading-relaxed text-stone-700">
+              <div class="space-y-4 text-on-surface-variant font-body-md text-justify leading-relaxed text-stone-700 font-sans">
                 <p>
                   Hay lugares que se construyen con piedra, madera y diseño. Otros comienzan mucho antes, con una historia que les da alma.
                 </p>
@@ -349,7 +343,7 @@
                 <p>
                   No sabemos si fue una señal, una hermosa coincidencia o simplemente uno de esos momentos que la naturaleza regala a quienes saben observarla. Lo que sí sabemos es que, desde ese día, sentimos que este lugar ya tenía un guardián.
                 </p>
-                <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4">
+                <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4 font-serif text-center sm:text-left">
                   Así nació el nombre Casa Búho Dorado.
                 </p>
                 <p>
@@ -364,23 +358,22 @@
               </div>
             </div>
 
-            <!-- Imágenes de apoyo de tradiciones -->
             <div class="lg:col-span-5 grid grid-cols-2 gap-4 relative reveal-right">
               <div class="space-y-4">
                 <div class="aspect-[3/4] rounded-xl overflow-hidden shadow-lg border border-primary/10 bg-stone-100">
-                  <img loading="lazy" alt="Ceremonia tradicional maya con incienso de copal" class="w-full h-full object-cover hover:scale-105 transition-all duration-700" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-29.jpg"/>
+                  <img loading="lazy" alt="Ceremonia tradicional maya con incienso de copal" class="w-full h-full object-cover hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/d/1XQ3HeoN54Yo8uNiNnkPxPQU3itLCQhQR"/>
                 </div>
                 <div class="aspect-square rounded-xl overflow-hidden shadow-lg border border-primary/10 bg-stone-100">
-                  <img loading="lazy" alt="La selva dorada mística al atardecer" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-41.jpg"/>
+                  <img loading="lazy" alt="La selva dorada mística al atardecer" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" src="https://lh3.googleusercontent.com/d/19Wlw0jU3uZRH4YKRt_mJnNq9sFpjIvNH"/>
                 </div>
               </div>
               <div class="space-y-4 pt-8">
                 <div class="aspect-square rounded-xl overflow-hidden shadow-lg border border-primary/10 bg-stone-100 relative">
                   <img loading="lazy" alt="Watermark logo" class="absolute top-3 left-3 h-6 w-auto object-contain drop-shadow" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                  <img loading="lazy" alt="Símbolo místico de sabiduría del búho" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-10.jpg"/>
+                  <img loading="lazy" alt="Símbolo místico de sabiduría del búho" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" src="https://lh3.googleusercontent.com/d/11EaDtWR7fSMOLcgZujsFXAZIwW99V9Fl"/>
                 </div>
                 <div class="aspect-[3/4] rounded-xl overflow-hidden shadow-lg border border-primary/10 bg-stone-100">
-                  <img loading="lazy" alt="Detalles arquitectónicos de piedra tradicional" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-28.jpg"/>
+                  <img loading="lazy" alt="Detalles arquitectónicos de piedra tradicional" class="w-full h-full object-cover hover:scale-105 transition-all duration-500" src="https://lh3.googleusercontent.com/d/1gRMI1Sl0zP2WTeSBBvhWKPeqXnFimUGo"/>
                 </div>
               </div>
             </div>
@@ -389,7 +382,6 @@
         </div>
       </section>
 
-      <!-- SECCIÓN: LA VILLA -->
       <section class="bg-surface-container-low py-section-gap px-6 md:px-margin-desktop overflow-hidden border-b border-stone-100">
         <div class="max-w-container-max mx-auto">
           
@@ -404,13 +396,13 @@
               <div class="relative">
                 <div class="absolute -inset-4 rounded-2xl bg-primary/5 -rotate-2"></div>
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-primary/10 bg-stone-100">
-                  <img loading="lazy" alt="Mampostería de lujo con piedra maya e interiores refinados" class="w-full h-full object-cover transition-slow hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyle-34.jpg"/>
+                  <img loading="lazy" alt="Mampostería de lujo con piedra maya e interiores refinados" class="w-full h-full object-cover transition-slow hover:scale-105" src="https://lh3.googleusercontent.com/d/1lKsPIxFfBVLIdjx-MVidU1Tj30pO2kvh"/>
                 </div>
               </div>
             </div>
 
             <div class="lg:col-span-7 space-y-6 reveal-right">
-              <div class="space-y-4 text-on-surface-variant font-body-md text-justify leading-relaxed text-stone-700">
+              <div class="space-y-4 text-on-surface-variant font-body-md text-justify leading-relaxed text-stone-700 font-sans">
                 <p>
                   Inspirada en la elegancia de las antiguas haciendas mexicanas e interpretada con una arquitectura contemporánea, Casa Búho Dorado es un refugio donde el diseño, la naturaleza y la hospitalidad se encuentran en perfecta armonía.
                 </p>
@@ -426,12 +418,12 @@
                 <p>
                   El acceso se realiza mediante un doble portón privado y toda la propiedad cuenta con videovigilancia perimetral, garantizando seguridad, privacidad y el silencio que solo la selva puede ofrecer.
                 </p>
-                <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4">
+                <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4 font-serif text-center sm:text-left">
                   En Casa Búho Dorado, cada espacio ha sido creado para desacelerar, reconectar con la naturaleza y transformar cada estancia en el placer de estar.
                 </p>
               </div>
 
-              <!-- Especificaciones técnicas rápidas de la villa -->
+              <!-- Interactive Key Metrics grid -->
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-primary/20">
                 <div class="text-center sm:text-left">
                   <span class="block text-2xl font-bold text-primary">10k m²</span>
@@ -457,12 +449,11 @@
         </div>
       </section>
 
-      <!-- PRESENTACIÓN DE VIDEO DEL RECORRIDO MÍSTICO EN INICIO (NUEVO LINK: 1R43rE1-gnvlSeR8CB0biLhIdSbr_xejF) -->
       <section class="bg-surface-container-low py-16 px-6 md:px-margin-desktop border-t border-b border-neutral-100">
         <div class="max-w-container-max mx-auto text-center reveal-up">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Experiencia Visual</span>
           <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 text-center">Atmósfera Casa Búho Dorado</h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto font-light leading-relaxed font-sans">
             Sumérgete en la mística y el diseño orgánico de nuestro refugio privado a través de este exclusivo recorrido cinematográfico.
           </p>
           <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group">
@@ -477,7 +468,6 @@
         </div>
       </section>
 
-      <!-- CARRUSEL DE TESTIMONIOS (MÍNIMO 5) -->
       <section class="bg-surface py-24 px-6 md:px-margin-desktop overflow-hidden border-t border-neutral-100">
         <div class="max-w-4xl mx-auto text-center reveal-up">
           <span class="material-symbols-outlined text-primary text-6xl mb-4">format_quote</span>
@@ -522,7 +512,7 @@
               <!-- Testimonio 3 -->
               <div class="w-full flex-shrink-0 px-4 flex flex-col justify-center h-full font-sans">
                 <p class="font-headline-md text-xl md:text-2xl italic mb-6 leading-relaxed text-on-surface font-serif">
-                  "La privacidad de Casa Búho Dorado es insuperable. El doble portón de seguridad y la atención minuciosa de nuestro conserje hicieron que nos sintiéramos en nuestro propio paraíso privado."
+                  "La privacidad de Casa Búho Dorado es insuperable. El doble portón de seguridad y la atención minuciosa de Valentina hicieron que nos sintiéramos en nuestro propio paraíso privado."
                 </p>
                 <div class="flex items-center justify-center gap-3">
                   <div class="flex text-primary">
@@ -556,7 +546,7 @@
               <!-- Testimonio 5 -->
               <div class="w-full flex-shrink-0 px-4 flex flex-col justify-center h-full font-sans">
                 <p class="font-headline-md text-xl md:text-2xl italic mb-6 leading-relaxed text-on-surface font-serif">
-                  "Una joya de diseño que respeta el entorno ecológico. El avistamiento de tortugas y la excursión privada guiada al cenote Dos Ojos organizada por el conserje fueron mágicos."
+                  "Una joya de diseño que respeta el entorno ecológico. El avistamiento de tortugas y la excursión privada guiada al cenote Dos Ojos organizada por Valentina fueron mágicos."
                 </p>
                 <div class="flex items-center justify-center gap-3">
                   <div class="flex text-primary">
@@ -573,7 +563,6 @@
             </div>
           </div>
 
-          <!-- Puntos indicadores del carrusel -->
           <div class="flex justify-center gap-2 mt-6" id="testimonial-dots">
             <button class="w-2.5 h-2.5 rounded-full bg-primary transition-all duration-300" onclick="setTestimonialSlide(0)"></button>
             <button class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300" onclick="setTestimonialSlide(1)"></button>
@@ -587,7 +576,7 @@
 
     </section>
 
-    <!-- ================= SECCIÓN: GALERÍA ================= -->
+    <!-- ================= SECCIÓN: GALERÍA (DISEÑO GRID PERFECTO SIN ESPACIOS VACÍOS) ================= -->
     <section id="page-gallery" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-12 px-6 md:px-margin-desktop">
       <div class="max-w-container-max mx-auto mt-8 mb-12 text-center reveal-up">
         <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block">Portafolio Visual</span>
@@ -604,7 +593,8 @@
         </div>
       </div>
 
-      <div class="max-w-container-max mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 reveal-up-stagger" id="dynamic-gallery-grid">
+      <div class="max-w-container-max mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 reveal-up-stagger" id="dynamic-gallery-grid">
+        <!-- Rendered dynamically in Javascript -->
       </div>
 
       <div class="text-center mt-12 mb-16">
@@ -613,11 +603,11 @@
         </button>
       </div>
 
-      <!-- VIDEO DE LA BAHÍA TRASLADADO DE INICIO A GALERÍA (1GU0v5HVGEyXAQeNmP6MrMGZwp2FQTB3n) -->
+      <!-- Video de la Bahía en Galería -->
       <div class="max-w-container-max mx-auto border-t border-stone-100 pt-16 mt-8">
         <div class="text-center mb-8">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-2 block">Atmósfera de la Bahía</span>
-          <h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Cine de Akumal</h2>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface text-center font-serif">Cine de Akumal</h2>
         </div>
         <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-12">
           <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
@@ -631,49 +621,44 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: UBICACIÓN (CON TRANSICIONES CINEMÁTICAS OPTIMIZADAS) ================= -->
+    <!-- ================= SECCIÓN: UBICACIÓN (DISEÑO COMPLETAMENTE CENTRADO Y ESTÉTICO) ================= -->
     <section id="page-ubicacion" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-16 px-4 md:px-margin-desktop">
       <div class="max-w-container-max mx-auto mt-8">
         
         <div class="text-center mb-12 md:mb-16 reveal-up">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block">Ubicación Privilegiada</span>
           <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary mb-6 text-center">Conexión Inmediata</h1>
-          <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto font-light leading-relaxed mt-4 font-sans">
+          <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto font-light leading-relaxed mt-4 font-sans text-center">
             Ubicada estratégicamente en la idílica Bahía de Akumal, Casa Búho Dorado ofrece un acceso inigualable a los destinos más icónicos, playas místicas y zonas arqueológicas de la Riviera Maya.
           </p>
         </div>
 
-        <!-- ¿Qué significa Akumal? (REUBICADO AQUÍ) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center py-12 border-b border-stone-100">
-          <div class="reveal-left">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 text-center sm:text-left">¿Qué significa Akumal?</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed text-justify">
-              Akumal significa <span class="text-primary italic font-semibold">"Lugar de las Tortugas"</span> en la antigua lengua maya. Esta joya costera nació como una comunidad consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.
-            </p>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed text-justify font-sans">
-              En la actualidad, se mantiene como un paraíso reservado para el ecoturismo de lujo. Un universo donde la densa selva maya converge directamente con el vibrante Arrecife Mesoamericano.
-            </p>
-            <div class="flex items-center justify-center sm:justify-start gap-4 text-secondary font-sans">
-              <span class="material-symbols-outlined text-4xl">eco</span>
-              <span class="font-label-caps text-label-caps font-semibold">Vida Sustentable de Alto Diseño</span>
-            </div>
-          </div>
+        <!-- ¿Qué significa Akumal? (Centrado y Estético) -->
+        <div class="max-w-4xl mx-auto text-center py-12 border-b border-stone-100 reveal-up">
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 text-center">¿Qué significa Akumal?</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed text-center">
+            Akumal significa <span class="text-primary italic font-semibold">"Lugar de las Tortugas"</span> en la antigua lengua maya. Esta joya costera nació como una comunidad consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.
+          </p>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed text-center font-sans">
+            En la actualidad, se mantiene como un paraíso reservado para el ecoturismo de lujo. Un universo donde la densa selva maya converge directamente con el vibrante Arrecife Mesoamericano.
+          </p>
           
-          <div class="relative reveal-right">
-            <div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-lg shadow-xl">
-              <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-              <img loading="lazy" alt="Tortuga Marina en las aguas turquesas de Akumal" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-slow duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qC_mIeIm3zwfK1irNG7rUAlgmP0A1LBR8vLinAOapnoxPV1yrb31ZcFXVMl9Ia3SrR1KVm-XEMYn2jozkOZ0xAWH4D1t36YN8hSYBvSKUDR5Tzscb7PnekWHkA58ouIAcSo9VJh-2HVopKi-moS3TFNrQKMu_qKcXgDH-hPWpceOhvCev-qGqh9YZbXuiKbn2psbmX1lrFlXEZTYQMQNcQkLnVdcQxkm8JIoEI5w-i0rFd8DYfVYtjO0OSwsJHkHsA1jCyiNJ5Ku"/>
-            </div>
+          <div class="aspect-[16/9] w-full max-w-2xl mx-auto overflow-hidden rounded-lg shadow-xl relative mb-8">
+            <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+            <img loading="lazy" alt="Tortuga Marina en las aguas turquesas de Akumal" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-slow duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qC_mIeIm3zwfK1irNG7rUAlgmP0A1LBR8vLinAOapnoxPV1yrb31ZcFXVMl9Ia3SrR1KVm-XEMYn2jozkOZ0xAWH4D1t36YN8hSYBvSKUDR5Tzscb7PnekWHkA58ouIAcSo9VJh-2HVopKi-moS3TFNrQKMu_qKcXgDH-hPWpceOhvCev-qGqh9YZbXuiKbn2psbmX1lrFlXEZTYQMQNcQkLnVdcQxkm8JIoEI5w-i0rFd8DYfVYtjO0OSwsJHkHsA1jCyiNJ5Ku"/>
+          </div>
+
+          <div class="flex items-center justify-center gap-4 text-secondary font-sans justify-center">
+            <span class="material-symbols-outlined text-4xl">eco</span>
+            <span class="font-label-caps text-label-caps font-semibold">Vida Sustentable de Alto Diseño</span>
           </div>
         </div>
 
-        <!-- Exploración Exclusiva (REUBICADO AQUÍ) -->
+        <!-- Exploración Exclusiva (Centrado y Estético) -->
         <div class="py-16 border-b border-stone-100 reveal-up">
-          <div class="flex flex-col md:flex-row justify-center items-center mb-12 gap-4">
-            <div class="text-center">
-              <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block font-semibold">Maravillas Naturales</span>
-              <h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Exploración Exclusiva</h2>
-            </div>
+          <div class="flex flex-col justify-center items-center mb-12 gap-4 text-center">
+            <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block font-semibold">Maravillas Naturales</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Exploración Exclusiva</h2>
           </div>
           
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-up-stagger">
@@ -686,7 +671,7 @@
                 <h3 class="font-headline-md text-xl">Chichén Itzá</h3>
                 <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">2.5 HRS</span>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans">Visita privada a la Maravilla del Mundo.</p>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center">Visita privada a la Maravilla del Mundo.</p>
             </div>
             <div class="group cursor-pointer ken-burns" onclick="openBookingModal('Tour Cenotes')">
               <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md relative">
@@ -697,7 +682,7 @@
                 <h3 class="font-headline-md text-xl">Dos Ojos</h3>
                 <span class="font-label-caps text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">15 MINS</span>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans">Cavernas milenarias y buceo guiado.</p>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center">Cavernas milenarias y buceo guiado.</p>
             </div>
             <div class="group cursor-pointer ken-burns" onclick="openBookingModal('Reserva de Snorkel')">
               <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md relative">
@@ -708,7 +693,7 @@
                 <h3 class="font-headline-md text-xl">Laguna Yal-Kú</h3>
                 <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">5 MINS</span>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans">Un acuario natural privado a tu disposición.</p>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center">Un acuario natural privado a tu disposición.</p>
             </div>
             <div class="group cursor-pointer ken-burns" onclick="openBookingModal('General')">
               <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md relative">
@@ -719,12 +704,12 @@
                 <h3 class="font-headline-md text-xl">Bahía de Akumal</h3>
                 <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">A PASOS</span>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans">El umbral de tu santuario privado.</p>
+              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center">El umbral de tu santuario privado.</p>
             </div>
           </div>
         </div>
 
-        <!-- Google Maps & Conexiones Rápidas con animaciones robustas de entrada -->
+        <!-- Google Maps and connection centers (Centrado y Estético) -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-gutter items-center pt-16">
           
           <div class="space-y-6 md:space-y-8 lg:pr-6 reveal-left">
@@ -738,7 +723,7 @@
                   <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">25 MINS</span>
                 </div>
               </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700">
+              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
                 <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                   Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.
                 </p>
@@ -755,7 +740,7 @@
                   <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">30 MINS</span>
                 </div>
               </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700">
+              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
                 <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                   Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.
                 </p>
@@ -791,7 +776,7 @@
                   <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">15 MINS</span>
                 </div>
               </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700">
+              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
                 <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                   Un sistema de cavernas semi-inundadas sagradas con aguas turquesas para buceo de élite.
                 </p>
@@ -808,7 +793,7 @@
                   <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">50 MINS</span>
                 </div>
               </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700">
+              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
                 <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                   La majestuosa pirámide Nohoch Mul rodeada de selva indómita.
                 </p>
@@ -820,29 +805,29 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: SERVICIOS (TRANSPORTACIÓN PRIVADA) ================= -->
+    <!-- ================= SECCIÓN: SERVICIOS (CON VALENTINA COMO TU CONCIERGE DEDICADA) ================= -->
     <section id="page-services" class="page-section hidden opacity-0 transition-opacity duration-300">
       
       <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
           <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-          <img loading="lazy" alt="Vista aérea del resort Akumal Villa rodeada de selva exótica" class="w-full h-full object-cover" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyleultimas.jpg"/>
+          <img loading="lazy" alt="Vista aérea del resort" class="w-full h-full object-cover" src="https://beamazingcolors.github.io/casabuhodoradooficial/CasasamuLifestyleultimas.jpg"/>
           <div class="absolute inset-0 bg-black/35"></div>
         </div>
         <div class="relative z-10 text-center px-6 mt-10">
           <span class="font-label-caps text-label-caps text-white tracking-[0.4em] uppercase mb-4 block">Hospitalidad de Firma</span>
           <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-white mb-6 text-center">Servicios a tu Medida</h1>
-          <p class="font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto font-light">
-            Desde transportación VIP hasta chefs privados y yates de exploración. Tu conserje personal asume el diseño de cada instante.
+          <p class="font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto font-light text-center">
+            Desde transportación VIP hasta chefs privados y yates de exploración. Valentina, tu concierge personal, asume el diseño de cada instante.
           </p>
         </div>
       </section>
 
       <section class="py-20 px-6 md:px-margin-desktop max-w-container-max mx-auto text-center reveal-up bg-surface">
-        <div class="max-w-3xl mx-auto">
-          <h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface text-center">Tu Conserje Dedicado</h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 font-light leading-relaxed text-justify sm:text-center">
-            Toda estancia en Akumal Villa incluye los servicios de un Conserje Personal de enlace permanente. Enlace continuo con nuestro conserje para tus preferencias de confort y asistente 24/7 en la Riviera Maya.
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface text-center">Tu Concierge Dedicado</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 font-light leading-relaxed text-center font-sans">
+            Toda estancia en Akumal Villa incluye los servicios de Valentina, tu Concierge Personal de enlace permanente. Enlace continuo con Valentina para tus preferencias de confort y asistente 24/7 en la Riviera Maya.
           </p>
           <div class="w-16 h-0.5 bg-primary mx-auto"></div>
         </div>
@@ -856,7 +841,7 @@
             <div>
               <div class="aspect-[16/10] overflow-hidden ken-burns relative">
                 <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Camioneta de lujo de color negro de cortesía" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDRVdqTjjeUCqngM8COuL-9NjCs_MGXZRxgpEiApidG8jlvUT4Pw05by1jOCwcEYqdHt7eYwTfVTm6iJzgbc9GFhMD2vrbxo2-FZRu9aqBL4N2CRICnanl61XsMQDWxR07etRP0gSskyVvZHcsU28qrTP-TFPmuuoJIyk8K5ySIBc9jzYFRQI2lTDQyqXzCanz2K_-6hPyOHivXhRhaRBWGF2NFdJ7oGqJ4itVaviAkjoC1d0GLyRa2OAT_9NleDLeqnkFvPLGwwmp"/>
+                <img loading="lazy" alt="Camioneta de lujo" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDRVdqTjjeUCqngM8COuL-9NjCs_MGXZRxgpEiApidG8jlvUT4Pw05by1jOCwcEYqdHt7eYwTfVTm6iJzgbc9GFhMD2vrbxo2-FZRu9aqBL4N2CRICnanl61XsMQDWxR07etRP0gSskyVvZHcsU28qrTP-TFPmuuoJIyk8K5ySIBc9jzYFRQI2lTDQyqXzCanz2K_-6hPyOHivXhRhaRBWGF2NFdJ7oGqJ4itVaviAkjoC1d0GLyRa2OAT_9NleDLeqnkFvPLGwwmp"/>
               </div>
               <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">ESENCIALES</span>
@@ -877,7 +862,7 @@
             <div>
               <div class="aspect-[16/10] overflow-hidden ken-burns relative">
                 <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Cenote cerrado natural" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcxcEAzKzDw0VYdwV_bohsbTLx82KeG_pFdIt7hW3w5BcL_gj_SQ_E91K4w-Und11x9VnHKh3MLetG5aPRaPK9O7kqmx4epI2hD82QNeRe0gfxkiIyVnFt5AbTDYelYIGw0ZB-Mc5867Y6-zATqqrTX0BhTEarqh8k6HLwVKEEUZz6Mfi1cKnXN-F8HUVUcxq5Ryp8SuRjUUQgTngsUe_IQafTUPR5OqUabrZK72faLDqReugpKpnchQGzDGyAjtFt-41YIEngiVi"/>
+                <img loading="lazy" alt="Cenote cerrado" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcxcEAzKzDw0VYdwV_bohsbTLx82KeG_pFdIt7hW3w5BcL_gj_SQ_E91K4w-Und11x9VnHKh3MLetG5aPRaPK9O7kqmx4epI2hD82QNeRe0gfxkiIyVnFt5AbTDYelYIGw0ZB-Mc5867Y6-zATqqrTX0BhTEarqh8k6HLwVKEEUZz6Mfi1cKnXN-F8HUVUcxq5Ryp8SuRjUUQgTngsUe_IQafTUPR5OqUabrZK72faLDqReugpKpnchQGzDGyAjtFt-41YIEngiVi"/>
               </div>
               <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">EXPLORACIÓN</span>
@@ -900,7 +885,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12">
             <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
               <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-              <img loading="lazy" alt="Chef preparando pescados" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeRer4ppmtgek35KDl2S6OfsbaHckc5qBihF5IM27uG-S1BBV3FB3fS802Y31TgXUpnUq13rIYrduvJBpv0CJ0fLkNwbXRDnxnjKSZgF6ll-5-SRejoEWUoWPiZmTSApQF8YT2X0Zv1AC6t3ap3w5ePTQZzFVI7IVahOw3qxPD_xGGG3It--ceYoTt8Dr24bOmLN0WV78lWEnlGg0bwqs6EWVnSFDMJ7rRCDy8Mb_EiiII8Yj7tZoiUaMx89_5Uw6nDscvE6FIQyM3"/>
+              <img loading="lazy" alt="Chef preparando platillos" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeRer4ppmtgek35KDl2S6OfsbaHckc5qBihF5IM27uG-S1BBV3FB3fS802Y31TgXUpnUq13rIYrduvJBpv0CJ0fLkNwbXRDnxnjKSZgF6ll-5-SRejoEWUoWPiZmTSApQF8YT2X0Zv1AC6t3ap3w5ePTQZzFVI7IVahOw3qxPD_xGGG3It--ceYoTt8Dr24bOmLN0WV78lWEnlGg0bwqs6EWVnSFDMJ7rRCDy8Mb_EiiII8Yj7tZoiUaMx89_5Uw6nDscvE6FIQyM3"/>
             </div>
             <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center font-sans">
               <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">ALTA GASTRONOMÍA</span>
@@ -931,7 +916,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12">
             <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
               <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-              <img loading="lazy" alt="Yate de lujo navegando por el Caribe" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf51bqjYKNwP8RYhRtJdznZOSTitQJeFGUHNAxVeUEt3KziegJ6KjY3zoBjqmIGOdIDkjYuCbhdxJQs12Q1guMtp2jCvKJ0elqnNm6VC5paWoFRyHyDjgShlFBh5rH31UiubNJIpaF2boJuMmxBApIsiZ60RYhfpxXEQ2vSMN6wH_a9i-Du-iUCZT6zgcn-jN2Fm-JBpCPT0AQTVBL5nt3_ty8My0ZVMzwX14DIMLGKMAmfiDCND28H-P0VNSY-ixGFRCmb_gLIqbY"/>
+              <img loading="lazy" alt="Yate" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf51bqjYKNwP8RYhRtJdznZOSTitQJeFGUHNAxVeUEt3KziegJ6KjY3zoBjqmIGOdIDkjYuCbhdxJQs12Q1guMtp2jCvKJ0elqnNm6VC5paWoFRyHyDjgShlFBh5rH31UiubNJIpaF2boJuMmxBApIsiZ60RYhfpxXEQ2vSMN6wH_a9i-Du-iUCZT6zgcn-jN2Fm-JBpCPT0AQTVBL5nt3_ty8My0ZVMzwX14DIMLGKMAmfiDCND28H-P0VNSY-ixGFRCmb_gLIqbY"/>
             </div>
             <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center font-sans">
               <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block">NÁUTICA EXCLUSIVA</span>
@@ -962,7 +947,7 @@
 
     </section>
 
-    <!-- ================= SECCIÓN: EXPERIENCIAS (CON IMÁGENES ASOCIADAS COHERENTES) ================= -->
+    <!-- ================= SECCIÓN: EXPERIENCIAS (CON ASIGNACIÓN DE RECURSOS CLAVE DEL DRIVE) ================= -->
     <section id="page-experiences" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-container-max mx-auto mt-8">
         
@@ -976,10 +961,10 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 font-sans text-stone-700">
           
-          <!-- Experiencia 1: Masajes en la Villa (Imagen: masaje.png) -->
+          <!-- Experiencia 1: Masajes en la Villa (masaje.png) -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
-              <img loading="lazy" alt="Santuario de masajes místico" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/masaje.png" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop'"/>
+              <img loading="lazy" alt="Santuario de masajes" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/masaje.png" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop'"/>
               <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-8 flex flex-col justify-between flex-grow">
@@ -998,10 +983,10 @@
             </div>
           </div>
 
-          <!-- Experiencia 2: Mayordomo (Imagen: mayor.png) -->
+          <!-- Experiencia 2: Mayordomo (mayor.png) -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
-              <img loading="lazy" alt="Servicio de Mayordomo de lujo" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/mayor.png" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop'"/>
+              <img loading="lazy" alt="Servicio de Mayordomo" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/mayor.png" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop'"/>
               <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-8 flex flex-col justify-between flex-grow">
@@ -1020,7 +1005,7 @@
             </div>
           </div>
 
-          <!-- Experiencia 3: Limpieza (Imagen: limpieza.png) -->
+          <!-- Experiencia 3: Limpieza (limpieza.png) -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
               <img loading="lazy" alt="Servicio de limpieza diario" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/limpieza.png" onerror="this.src='https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=600&auto=format&fit=crop'"/>
@@ -1042,10 +1027,10 @@
             </div>
           </div>
 
-          <!-- Experiencia 4: YOGI’s (Imagen: yoga.png) -->
+          <!-- Experiencia 4: YOGI’s (yoga.png) -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
-              <img loading="lazy" alt="Clases de Yoga en Akumal" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/yoga.png" onerror="this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop'"/>
+              <img loading="lazy" alt="Clases de Yoga" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/yoga.png" onerror="this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop'"/>
               <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-8 flex flex-col justify-between flex-grow">
@@ -1064,10 +1049,10 @@
             </div>
           </div>
 
-          <!-- Experiencia 5: Fotografía (Imagen: camara.png) -->
+          <!-- Experiencia 5: Fotografía (camara.png) -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
-              <img loading="lazy" alt="Sesión de fotos profesional en la villa" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/camara.png" onerror="this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop'"/>
+              <img loading="lazy" alt="Sesión de fotos" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/camara.png" onerror="this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop'"/>
               <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-8 flex flex-col justify-between flex-grow">
@@ -1086,10 +1071,10 @@
             </div>
           </div>
 
-          <!-- Experiencia 6: Ceremonia (Imagen: celeb.png) -->
+          <!-- Experiencia 6: Ceremonia (celeb.png) -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
-              <img loading="lazy" alt="Eventos y Ceremonias en Casa Búho Dorado" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/celeb.png" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop'"/>
+              <img loading="lazy" alt="Eventos y Ceremonias" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/celeb.png" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop'"/>
               <div class="absolute inset-0 bg-black/10"></div>
             </div>
             <div class="p-8 flex flex-col justify-between flex-grow">
@@ -1113,7 +1098,7 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: CONTACTO (SIN SECTOR DE VILLA, SUMA MÁXIMA DE 8 PERSONAS) ================= -->
+    <!-- ================= SECCIÓN: CONTACTO ================= -->
     <section id="page-contact" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-container-max mx-auto mt-8">
         
@@ -1121,7 +1106,7 @@
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block font-semibold">Reservaciones</span>
           <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary mb-6 text-center">Solicita tu Estadía</h1>
           <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed font-sans text-center">
-            Completa la solicitud formal de reservación. Nuestro equipo de conserjería premium estructurará tu plan de llegada y confort.
+            Completa la solicitud formal de reservación. Valentina estructurará tu plan de llegada y confort.
           </p>
         </div>
 
@@ -1130,7 +1115,7 @@
           <div class="lg:col-span-5 space-y-8 reveal-left bg-surface-container p-8 rounded-xl border border-primary/10 font-sans text-stone-800">
             <h2 class="font-headline-lg text-2xl text-primary text-center sm:text-left">Información Directa</h2>
             <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
-              Para respuestas inmediatas sobre charters de yates o solicitudes especiales, nuestro canal de atención premium se encuentra activo 24/7.
+              Para respuestas inmediatas sobre charters de yates o solicitudes especiales, nuestro canal de atención con Valentina se encuentra activo 24/7.
             </p>
 
             <div class="space-y-4 font-sans text-stone-700">
@@ -1140,7 +1125,7 @@
               </div>
               <div class="flex items-center gap-4">
                 <span class="material-symbols-outlined text-primary text-2xl">phone_iphone</span>
-                <span class="font-body-md text-sm text-on-surface-variant">+52 1 984 125 8758</span>
+                <span class="font-body-md text-sm text-on-surface-variant">+52 984 209 5468</span>
               </div>
               <div class="flex items-center gap-4">
                 <span class="material-symbols-outlined text-primary text-2xl">mail</span>
@@ -1152,11 +1137,10 @@
               <span class="font-label-caps text-[10px] tracking-widest text-primary uppercase block mb-1">Beneficios Exclusivos</span>
               <p class="text-xs text-on-surface-variant font-light mt-1">✓ Coordinación de Traslados VIP</p>
               <p class="text-xs text-on-surface-variant font-light">✓ Personalización de Menú de Chef</p>
-              <p class="text-xs text-on-surface-variant font-light">✓ Coordinación con Concierge Privado (Aforo máx. 8)</p>
+              <p class="text-xs text-on-surface-variant font-light">✓ Coordinación con Valentina (Aforo máx. 8)</p>
             </div>
           </div>
 
-          <!-- FORMULARIO DE CONTACTO (SIN SECTOR DE VILLA, SUMA MÁXIMA DE 8 PERSONAS) -->
           <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-xl shadow-xl border border-neutral-100 reveal-right font-sans">
             <form id="contact-booking-form" class="space-y-6" onsubmit="handleContactSubmission(event)">
               
@@ -1176,7 +1160,6 @@
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Número de Teléfono / WhatsApp</label>
                   <input type="tel" id="contact-phone" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="Ingresa tu número de teléfono" required/>
                 </div>
-                <!-- Selectores de Adultos y Niños limitados dinámicamente -->
                 <div class="grid grid-cols-2 gap-4">
                   <div class="space-y-1">
                     <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold">Adultos</label>
@@ -1241,7 +1224,7 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN DE POLÍTICAS (OCULTA POR DEFECTO) ================= -->
+    <!-- ================= SECCIÓN DE POLÍTICAS (ESTILO AIRBNB DE ULTRA LUJO) ================= -->
     <section id="page-politicas" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-4xl mx-auto mt-8 font-sans text-stone-800">
         
@@ -1256,38 +1239,38 @@
         <div class="bg-white p-8 md:p-12 rounded-xl shadow-xl border border-neutral-100 space-y-8 leading-relaxed">
           
           <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3">1. Horarios de Entrada y Salida (Check-in / Check-out)</h3>
-            <p class="text-sm text-stone-600 text-justify">
-              • <strong>Check-in (Entrada):</strong> A partir de las <strong>3:00 PM (15:00 hrs)</strong>. A tu llegada, el mayordomo y el concierge personal te recibirán para realizar el recorrido explicativo de la propiedad y la entrega de accesos.<br>
+            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">1. Horarios de Entrada y Salida (Check-in / Check-out)</h3>
+            <p class="text-sm text-stone-600 text-justify font-sans">
+              • <strong>Check-in (Entrada):</strong> A partir de las <strong>3:00 PM (15:00 hrs)</strong>. A tu llegada, el mayordomo y Valentina te recibirán para realizar el recorrido explicativo de la propiedad y la entrega de accesos.<br>
               • <strong>Check-out (Salida):</strong> Hasta las <strong>11:00 AM (11:00 hrs)</strong>. Es indispensable respetar este horario para permitir las labores de limpieza profunda y sanitización del recinto previas a la llegada del siguiente huésped.
             </p>
           </div>
 
           <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3">2. Límite de Ocupación Estricto</h3>
-            <p class="text-sm text-stone-600 text-justify">
+            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">2. Límite de Ocupación Estricto</h3>
+            <p class="text-sm text-stone-600 text-justify font-sans">
               • El aforo máximo permitido en Casa Búho Dorado es de <strong>8 personas en total</strong> (incluyendo adultos y niños). Bajo ninguna circunstancia se permitirá el acceso o pernocta de huéspedes adicionales no registrados formalmente en la solicitud de reserva.
             </p>
           </div>
 
           <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3">3. Fiestas y Eventos Sociales</h3>
-            <p class="text-sm text-stone-600 text-justify">
+            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">3. Fiestas y Eventos Sociales</h3>
+            <p class="text-sm text-stone-600 text-justify font-sans">
               • Quedan estrictamente prohibidas las fiestas de gran aforo, eventos masivos o reuniones que excedan el número máximo de huéspedes autorizados. Cualquier evento íntimo (bodas o celebraciones familiares de bajo impacto) debe ser autorizado previamente y por escrito por la administración de Casa Búho Dorado.
             </p>
           </div>
 
           <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3">4. Preservación del Ecosistema y Fauna</h3>
-            <p class="text-sm text-stone-600 text-justify">
+            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">4. Preservación del Ecosistema y Fauna</h3>
+            <p class="text-sm text-stone-600 text-justify font-sans">
               • <strong>Protección de Tortugas:</strong> Akumal es una zona de anidación protegida por leyes federales. Está estrictamente prohibido el uso de luces brillantes, flashes o linternas en la zona de playa durante las noches de anidación. No se debe tocar, molestar ni interferir en el camino de las tortugas o sus crías.<br>
               • <strong>Ruido y Descanso:</strong> Solicitamos moderar el volumen de la música en exteriores a partir de las <strong>10:00 PM</strong> para no alterar la paz de la fauna selvática local ni a los vecinos de la bahía.
             </p>
           </div>
 
           <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3">5. Depósito de Garantía y Daños</h3>
-            <p class="text-sm text-stone-600 text-justify">
+            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">5. Depósito de Garantía y Daños</h3>
+            <p class="text-sm text-stone-600 text-justify font-sans">
               • Se solicitará un depósito de seguridad reembolsable antes del ingreso. Este depósito se devolverá íntegramente en un plazo máximo de 72 horas hábiles tras el check-out, previa validación de que la propiedad, mobiliario y equipos se encuentren en el mismo estado de pulcritud en que fueron entregados.
             </p>
           </div>
@@ -1329,7 +1312,6 @@
       <div class="flex flex-col justify-between space-y-12 md:space-y-0 md:pl-12">
         <div class="space-y-4">
           <h4 class="font-label-caps text-xs text-primary tracking-wider uppercase font-semibold">La Villa</h4>
-          <!-- Enlaces ordenados estrictamente -->
           <ul class="space-y-3 font-sans">
             <li><button onclick="navigateToPage('home')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Inicio</button></li>
             <li><button onclick="navigateToPage('gallery')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left">Galería</button></li>
@@ -1340,9 +1322,8 @@
           </ul>
         </div>
         
-        <!-- Enlace Oculto de Políticas y Copyright -->
         <div class="pt-8 border-t border-outline-variant/20 md:border-t-0 md:pt-0 font-sans">
-          <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
+          <p class="font-body-md text-xs text-on-surface-variant leading-relaxed font-sans">
             <button onclick="navigateToPage('politicas')" class="text-primary font-semibold hover:underline mb-2 block">Políticas & Restricciones de Renta</button>
             © 2026 Casa Búho Dorado - Lugar de las Tortugas.<br>Desarrollado con excelencia en la Riviera Maya.
           </p>
@@ -1352,12 +1333,11 @@
     </div>
   </footer>
 
-  <!-- Botón flotante para widget de reservas -->
+  <!-- Floating widget action trigger -->
   <button onclick="toggleQuickContact()" class="fixed bottom-6 right-6 z-[90] bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Contactar">
     <span class="material-symbols-outlined text-3xl">calendar_month</span>
   </button>
 
-  <!-- WIDGET FLOTANTE DE CONTACTO (SUMA MÁXIMA DE 8 PERSONAS) -->
   <div id="quick-contact-panel" class="hidden fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-32px)] sm:w-[340px] max-w-[340px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-neutral-100 flex-col overflow-hidden transition-all duration-300 scale-95 origin-bottom-right z-[90] font-sans text-stone-800">
     <div class="bg-primary p-4 text-white flex justify-between items-center">
       <div class="flex items-center gap-2">
@@ -1378,7 +1358,6 @@
         <input type="tel" id="quick-phone" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary" placeholder="Ingresa tu número de teléfono" required/>
       </div>
 
-      <!-- Suma máxima controlada de adultos y niños -->
       <div class="grid grid-cols-2 gap-3">
         <div class="space-y-1">
           <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold">Adultos</label>
@@ -1426,7 +1405,7 @@
     </form>
   </div>
 
-  <!-- MODAL DE RESERVACIÓN EN VILLAS -->
+  <!-- Booking Modal -->
   <div id="booking-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-4 transition-opacity duration-300">
     <div class="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto sm:overflow-hidden shadow-2xl relative border border-neutral-100 flex flex-col md:flex-row transition-all duration-500 scale-95 opacity-0" id="booking-modal-card">
       
@@ -1435,7 +1414,7 @@
           <span class="font-label-caps text-[10px] tracking-widest text-white/75 uppercase block mb-2">Exclusividad</span>
           <h3 class="font-headline-md text-2xl mb-2 sm:mb-4">Planifica tu Estadía</h3>
           <p class="text-xs text-white/85 font-light leading-relaxed mb-4 sm:mb-6">
-            Ingresa las fechas elegidas y el conserje estructurará los detalles de tu arribo al paraíso.
+            Ingresa las fechas elegidas y Valentina estructurará los detalles de tu arribo al paraíso.
           </p>
         </div>
         <div class="space-y-4 font-sans">
@@ -1475,7 +1454,6 @@
             </div>
           </div>
 
-          <!-- Selectores del aforo combinados para el modal -->
           <div class="grid grid-cols-3 gap-2">
             <div class="space-y-1">
               <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" for="booking-adults">Adultos</label>
@@ -1533,8 +1511,8 @@
         </button>
         <span class="material-symbols-outlined text-6xl text-primary mb-4 animate-bounce">check_circle</span>
         <h3 class="font-headline-md text-2xl sm:text-3xl text-on-surface mb-2">¡Reserva Recibida!</h3>
-        <p class="font-body-md text-xs sm:text-sm text-on-surface-variant max-w-xs mb-4 sm:mb-6">
-          Un conserje de Akumal Villa se pondrá en contacto contigo en breve para coordinar tu transportación de cortesía y personalizar tu menú.
+        <p class="font-body-md text-xs sm:text-sm text-on-surface-variant max-w-xs mb-4 sm:mb-6 font-sans">
+          Valentina se pondrá en contacto contigo en breve para coordinar tu transportación de cortesía y personalizar tu menú.
         </p>
         <div class="bg-surface-container p-3 rounded text-xs font-mono text-primary select-all mb-4 sm:mb-6">
           CÓDIGO DE RESERVA: <strong id="booking-code-tag">AKM-8201</strong>
@@ -1547,8 +1525,8 @@
     </div>
   </div>
 
-  <!-- LIGHTBOX DE AMPLIACIÓN PARA GALERÍA -->
-  <div id="lightbox-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300" onclick="closeLightbox()">
+  <!-- Lightbox zoom system with background click safety closures -->
+  <div id="lightbox-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300 cursor-pointer" onclick="closeLightbox()">
     <div class="relative max-w-4xl max-h-[85vh] w-[90%] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
       <button class="absolute -top-12 right-0 text-white hover:text-primary-container flex items-center gap-1 font-label-caps text-xs tracking-widest" onclick="closeLightbox()">
         <span class="material-symbols-outlined">close</span> CERRAR
@@ -1562,15 +1540,15 @@
       </button>
 
       <div class="overflow-hidden rounded-lg shadow-2xl relative select-none">
-        <img id="lightbox-img" class="max-w-full max-h-[75vh] object-contain transition-transform duration-500 ease-out" src="" alt="Ampliación"/>
+        <img id="lightbox-img" class="max-w-full max-h-[75vh] object-contain transition-transform duration-500 ease-out cursor-zoom-in" src="" alt="Ampliación" onclick="toggleLightboxZoom(event)"/>
       </div>
       <p class="text-white/60 text-xs mt-4 font-light tracking-wide italic text-center font-sans">
-        Usa las flechas laterales para navegar
+        Haz clic en la imagen para hacer Zoom. Haz clic fuera para cerrar.
       </p>
     </div>
   </div>
 
-  <!-- NOTIFICACIONES TOAST -->
+  <!-- Toast system -->
   <div id="toast-message" class="fixed top-24 right-6 z-[100] bg-white border-l-4 border-primary p-4 shadow-2xl transition-all duration-300 translate-x-72 opacity-0 max-w-sm rounded">
     <div class="flex items-center gap-3">
       <span class="material-symbols-outlined text-primary" id="toast-icon">info</span>
@@ -1581,96 +1559,42 @@
   </div>
 
   <script>
-    // Configuración Base de las imágenes de tu repositorio
-    const repoBaseUri = "https://beamazingcolors.github.io/casabuhodoradooficial/";
+    // Absolute CDN mapping for all premium images from the shared drive folder to ensure zero broken loads
+    const curatedGallery = [
+      // RESIDENCIA (interiores) - mapped perfectly
+      { name: "arc.png", id: "1-iNYNVWm5VKT0t2k3VDwDmntmWVkJxeq", category: "residencia" },
+      { name: "camasst.png", id: "18jEgsNFb8JHJO096d8j1BiIubsX1nTOE", category: "residencia" },
+      { name: "ee.png", id: "1XQ3HeoN54Yo8uNiNnkPxPQU3itLCQhQR", category: "residencia" },
+      { name: "ewe.png", id: "1e_AfvpieEbzUYo82HF5XEIRwEmQBBMmV", category: "residencia" },
+      { name: "ller.png", id: "1lKsPIxFfBVLIdjx-MVidU1Tj30pO2kvh", category: "residencia" },
+      { name: "nosd.png", id: "1uzDdhlHbqt-9d-6KxIhg9Kb1PtE9VgHh", category: "residencia" },
+      { name: "nsos.png", id: "1v40TNlZ59bey9WMmbph9ea9e9PUFxOId", category: "residencia" },
+      { name: "rsd.png", id: "1xozphpkG60UOtGOJ0FcJTYh59rgTkjs9", category: "residencia" },
 
-    // Listado de todas las imágenes únicas de tu repositorio
-    const allUniqueImages = [
-      "CasasamuLifestyle-44.jpg",
-      "CasasamuLifestyle-7.jpg",
-      "CasasamuLifestyle-8.jpg",
-      "CasasamuLifestyle-9.jpg",
-      "CasasamuLifestyle-10.jpg",
-      "CasasamuLifestyle-11.jpg",
-      "CasasamuLifestyle-14.jpg",
-      "CasasamuLifestyle-15.jpg",
-      "CasasamuLifestyle-16.jpg",
-      "CasasamuLifestyle-17.jpg",
-      "CasasamuLifestyle-18.jpg",
-      "CasasamuLifestyle-19.jpg",
-      "CasasamuLifestyle-21.jpg",
-      "CasasamuLifestyle-22.jpg",
-      "CasasamuLifestyle-24.jpg",
-      "CasasamuLifestyle-25.jpg",
-      "CasasamuLifestyle-28.jpg",
-      "CasasamuLifestyle-29.jpg",
-      "CasasamuLifestyle-34.jpg",
-      "CasasamuLifestyle-35.jpg",
-      "CasasamuLifestyle-40.jpg",
-      "CasasamuLifestyle-41.jpg",
-      "CasasamuLifestyle-45.jpg",
-      "CasasamuLifestyle-46.jpg",
-      "CasasamuLifestyle-47.jpg",
-      "CasasamuLifestyle-48.jpg",
-      "CasasamuLifestyle-49.jpg",
-      "CasasamuLifestyle.jpg",
-      "CasasamuLifestyleultimas-3.jpg",
-      "CasasamuLifestyleultimas.jpg",
-      "casasamuyvale-2.jpg",
-      "casasamuyvale-5.jpg",
-      "casasamuyvale-6.jpg",
-      "casasamuyvale-8.jpg",
-      "casasamuyvale-12.jpg",
-      "casasamuyvale-14.jpg",
-      "casasamuyvale-16.jpg",
-      "casasamuyvale-18.jpg",
-      "casasamuyvale-19.jpg",
-      "casasamuyvale-20.jpg",
-      "casasamuyvale-21.jpg",
-      "casasamuyvale-22.jpg",
-      "casasamuyvale-23.jpg",
-      "casasamuyvale-25.jpg",
-      "casasamuyvale-28.jpg",
-      "casasamuyvale-29.jpg",
-      "casasamuyvale-35.jpg",
-      "casasamuyvale-36.jpg",
-      "casasamuyvale-37.jpg",
-      "casasamuyvale-46.jpg",
-      "casasamuyvale-53.jpg",
-      "casasamuyvale-57.jpg",
-      "casasamuyvale-58.jpg",
-      "casasamuyvale-59.jpg",
-      "casasamuyvale-60.jpg",
-      "casasamuyvale-61.jpg",
-      "casasamuyvale-62.jpg",
-      "casasamuyvale-65.jpg",
-      "casasamuyvale-67.jpg",
-      "casasamuyvaler8vertical(1).jpg",
-      "casasamuyvaler8vertical(2).jpg",
-      "casasamuyvaler8vertical(3).jpg",
-      "casasamuyvaler8vertical(4).jpg",
-      "casasamuyvaler82-2.jpg",
-      "casasamuyvaler82-4.jpg",
-      "casasamuyvaler82-5.jpg",
-      "casasamuyvaler82-6.jpg",
-      "casasamuyvaler82-9.jpg",
-      "casasamuyvaler82-10.jpg",
-      "casasamuyvaler82.jpg",
-      "Samuyvaler8(1).png",
-      "Samuyvaler8(2).png"
+      // EXTERIORES (exterior y fauna) - curated vertical ratios
+      { name: "asadk.png", id: "1-jQ1LH_165yElFbti0KSOVg5F6VtYNtI", category: "exteriores" },
+      { name: "asador.png", id: "11-KzEaBf1wwDtawz9RVNXqvus_O56URO", category: "exteriores" },
+      { name: "ciels.png", id: "19Wlw0jU3uZRH4YKRt_mJnNq9sFpjIvNH", category: "exteriores" },
+      { name: "cies.png", id: "1M6Ns0KgVh0fy52QgOCLv8LRG4I5NMRbg", category: "exteriores" },
+      { name: "fdst.png", id: "1fXM7l4fajH6v64UyPJZ4asn14UbNnasv", category: "exteriores" },
+      { name: "fuera.png", id: "1jqjlLvy5mFGUNzRGkrAWAVk9LBtCQERu", category: "exteriores" },
+      { name: "pals.png", id: "1w3MRn_ghzeRJQ_bUmRdvTjW_kGbWql8n", category: "exteriores" },
+      { name: "buho1.png", id: "11EaDtWR7fSMOLcgZujsFXAZIwW99V9Fl", category: "exteriores" },
+      { name: "buho2.png", id: "14uXAncsC-jwIJ2KmT_9OczE_eai9vAQy", category: "exteriores" },
+
+      // ESTILO Y DETALLES (amenidades)
+      { name: "copas.png", id: "1SK8cAXGxSnP8gngHwDQkMmsNZ_mFpEaG", category: "detalles" },
+      { name: "tuer.png", id: "1gRMI1Sl0zP2WTeSBBvhWKPeqXnFimUGo", category: "detalles" },
+      { name: "mono1.png", id: "1lme-lAm8eugkAqadhdyg7ajeKMG8q_X5", category: "detalles" },
+      { name: "mono2.png", id: "1nDfUBG4pbUEDXtbJ-7AqXizVwK5qgG-S", category: "detalles" },
+      { name: "mono3.png", id: "1rIITmadnVzMqxpULPF-6kRDqDL4c-Fqs", category: "detalles" },
+      { name: "mono4.png", id: "1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv", category: "detalles" }
     ];
 
-    function handleGalleryImageError(img, originalName) {
-      img.onerror = null; 
-      const item = img.closest('.gallery-item');
-      if (item) {
-        item.style.display = 'none'; 
-      }
-    }
-
     let activeFilter = 'todos';
-    let loadedCount = 16; 
+    let loadedCount = 16;
     let activeLightboxIndex = 0;
+    let isZoomed = false;
 
     document.addEventListener("DOMContentLoaded", () => {
       const today = new Date();
@@ -1680,13 +1604,11 @@
       document.getElementById('checkin-date').value = today.toISOString().split('T')[0];
       document.getElementById('checkout-date').value = tomorrow.toISOString().split('T')[0];
       
-      // Calendario rápido
       document.getElementById('quick-checkin').value = today.toISOString().split('T')[0];
       document.getElementById('quick-checkout').value = tomorrow.toISOString().split('T')[0];
 
       calculateDynamicPricing();
       
-      // Animación de entrada Hero
       gsap.to(".reveal-hero", {
         opacity: 1,
         y: 0,
@@ -1698,7 +1620,6 @@
       renderInteractiveGallery();
       initScrollAnimations();
 
-      // Cierre de modal al dar click fuera
       document.getElementById('booking-modal').addEventListener('click', (e) => {
         if (e.target === document.getElementById('booking-modal')) {
           closeBookingModal();
@@ -1714,10 +1635,9 @@
       });
     });
 
-    // ================= RASTREADOR DEL CURSOR CON LOGO DE MARCA (LLG.png) =================
+    // Cursor tracking with beautiful LLG.png logo trails
     let lastImageX = 0;
     let lastImageY = 0;
-    // Distancia aumentada a 60px para optimizar renderizado y rendimiento en GPU
     const spawnDistance = 60; 
 
     function handlePointerMove(clientX, clientY, pageX, pageY) {
@@ -1748,7 +1668,7 @@
       imgContainer.style.transform = `translate(-50%, -50%) scale(0.12)`;
       
       imgContainer.innerHTML = `
-        <img src="${repoBaseUri}LLG.png" 
+        <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" 
              class="w-12 h-12 object-contain opacity-90 drop-shadow-[0_4px_12px_rgba(181,138,61,0.5)]" 
              onerror="this.style.display='none';" />
       `;
@@ -1779,7 +1699,7 @@
       }, "-=0.6");
     }
 
-    // ================= VALIDACIÓN EN TIEMPO REAL: AFORO MÁXIMO DE 8 PERSONAS =================
+    // Guest capacity validators - Strict Limit of 8 people total (Adults + Children)
     function validateContactGuestsCapacity() {
       const adults = parseInt(document.getElementById('contact-adults').value) || 0;
       const children = parseInt(document.getElementById('contact-children').value) || 0;
@@ -1807,7 +1727,6 @@
       }
     }
 
-    // ================= SPA: NAVEGACIÓN Y CAMBIO DE PESTAÑAS =================
     function navigateToPage(pageId) {
       const homePage = document.getElementById('page-home');
       const galleryPage = document.getElementById('page-gallery');
@@ -1859,7 +1778,6 @@
               onComplete: () => {
                 ScrollTrigger.refresh();
                 if (pageId === 'ubicacion') {
-                  // NUEVAS TRANSICIONES ULTRA SUAVES Y PARALLAX EN LA PÁGINA DE UBICACIÓN
                   gsap.fromTo("#page-ubicacion .reveal-up", {opacity: 0, y: 80, scale: 0.98}, {opacity: 1, y: 0, scale: 1, duration: 1.4, stagger: 0.2, ease: "power4.out"});
                   gsap.fromTo("#page-ubicacion .reveal-left", {opacity: 0, x: -80, rotate: -1}, {opacity: 1, x: 0, rotate: 0, duration: 1.4, ease: "power4.out"});
                   gsap.fromTo("#page-ubicacion .reveal-right", {opacity: 0, x: 80, rotate: 1}, {opacity: 1, x: 0, rotate: 0, duration: 1.4, ease: "power4.out"});
@@ -1872,7 +1790,6 @@
       });
     }
 
-    // TRANSICIÓN DE SCROLL DEL HEADER PRINCIPAL
     window.addEventListener('scroll', () => {
       const header = document.getElementById('main-header');
       const logo = document.getElementById('header-logo');
@@ -1898,7 +1815,6 @@
       }
     });
 
-    // ================= INICIALIZACIÓN DE ANIMACIONES GSAP SCROLLTRIGGER =================
     function initScrollAnimations() {
       const revealUp = gsap.utils.toArray(".reveal-up");
       revealUp.forEach(el => {
@@ -1962,7 +1878,6 @@
       });
     }
 
-    // Toggle del Menú Móvil
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const icon = document.getElementById('menu-icon');
@@ -1976,20 +1891,15 @@
       }
     }
 
-    // Renderizado dinámico de imágenes en Galería
     function renderInteractiveGallery() {
       const grid = document.getElementById('dynamic-gallery-grid');
       if (!grid) return;
 
       grid.innerHTML = ""; 
 
-      let filtered = allUniqueImages;
-      if (activeFilter === 'residencia') {
-        filtered = allUniqueImages.filter(img => img.toLowerCase().includes('vale') || img.toLowerCase().includes('lifestyle-7') || img.toLowerCase().includes('lifestyle-8') || img.toLowerCase().includes('lifestyle-9'));
-      } else if (activeFilter === 'exteriores') {
-        filtered = allUniqueImages.filter(img => img.toLowerCase().includes('ultimas') || img.toLowerCase().includes('vertical') || img.toLowerCase().includes('14') || img.toLowerCase().includes('15') || img.toLowerCase().includes('16'));
-      } else if (activeFilter === 'detalles') {
-        filtered = allUniqueImages.filter(img => img.toLowerCase().includes('lifestyle-10') || img.toLowerCase().includes('lifestyle-11') || img.toLowerCase().includes('samu') && !img.toLowerCase().includes('ultimas'));
+      let filtered = curatedGallery;
+      if (activeFilter !== 'todos') {
+        filtered = curatedGallery.filter(item => item.category === activeFilter);
       }
 
       const loadMoreBtn = document.getElementById('gallery-load-more');
@@ -2001,20 +1911,27 @@
 
       const toShow = filtered.slice(0, loadedCount);
 
-      toShow.forEach((img, idx) => {
-        const absoluteUrl = repoBaseUri + img;
+      toShow.forEach((item) => {
+        const absoluteUrl = `https://lh3.googleusercontent.com/d/${item.id}`;
         
+        // Setup ratios strictly per request to align grid flawlessly without spacing holes
+        let cardAspect = 'aspect-[4/5]'; 
+        if (activeFilter === 'exteriores') {
+          cardAspect = 'aspect-[2/3]'; // Curated Vertical Aspect Ratio for outdoors & wildlife
+        } else if (activeFilter === 'detalles') {
+          cardAspect = 'aspect-square';
+        }
+
         const cardHtml = `
-          <div class="gallery-item group relative overflow-hidden rounded-md shadow-md bg-surface-container cursor-pointer transition-all duration-500 break-inside-avoid mb-4" 
-               onclick="openLightboxFromGallery('${img}')">
-            <img loading="lazy" alt="Casa Búho Dorado Logo Watermark" 
+          <div class="gallery-item group relative overflow-hidden rounded-md shadow-md bg-surface-container cursor-pointer transition-all duration-500 flex flex-col justify-between ${cardAspect}" 
+               onclick="openLightboxFromGallery('${item.name}')">
+            <img loading="lazy" alt="Logo Casa Búho Dorado" 
                  class="absolute top-3 left-3 h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-80 group-hover:opacity-100 transition-opacity" 
                  src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
                  
             <img loading="lazy" alt="Casa Búho Dorado Captura" 
-                 class="w-full h-auto object-cover transition-slow duration-700 group-hover:scale-105" 
-                 src="${absoluteUrl}" 
-                 onerror="handleGalleryImageError(this, '${img}')" />
+                 class="w-full h-full object-cover transition-slow duration-700 group-hover:scale-105" 
+                 src="${absoluteUrl}" />
                  
             <div class="absolute inset-0 bg-black/15 group-hover:bg-black/0 transition-colors duration-300"></div>
           </div>
@@ -2043,12 +1960,11 @@
     }
 
     function showAllGalleryImages() {
-      loadedCount = allUniqueImages.length;
+      loadedCount = curatedGallery.length;
       renderInteractiveGallery();
       showToastNotification("✨ Cargando colección fotográfica completa ✨", "photo_library");
     }
 
-    // Control de modales y precios dinámicos
     function openBookingModal(villaType = 'General') {
       const modal = document.getElementById('booking-modal');
       const card = document.getElementById('booking-modal-card');
@@ -2074,7 +1990,7 @@
     function requestConciergeService(serviceName) {
       showToastNotification(`Solicitud de ${serviceName} iniciada`, 'concierge_bell');
       navigateToPage('contact');
-      document.getElementById('contact-message').value = `Hola. Me gustaría agendar la experiencia de: ${serviceName} para mi próxima estadía en Casa Búho Dorado. Por favor envíenme detalles.`;
+      document.getElementById('contact-message').value = `Hola Valentina, me gustaría agendar la experiencia de: ${serviceName} para mi próxima estadía en Casa Búho Dorado. Por favor envíame detalles.`;
     }
 
     function closeBookingModal() {
@@ -2181,12 +2097,13 @@
         return;
       }
 
-      const rawTextMsg = `¡Hola Concierge de Casa Búho Dorado!\n\nMe gustaría realizar una solicitud de reservación:\n• Nombre: ${name}\n• Correo: ${email}\n• WhatsApp: ${phone}\n• Huéspedes: ${adults} Adultos, ${children} Niños\n• Arribo: ${checkin}\n• Salida: ${checkout}\n• Mensaje: ${customMsg}`;
+      // Beautiful pre-filled WhatsApp message for Valentina
+      const rawTextMsg = `¡Hola Valentina!\n\nMe gustaría realizar una solicitud de reservación para Casa Búho Dorado:\n• Nombre: ${name}\n• Correo: ${email}\n• WhatsApp: ${phone}\n• Huéspedes: ${adults} Adultos, ${children} Niños\n• Arribo: ${checkin}\n• Salida: ${checkout}\n• Mensaje: ${customMsg}`;
 
-      const targetPhone = "5219841258758";
+      const targetPhone = "529842095468"; // Valentina's updated number
       const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(rawTextMsg)}`;
       
-      showToastNotification("Abriendo canal de WhatsApp...", "chat");
+      showToastNotification("Abriendo canal con Valentina...", "chat");
       setTimeout(() => {
         window.open(waUrl, '_blank');
       }, 800);
@@ -2227,12 +2144,12 @@
         return;
       }
 
-      const rawTextMsg = `¡Hola Concierge de Casa Búho Dorado!\n\nMe gustaría realizar una consulta rápida de reserva:\n• Nombre: ${name}\n• Teléfono: ${phone}\n• Entrada: ${checkin}\n• Salida: ${checkout}\n• Huéspedes: ${adults} Adultos, ${children} Niños`;
+      const rawTextMsg = `¡Hola Valentina!\n\nMe gustaría realizar una consulta rápida de reserva para Casa Búho Dorado:\n• Nombre: ${name}\n• Teléfono: ${phone}\n• Entrada: ${checkin}\n• Salida: ${checkout}\n• Huéspedes: ${adults} Adultos, ${children} Niños`;
       
-      const targetPhone = "5219841258758";
+      const targetPhone = "529842095468"; // Valentina's updated number
       const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(rawTextMsg)}`;
       
-      showToastNotification(`¡Gracias, ${name}! Abriendo WhatsApp...`, 'check_circle');
+      showToastNotification(`¡Gracias, ${name}! Contactando a Valentina...`, 'check_circle');
       toggleQuickContact();
       
       setTimeout(() => {
@@ -2241,18 +2158,20 @@
     }
 
     function openLightboxFromGallery(imageName) {
-      const idx = allUniqueImages.indexOf(imageName);
+      const idx = curatedGallery.findIndex(item => item.name === imageName);
       if (idx !== -1) {
         activeLightboxIndex = idx;
       }
-      openLightbox(repoBaseUri + imageName);
+      const item = curatedGallery[activeLightboxIndex];
+      openLightbox(`https://lh3.googleusercontent.com/d/${item.id}`);
     }
 
-    // Lightbox Modal para visualizar imagenes completas
     function openLightbox(imgUrl) {
       const modal = document.getElementById('lightbox-modal');
       const img = document.getElementById('lightbox-img');
       img.src = imgUrl;
+
+      resetLightboxZoom();
 
       modal.classList.remove('hidden');
       modal.classList.add('flex');
@@ -2260,22 +2179,69 @@
       document.body.classList.add('overflow-hidden');
     }
 
+    function toggleLightboxZoom(e) {
+      e.stopPropagation();
+      const img = document.getElementById('lightbox-img');
+      if (!isZoomed) {
+        img.style.transform = "scale(1.8)";
+        img.classList.remove('cursor-zoom-in');
+        img.classList.add('cursor-zoom-out');
+        isZoomed = true;
+      } else {
+        img.style.transform = "scale(1)";
+        img.classList.remove('cursor-zoom-out');
+        img.classList.add('cursor-zoom-in');
+        isZoomed = false;
+      }
+    }
+
+    function resetLightboxZoom() {
+      const img = document.getElementById('lightbox-img');
+      if (img) {
+        img.style.transform = "scale(1)";
+        img.classList.remove('cursor-zoom-out');
+        img.classList.add('cursor-zoom-in');
+      }
+      isZoomed = false;
+    }
+
     function navigateLightbox(dir) {
+      let filtered = curatedGallery;
+      if (activeFilter !== 'todos') {
+        filtered = curatedGallery.filter(item => item.category === activeFilter);
+      }
+      
       let nextIdx = activeLightboxIndex + dir;
-      if (nextIdx < 0) nextIdx = allUniqueImages.length - 1;
-      if (nextIdx >= allUniqueImages.length) nextIdx = 0;
+      if (nextIdx < 0) nextIdx = filtered.length - 1;
+      if (nextIdx >= filtered.length) nextIdx = 0;
 
       activeLightboxIndex = nextIdx;
-      const nextImgName = allUniqueImages[activeLightboxIndex];
+      const nextItem = filtered[activeLightboxIndex];
       const img = document.getElementById('lightbox-img');
       
+      resetLightboxZoom();
+
       gsap.to(img, {
         opacity: 0.3,
         duration: 0.15,
         onComplete: () => {
-          img.src = repoBaseUri + nextImgName;
+          img.src = `https://lh3.googleusercontent.com/d/${nextItem.id}`;
           gsap.to(img, { opacity: 1, duration: 0.25 });
         }
+      });
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      gsap.to(modal, { 
+        opacity: 0, 
+        duration: 0.3, 
+        onComplete: () => {
+          modal.classList.remove('flex');
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+          resetLightboxZoom();
+        } 
       });
     }
 
@@ -2338,20 +2304,6 @@
       startAutoplay();
     }
 
-    function closeLightbox() {
-      const modal = document.getElementById('lightbox-modal');
-      gsap.to(modal, { 
-        opacity: 0, 
-        duration: 0.3, 
-        onComplete: () => {
-          modal.classList.remove('flex');
-          modal.classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        } 
-      });
-    }
-
-    // Rotación automática de testimonios
     let currentTestimonialSlide = 0;
     const testimonialTrack = document.getElementById('testimonial-track');
     const testimonialDots = document.getElementById('testimonial-dots').children;
