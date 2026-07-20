@@ -2363,18 +2363,16 @@
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          const currentSrc = videoFrame.src;
-          // Only alter play state if visible or not
+          let currentSrc = videoFrame.src;
           if (entry.isIntersecting) {
-            // Append play parameter or do nothing if loaded dynamically
-            if (!currentSrc.includes('&autoplay=1')) {
-              videoFrame.src = currentSrc + '&autoplay=1';
+            if (!currentSrc.includes('autoplay=1')) {
+              // Safely verify if a standard query string prefix ? already exists
+              const separator = currentSrc.includes('?') ? '&' : '?';
+              videoFrame.src = currentSrc + separator + 'autoplay=1';
             }
           } else {
-            // Remove autoplay parameter when offscreen
-            if (currentSrc.includes('&autoplay=1')) {
-              videoFrame.src = currentSrc.replace('&autoplay=1', '');
-            }
+            // Safely strip off autoplay params and trailing questions marks
+            videoFrame.src = currentSrc.replace(/[?&]autoplay=1/, '').replace(/\?$/, '');
           }
         });
       }, { threshold: 0.25 });
