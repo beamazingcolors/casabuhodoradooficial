@@ -198,7 +198,7 @@
     <div class="flex items-center justify-between px-4 md:px-margin-desktop max-w-container-max mx-auto w-full">
       <div class="flex items-center gap-2 md:gap-4 cursor-pointer" onclick="navigateToPage('home')">
         <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-10 xs:h-12 sm:h-16 md:h-24 w-auto object-contain transition-all duration-500 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-        <span class="font-headline-md text-[10px] xs:text-sm sm:text-lg md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 whitespace-nowrap">CASA BÚHO DORADO</span>
+        <span id="header-title" class="font-headline-md text-[10px] xs:text-sm sm:text-lg md:text-2xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 whitespace-nowrap">CASA BÚHO DORADO</span>
       </div>
       
       <nav class="hidden lg:flex items-center gap-8">
@@ -539,7 +539,7 @@
             <img loading="lazy" alt="Tortuga Marina en las aguas turquesas de Akumal" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-slow duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qC_mIeIm3zwfK1irNG7rUAlgmP0A1LBR8vLinAOapnoxPV1yrb31ZcFXVMl9Ia3SrR1KVm-XEMYn2jozkOZ0xAWH4D1t36YN8hSYBvSKUDR5Tzscb7PnekWHkA58ouIAcSo9VJh-2HVopKi-moS3TFNrQKMu_qKcXgDH-hPWpceOhvCev-qGqh9YZbXuiKbn2psbmX1lrFlXEZTYQMQNcQkLnVdcQxkm8JIoEI5w-i0rFd8DYfVYtjO0OSwsJHkHsA1jCyiNJ5Ku"/>
           </div>
 
-          <div class="flex items-center justify-center gap-4 text-secondary font-sans justify-center">
+          <div class="flex items-center justify-center gap-4 text-secondary font-sans">
             <span class="material-symbols-outlined text-4xl">eco</span>
             <span class="font-label-caps text-label-caps font-semibold">Vida Sustentable de Alto Diseño</span>
           </div>
@@ -1431,35 +1431,81 @@
 
   <!-- ================= MASTER DATA & LOGIC ================= -->
   <script>
-    // Absolute CDN mapping for all premium images to ensure zero broken loads (arc.png / image_0f60bf.jpg completely removed)
+    // Absolute CDN mapping for all premium images entirely sourced from Google Drive
     const curatedGallery = [
       // RESIDENCIA (interiores)
-      { name: "camasst.png", id: "18jEgsNFb8JHJO096d8j1BiIubsX1nTOE", category: "residencia" },
-      { name: "ee.png", id: "1XQ3HeoN54Yo8uNiNnkPxPQU3itLCQhQR", category: "residencia" },
-      { name: "ewe.png", id: "1e_AfvpieEbzUYo82HF5XEIRwEmQBBMmV", category: "residencia" },
-      { name: "ller.png", id: "1lKsPIxFfBVLIdjx-MVidU1Tj30pO2kvh", category: "residencia" },
-      { name: "nosd.png", id: "1uzDdhlHbqt-9d-6KxIhg9Kb1PtE9VgHh", category: "residencia" },
-      { name: "nsos.png", id: "1v40TNlZ59bey9WMmbph9ea9e9PUFxOId", category: "residencia" },
-      { name: "rsd.png", id: "1xozphpkG60UOtGOJ0FcJTYh59rgTkjs9", category: "residencia" },
+      { name: "camasst", id: "18jEgsNFb8JHJO096d8j1BiIubsX1nTOE", category: "residencia" },
+      { name: "interior-1", id: "10h9hn20rHbmLWdJ4-36PigNqK3a6y2bs", category: "residencia" },
+      { name: "interior-2", id: "10oYtmvgYbXeqM2nmNODvaveA2-g2fDpP", category: "residencia" },
+      { name: "suite-detalle", id: "11jEYcQQ3eChnnR8MqA34huNeQkWv-1ZY", category: "residencia" },
+      { name: "bano-lujo", id: "12L1DDIub8AeclOxcbU7s_rn_k726soJr", category: "residencia" },
+      { name: "salon-principal", id: "12Z2baTVRW0rzvxMD6pUfx8l3-QfaSIJJ", category: "residencia" },
+      { name: "habitacion-principal", id: "13OzBJ4KCAueEtTR-8GbOtc5cj1UhO5MD", category: "residencia" },
+      { name: "comedor-interior", id: "14aAhsF0Q_Nci68tMPHu59milP2gYaHr2", category: "residencia" },
+      { name: "pasillo-piedra", id: "18RuKIgAgWBWKAWBCuN9nWw_JLJ8Lk71z", category: "residencia" },
+      { name: "habitacion-atardecer", id: "18ap5p_kYIwG3zpDvSk7_5k95jmzwGdCu", category: "residencia" },
+      { name: "paredes-piedra", id: "19LE-gBX59b9YE8ngFDdWyl33Ma5fS1Bm", category: "residencia" },
+      { name: "lounge-villa", id: "19La8TtHroAHFpLVINlN20kHBYF2C7TZg", category: "residencia" },
+      { name: "tina-bano", id: "1HjlCJRd8hha3wSl7YJxXLwg5dpvuJTAy", category: "residencia" },
+      { name: "estancia-comun", id: "1ISjVioAPrzULspwrf-dJIkIgP-Ioy2NZ", category: "residencia" },
+      { name: "habitacion-vista", id: "1Jk82thvhSJ-CEhxxh1NR_4HIjVfCyWP1", category: "residencia" },
+      { name: "escalera-diseno", id: "1JnkPwrwKuryzci8gBKphWcRKkHmnXKaQ", category: "residencia" },
+      { name: "bano-master", id: "1KmivOMronydV66K80EGdUYaOsC4soQ6P", category: "residencia" },
+      { name: "cocina-autor", id: "1LaQrSzvxyhRbuW_Ew4WmZ_2-QfQ50Dnr", category: "residencia" },
+      { name: "suite-invitados", id: "1NaOckhfZ4UT13l6SVSGjiKn7L7dKGTU9", category: "residencia" },
+      { name: "techos-altos", id: "1RaUiG6jFnplSlterpM0QWY2bLwuDr9dq", category: "residencia" },
+      { name: "cama-king", id: "1SRUJLOgLXUqfi6rIrrxcdD081tkU2PK_", category: "residencia" },
+      { name: "detalle-comoda", id: "1TG8xsLSY1UyVcddoPMECSQGh_6xzCy4S", category: "residencia" },
+      { name: "vista-sala", id: "1TMy5Y5rno2_ruYrkeVlfGV_9iiKQGlWO", category: "residencia" },
+      { name: "cama-soft", id: "1TMzXKq_fkbThFs82BVJ8rdp0ICH8wD8-", category: "residencia" },
+      { name: "estructura-escaleras", id: "1Ui6COwqbXJopi83R_b4X2Aa15xGjAu6R", category: "residencia" },
+      { name: "bano-invitados", id: "1WeZk26s51iIwLZ-Inpe9KR3W0z7007AI", category: "residencia" },
+      { name: "mesa-comedor", id: "1Wvjawrv26V5qljkQQIiKdHPpO94rpSqS", category: "residencia" },
+      { name: "bano-minimalista", id: "1YJ3J_kg5nQCD1FAgEOBEesz0aMX2qoB1", category: "residencia" },
+      { name: "rincon-cuarto", id: "1b1kKRYhMrXk2S0SmJ5OoQm5wu77HgA1l", category: "residencia" },
+      { name: "ventana-selva", id: "1c8ro1WpQU_VMsIT8vHVVyKoPIZq1iHXA", category: "residencia" },
+      { name: "detalle-sabanas", id: "1djSQtx_hLft2aljy2Y9x-7PXaGbRuHB0", category: "residencia" },
+      { name: "madera-piedra", id: "1e_AfvpieEbzUYo82HF5XEIRwEmQBBMmV", category: "residencia" },
+      { name: "hall-principal", id: "1fYNTPruEsW7fW1qtoxOrECzJ_PJ89LbO", category: "residencia" },
+      { name: "entrada-elegante", id: "1fxjPpyZtUVNqE7njoCE8yXcGvfmPBy2j", category: "residencia" },
+      { name: "luz-calida", id: "1fxswfw_hFePp221VGUgyf5r8WroMwfyt", category: "residencia" },
+      { name: "detalle-tina", id: "1gDmTOUwMw4a2wV4YEeCFISSbF6WLIP2N", category: "residencia" },
+      { name: "tocador", id: "1gI1tJ5PNZBxNrNqY_Petw8gmGbMdItYs", category: "residencia" },
+      { name: "sofa-lounge", id: "1gle_nq055Le1iEk50anmS8UukHOiSeuR", category: "residencia" },
+      { name: "salon-confort", id: "1gvzOElp00EdPCGNh9omiF-P5PNDEVVLi", category: "residencia" },
+      { name: "suite-completa", id: "1lKsPIxFfBVLIdjx-MVidU1Tj30pO2kvh", category: "residencia" },
+      { name: "cama-acogedora", id: "1uzDdhlHbqt-9d-6KxIhg9Kb1PtE9VgHh", category: "residencia" },
+      { name: "estancia-piedra", id: "1v40TNlZ59bey9WMmbph9ea9e9PUFxOId", category: "residencia" },
+      { name: "lounge-noche", id: "1xozphpkG60UOtGOJ0FcJTYh59rgTkjs9", category: "residencia" },
 
-      // EXTERIORES (exterior y fauna)
-      { name: "asadk.png", id: "1-jQ1LH_165yElFbti0KSOVg5F6VtYNtI", category: "exteriores" },
-      { name: "asador.png", id: "11-KzEaBf1wwDtawz9RVNXqvus_O56URO", category: "exteriores" },
-      { name: "ciels.png", id: "19Wlw0jU3uZRH4YKRt_mJnNq9sFpjIvNH", category: "exteriores" },
-      { name: "cies.png", id: "1M6Ns0KgVh0fy52QgOCLv8LRG4I5NMRbg", category: "exteriores" },
-      { name: "fdst.png", id: "1fXM7l4fajH6v64UyPJZ4asn14UbNnasv", category: "exteriores" },
-      { name: "fuera.png", id: "1jqjlLvy5mFGUNzRGkrAWAVk9LBtCQERu", category: "exteriores" },
-      { name: "pals.png", id: "1w3MRn_ghzeRJQ_bUmRdvTjW_kGbWql8n", category: "exteriores" },
-      { name: "buho1.png", id: "11EaDtWR7fSMOLcgZujsFXAZIwW99V9Fl", category: "exteriores" },
-      { name: "buho2.png", id: "14uXAncsC-jwIJ2KmT_9OczE_eai9vAQy", category: "exteriores" },
+      // EXTERIORES (Vertical Aspect Ratio: aspect-[2/3])
+      { name: "alberca-jardin", id: "1-8RqlEQwxq5jG9qq0A0C4zEF8tw8JQz7", category: "exteriores" },
+      { name: "area-asador", id: "1-jQ1LH_165yElFbti0KSOVg5F6VtYNtI", category: "exteriores" },
+      { name: "asador-exterior", id: "11-KzEaBf1wwDtawz9RVNXqvus_O56URO", category: "exteriores" },
+      { name: "buho-guardian", id: "11EaDtWR7fSMOLcgZujsFXAZIwW99V9Fl", category: "exteriores" },
+      { name: "buho-retrato", id: "14uXAncsC-jwIJ2KmT_9OczE_eai9vAQy", category: "exteriores" },
+      { name: "atardecer-selva", id: "19Wlw0jU3uZRH4YKRt_mJnNq9sFpjIvNH", category: "exteriores" },
+      { name: "perspectiva-alberca", id: "1Jr_sJkjUvksESjuEnr-WJe2Rrze_B_4F", category: "exteriores" },
+      { name: "palmeras-alberca", id: "1M6Ns0KgVh0fy52QgOCLv8LRG4I5NMRbg", category: "exteriores" },
+      { name: "reflejos-agua", id: "1fXM7l4fajH6v64UyPJZ4asn14UbNnasv", category: "exteriores" },
+      { name: "fauna-local", id: "1lme-lAm8eugkAqadhdyg7ajeKMG8q_X5", category: "exteriores" },
+      { name: "mono-selva", id: "1nDfUBG4pbUEDXtbJ-7AqXizVwK5qgG-S", category: "exteriores" },
+      { name: "fauna-curiosa", id: "1rIITmadnVzMqxpULPF-6kRDqDL4c-Fqs", category: "exteriores" },
+      { name: "palmeras-exterior", id: "1w3MRn_ghzeRJQ_bUmRdvTjW_kGbWql8n", category: "exteriores" },
+      { name: "exterior-detalle", id: "1jqjlLvy5mFGUNzRGkrAWAVk9LBtCQERu", category: "exteriores" },
 
       // ESTILO Y DETALLES (amenidades)
-      { name: "copas.png", id: "1SK8cAXGxSnP8gngHwDQkMmsNZ_mFpEaG", category: "detalles" },
-      { name: "tuer.png", id: "1gRMI1Sl0zP2WTeSBBvhWKPeqXnFimUGo", category: "detalles" },
-      { name: "mono1.png", id: "1lme-lAm8eugkAqadhdyg7ajeKMG8q_X5", category: "detalles" },
-      { name: "mono2.png", id: "1nDfUBG4pbUEDXtbJ-7AqXizVwK5qgG-S", category: "detalles" },
-      { name: "mono3.png", id: "1rIITmadnVzMqxpULPF-6kRDqDL4c-Fqs", category: "detalles" },
-      { name: "mono4.png", id: "1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv", category: "detalles" }
+      { name: "amenidad-bano", id: "14xzh78Xoy7JGBrZKB3dXDcxIjl8AUD_2", category: "detalles" },
+      { name: "jabones-organicos", id: "16CKh-JYSIXb4Dk9PVUcCMv8RS8mdiMJu", category: "detalles" },
+      { name: "velas-decoracion", id: "16I5g1UhePn1OcJoyOP-dZym6Q64Q98Id", category: "detalles" },
+      { name: "luz-pared", id: "19B1vlnnLRfGIm2MD7I751OB9sXeLlB_6", category: "detalles" },
+      { name: "artesanias-mayas", id: "1C3CrCrY803911ALRkYIrhR2BqpfJ59WQ", category: "detalles" },
+      { name: "toques-diseno", id: "1KTU1vQHAraaVn1K8a4ICC3f8AddpNNy1", category: "detalles" },
+      { name: "amenidades-premium", id: "1QlrCk1lCTEjWOuUNqfq8NRYFgRAZMBEd", category: "detalles" },
+      { name: "copas-bienvenida", id: "1SK8cAXGxSnP8gngHwDQkMmsNZ_mFpEaG", category: "detalles" },
+      { name: "ceremonia-incienso", id: "1XQ3HeoN54Yo8uNiNnkPxPQU3itLCQhQR", category: "detalles" },
+      { name: "tallado-piedra", id: "1gRMI1Sl0zP2WTeSBBvhWKPeqXnFimUGo", category: "detalles" },
+      { name: "decoracion-rustica", id: "1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv", category: "detalles" }
     ];
 
     let activeFilter = 'todos';
@@ -1667,23 +1713,25 @@
       const logo = document.getElementById('header-logo');
       const title = document.getElementById('header-title');
 
-      if (window.scrollY > 40) {
-        header.classList.add('glass-nav', 'shadow-md', 'py-2');
-        header.classList.remove('py-6');
-        header.classList.add('border-b', 'border-[#cfc4b4]/40');
-        
-        logo.classList.add('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
-        logo.classList.remove('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
-        title.classList.add('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
-        title.classList.remove('text-[10px]', 'xs:text-sm', 'sm:text-lg', 'md:text-2xl');
-      } else {
-        header.classList.remove('glass-nav', 'shadow-md', 'py-2', 'border-b', 'border-[#cfc4b4]/40');
-        header.classList.add('py-6');
-        
-        logo.classList.remove('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
-        logo.classList.add('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
-        title.classList.remove('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
-        title.classList.add('text-[10px]', 'xs:text-sm', 'sm:text-lg', 'md:text-2xl');
+      if (header && logo && title) {
+        if (window.scrollY > 40) {
+          header.classList.add('glass-nav', 'shadow-md', 'py-2');
+          header.classList.remove('py-6');
+          header.classList.add('border-b', 'border-[#cfc4b4]/40');
+          
+          logo.classList.add('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
+          logo.classList.remove('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
+          title.classList.add('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
+          title.classList.remove('text-[10px]', 'xs:text-sm', 'sm:text-lg', 'md:text-2xl');
+        } else {
+          header.classList.remove('glass-nav', 'shadow-md', 'py-2', 'border-b', 'border-[#cfc4b4]/40');
+          header.classList.add('py-6');
+          
+          logo.classList.remove('h-8', 'xs:h-10', 'sm:h-12', 'md:h-16');
+          logo.classList.add('h-10', 'xs:h-12', 'sm:h-16', 'md:h-24');
+          title.classList.remove('text-[9px]', 'xs:text-xs', 'sm:text-sm', 'md:text-lg');
+          title.classList.add('text-[10px]', 'xs:text-sm', 'sm:text-lg', 'md:text-2xl');
+        }
       }
     });
 
@@ -1786,9 +1834,9 @@
       toShow.forEach((item) => {
         const absoluteUrl = `https://lh3.googleusercontent.com/d/${item.id}`;
         
-        let cardAspect = 'aspect-[4/5]'; 
+        let cardAspect = 'aspect-[3/4]'; 
         if (activeFilter === 'exteriores') {
-          cardAspect = 'aspect-[2/3]'; 
+          cardAspect = 'aspect-[2/3]'; // Strict vertical aspect ratio
         } else if (activeFilter === 'detalles') {
           cardAspect = 'aspect-square';
         }
@@ -2179,13 +2227,18 @@
 
     let currentTestimonialSlide = 0;
     const testimonialTrack = document.getElementById('testimonial-track');
-    const testimonialDots = document.getElementById('testimonial-dots').children;
+    const testimonialDotsContainer = document.getElementById('testimonial-dots');
 
     function setTestimonialSlide(index) {
+      const track = document.getElementById('testimonial-track');
+      const dotsContainer = document.getElementById('testimonial-dots');
+      if (!track || !dotsContainer) return;
+
       currentTestimonialSlide = index;
-      testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+      track.style.transform = `translateX(-${index * 100}%)`;
       
-      Array.from(testimonialDots).forEach((dot, idx) => {
+      const dots = dotsContainer.children;
+      Array.from(dots).forEach((dot, idx) => {
         if (idx === index) {
           dot.classList.remove('bg-stone-300');
           dot.classList.add('bg-primary');
