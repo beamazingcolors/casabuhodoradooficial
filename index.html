@@ -98,7 +98,7 @@
 
     .custom-cursor-follower {
       will-change: transform, opacity;
-      transform: translate3d(-50%, -50%, 0);
+      pointer-events: none !important;
     }
   </style>
 
@@ -1417,12 +1417,13 @@
     </div>
   </div>
 
-  <!-- Custom Harmonic Logo Cursor Follower -->
-  <div id="cursor-follower" class="custom-cursor-follower hidden lg:block fixed top-0 left-0 w-12 h-12 pointer-events-none z-[9999] opacity-0 transition-opacity duration-500 ease-out">
-    <div id="cursor-inner-ring" class="relative w-full h-full flex items-center justify-center rounded-full bg-surface/85 backdrop-blur-md border border-primary/40 shadow-[0_0_25px_rgba(181,138,61,0.3)] transition-all duration-300 ease-out transform scale-100">
-      <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'" alt="Casa Búho Dorado Logo" class="w-7 h-7 object-contain drop-shadow-sm pointer-events-none"/>
-    </div>
+  <!-- Pure PNG Logo Cursor Follower (No Background) -->
+  <div id="cursor-follower" class="custom-cursor-follower hidden md:block fixed top-0 left-0 pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 ease-out select-none">
+    <img id="cursor-main-img" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.onerror=null; this.src='LLG.png';" alt="Casa Búho Dorado Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-[0_4px_12px_rgba(181,138,61,0.6)] pointer-events-none transition-transform duration-200"/>
   </div>
+
+  <!-- Container for flying owl particles trail -->
+  <div id="cursor-particles-container" class="hidden md:block fixed inset-0 pointer-events-none z-[9998] overflow-hidden"></div>
 
   <!-- ================= MASTER DATA & LOGIC ================= -->
   <script>
@@ -2703,17 +2704,72 @@
 
     function initCustomCursor() {
       const cursor = document.getElementById('cursor-follower');
-      const cursorInner = document.getElementById('cursor-inner-ring');
-      if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
+      const cursorImg = document.getElementById('cursor-main-img');
+      const particlesContainer = document.getElementById('cursor-particles-container');
+      if (!cursor || !particlesContainer) return;
+
+      if (typeof gsap !== 'undefined') {
+        gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+      }
 
       let mouseX = -100;
       let mouseY = -100;
       let cursorX = -100;
       let cursorY = -100;
+      let lastParticleX = -100;
+      let lastParticleY = -100;
       let isVisible = false;
 
-      const setX = gsap.quickSetter(cursor, "x", "px");
-      const setY = gsap.quickSetter(cursor, "y", "px");
+      const setX = (typeof gsap !== 'undefined') ? gsap.quickSetter(cursor, "x", "px") : (v) => cursor.style.left = v + 'px';
+      const setY = (typeof gsap !== 'undefined') ? gsap.quickSetter(cursor, "y", "px") : (v) => cursor.style.top = v + 'px';
+
+      // Spawns a floating/flying owl particle
+      function createFlyingOwlParticle(x, y) {
+        const particle = document.createElement('img');
+        particle.src = 'https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png';
+        particle.onerror = function() { this.src = 'LLG.png'; };
+        particle.className = 'fixed pointer-events-none z-[9998] object-contain select-none';
+        
+        // Random organic particle dimensions
+        const size = Math.floor(Math.random() * 10) + 18; // 18px to 28px
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.transform = 'translate(-50%, -50%)';
+        particle.style.filter = 'drop-shadow(0 2px 8px rgba(181, 138, 61, 0.5))';
+
+        particlesContainer.appendChild(particle);
+
+        // Flight physics: ascend upwards, sway horizontally, tilt wings & fade out
+        const driftX = (Math.random() - 0.5) * 45; // Sway left/right
+        const riseY = - (Math.random() * 60 + 50); // Ascend 50px - 110px upwards
+        const rotation = (Math.random() - 0.5) * 35; // Slight wing tilt
+        const duration = Math.random() * 0.5 + 0.8; // Flight duration 0.8s to 1.3s
+
+        if (typeof gsap !== 'undefined') {
+          gsap.to(particle, {
+            x: driftX,
+            y: riseY,
+            rotation: rotation,
+            scale: 1.15,
+            opacity: 0,
+            duration: duration,
+            ease: "power1.out",
+            onComplete: () => {
+              if (particle && particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+              }
+            }
+          });
+        } else {
+          setTimeout(() => {
+            if (particle && particle.parentNode) {
+              particle.parentNode.removeChild(particle);
+            }
+          }, 1000);
+        }
+      }
 
       window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
@@ -2725,21 +2781,27 @@
           cursorY = mouseY;
           setX(cursorX);
           setY(cursorY);
-          cursor.classList.remove('opacity-0');
-          cursor.classList.add('opacity-100');
+          cursor.style.opacity = '1';
+        }
+
+        // Spawn flying owl particles when cursor moves beyond threshold
+        const dist = Math.hypot(mouseX - lastParticleX, mouseY - lastParticleY);
+        if (dist > 16) {
+          createFlyingOwlParticle(mouseX, mouseY);
+          lastParticleX = mouseX;
+          lastParticleY = mouseY;
         }
       });
 
       document.addEventListener('mouseleave', () => {
         isVisible = false;
-        cursor.classList.remove('opacity-100');
-        cursor.classList.add('opacity-0');
+        cursor.style.opacity = '0';
       });
 
       function animateCursor() {
         if (isVisible) {
-          cursorX += (mouseX - cursorX) * 0.12;
-          cursorY += (mouseY - cursorY) * 0.12;
+          cursorX += (mouseX - cursorX) * 0.2;
+          cursorY += (mouseY - cursorY) * 0.2;
           setX(cursorX);
           setY(cursorY);
         }
@@ -2747,18 +2809,18 @@
       }
       requestAnimationFrame(animateCursor);
 
-      // Dynamic glow expansion on interactive elements hover
+      // Dynamic glow expansion on hoverable elements
       document.addEventListener('mouseover', (e) => {
         const target = e.target.closest('a, button, input, select, textarea, .gallery-item, .ken-burns, [onclick]');
-        if (target && cursorInner) {
-          cursorInner.classList.add('scale-125', 'border-primary', 'bg-surface', 'shadow-[0_0_35px_rgba(181,138,61,0.6)]');
+        if (target && cursorImg) {
+          cursorImg.classList.add('scale-125', 'drop-shadow-[0_0_20px_rgba(181,138,61,0.95)]');
         }
       });
 
       document.addEventListener('mouseout', (e) => {
         const target = e.target.closest('a, button, input, select, textarea, .gallery-item, .ken-burns, [onclick]');
-        if (target && cursorInner) {
-          cursorInner.classList.remove('scale-125', 'border-primary', 'bg-surface', 'shadow-[0_0_35px_rgba(181,138,61,0.6)]');
+        if (target && cursorImg) {
+          cursorImg.classList.remove('scale-125', 'drop-shadow-[0_0_20px_rgba(181,138,61,0.95)]');
         }
       });
     }
