@@ -101,7 +101,6 @@
       pointer-events: none !important;
     }
   </style>
-
   <!-- Tailwind Theme Configuration overrides -->
   <script id="tailwind-config">
     tailwind.config = {
@@ -2725,8 +2724,22 @@
       const particlesContainer = document.getElementById('cursor-particles-container');
       if (!cursor || !particlesContainer) return;
 
+      if (window.matchMedia('(pointer: coarse)').matches) {
+        cursor.style.display = 'none';
+        return;
+      }
+
       if (typeof gsap !== 'undefined') {
         gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+        // Continuous dynamic floating and rotation animation for the main cursor logo so it's never static
+        gsap.to(cursorImg, {
+          y: "-=8",
+          rotation: "+=6",
+          duration: 1.0,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut"
+        });
       }
 
       let mouseX = -100;
@@ -2741,39 +2754,40 @@
       const setX = (typeof gsap !== 'undefined') ? gsap.quickSetter(cursor, "x", "px") : (v) => cursor.style.left = v + 'px';
       const setY = (typeof gsap !== 'undefined') ? gsap.quickSetter(cursor, "y", "px") : (v) => cursor.style.top = v + 'px';
 
-      // Spawns a floating/flying owl particle
       function createFlyingOwlParticle(x, y) {
         const particle = document.createElement('img');
         particle.src = 'https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png';
         particle.onerror = function() { this.src = 'LLG.png'; };
         particle.className = 'fixed pointer-events-none z-[9998] object-contain select-none';
         
-        // Random organic particle dimensions
-        const size = Math.floor(Math.random() * 10) + 18; // 18px to 28px
+        const size = Math.floor(Math.random() * 8) + 22;
         particle.style.width = size + 'px';
         particle.style.height = size + 'px';
         particle.style.left = x + 'px';
         particle.style.top = y + 'px';
         particle.style.transform = 'translate(-50%, -50%)';
-        particle.style.filter = 'drop-shadow(0 2px 8px rgba(181, 138, 61, 0.5))';
+        particle.style.filter = 'drop-shadow(0 4px 12px rgba(181, 138, 61, 0.7))';
 
         particlesContainer.appendChild(particle);
 
-        // Flight physics: ascend upwards, sway horizontally, tilt wings & fade out
-        const driftX = (Math.random() - 0.5) * 45; // Sway left/right
-        const riseY = - (Math.random() * 60 + 50); // Ascend 50px - 110px upwards
-        const rotation = (Math.random() - 0.5) * 35; // Slight wing tilt
-        const duration = Math.random() * 0.5 + 0.8; // Flight duration 0.8s to 1.3s
+        const driftX = (Math.random() - 0.5) * 55;
+        const riseY = - (Math.random() * 70 + 60);
+        const rotation = (Math.random() - 0.5) * 45;
+        const duration = Math.random() * 0.4 + 0.9;
 
         if (typeof gsap !== 'undefined') {
-          gsap.to(particle, {
+          gsap.fromTo(particle, {
+            scale: 0.6,
+            opacity: 0.95,
+            rotation: 0
+          }, {
             x: driftX,
             y: riseY,
             rotation: rotation,
-            scale: 1.15,
+            scale: 1.2,
             opacity: 0,
             duration: duration,
-            ease: "power1.out",
+            ease: "power2.out",
             onComplete: () => {
               if (particle && particle.parentNode) {
                 particle.parentNode.removeChild(particle);
@@ -2803,15 +2817,13 @@
 
         cursor.style.opacity = '1';
 
-        // Spawn flying owl particles when cursor or touch moves beyond threshold
         const dist = Math.hypot(mouseX - lastParticleX, mouseY - lastParticleY);
-        if (dist > 16) {
+        if (dist > 14) {
           createFlyingOwlParticle(mouseX, mouseY);
           lastParticleX = mouseX;
           lastParticleY = mouseY;
         }
 
-        // Reset idle timer: if cursor stops moving, hide follower so ONLY default cursor arrow remains
         if (idleTimer) clearTimeout(idleTimer);
         idleTimer = setTimeout(() => {
           isVisible = false;
@@ -2819,28 +2831,8 @@
         }, 350);
       }
 
-      // Desktop mouse listener
       window.addEventListener('mousemove', (e) => {
         handlePointerMove(e.clientX, e.clientY);
-      });
-
-      // Mobile Touch listeners (swipe / touch move)
-      window.addEventListener('touchstart', (e) => {
-        if (e.touches && e.touches.length > 0) {
-          handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
-        }
-      }, { passive: true });
-
-      window.addEventListener('touchmove', (e) => {
-        if (e.touches && e.touches.length > 0) {
-          handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
-        }
-      }, { passive: true });
-
-      window.addEventListener('touchend', () => {
-        if (idleTimer) clearTimeout(idleTimer);
-        isVisible = false;
-        cursor.style.opacity = '0';
       });
 
       document.addEventListener('mouseleave', () => {
@@ -2860,7 +2852,6 @@
       }
       requestAnimationFrame(animateCursor);
 
-      // Dynamic glow expansion on hoverable elements
       document.addEventListener('mouseover', (e) => {
         const target = e.target.closest('a, button, input, select, textarea, .gallery-item, .ken-burns, [onclick]');
         if (target && cursorImg) {
