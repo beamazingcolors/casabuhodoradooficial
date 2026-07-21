@@ -1417,13 +1417,13 @@
     </div>
   </div>
 
-  <!-- Pure PNG Logo Cursor Follower (No Background) -->
-  <div id="cursor-follower" class="custom-cursor-follower hidden md:block fixed top-0 left-0 pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 ease-out select-none">
+  <!-- Pure PNG Logo Cursor Follower (Enabled for both Desktop and Mobile Swipe) -->
+  <div id="cursor-follower" class="custom-cursor-follower fixed top-0 left-0 pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 ease-out select-none">
     <img id="cursor-main-img" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.onerror=null; this.src='LLG.png';" alt="Casa Búho Dorado Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-[0_4px_12px_rgba(181,138,61,0.6)] pointer-events-none transition-transform duration-200"/>
   </div>
 
   <!-- Container for flying owl particles trail -->
-  <div id="cursor-particles-container" class="hidden md:block fixed inset-0 pointer-events-none z-[9998] overflow-hidden"></div>
+  <div id="cursor-particles-container" class="fixed inset-0 pointer-events-none z-[9998] overflow-hidden"></div>
 
   <!-- ================= MASTER DATA & LOGIC ================= -->
   <script>
@@ -2719,6 +2719,7 @@
       let lastParticleX = -100;
       let lastParticleY = -100;
       let isVisible = false;
+      let idleTimer = null;
 
       const setX = (typeof gsap !== 'undefined') ? gsap.quickSetter(cursor, "x", "px") : (v) => cursor.style.left = v + 'px';
       const setY = (typeof gsap !== 'undefined') ? gsap.quickSetter(cursor, "y", "px") : (v) => cursor.style.top = v + 'px';
@@ -2771,9 +2772,9 @@
         }
       }
 
-      window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+      function handlePointerMove(x, y) {
+        mouseX = x;
+        mouseY = y;
 
         if (!isVisible) {
           isVisible = true;
@@ -2781,27 +2782,60 @@
           cursorY = mouseY;
           setX(cursorX);
           setY(cursorY);
-          cursor.style.opacity = '1';
         }
 
-        // Spawn flying owl particles when cursor moves beyond threshold
+        cursor.style.opacity = '1';
+
+        // Spawn flying owl particles when cursor or touch moves beyond threshold
         const dist = Math.hypot(mouseX - lastParticleX, mouseY - lastParticleY);
         if (dist > 16) {
           createFlyingOwlParticle(mouseX, mouseY);
           lastParticleX = mouseX;
           lastParticleY = mouseY;
         }
+
+        // Reset idle timer: if cursor stops moving, hide follower so ONLY default cursor arrow remains
+        if (idleTimer) clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          isVisible = false;
+          cursor.style.opacity = '0';
+        }, 350);
+      }
+
+      // Desktop mouse listener
+      window.addEventListener('mousemove', (e) => {
+        handlePointerMove(e.clientX, e.clientY);
+      });
+
+      // Mobile Touch listeners (swipe / touch move)
+      window.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        if (idleTimer) clearTimeout(idleTimer);
+        isVisible = false;
+        cursor.style.opacity = '0';
       });
 
       document.addEventListener('mouseleave', () => {
+        if (idleTimer) clearTimeout(idleTimer);
         isVisible = false;
         cursor.style.opacity = '0';
       });
 
       function animateCursor() {
         if (isVisible) {
-          cursorX += (mouseX - cursorX) * 0.2;
-          cursorY += (mouseY - cursorY) * 0.2;
+          cursorX += (mouseX - cursorX) * 0.25;
+          cursorY += (mouseY - cursorY) * 0.25;
           setX(cursorX);
           setY(cursorY);
         }
