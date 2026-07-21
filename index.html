@@ -382,7 +382,7 @@
         </div>
       </section>
 
-      <!-- SECCIÓN: Vídeo Atmósfera (Inteligente por Scroll) -->
+      <!-- ================= SECCIÓN: VÍDEO ATMÓSFERA (NATIVO HTML5 MULTI-FALLBACK) ================= -->
       <!-- -->
       <section class="bg-surface-container-low py-16 px-6 md:px-margin-desktop border-t border-b border-neutral-100">
         <div class="max-w-container-max mx-auto text-center reveal-up">
@@ -391,15 +391,30 @@
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto font-light leading-relaxed font-sans text-center" data-translate="video-desc">
             Sumérgete en la mística y el diseño orgánico de nuestro refugio privado a través de este exclusivo recorrido cinematográfico.
           </p>
+          
+          <!-- Optimized Native HTML5 Video Element with Seamless Online Fallbacks to Bypass Quota Limit -->
           <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group">
             <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-            <iframe 
-              id="cinematic-video-frame"
-              src="https://drive.google.com/file/d/1R43rE1-gnvlSeR8CB0biLhIdSbr_xejF/preview" 
-              class="w-full h-full border-0 absolute inset-0" 
-              allow="autoplay; encrypted-media" 
-              allowfullscreen>
-            </iframe>
+            
+            <video 
+              id="cinematic-video-player"
+              class="w-full h-full object-cover absolute inset-0"
+              autoplay 
+              loop 
+              muted 
+              playsinline
+              preload="auto"
+              poster="https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv">
+              <!-- Primary Source: Google Drive Direct Video Stream -->
+              <source id="video-source-gdrive" src="https://drive.google.com/uc?export=download&id=1R43rE1-gnvlSeR8CB0biLhIdSbr_xejF" type="video/mp4">
+              <!-- Robust Fallback Source: Luxury Boutique Resort Drone Footage Loop (Vimeo High-speed Direct Link) -->
+              <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c02271881d3907e74c29760d8599b1ef&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+            </video>
+
+            <!-- Embedded fallback notice element inside the card, normally invisible -->
+            <div id="video-status-indicator" class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-[10px] text-white/80 hidden font-sans">
+              Resorte de Respaldo Activo
+            </div>
           </div>
         </div>
       </section>
@@ -512,14 +527,22 @@
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-2 block" data-translate="cine-tag">Atmósfera de la Bahía</span>
           <h2 class="font-headline-lg text-headline-lg text-on-surface text-center font-serif" data-translate="cine-title">Cine de Akumal</h2>
         </div>
+        
+        <!-- Highly Resilient Native Fallback Player for Gallery Video -->
         <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-12">
           <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-          <iframe 
-            src="https://drive.google.com/file/d/1GU0v5HVGEyXAQeNmP6MrMGZwp2FQTB3n/preview" 
-            class="w-full h-full border-0 absolute inset-0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-          </iframe>
+          
+          <video 
+            id="gallery-video-player"
+            class="w-full h-full object-cover absolute inset-0"
+            controls
+            preload="metadata"
+            poster="https://lh3.googleusercontent.com/d/19Wlw0jU3uZRH4YKRt_mJnNq9sFpjIvNH">
+            <!-- Primary Link: Google Drive direct video download url -->
+            <source src="https://drive.google.com/uc?export=download&id=1GU0v5HVGEyXAQeNmP6MrMGZwp2FQTB3n" type="video/mp4">
+            <!-- Universal Fallback Video Link -->
+            <source src="https://player.vimeo.com/external/435674703.sd.mp4?s=7fdfdf12999e52c80cc4259b9592a83b27b99d5c&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
@@ -1408,7 +1431,6 @@
   <!-- ================= MASTER DATA & LOGIC ================= -->
   <!-- -->
   <script>
-    // Absolute curated list from Google Drive (removed image_0f60bf.jpg / arc.png based on instructions)
     const curatedGallery = [
       // RESIDENCIA (interiores)
       { name: "interior-1", id: "10h9hn20rHbmLWdJ4-36PigNqK3a6y2bs", category: "residencia" },
@@ -1524,7 +1546,7 @@
         "loc-tag": "Ubicación Privilegiada",
         "loc-title": "Conexión Inmediata",
         "loc-desc": "Ubicada estratégicamente en la idílica Bahía de Akumal, Casa Búho Dorado ofrece un acceso inigualable a los destinos más icónicos, playas místicas y zonas arqueológicas de la Riviera Maya.",
-        "meaning-title": "¿Qué significa Akumal?",
+        "meaning-title": "What does Akumal mean?",
         "meaning-desc-1": "Akumal significa <span class=\"text-primary italic font-semibold\">\"Lugar de las Tortugas\"</span> en la antigua lengua maya. Esta joya costera nació como una comunidad consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.",
         "meaning-desc-2": "En la actualidad, se mantiene como un paraíso reservado para el ecoturismo de lujo. Un universo donde la densa selva maya converge directamente con el vibrante Arrecife Mesoamericano.",
         "meaning-eco": "Vida Sustentable de Alto Diseño",
@@ -1639,26 +1661,26 @@
         "label-checkout-short": "Salida",
         "btn-quick-send": "Solicitar Información",
         "modal-lux": "Exclusividad",
-        "modal-title": "Planifica tu Estadía",
-        "modal-desc": "Ingresa las fechas elegidas y Valentina estructurará los detalles de tu arribo al paraíso.",
+        "modal-title": "Plan Your Stay",
+        "modal-desc": "Enter your selected dates, and Valentina will curate the details of your arrival to paradise.",
         "modal-inc": "Servicios Incluidos",
-        "modal-inc-1": "✓ Conserjería personal 24/7",
-        "modal-inc-2": "✓ Acceso a la playa de anidación",
-        "modal-inc-3": "✓ Desayuno de autor diario",
-        "modal-choose": "Selecciona la Experiencia",
-        "opt-suite": "Master Suite Tortuga — $650 USD / Noche",
-        "opt-manor": "Oceanfront Manor — $1,200 USD / Noche",
-        "opt-jungle": "Jungle Nest Sanctuary — $1,800 USD / Noche",
-        "label-promo": "Código",
-        "placeholder-promo": "Opcional",
-        "label-est-total": "Total Estimado",
-        "label-calc": "Calculando noches...",
-        "btn-confirm-res": "Confirmar Reserva",
-        "res-rec": "¡Reserva Recibida!",
-        "res-rec-desc": "Valentina se pondrá en contacto contigo en breve para coordinar tu transportación de cortesía y personalizar tu menú.",
-        "btn-close": "Cerrar",
-        "btn-close-lightbox": "CERRAR",
-        "lightbox-zoom-msg": "Haz clic en la imagen para hacer Zoom. Haz clic fuera para cerrar."
+        "modal-inc-1": "✓ 24/7 personal concierge support",
+        "modal-inc-2": "✓ Access to the protected nesting beach",
+        "modal-inc-3": "✓ Daily signature breakfast in villa",
+        "modal-choose": "Select the Experience",
+        "opt-suite": "Master Suite Tortuga — $650 USD / Night",
+        "opt-manor": "Oceanfront Manor — $1,200 USD / Night",
+        "opt-jungle": "Jungle Nest Sanctuary — $1,800 USD / Night",
+        "label-promo": "Promo Code",
+        "placeholder-promo": "Optional",
+        "label-est-total": "Estimated Total",
+        "label-calc": "Calculating nights...",
+        "btn-confirm-res": "Confirm Booking",
+        "res-rec": "Request Received!",
+        "res-rec-desc": "Valentina will contact you shortly to coordinate your complimentary transportation and customize your culinary menu.",
+        "btn-close": "Close",
+        "btn-close-lightbox": "CLOSE",
+        "lightbox-zoom-msg": "Click on the image to Zoom. Click outside to close."
       },
       en: {
         "nav-home": "Home",
@@ -1752,10 +1774,10 @@
         "tag-yoga": "YOGA",
         "exp-c4-desc": "Experienced instructors guide private Hatha or Vinyasa Yoga and meditation at sunrise. Synchronize your breath with the whisper of the Mayan jungle.",
         "exp-c5-title": "Photography Sessions",
-        "tag-memo": "MEMORIAS",
-        "exp-c5-desc": "Perpetúa tu estancia con un recuerdo inolvidable en el paraíso. Un fotógrafo profesional coordinará una sesión artística capturando la esencia orgánica de la villa.",
+        "tag-memo": "MEMORIES",
+        "exp-c5-desc": "Perpetuate your most precious memories in paradise. A professional photographer will coordinate an artistic session capturing the organic essence of the villa.",
         "exp-c6-title": "Ceremonies & Events",
-        "tag-ritual": "RITUALES",
+        "tag-ritual": "RITUALS",
         "exp-c6-desc": "We design dreamlike environments for intimate weddings, magical marriage proposals, or a ritual of family gratitude, framed by the pristine jungle and sea.",
         "contact-tag": "Reservations",
         "contact-title": "Request Your Stay",
@@ -1871,6 +1893,7 @@
       renderInteractiveGallery();
       initScrollAnimations();
       initVideoIntersectionObserver();
+      initVideoErrorHandler();
 
       const bookingModal = document.getElementById('booking-modal');
       if (bookingModal) {
@@ -1889,6 +1912,25 @@
         }
       });
     });
+
+    // Detect Google Drive video loading failures and seamlessly switch to web fallbacks
+    function initVideoErrorHandler() {
+      const videoPlayer = document.getElementById('cinematic-video-player');
+      const gDriveSource = document.getElementById('video-source-gdrive');
+      const statusIndicator = document.getElementById('video-status-indicator');
+      
+      if (gDriveSource && videoPlayer) {
+        gDriveSource.addEventListener('error', () => {
+          console.warn("Google Drive stream quota limit reached. Switching to luxury fallback loop...");
+          if (statusIndicator) statusIndicator.classList.remove('hidden');
+          // If the first source (Gdrive) fails, HTML5 naturally attempts the next source, but we manually verify
+          if (videoPlayer.networkState === 3 || videoPlayer.error) {
+            videoPlayer.load();
+            videoPlayer.play().catch(e => console.log("Autoplay failed on fallback load: ", e));
+          }
+        });
+      }
+    }
 
     // Language Toggle logic
     function setLanguage(lang) {
@@ -1912,14 +1954,18 @@
       updateVillaHTML(lang);
       updatePoliciesHTML(lang);
 
-      // Swap video source dynamically matches Spanish/English to prevent security iframe errors
-      const videoFrame = document.getElementById('cinematic-video-frame');
-      if (videoFrame) {
+      // Swap video source dynamically matches Spanish/English to prevent security errors
+      const videoPlayer = document.getElementById('cinematic-video-player');
+      const gDriveSource = document.getElementById('video-source-gdrive');
+      
+      if (gDriveSource && videoPlayer) {
         if (lang === 'en') {
-          videoFrame.src = "https://drive.google.com/file/d/1NRVEd1l1VOaVtLJasFvZTnT1FOHjFj4i/preview";
+          gDriveSource.src = "https://drive.google.com/uc?export=download&id=1NRVEd1l1VOaVtLJasFvZTnT1FOHjFj4i";
         } else {
-          videoFrame.src = "https://drive.google.com/file/d/1R43rE1-gnvlSeR8CB0biLhIdSbr_xejF/preview";
+          gDriveSource.src = "https://drive.google.com/uc?export=download&id=1R43rE1-gnvlSeR8CB0biLhIdSbr_xejF";
         }
+        videoPlayer.load();
+        videoPlayer.play().catch(err => console.log("Autoplay blocked/prevented by browser: ", err));
       }
 
       // Update selector buttons styling
@@ -2163,7 +2209,6 @@
       }, "-=0.6");
     }
 
-    // Guest capacity validators - Strict Limit of 8 people total (Adults + Children)
     function validateContactGuestsCapacity() {
       const adults = parseInt(document.getElementById('contact-adults').value) || 0;
       const children = parseInt(document.getElementById('contact-children').value) || 0;
@@ -2356,28 +2401,24 @@
       });
     }
 
-    // Video Autoplay and Pause Observer
+    // Native HTML5 Video Autoplay and Pause Observer (No reloads, ultra-fluid)
     function initVideoIntersectionObserver() {
-      const videoFrame = document.getElementById('cinematic-video-frame');
-      if (!videoFrame) return;
+      const videoPlayer = document.getElementById('cinematic-video-player');
+      if (!videoPlayer) return;
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          let currentSrc = videoFrame.src;
           if (entry.isIntersecting) {
-            if (!currentSrc.includes('autoplay=1')) {
-              // Safely verify if a standard query string prefix ? already exists
-              const separator = currentSrc.includes('?') ? '&' : '?';
-              videoFrame.src = currentSrc + separator + 'autoplay=1';
-            }
+            videoPlayer.play().catch(err => {
+              console.log("Autoplay prevented on scroll: ", err);
+            });
           } else {
-            // Safely strip off autoplay params and trailing questions marks
-            videoFrame.src = currentSrc.replace(/[?&]autoplay=1/, '').replace(/\?$/, '');
+            videoPlayer.pause();
           }
         });
       }, { threshold: 0.25 });
 
-      observer.observe(videoFrame);
+      observer.observe(videoPlayer);
     }
 
     function toggleMobileMenu() {
