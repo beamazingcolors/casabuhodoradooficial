@@ -391,8 +391,8 @@
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto font-light leading-relaxed font-sans text-center" data-translate="video-desc">
             Sumérgete en la mística y el diseño orgánico de nuestro refugio privado a través de este exclusivo recorrido cinematográfico.
           </p>
-          
-          <!-- Optimized Native HTML5 Video Element with Seamless Online Fallbacks to Bypass Quota Limit -->
+
+          <!-- Optimized Native HTML5 Video Element with Seamless Online Fallbacks -->
           <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group">
             <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
             
@@ -405,13 +405,10 @@
               playsinline
               preload="auto"
               poster="https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv">
-              <!-- Primary Source: Google Drive Direct Video Stream -->
-              <source id="video-source-gdrive" src="https://drive.google.com/uc?export=download&id=1R43rE1-gnvlSeR8CB0biLhIdSbr_xejF" type="video/mp4">
-              <!-- Robust Fallback Source: Luxury Boutique Resort Drone Footage Loop (Vimeo High-speed Direct Link) -->
               <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c02271881d3907e74c29760d8599b1ef&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-resort-and-beach-41484-large.mp4" type="video/mp4">
             </video>
 
-            <!-- Embedded fallback notice element inside the card, normally invisible -->
             <div id="video-status-indicator" class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-[10px] text-white/80 hidden font-sans">
               Resorte de Respaldo Activo
             </div>
@@ -528,21 +525,26 @@
           <h2 class="font-headline-lg text-headline-lg text-on-surface text-center font-serif" data-translate="cine-title">Cine de Akumal</h2>
         </div>
         
-        <!-- Highly Resilient Native Fallback Player for Gallery Video -->
-        <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-12">
+        <!-- Responsive Embedded YouTube Player for Gallery Video -->
+        <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-4">
           <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
           
-          <video 
+          <iframe 
             id="gallery-video-player"
-            class="w-full h-full object-cover absolute inset-0"
-            controls
-            preload="metadata"
-            poster="https://lh3.googleusercontent.com/d/19Wlw0jU3uZRH4YKRt_mJnNq9sFpjIvNH">
-            <!-- Primary Link: Google Drive direct video download url -->
-            <source src="https://drive.google.com/uc?export=download&id=1GU0v5HVGEyXAQeNmP6MrMGZwp2FQTB3n" type="video/mp4">
-            <!-- Universal Fallback Video Link -->
-            <source src="https://player.vimeo.com/external/435674703.sd.mp4?s=7fdfdf12999e52c80cc4259b9592a83b27b99d5c&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
-          </video>
+            class="w-full h-full absolute inset-0 border-0"
+            src="https://www.youtube-nocookie.com/embed/jXKOwOTaVjg?rel=0&modestbranding=1&playsinline=1"
+            title="Cine de Akumal"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="text-center mb-12">
+          <a href="https://youtu.be/jXKOwOTaVjg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-label-caps text-primary hover:underline font-semibold tracking-wider">
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+            <span>Ver vídeo directamente en YouTube</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1913,22 +1915,19 @@
       });
     });
 
-    // Detect Google Drive video loading failures and seamlessly switch to web fallbacks
+    // Detect Google Drive / Video loading failures and seamlessly switch to web fallbacks
     function initVideoErrorHandler() {
       const videoPlayer = document.getElementById('cinematic-video-player');
-      const gDriveSource = document.getElementById('video-source-gdrive');
-      const statusIndicator = document.getElementById('video-status-indicator');
-      
-      if (gDriveSource && videoPlayer) {
-        gDriveSource.addEventListener('error', () => {
-          console.warn("Google Drive stream quota limit reached. Switching to luxury fallback loop...");
-          if (statusIndicator) statusIndicator.classList.remove('hidden');
-          // If the first source (Gdrive) fails, HTML5 naturally attempts the next source, but we manually verify
-          if (videoPlayer.networkState === 3 || videoPlayer.error) {
+      if (videoPlayer) {
+        videoPlayer.addEventListener('error', () => {
+          console.warn("Primary video stream failed, attempting fallback source...");
+          const sources = videoPlayer.getElementsByTagName('source');
+          if (sources.length > 1) {
+            videoPlayer.src = sources[1].src;
             videoPlayer.load();
             videoPlayer.play().catch(e => console.log("Autoplay failed on fallback load: ", e));
           }
-        });
+        }, true);
       }
     }
 
