@@ -188,16 +188,15 @@
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
-  <!-- ================= MASTER HEADER (Harmonious, Majestic & Larger Redesign) ================= -->
-  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-4 sm:py-5 lg:py-6 glass-header border-b border-primary/20 shadow-md" id="main-header">
+  <!-- ================= MASTER HEADER (Compact, Harmonic & Elegant) ================= -->
+  <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-2.5 sm:py-3 lg:py-3.5 glass-header border-b border-primary/20 shadow-sm" id="main-header">
     <div class="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 max-w-container-max mx-auto w-full gap-4 lg:gap-10">
       
-      <!-- Brand Logo + Title Container (Larger, Aesthetic & Proportionate) -->
-      <div class="flex items-center gap-3.5 sm:gap-4 lg:gap-5 cursor-pointer flex-shrink-0" onclick="navigateToPage('home')">
-        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-11 sm:h-14 md:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-sm" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-        <div class="flex flex-col">
-          <span id="header-title" class="font-headline-md text-base sm:text-xl md:text-2xl lg:text-3xl text-primary tracking-[0.22em] uppercase font-bold transition-colors duration-300 whitespace-nowrap drop-shadow-sm">CASA BÚHO DORADO</span>
-          <span class="text-[9px] sm:text-[10px] md:text-xs tracking-[0.3em] uppercase text-stone-500 font-sans font-semibold -mt-0.5 sm:-mt-1 block">Akumal · Quintana Roo</span>
+      <!-- Brand Logo + Title Container (Simplified & Proportionate) -->
+      <div class="flex items-center gap-3 sm:gap-4 cursor-pointer flex-shrink-0" onclick="navigateToPage('home')">
+        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-8 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-sm" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+        <div class="flex flex-col justify-center">
+          <span id="header-title" class="font-headline-md text-base sm:text-lg md:text-xl lg:text-2xl text-primary tracking-[0.18em] uppercase font-bold transition-colors duration-300 whitespace-nowrap drop-shadow-sm leading-none">CASA BÚHO DORADO</span>
         </div>
       </div>
       
@@ -243,14 +242,14 @@
     </div>
   </header>
 
-  <!-- Content padding offset adjusted for the new larger header -->
-  <main class="pt-24 sm:pt-28 md:pt-32 lg:pt-36">
+  <!-- Content padding offset adjusted flush to header with no white gap -->
+  <main class="pt-0">
 
     <!-- ================= SECCIÓN: INICIO ================= -->
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
       <!-- Hero Welcome section with verified assets and rich animations -->
-      <section class="relative h-[85vh] sm:h-[92vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center animate-fade-in" style="background-image: url('https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv');">
+      <section class="relative h-[88vh] sm:h-[92vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center animate-fade-in pt-14 sm:pt-16" style="background-image: url('https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv');">
         
         <!-- Drifting Clouds Parallax -->
         <div class="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden opacity-95 select-none">
@@ -483,8 +482,8 @@
     </section>
 
     <!-- ================= SECCIÓN: GALERÍA ================= -->
-    <section id="page-gallery" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-12 px-6 md:px-margin-desktop">
-      <div class="max-w-container-max mx-auto mt-8 mb-12 text-center reveal-up">
+    <section id="page-gallery" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface pt-20 sm:pt-24 pb-12 px-6 md:px-margin-desktop">
+      <div class="max-w-container-max mx-auto mt-4 mb-12 text-center reveal-up">
         <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block" data-translate="gal-sub">Portafolio Visual</span>
         <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary mb-6 text-center" data-translate="gal-title">Galería de Ensueño</h1>
         <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed font-sans text-center" data-translate="gal-desc">
@@ -540,8 +539,8 @@
     </section>
 
     <!-- ================= SECCIÓN: UBICACIÓN ================= -->
-    <section id="page-ubicacion" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-16 px-4 md:px-margin-desktop">
-      <div class="max-w-container-max mx-auto mt-8">
+    <section id="page-ubicacion" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface pt-20 sm:pt-24 pb-16 px-4 md:px-margin-desktop">
+      <div class="max-w-container-max mx-auto mt-4">
         
         <div class="text-center mb-12 md:mb-16 reveal-up">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block" data-translate="loc-tag">Ubicación Privilegiada</span>
@@ -844,8 +843,8 @@
     </section>
 
     <!-- ================= SECCIÓN: EXPERIENCIAS ================= -->
-    <section id="page-experiences" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
-      <div class="max-w-container-max mx-auto mt-8">
+    <section id="page-experiences" class="page-section hidden opacity-0 transition-opacity duration-300 pt-20 sm:pt-24 pb-16 px-6 md:px-margin-desktop bg-surface">
+      <div class="max-w-container-max mx-auto mt-4">
         
         <div class="text-center mb-16 reveal-up">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block" data-translate="exp-lux-tag">Quiet Luxury Experiences</span>
@@ -995,8 +994,8 @@
     </section>
 
     <!-- ================= SECCIÓN: CONTACTO ================= -->
-    <section id="page-contact" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
-      <div class="max-w-container-max mx-auto mt-8">
+    <section id="page-contact" class="page-section hidden opacity-0 transition-opacity duration-300 pt-20 sm:pt-24 pb-16 px-6 md:px-margin-desktop bg-surface">
+      <div class="max-w-container-max mx-auto mt-4">
         
         <div class="text-center mb-16 reveal-up">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block font-semibold" data-translate="contact-tag">Reservaciones</span>
@@ -1121,8 +1120,8 @@
     </section>
 
     <!-- ================= SECCIÓN DE POLÍTICAS ================= -->
-    <section id="page-politicas" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
-      <div class="max-w-4xl mx-auto mt-8 font-sans text-stone-800">
+    <section id="page-politicas" class="page-section hidden opacity-0 transition-opacity duration-300 pt-20 sm:pt-24 pb-16 px-6 md:px-margin-desktop bg-surface">
+      <div class="max-w-4xl mx-auto mt-4 font-sans text-stone-800">
         
         <div class="text-center mb-12">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block" data-translate="pol-tag">Normas de la Casa</span>
