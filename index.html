@@ -1479,7 +1479,7 @@
       { name: "estancia-piedra", id: "1v40TNlZ59bey9WMmbph9ea9e9PUFxOId", category: "residencia" },
       { name: "lounge-noche", id: "1xozphpkG60UOtGOJ0FcJTYh59rgTkjs9", category: "residencia" },
 
-      // EXTERIORES (Todos mapeados con Aspect ratio vertical aspect-[2/3])
+      // EXTERIORES
       { name: "alberca-jardin", id: "1-8RqlEQwxq5jG9qq0A0C4zEF8tw8JQz7", category: "exteriores" },
       { name: "area-asador", id: "1-jQ1LH_165yElFbti0KSOVg5F6VtYNtI", category: "exteriores" },
       { name: "asador-exterior", id: "11-KzEaBf1wwDtawz9RVNXqvus_O56URO", category: "exteriores" },
@@ -1495,7 +1495,7 @@
       { name: "palmeras-exterior", id: "1w3MRn_ghzeRJQ_bUmRdvTjW_kGbWql8n", category: "exteriores" },
       { name: "exterior-detalle", id: "1jqjlLvy5mFGUNzRGkrAWAVk9LBtCQERu", category: "exteriores" },
 
-      // ESTILO Y DETALLES (amenidades)
+      // ESTILO Y DETALLES
       { name: "amenidad-bano", id: "14xzh78Xoy7JGBrZKB3dXDcxIjl8AUD_2", category: "detalles" },
       { name: "jabones-organicos", id: "16CKh-JYSIXb4Dk9PVUcCMv8RS8mdiMJu", category: "detalles" },
       { name: "velas-decoracion", id: "16I5g1UhePn1OcJoyOP-dZym6Q64Q98Id", category: "detalles" },
@@ -1549,7 +1549,7 @@
         "loc-tag": "Ubicación Privilegiada",
         "loc-title": "Conexión Inmediata",
         "loc-desc": "Ubicada estratégicamente en la idílica Bahía de Akumal, Casa Búho Dorado ofrece un acceso inigualable a los destinos más icónicos, playas místicas y zonas arqueológicas de la Riviera Maya.",
-        "meaning-title": "What does Akumal mean?",
+        "meaning-title": "¿Qué significa Akumal?",
         "meaning-desc-1": "Akumal significa <span class=\"text-primary italic font-semibold\">\"Lugar de las Tortugas\"</span> en la antigua lengua maya. Esta joya costera nació como una comunidad consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.",
         "meaning-desc-2": "En la actualidad, se mantiene como un paraíso reservado para el ecoturismo de lujo. Un universo donde la densa selva maya converge directamente con el vibrante Arrecife Mesoamericano.",
         "meaning-eco": "Vida Sustentable de Alto Diseño",
@@ -1664,26 +1664,26 @@
         "label-checkout-short": "Salida",
         "btn-quick-send": "Solicitar Información",
         "modal-lux": "Exclusividad",
-        "modal-title": "Plan Your Stay",
-        "modal-desc": "Enter your selected dates, and Valentina will curate the details of your arrival to paradise.",
+        "modal-title": "Planifica tu Estadía",
+        "modal-desc": "Ingresa las fechas elegidas y Valentina estructurará los detalles de tu arribo al paraíso.",
         "modal-inc": "Servicios Incluidos",
-        "modal-inc-1": "✓ 24/7 personal concierge support",
-        "modal-inc-2": "✓ Access to the protected nesting beach",
-        "modal-inc-3": "✓ Daily signature breakfast in villa",
-        "modal-choose": "Select the Experience",
-        "opt-suite": "Master Suite Tortuga — $650 USD / Night",
-        "opt-manor": "Oceanfront Manor — $1,200 USD / Night",
-        "opt-jungle": "Jungle Nest Sanctuary — $1,800 USD / Night",
-        "label-promo": "Promo Code",
-        "placeholder-promo": "Optional",
-        "label-est-total": "Estimated Total",
-        "label-calc": "Calculating nights...",
-        "btn-confirm-res": "Confirm Booking",
-        "res-rec": "Request Received!",
-        "res-rec-desc": "Valentina will contact you shortly to coordinate your complimentary transportation and customize your culinary menu.",
-        "btn-close": "Close",
-        "btn-close-lightbox": "CLOSE",
-        "lightbox-zoom-msg": "Click on the image to Zoom. Click outside to close."
+        "modal-inc-1": "✓ Conserjería personal 24/7",
+        "modal-inc-2": "✓ Acceso a la playa de anidación",
+        "modal-inc-3": "✓ Desayuno de autor diario",
+        "modal-choose": "Selecciona la Experiencia",
+        "opt-suite": "Master Suite Tortuga — $650 USD / Noche",
+        "opt-manor": "Oceanfront Manor — $1,200 USD / Noche",
+        "opt-jungle": "Jungle Nest Sanctuary — $1,800 USD / Noche",
+        "label-promo": "Código Promocional",
+        "placeholder-promo": "Opcional",
+        "label-est-total": "Total Estimado",
+        "label-calc": "Calculando noches...",
+        "btn-confirm-res": "Confirmar Reserva",
+        "res-rec": "¡Reserva Recibida!",
+        "res-rec-desc": "Valentina se pondrá en contacto contigo en breve para coordinar tu transportación de cortesía y personalizar tu menú.",
+        "btn-close": "Cerrar",
+        "btn-close-lightbox": "CERRAR",
+        "lightbox-zoom-msg": "Haz clic en la imagen para hacer Zoom. Haz clic fuera para cerrar."
       },
       en: {
         "nav-home": "Home",
@@ -1867,6 +1867,266 @@
     let activeLightboxIndex = 0;
     let isZoomed = false;
 
+    function navigateToPage(pageId) {
+      const pages = document.querySelectorAll('.page-section');
+      pages.forEach(p => {
+        p.classList.add('hidden', 'opacity-0');
+        p.classList.remove('opacity-100');
+      });
+
+      const targetPage = document.getElementById(`page-${pageId}`);
+      if (targetPage) {
+        targetPage.classList.remove('hidden');
+        gsap.to(targetPage, {
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out"
+        });
+      }
+
+      // Update navbar links styling
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('text-primary', 'nav-active-line');
+        link.classList.add('text-[#1d1c16]');
+      });
+
+      const activeLink = document.getElementById(`nav-${pageId}`);
+      if (activeLink) {
+        activeLink.classList.remove('text-[#1d1c16]');
+        activeLink.classList.add('text-primary', 'nav-active-line');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    }
+
+    function toggleLanguage() {
+      const newLang = activeLanguage === 'es' ? 'en' : 'es';
+      setLanguage(newLang);
+    }
+
+    function setLanguage(lang) {
+      activeLanguage = lang;
+
+      const btnDesktop = document.getElementById('lang-btn-desktop');
+      const btnMobile = document.getElementById('lang-btn-mobile');
+      
+      if (btnDesktop) {
+        btnDesktop.innerHTML = `<span class="material-symbols-outlined text-sm">language</span> <span>${lang === 'es' ? 'ENGLISH' : 'ESPAÑOL'}</span>`;
+      }
+      if (btnMobile) {
+        btnMobile.innerHTML = `<span class="material-symbols-outlined text-base">language</span> <span>${lang === 'es' ? 'English' : 'Español'}</span>`;
+      }
+
+      const langDict = dictionary[lang] || dictionary['es'];
+      document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        if (langDict[key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = langDict[key];
+          } else {
+            el.innerHTML = langDict[key];
+          }
+        }
+      });
+
+      populateDynamicContent(lang);
+    }
+
+    function populateDynamicContent(lang) {
+      const historyArea = document.getElementById('history-content-area');
+      if (historyArea) {
+        if (lang === 'es') {
+          historyArea.innerHTML = `
+            <p class="mb-4">Erigida sobre la mística tierra sagrada de Akumal —cuyo nombre en lengua maya evoca el ancestral <em>"Lugar de las Tortugas"</em>—, Casa Búho Dorado nació como un tributo a la quietud, la arquitectura orgánica y el profundo respeto por la selva tropical.</p>
+            <p class="mb-4">Inspirada en la majestuosidad de la fauna endémica y los vestigios de la sabiduría ancestral maya, cada espacio fue trazado respetando los árboles centenarios y la topografía natural del entorno. Los muros tallados a mano en piedra de la región albergan un refugio insuperable de privacidad y confort.</p>
+            <p>No somos un simple hospedaje de lujo; somos creadores de memorias atemporales donde el lujo silencioso, la brisa marina y la calidez del servicio personalizado convergen para restaurar el cuerpo y el espíritu.</p>
+          `;
+        } else {
+          historyArea.innerHTML = `
+            <p class="mb-4">Erected upon the sacred land of Akumal —whose name in the ancient Mayan language translates to <em>"Place of the Turtles"</em>—, Casa Búho Dorado was conceived as a homage to serenity, organic architecture, and deep reverence for the rainforest.</p>
+            <p class="mb-4">Inspired by majestic endemic wildlife and remnants of Mayan wisdom, every space was designed to honor century-old trees and natural contours. Hand-carved regional stone walls encase an unmatched sanctuary of privacy and luxury.</p>
+            <p>We are not mere hosts; we are memory makers where quiet luxury, sea breezes, and genuine bespoke hospitality unite to restore body and soul.</p>
+          `;
+        }
+      }
+
+      const villaArea = document.getElementById('villa-content-area');
+      if (villaArea) {
+        if (lang === 'es') {
+          villaArea.innerHTML = `
+            <p class="mb-4">Distribuida majestuosamente sobre más de 10,000 m² de reserva selvática privada, la residencia es una obra maestra de integración natural. Cuenta con 4 suites de lujo diseñadas con techos de doble altura, acabados en maderas finas sustentables y amplios ventanales de piso a techo.</p>
+            <p class="mb-4">Su distribución contempla dos cocinas de autor completamente equipadas, alberca privada envuelta por vegetación exótica, área de asador boutique, salones de estar al aire libre y terrazas privadas para contemplar la bóveda celeste.</p>
+            <p>Garantizando un entorno de descanso ininterrumpido, la propiedad cuenta con un sistema de acceso con doble portón de seguridad, monitoreo privado 24/7 y la atención continua de Valentina, tu concierge dedicada.</p>
+          `;
+        } else {
+          villaArea.innerHTML = `
+            <p class="mb-4">Majestically set across more than 10,000 sq meters of private jungle reserve, the residence is a masterpiece of natural integration. Featuring 4 luxury suites with double-height ceilings, sustainable hardwoods, and floor-to-ceiling glass walls.</p>
+            <p class="mb-4">The layout includes two fully equipped designer kitchens, a private swimming pool framed by exotic foliage, a boutique grill lounge, open-air living rooms, and private starlight observation decks.</p>
+            <p>Ensuring absolute peace of mind, the estate features a double-gated entry system, 24/7 private security monitoring, and continuous support from Valentina, your personal concierge.</p>
+          `;
+        }
+      }
+
+      const polArea = document.getElementById('pol-content-area');
+      if (polArea) {
+        if (lang === 'es') {
+          polArea.innerHTML = `
+            <div class="space-y-6 text-stone-700">
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">1. Ocupación y Aforo Máximo</h3>
+                <p class="text-sm font-sans">El aforo máximo estricto de Casa Búho Dorado es de <strong>8 huéspedes en total</strong> (combinación de adultos y niños). No se permiten visitas adicionales ni eventos multitudinarios no autorizados previamente por la administración.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">2. Horarios de Check-in y Check-out</h3>
+                <p class="text-sm font-sans">El horario de entrada (Check-in) es a partir de las <strong>3:00 PM</strong> y la salida (Check-out) debe realizarse antes de las <strong>11:00 AM</strong>. Salidas tardías o entradas anticipadas están sujetas a disponibilidad y confirmación previa de Valentina.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">3. Protección Ecosistémica y Tortugas Marinas</h3>
+                <p class="text-sm font-sans">Debido a que Akumal es un santuario protegido de anidación de tortugas marinas, se solicita apagar las luces exteriores directas hacia la playa después de las 10:00 PM durante la temporada de anidación y respetar en todo momento la flora y fauna de la reserva.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">4. Normas de Convivencia y Ruido</h3>
+                <p class="text-sm font-sans">Para preservar la paz de la selva y las residencias vecinas, se aplica un horario de silencio moderado a partir de las <strong>10:00 PM</strong>. No se permite música a volúmenes amplificados durante la noche.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">5. Humo y Fuego</h3>
+                <p class="text-sm font-sans">Queda strictly prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">6. Políticas de Cancelación y Depósito</h3>
+                <p class="text-sm font-sans">Las cancelaciones realizadas con más de 30 días de anticipación otorgan un reembolso completo del depósito. Cancelaciones posteriores estarán sujetas a la retención del anticipo conforme a las políticas del contrato de arrendamiento privado.</p>
+              </div>
+            </div>
+          `;
+        } else {
+          polArea.innerHTML = `
+            <div class="space-y-6 text-stone-700">
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">1. Occupancy & Maximum Capacity</h3>
+                <p class="text-sm font-sans">The strict maximum occupancy for Casa Búho Dorado is <strong>8 guests in total</strong> (adults and children combined). Unregistered day visitors or non-authorized large events are strictly prohibited.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">2. Check-in & Check-out Schedules</h3>
+                <p class="text-sm font-sans">Standard Check-in time is from <strong>3:00 PM</strong> onwards, and Check-out must be completed before <strong>11:00 AM</strong>. Late departures or early check-ins depend on availability and prior confirmation by Valentina.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">3. Ecosystem Protection & Sea Turtles</h3>
+                <p class="text-sm font-sans">As Akumal is a protected sea turtle nesting sanctuary, guests are kindly requested to turn off exterior lights facing the beach after 10:00 PM during nesting season and respect local flora and fauna at all times.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">4. Quiet Hours & Sound Policies</h3>
+                <p class="text-sm font-sans">To safeguard the peace of the jungle and surrounding estates, quiet hours take effect at <strong>10:00 PM</strong>. High-volume amplified outdoor sound systems are strictly prohibited during night hours.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">5. Smoking & Fire Restrictions</h3>
+                <p class="text-sm font-sans">Smoking is strictly forbidden inside suites and interior lounges. Smoking is permitted exclusively in designated outdoor areas equipped with ashtrays. Open campfires in jungle zones are strictly prohibited.</p>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-primary font-serif mb-2">6. Cancellation & Security Deposit</h3>
+                <p class="text-sm font-sans">Cancellations made more than 30 days prior to arrival receive a full deposit refund. Subsequent cancellations are subject to advance retention in accordance with private lease contract terms.</p>
+              </div>
+            </div>
+          `;
+        }
+      }
+    }
+
+    function validateCapacity(adultsElId, childrenElId) {
+      const adultsEl = document.getElementById(adultsElId);
+      const childrenEl = document.getElementById(childrenElId);
+      if (!adultsEl || !childrenEl) return;
+
+      const adults = parseInt(adultsEl.value) || 0;
+      const children = parseInt(childrenEl.value) || 0;
+
+      if (adults + children > 8) {
+        const errorMsg = activeLanguage === 'es' 
+          ? "⚠️ El aforo máximo en Casa Búho Dorado es de 8 personas en total."
+          : "⚠️ The maximum total capacity at Casa Búho Dorado is 8 guests.";
+        showToastNotification(errorMsg, "warning");
+        
+        if (children > 0 && adults + children > 8) {
+          childrenEl.value = Math.max(0, 8 - adults);
+        } else if (adults > 8) {
+          adultsEl.value = "8";
+          childrenEl.value = "0";
+        }
+      }
+    }
+
+    function validateContactGuestsCapacity() {
+      validateCapacity('contact-adults', 'contact-children');
+    }
+
+    function validateQuickGuestsCapacity() {
+      validateCapacity('quick-adults', 'quick-children');
+    }
+
+    function validateBookingGuestsCapacity() {
+      validateCapacity('booking-adults', 'booking-children');
+    }
+
+    function initScrollAnimations() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray('.reveal-up').forEach(elem => {
+        gsap.fromTo(elem, 
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.reveal-left').forEach(elem => {
+        gsap.fromTo(elem, 
+          { x: -50, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.reveal-right').forEach(elem => {
+        gsap.fromTo(elem, 
+          { x: 50, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       const today = new Date();
       const tomorrow = new Date(today);
@@ -1882,7 +2142,7 @@
       if (quickCheckInEl) quickCheckInEl.value = today.toISOString().split('T')[0];
       if (quickCheckOutEl) quickCheckOutEl.value = tomorrow.toISOString().split('T')[0];
 
-      // Initialize language text
+      // Initialize language text and dynamic sections
       setLanguage('es');
 
       // Setup Hero welcome transition
@@ -1917,7 +2177,6 @@
       });
     });
 
-    // Detect Google Drive / Video loading failures and seamlessly switch to web fallbacks
     function initVideoErrorHandler() {
       const videoPlayer = document.getElementById('cinematic-video-player');
       if (videoPlayer && videoPlayer.tagName === 'VIDEO') {
@@ -1935,7 +2194,6 @@
       }
     }
 
-    // Native HTML5 Video Autoplay and Pause Observer (No reloads, ultra-fluid)
     function initVideoIntersectionObserver() {
       const videoPlayer = document.getElementById('cinematic-video-player');
       if (!videoPlayer || typeof videoPlayer.play !== 'function') return;
@@ -1999,7 +2257,7 @@
         
         let cardAspect = 'aspect-[3/4]'; 
         if (activeFilter === 'exteriores') {
-          cardAspect = 'aspect-[2/3]'; // Strict vertical aspect ratio
+          cardAspect = 'aspect-[2/3]';
         } else if (activeFilter === 'detalles') {
           cardAspect = 'aspect-square';
         }
@@ -2299,13 +2557,11 @@
       if (!img) return;
       
       if (!isZoomed) {
-        // Zoom in and allow premium independent drag-panning
         isZoomed = true;
         img.style.transform = "scale(2.2)";
         img.classList.remove('cursor-zoom-in', 'transition-transform');
         img.classList.add('cursor-grab');
         
-        // Listeners for panning/dragging
         img.addEventListener('mousedown', startPan);
         img.addEventListener('mousemove', pan);
         window.addEventListener('mouseup', endPan);
@@ -2314,7 +2570,6 @@
         img.addEventListener('touchmove', pan, { passive: false });
         window.addEventListener('touchend', endPan);
       } else {
-        // Zoom out / reset
         resetLightboxZoom();
       }
     }
@@ -2326,7 +2581,6 @@
         img.classList.remove('cursor-grab', 'cursor-grabbing');
         img.classList.add('cursor-zoom-in', 'transition-transform');
         
-        // Clean up listeners
         img.removeEventListener('mousedown', startPan);
         img.removeEventListener('mousemove', pan);
         window.removeEventListener('mouseup', endPan);
@@ -2364,7 +2618,6 @@
       translateX = clientX - startX;
       translateY = clientY - startY;
 
-      // Keep panning constrained beautifully
       const maxPan = 220; 
       translateX = Math.max(-maxPan, Math.min(maxPan, translateX));
       translateY = Math.max(-maxPan, Math.min(maxPan, translateY));
