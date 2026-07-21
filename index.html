@@ -607,7 +607,7 @@
               </div>
               <div class="flex justify-between items-start font-sans">
                 <h3 class="font-headline-md text-xl">Dos Ojos</h3>
-                <span class="font-label-caps text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">15 MINS</span>
+                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">15 MINS</span>
               </div>
               <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center" data-translate="exp-c2">Cavernas milenarias y buceo guiado.</p>
             </div>
@@ -2751,31 +2751,99 @@
       }
     }
 
+    let startX = 0, startY = 0;
+    let translateX = 0, translateY = 0;
+    let isDragging = false;
+
     function toggleLightboxZoom(e) {
       e.stopPropagation();
       const img = document.getElementById('lightbox-img');
       if (!img) return;
+      
       if (!isZoomed) {
-        img.style.transform = "scale(1.8)";
-        img.classList.remove('cursor-zoom-in');
-        img.classList.add('cursor-zoom-out');
+        // Zoom in and allow premium independent drag-panning
         isZoomed = true;
+        img.style.transform = "scale(2.2)";
+        img.classList.remove('cursor-zoom-in', 'transition-transform');
+        img.classList.add('cursor-grab');
+        
+        // Listeners for panning/dragging
+        img.addEventListener('mousedown', startPan);
+        img.addEventListener('mousemove', pan);
+        window.addEventListener('mouseup', endPan);
+        
+        img.addEventListener('touchstart', startPan, { passive: false });
+        img.addEventListener('touchmove', pan, { passive: false });
+        window.addEventListener('touchend', endPan);
       } else {
-        img.style.transform = "scale(1)";
-        img.classList.remove('cursor-zoom-out');
-        img.classList.add('cursor-zoom-in');
-        isZoomed = false;
+        // Zoom out / reset
+        resetLightboxZoom();
       }
     }
 
     function resetLightboxZoom() {
       const img = document.getElementById('lightbox-img');
       if (img) {
-        img.style.transform = "scale(1)";
-        img.classList.remove('cursor-zoom-out');
-        img.classList.add('cursor-zoom-in');
+        img.style.transform = "scale(1) translate(0px, 0px)";
+        img.classList.remove('cursor-grab', 'cursor-grabbing');
+        img.classList.add('cursor-zoom-in', 'transition-transform');
+        
+        // Clean up listeners
+        img.removeEventListener('mousedown', startPan);
+        img.removeEventListener('mousemove', pan);
+        window.removeEventListener('mouseup', endPan);
+        
+        img.removeEventListener('touchstart', startPan);
+        img.removeEventListener('touchmove', pan);
+        window.removeEventListener('touchend', endPan);
       }
       isZoomed = false;
+      isDragging = false;
+      translateX = 0;
+      translateY = 0;
+    }
+
+    function startPan(e) {
+      e.preventDefault();
+      isDragging = true;
+      const img = document.getElementById('lightbox-img');
+      if (img) {
+        img.classList.remove('cursor-grab');
+        img.classList.add('cursor-grabbing');
+      }
+      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+      startX = clientX - translateX;
+      startY = clientY - translateY;
+    }
+
+    function pan(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+      
+      translateX = clientX - startX;
+      translateY = clientY - startY;
+
+      // Keep panning constrained beautifully
+      const maxPan = 220; 
+      translateX = Math.max(-maxPan, Math.min(maxPan, translateX));
+      translateY = Math.max(-maxPan, Math.min(maxPan, translateY));
+
+      const img = document.getElementById('lightbox-img');
+      if (img) {
+        img.style.transform = `scale(2.2) translate(${translateX / 2.2}px, ${translateY / 2.2}px)`;
+      }
+    }
+
+    function endPan() {
+      isDragging = false;
+      const img = document.getElementById('lightbox-img');
+      if (img && isZoomed) {
+        img.classList.remove('cursor-grabbing');
+        img.classList.add('cursor-grab');
+      }
     }
 
     function navigateLightbox(dir) {
