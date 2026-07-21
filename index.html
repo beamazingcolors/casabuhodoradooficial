@@ -382,7 +382,7 @@
         </div>
       </section>
 
-      <!-- ================= SECCIÓN: VÍDEO ATMÓSFERA (NATIVO HTML5 MULTI-FALLBACK) ================= -->
+      <!-- ================= SECCIÓN: VÍDEO ATMÓSFERA (EMBEBIDO YOUTUBE) ================= -->
       <!-- -->
       <section class="bg-surface-container-low py-16 px-6 md:px-margin-desktop border-t border-b border-neutral-100">
         <div class="max-w-container-max mx-auto text-center reveal-up">
@@ -392,26 +392,26 @@
             Sumérgete en la mística y el diseño orgánico de nuestro refugio privado a través de este exclusivo recorrido cinematográfico.
           </p>
 
-          <!-- Optimized Native HTML5 Video Element with Seamless Online Fallbacks -->
-          <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group">
+          <!-- Embedded YouTube Video Player with Language Support -->
+          <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-4">
             <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
             
-            <video 
+            <iframe 
               id="cinematic-video-player"
-              class="w-full h-full object-cover absolute inset-0"
-              autoplay 
-              loop 
-              muted 
-              playsinline
-              preload="auto"
-              poster="https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv">
-              <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c02271881d3907e74c29760d8599b1ef&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
-              <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-resort-and-beach-41484-large.mp4" type="video/mp4">
-            </video>
+              class="w-full h-full absolute inset-0 border-0"
+              src="https://www.youtube-nocookie.com/embed/h6W6BbKsgK4?rel=0&modestbranding=1&playsinline=1"
+              title="Atmósfera Casa Búho Dorado"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
 
-            <div id="video-status-indicator" class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-[10px] text-white/80 hidden font-sans">
-              Resorte de Respaldo Activo
-            </div>
+          <div class="text-center">
+            <a id="home-video-direct-link" href="https://youtu.be/h6W6BbKsgK4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-label-caps text-primary hover:underline font-semibold tracking-wider">
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+              <span data-translate="video-direct-link">Ver vídeo directamente en YouTube</span>
+            </a>
           </div>
         </div>
       </section>
@@ -1529,6 +1529,7 @@
         "video-tag": "Experiencia Visual",
         "video-title": "Atmósfera Casa Búho Dorado",
         "video-desc": "Sumérgete en la mística y el diseño orgánico de nuestro refugio privado a través de este exclusivo recorrido cinematográfico.",
+        "video-direct-link": "Ver vídeo directamente en YouTube",
         "t1-text": "\"Un refugio que redefine el descanso. La delicadeza del servicio privado y la mágica presencia de las tortugas en la orilla nos conmovió profundamente. Esto es la verdadera sofisticación del espacio.\"",
         "t1-author": "— FAMILIA HENDERSON, LONDRES",
         "t2-text": "\"Despertar rodeados de la selva maya con un desayuno de chef privado de clase mundial fue una experiencia inigualable. El diseño orgánico de la villa te transporta a un estado de paz absoluto.\"",
@@ -1702,6 +1703,7 @@
         "video-tag": "Visual Experience",
         "video-title": "Casa Búho Dorado Atmosphere",
         "video-desc": "Immerse yourself in the mysticism and organic design of our private sanctuary through this exclusive cinematic tour.",
+        "video-direct-link": "Watch video directly on YouTube",
         "t1-text": "\"A sanctuary that redefines rest. The delicacy of the private service and the magical presence of sea turtles on the shore deeply moved us. This is the true sophistication of space.\"",
         "t1-author": "— THE HENDERSON FAMILY, LONDON",
         "t2-text": "\"Waking up surrounded by the Mayan jungle with a world-class private chef breakfast was an unparalleled experience. The organic design of the villa transports you to absolute peace.\"",
@@ -1918,501 +1920,38 @@
     // Detect Google Drive / Video loading failures and seamlessly switch to web fallbacks
     function initVideoErrorHandler() {
       const videoPlayer = document.getElementById('cinematic-video-player');
-      if (videoPlayer) {
+      if (videoPlayer && videoPlayer.tagName === 'VIDEO') {
         videoPlayer.addEventListener('error', () => {
           console.warn("Primary video stream failed, attempting fallback source...");
           const sources = videoPlayer.getElementsByTagName('source');
           if (sources.length > 1) {
             videoPlayer.src = sources[1].src;
-            videoPlayer.load();
-            videoPlayer.play().catch(e => console.log("Autoplay failed on fallback load: ", e));
+            if (typeof videoPlayer.load === 'function') videoPlayer.load();
+            if (typeof videoPlayer.play === 'function') {
+              videoPlayer.play().catch(e => console.log("Autoplay failed on fallback load: ", e));
+            }
           }
         }, true);
       }
     }
 
-    // Language Toggle logic
-    function setLanguage(lang) {
-      activeLanguage = lang;
-      
-      // Update data-translate nodes
-      document.querySelectorAll('[data-translate]').forEach(el => {
-        const key = el.getAttribute('data-translate');
-        if (dictionary[lang] && dictionary[lang][key]) {
-          // Check if placeholder or standard tag
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.setAttribute('placeholder', dictionary[lang][key]);
-          } else {
-            el.innerHTML = dictionary[lang][key];
-          }
-        }
-      });
-
-      // Update interactive blocks
-      updateHistoryHTML(lang);
-      updateVillaHTML(lang);
-      updatePoliciesHTML(lang);
-
-      // Swap video source dynamically matches Spanish/English to prevent security errors
-      const videoPlayer = document.getElementById('cinematic-video-player');
-      const gDriveSource = document.getElementById('video-source-gdrive');
-      
-      if (gDriveSource && videoPlayer) {
-        if (lang === 'en') {
-          gDriveSource.src = "https://drive.google.com/uc?export=download&id=1NRVEd1l1VOaVtLJasFvZTnT1FOHjFj4i";
-        } else {
-          gDriveSource.src = "https://drive.google.com/uc?export=download&id=1R43rE1-gnvlSeR8CB0biLhIdSbr_xejF";
-        }
-        videoPlayer.load();
-        videoPlayer.play().catch(err => console.log("Autoplay blocked/prevented by browser: ", err));
-      }
-
-      // Update selector buttons styling
-      const btnDesktop = document.getElementById('lang-btn-desktop');
-      const btnMobile = document.getElementById('lang-btn-mobile');
-      
-      if (btnDesktop) {
-        btnDesktop.querySelector('span:not(.material-symbols-outlined)').textContent = lang === 'es' ? 'ENGLISH' : 'ESPAÑOL';
-      }
-      if (btnMobile) {
-        btnMobile.querySelector('span:not(.material-symbols-outlined)').textContent = lang === 'es' ? 'English' : 'Español';
-      }
-
-      calculateDynamicPricing();
-    }
-
-    function toggleLanguage() {
-      const nextLang = activeLanguage === 'es' ? 'en' : 'es';
-      gsap.to("main", {
-        opacity: 0,
-        y: 10,
-        duration: 0.3,
-        onComplete: () => {
-          setLanguage(nextLang);
-          gsap.to("main", { opacity: 1, y: 0, duration: 0.4 });
-        }
-      });
-    }
-
-    function updateHistoryHTML(lang) {
-      const el = document.getElementById('history-content-area');
-      if (!el) return;
-      if (lang === 'es') {
-        el.innerHTML = `
-          <p>Hay lugares que se construyen con piedra, madera y diseño. Otros comienzan mucho antes, con una historia que les da alma.</p>
-          <p>Antes de iniciar la construcción de la villa, quisimos rendir homenaje a la tierra que hoy la alberga. Celebramos una ceremonia tradicional maya para pedir permiso a la selva, agradecer su generosidad y honrar a los Aluxes, considerados por la tradición como los guardianes de estos antiguos territorios.</p>
-          <p>Mientras el sol descendía y la luz dorada de la tarde envolvía la selva un pequeño búho apareció silencioso entre los árboles. Permaneció observando toda la ceremonia con una serenidad que parecía detener el tiempo.</p>
-          <p>Al finalizar, el chamán nos explicó que, según la tradición de esta región, el búho es un animal guía y protector de este rincón de la selva; un símbolo de sabiduría, intuición y conexión con la naturaleza.</p>
-          <p>No sabemos si fue una señal, una hermosa coincidencia o simplemente uno de esos momentos que la naturaleza regala a quienes saben observarla. Lo que sí sabemos es que, desde ese día, sentimos que este lugar ya tenía un guardián.</p>
-          <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4 font-serif text-center sm:text-left">Así nació el nombre Casa Búho Dorado.</p>
-          <p>De tanto en tanto nos visita el pequeño búho, siempre al caer la tarde, cuando la selva se tiñe de luz dorada, si nos visitas búscalo entre los arboles quizás guíe tu camino hacia la paz.</p>
-          <p>Hoy, el búho no solo inspira nuestro nombre y nuestro emblema. Representa la esencia de este hogar: un refugio donde la naturaleza, la hospitalidad y los momentos compartidos se convierten en recuerdos que permanecen para siempre.</p>
-          <p class="font-semibold text-primary font-label-caps text-sm tracking-widest pt-2">No somos anfitriones. Somos creadores de recuerdos.</p>
-        `;
-      } else {
-        el.innerHTML = `
-          <p>There are places built with stone, wood, and design. Others begin much earlier, with a story that gives them a soul.</p>
-          <p>Before breaking ground on the villa, we wished to pay tribute to the land that embraces it today. We celebrated a traditional Mayan ceremony to request permission from the jungle, show gratitude for its generosity, and honor the Aluxes, regarded by tradition as the guardians of these ancient territories.</p>
-          <p>As the sun set and the golden afternoon light enveloped the canopy, a small owl appeared silently among the trees. It remained watching the entire ceremony with a serenity that seemed to pause time.</p>
-          <p>When it concluded, the shaman explained that, according to the region's traditions, the owl is a guide and protective animal of this corner of the forest; a symbol of wisdom, intuition, and connection with nature.</p>
-          <p>We do not know if it was a sign, a beautiful coincidence, or simply one of those moments that nature gifts to those who know how to observe it. What we do know is that, from that day on, we felt this place already had a guardian.</p>
-          <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4 font-serif text-center sm:text-left">Thus, the name Casa Búho Dorado was born.</p>
-          <p>From time to time, the small owl visits us, always at dusk when the jungle is bathed in golden light. If you visit us, search for him among the branches—he may guide your path to peace.</p>
-          <p>Today, the owl does not only inspire our name and emblem. It represents the essence of this home: a refuge where nature, hospitality, and shared moments transform into memories that last forever.</p>
-          <p class="font-semibold text-primary font-label-caps text-sm tracking-widest pt-2">We are not hosts. We are memory makers.</p>
-        `;
-      }
-    }
-
-    function updateVillaHTML(lang) {
-      const el = document.getElementById('villa-content-area');
-      if (!el) return;
-      if (lang === 'es') {
-        el.innerHTML = `
-          <p>Inspirada en la elegancia de las antiguas haciendas mexicanas e interpretada con una arquitectura contemporánea, Casa Búho Dorado es un refugio donde el diseño, la naturaleza y la hospitalidad se encuentran en perfecta armonía.</p>
-          <p>Ubicada en un terreno privado de 10,000 m², rodeada por la selva maya y a solo minutos del Caribe Mexicano, la villa ofrece absoluta privacidad, tranquilidad y una ubicación privilegiada para explorar la Riviera Maya.</p>
-          <p>Su arquitectura integra los espacios interiores y exteriores en un solo ambiente. La sala se abre hacia una amplia terraza y una gran alberca privada, mientras la luz natural recorre cada rincón, resaltando la calidez de la piedra maya, la madera y los materiales naturales.</p>
-          <p>La villa cuenta con cuatro suites, cada una con baño privado, además de un medio baño para visitas. Dispone de dos cocinas totalmente equipadas: una cocina interior de diseño y una espectacular cocina exterior con horno de leña, quemadores de gas, comal y asador regulable, pensada para convertir cada comida en una experiencia.</p>
-          <p>El acceso se realiza mediante un doble portón privado y toda la propiedad cuenta con videovigilancia perimetral, garantizando seguridad, privacidad y el silencio que solo la selva puede ofrecer.</p>
-          <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4 font-serif text-center sm:text-left">En Casa Búho Dorado, cada espacio ha sido creado para desacelerar, reconectar con la naturaleza y transformar cada estancia en el placer de estar.</p>
-        `;
-      } else {
-        el.innerHTML = `
-          <p>Inspired by the elegance of ancient Mexican haciendas and interpreted through contemporary architecture, Casa Búho Dorado is a sanctuary where design, nature, and hospitality meet in perfect harmony.</p>
-          <p>Nestled within a private 10,000 m² estate surrounded by the Mayan jungle and just minutes from the Mexican Caribbean, the villa offers absolute privacy, tranquility, and a privileged location to explore the Riviera Maya.</p>
-          <p>Its architecture seamlessly integrates indoor and outdoor spaces. The living room opens up to a vast terrace and a grand private pool, while natural light flows through every corner, accentuating the warmth of Mayan stone, rich woods, and organic materials.</p>
-          <p>The villa features four suites, each with a private en-suite bathroom, along with a guest powder room. It boasts two fully equipped kitchens: a designer indoor kitchen and a spectacular outdoor kitchen equipped with a wood-fired oven, gas burners, comal griddle, and adjustable grill, crafted to turn every meal into a memorable experience.</p>
-          <p>Access is granted through a private double-gated entrance, and the entire property features perimeter security cameras, ensuring safety, privacy, and the absolute silence that only the deep jungle can offer.</p>
-          <p class="font-headline-md italic text-primary text-lg pl-4 border-l-2 border-primary/40 my-4 font-serif text-center sm:text-left">At Casa Búho Dorado, every space has been conceived to slow down, reconnect with nature, and transform every stay into the pure pleasure of being present.</p>
-        `;
-      }
-    }
-
-    function updatePoliciesHTML(lang) {
-      const el = document.getElementById('pol-content-area');
-      if (!el) return;
-      if (lang === 'es') {
-        el.innerHTML = `
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">1. Horarios de Entrada y Salida (Check-in / Check-out)</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • <strong>Check-in (Entrada):</strong> A partir de las <strong>3:00 PM (15:00 hrs)</strong>. A tu llegada, el mayordomo y Valentina te recibirán para realizar el recorrido explicativo de la propiedad y la entrega de accesos.<br>
-              • <strong>Check-out (Salida):</strong> Hasta las <strong>11:00 AM (11:00 hrs)</strong>. Es indispensable respetar este horario para permitir las labores de limpieza profunda y sanitización del recinto previas a la llegada del siguiente huésped.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">2. Límite de Ocupación Estricto</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • El aforo máximo permitido en Casa Búho Dorado es de <strong>8 personas en total</strong> (incluyendo adultos y niños). Bajo ninguna circunstancia se permitirá el acceso o pernocta de huéspedes adicionales no registrados formalmente en la solicitud de reserva.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">3. Fiestas y Eventos Sociales</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • Quedan estrictamente prohibidas las fiestas de gran aforo, eventos masivos o reuniones que excedan el número máximo de huéspedes autorizados. Cualquier evento íntimo (bodas o celebraciones familiares de bajo impacto) debe ser autorizado previamente y por escrito por la administración de Casa Búho Dorado.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">4. Preservación del Ecosistema y Fauna</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • <strong>Protección de Tortugas:</strong> Akumal es una zona de anidación protegida por leyes federales. Está estrictamente prohibido el uso de luces brillantes, flashes o linternas en la zona de playa durante las noches de anidación. No se debe tocar, molestar ni interferir en el camino de las tortugas o sus crías.<br>
-              • <strong>Ruido y Descanso:</strong> Solicitamos moderar el volumen de la música en exteriores a partir de las <strong>10:00 PM</strong> para no alterar la paz de la fauna selvática local ni a los vecinos de la bahía.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">5. Depósito de Garantía y Daños</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • Se solicitará un depósito de seguridad reembolsable antes del ingreso. Este depósito se devolverá íntegramente en un plazo máximo de 72 horas hábiles tras el check-out, previa validación de que la propiedad, mobiliario y equipos se encuentren en el mismo estado de pulcritud en que fueron entregados.
-            </p>
-          </div>
-
-          <div class="pt-6 border-t border-primary/20 flex justify-center">
-            <button onclick="navigateToPage('home')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3 font-label-caps text-xs tracking-widest uppercase transition-all shadow-md">
-              Regresar al Inicio
-            </button>
-          </div>
-        `;
-      } else {
-        el.innerHTML = `
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">1. Arrival and Departure Times (Check-in / Check-out)</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • <strong>Check-in:</strong> Starting at <strong>3:00 PM (15:00 hrs)</strong>. Upon your arrival, the butler and Valentina will welcome you for an explanatory tour of the property and hand over the accesses.<br>
-              • <strong>Check-out:</strong> Until <strong>11:00 AM (11:00 hrs)</strong>. It is essential to respect this schedule to allow deep cleaning and sanitation before the next guest arrives.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">2. Strict Occupancy Limit</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • The maximum allowed occupancy at Casa Búho Dorado is <strong>8 people in total</strong> (including adults and children). Under no circumstances will additional guests who are not formally registered be allowed access or overnight stays.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">3. Parties and Social Events</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • Large parties, massive events, or gatherings exceeding the maximum authorized number of guests are strictly prohibited. Any intimate celebration (weddings or low-impact family events) must be authorized in advance and in writing.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">4. Ecosystem and Wildlife Preservation</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • <strong>Turtle Protection:</strong> Akumal is a protected nesting area under federal laws. It is strictly forbidden to use bright lights, flashes, or flashlights on the beach during nesting nights. Turtles and their hatchlings must not be touched or disturbed.<br>
-              • <strong>Noise Control:</strong> Please moderate music volume in outdoor areas after <strong>10:00 PM</strong> to maintain the peace of the local wildlife and nearby neighbors.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-headline-md text-xl text-primary mb-3 font-serif">5. Security Deposit & Damages</h3>
-            <p class="text-sm text-stone-600 text-justify font-sans">
-              • A refundable security deposit is required prior to entry. This deposit will be returned in full within 72 business hours after check-out, subject to verification of the property.
-            </p>
-          </div>
-
-          <div class="pt-6 border-t border-primary/20 flex justify-center">
-            <button onclick="navigateToPage('home')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3 font-label-caps text-xs tracking-widest uppercase transition-all shadow-md">
-              Return Home
-            </button>
-          </div>
-        `;
-      }
-    }
-
-    // Cursor tracking with beautiful LLG.png logo trails
-    let lastImageX = 0;
-    let lastImageY = 0;
-    const spawnDistance = 60; 
-
-    function handlePointerMove(clientX, clientY, pageX, pageY) {
-      const dist = Math.hypot(pageX - lastImageX, pageY - lastImageY);
-      if (dist > spawnDistance) {
-        spawnCursorImage(pageX, pageY);
-        lastImageX = pageX;
-        lastImageY = pageY;
-      }
-    }
-
-    window.addEventListener('mousemove', (e) => {
-      handlePointerMove(e.clientX, e.clientY, e.pageX, e.pageY);
-    });
-
-    window.addEventListener('touchmove', (e) => {
-      if (e.touches && e.touches[0]) {
-        const touch = e.touches[0];
-        handlePointerMove(touch.clientX, touch.clientY, touch.pageX, touch.pageY);
-      }
-    }, { passive: true });
-
-    function spawnCursorImage(x, y) {
-      const imgContainer = document.createElement('div');
-      imgContainer.className = "absolute pointer-events-none z-[80]";
-      imgContainer.style.left = `${x}px`;
-      imgContainer.style.top = `${y}px`;
-      imgContainer.style.transform = `translate(-50%, -50%) scale(0.12)`;
-      
-      imgContainer.innerHTML = `
-        <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" 
-             class="w-12 h-12 object-contain opacity-90 drop-shadow-[0_4px_12px_rgba(181,138,61,0.5)]" 
-             onerror="this.style.display='none';" />
-      `;
-      document.body.appendChild(imgContainer);
-
-      const angle = Math.random() * Math.PI * 2;
-      const distance = 30 + Math.random() * 50;
-      const targetX = x + Math.cos(angle) * distance;
-      const targetY = y - (40 + Math.random() * 65); 
-      const randomScale = 0.4 + Math.random() * 0.4;
-
-      const tl = gsap.timeline({
-        onComplete: () => {
-          imgContainer.remove();
-        }
-      });
-
-      tl.to(imgContainer, {
-        left: targetX,
-        top: targetY,
-        scale: randomScale,
-        duration: 1.5 + Math.random() * 0.5,
-        ease: "power1.out"
-      })
-      .to(imgContainer, {
-        opacity: 0,
-        duration: 0.6
-      }, "-=0.6");
-    }
-
-    function validateContactGuestsCapacity() {
-      const adults = parseInt(document.getElementById('contact-adults').value) || 0;
-      const children = parseInt(document.getElementById('contact-children').value) || 0;
-      if (adults + children > 8) {
-        const alertMsg = activeLanguage === 'es' ? "⚠️ El aforo máximo permitido en la villa es de 8 personas en total (adultos + niños)." : "⚠️ The maximum occupancy allowed in the villa is 8 people in total (adults + children).";
-        showToastNotification(alertMsg, "warning");
-        document.getElementById('contact-children').value = 8 - adults;
-      }
-    }
-
-    function validateQuickGuestsCapacity() {
-      const adults = parseInt(document.getElementById('quick-adults').value) || 0;
-      const children = parseInt(document.getElementById('quick-children').value) || 0;
-      if (adults + children > 8) {
-        const alertMsg = activeLanguage === 'es' ? "⚠️ El aforo máximo permitido en la villa es de 8 personas en total." : "⚠️ The maximum occupancy allowed in the villa is 8 people in total.";
-        showToastNotification(alertMsg, "warning");
-        document.getElementById('quick-children').value = 8 - adults;
-      }
-    }
-
-    function validateBookingGuestsCapacity() {
-      const adults = parseInt(document.getElementById('booking-adults').value) || 0;
-      const children = parseInt(document.getElementById('booking-children').value) || 0;
-      if (adults + children > 8) {
-        const alertMsg = activeLanguage === 'es' ? "⚠️ El aforo máximo de Casa Búho Dorado es de 8 personas en total." : "⚠️ The maximum occupancy of Casa Búho Dorado is 8 people in total.";
-        showToastNotification(alertMsg, "warning");
-        document.getElementById('booking-children').value = 8 - adults;
-      }
-    }
-
-    function navigateToPage(pageId) {
-      const homePage = document.getElementById('page-home');
-      const galleryPage = document.getElementById('page-gallery');
-      const ubicacionPage = document.getElementById('page-ubicacion');
-      const servicesPage = document.getElementById('page-services');
-      const experiencesPage = document.getElementById('page-experiences');
-      const contactPage = document.getElementById('page-contact');
-      const politicasPage = document.getElementById('page-politicas');
-      
-      const pages = [homePage, galleryPage, ubicacionPage, servicesPage, experiencesPage, contactPage, politicasPage];
-      let activePage = null;
-
-      pages.forEach(p => {
-        if (p && !p.classList.contains('hidden')) {
-          activePage = p;
-        }
-      });
-
-      const targetPage = document.getElementById(`page-${pageId}`);
-      if (!activePage || !targetPage || activePage === targetPage) return;
-
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('text-primary', 'nav-active-line');
-        link.classList.add('text-[#1d1c16]');
-      });
-
-      const targetNavLink = document.getElementById(`nav-${pageId}`);
-      if (targetNavLink) {
-        targetNavLink.classList.remove('text-[#1d1c16]');
-        targetNavLink.classList.add('text-primary', 'nav-active-line');
-      }
-
-      gsap.to(activePage, {
-        opacity: 0,
-        y: -15,
-        duration: 0.4,
-        onComplete: () => {
-          activePage.classList.add('hidden');
-          targetPage.classList.remove('hidden');
-          window.scrollTo(0, 0);
-          
-          gsap.fromTo(targetPage, 
-            { opacity: 0, y: 15 },
-            { 
-              opacity: 1, 
-              y: 0, 
-              duration: 0.5, 
-              ease: "power2.out",
-              onComplete: () => {
-                ScrollTrigger.refresh();
-                if (pageId === 'ubicacion') {
-                  gsap.fromTo("#page-ubicacion .reveal-up", {opacity: 0, y: 80, scale: 0.98}, {opacity: 1, y: 0, scale: 1, duration: 1.4, stagger: 0.2, ease: "power4.out"});
-                  gsap.fromTo("#page-ubicacion .reveal-left", {opacity: 0, x: -80, rotate: -1}, {opacity: 1, x: 0, rotate: 0, duration: 1.4, ease: "power4.out"});
-                  gsap.fromTo("#page-ubicacion .reveal-right", {opacity: 0, x: 80, rotate: 1}, {opacity: 1, x: 0, rotate: 0, duration: 1.4, ease: "power4.out"});
-                  gsap.fromTo("#page-ubicacion .ken-burns", {opacity: 0, scale: 0.9}, {opacity: 1, scale: 1, duration: 1.2, stagger: 0.15, ease: "power3.out"});
-                }
-              }
-            }
-          );
-        }
-      });
-    }
-
-    // Scroll Transformation for Navbar with Safe element checks to prevent Console errors
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('main-header');
-      const logo = document.getElementById('header-logo');
-      const title = document.getElementById('header-title');
-
-      if (header && logo && title) {
-        if (window.scrollY > 40) {
-          header.classList.add('glass-nav', 'shadow-md', 'py-2');
-          header.classList.remove('py-6', 'md:py-8');
-          header.classList.add('border-b', 'border-[#cfc4b4]/40');
-          
-          logo.classList.add('h-10', 'xs:h-12', 'sm:h-16', 'md:h-20');
-          logo.classList.remove('h-16', 'xs:h-20', 'sm:h-24', 'md:h-28');
-          title.classList.add('text-xs', 'sm:text-lg', 'md:text-2xl');
-          title.classList.remove('text-sm', 'sm:text-2xl', 'md:text-3xl');
-        } else {
-          header.classList.remove('glass-nav', 'shadow-md', 'py-2', 'border-b', 'border-[#cfc4b4]/40');
-          header.classList.add('py-6', 'md:py-8');
-          
-          logo.classList.remove('h-10', 'xs:h-12', 'sm:h-16', 'md:h-20');
-          logo.classList.add('h-16', 'xs:h-20', 'sm:h-24', 'md:h-28');
-          title.classList.remove('text-xs', 'sm:text-lg', 'md:text-2xl');
-          title.classList.add('text-sm', 'sm:text-2xl', 'md:text-3xl');
-        }
-      }
-    });
-
-    function initScrollAnimations() {
-      const revealUp = gsap.utils.toArray(".reveal-up");
-      revealUp.forEach(el => {
-        if (el) {
-          gsap.set(el, { opacity: 0, y: 50 });
-          gsap.to(el, {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              toggleActions: "play none none none"
-            }
-          });
-        }
-      });
-
-      const revealLeft = gsap.utils.toArray(".reveal-left");
-      revealLeft.forEach(el => {
-        if (el) {
-          gsap.set(el, { opacity: 0, x: -50 });
-          gsap.to(el, {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              toggleActions: "play none none none"
-            }
-          });
-        }
-      });
-
-      const revealRight = gsap.utils.toArray(".reveal-right");
-      revealRight.forEach(el => {
-        if (el) {
-          gsap.set(el, { opacity: 0, x: 50 });
-          gsap.to(el, {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              toggleActions: "play none none none"
-            }
-          });
-        }
-      });
-
-      const staggers = gsap.utils.toArray(".reveal-up-stagger");
-      staggers.forEach(container => {
-        if (container) {
-          const children = container.children;
-          gsap.set(children, { opacity: 0, y: 30 });
-          gsap.to(children, {
-            opacity: 1,
-            y: 0,
-            duration: 1.0,
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: container,
-              start: "top 80%"
-            }
-          });
-        }
-      });
-    }
-
     // Native HTML5 Video Autoplay and Pause Observer (No reloads, ultra-fluid)
     function initVideoIntersectionObserver() {
       const videoPlayer = document.getElementById('cinematic-video-player');
-      if (!videoPlayer) return;
+      if (!videoPlayer || typeof videoPlayer.play !== 'function') return;
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            videoPlayer.play().catch(err => {
-              console.log("Autoplay prevented on scroll: ", err);
-            });
+            if (typeof videoPlayer.play === 'function') {
+              videoPlayer.play().catch(err => {
+                console.log("Autoplay prevented on scroll: ", err);
+              });
+            }
           } else {
-            videoPlayer.pause();
+            if (typeof videoPlayer.pause === 'function') {
+              videoPlayer.pause();
+            }
           }
         });
       }, { threshold: 0.25 });
