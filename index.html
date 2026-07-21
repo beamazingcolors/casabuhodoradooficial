@@ -95,6 +95,11 @@
       .cloud-slow-1 { width: 280px !important; height: 110px !important; }
       .cloud-slow-2 { width: 340px !important; height: 130px !important; }
     }
+
+    .custom-cursor-follower {
+      will-change: transform, opacity;
+      transform: translate3d(-50%, -50%, 0);
+    }
   </style>
 
   <!-- Tailwind Theme Configuration overrides -->
@@ -1412,6 +1417,13 @@
     </div>
   </div>
 
+  <!-- Custom Harmonic Logo Cursor Follower -->
+  <div id="cursor-follower" class="custom-cursor-follower hidden lg:block fixed top-0 left-0 w-12 h-12 pointer-events-none z-[9999] opacity-0 transition-opacity duration-500 ease-out">
+    <div id="cursor-inner-ring" class="relative w-full h-full flex items-center justify-center rounded-full bg-surface/85 backdrop-blur-md border border-primary/40 shadow-[0_0_25px_rgba(181,138,61,0.3)] transition-all duration-300 ease-out transform scale-100">
+      <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'" alt="Casa Búho Dorado Logo" class="w-7 h-7 object-contain drop-shadow-sm pointer-events-none"/>
+    </div>
+  </div>
+
   <!-- ================= MASTER DATA & LOGIC ================= -->
   <script>
     const curatedGallery = [
@@ -2150,6 +2162,7 @@
 
       renderInteractiveGallery();
       initScrollAnimations();
+      initCustomCursor();
 
       const bookingModal = document.getElementById('booking-modal');
       if (bookingModal) {
@@ -2687,6 +2700,68 @@
       if (next >= 3) next = 0;
       setTestimonialSlide(next);
     }, 5000);
+
+    function initCustomCursor() {
+      const cursor = document.getElementById('cursor-follower');
+      const cursorInner = document.getElementById('cursor-inner-ring');
+      if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
+
+      let mouseX = -100;
+      let mouseY = -100;
+      let cursorX = -100;
+      let cursorY = -100;
+      let isVisible = false;
+
+      const setX = gsap.quickSetter(cursor, "x", "px");
+      const setY = gsap.quickSetter(cursor, "y", "px");
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!isVisible) {
+          isVisible = true;
+          cursorX = mouseX;
+          cursorY = mouseY;
+          setX(cursorX);
+          setY(cursorY);
+          cursor.classList.remove('opacity-0');
+          cursor.classList.add('opacity-100');
+        }
+      });
+
+      document.addEventListener('mouseleave', () => {
+        isVisible = false;
+        cursor.classList.remove('opacity-100');
+        cursor.classList.add('opacity-0');
+      });
+
+      function animateCursor() {
+        if (isVisible) {
+          cursorX += (mouseX - cursorX) * 0.12;
+          cursorY += (mouseY - cursorY) * 0.12;
+          setX(cursorX);
+          setY(cursorY);
+        }
+        requestAnimationFrame(animateCursor);
+      }
+      requestAnimationFrame(animateCursor);
+
+      // Dynamic glow expansion on interactive elements hover
+      document.addEventListener('mouseover', (e) => {
+        const target = e.target.closest('a, button, input, select, textarea, .gallery-item, .ken-burns, [onclick]');
+        if (target && cursorInner) {
+          cursorInner.classList.add('scale-125', 'border-primary', 'bg-surface', 'shadow-[0_0_35px_rgba(181,138,61,0.6)]');
+        }
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        const target = e.target.closest('a, button, input, select, textarea, .gallery-item, .ken-burns, [onclick]');
+        if (target && cursorInner) {
+          cursorInner.classList.remove('scale-125', 'border-primary', 'bg-surface', 'shadow-[0_0_35px_rgba(181,138,61,0.6)]');
+        }
+      });
+    }
   </script>
 
 </body>
