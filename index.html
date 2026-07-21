@@ -195,27 +195,27 @@
 
   <!-- ================= MASTER HEADER (Aesthetic, Zero Overlap Redesign) ================= -->
   <!-- -->
-  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-6 md:py-8 bg-surface-container border-b border-transparent" id="main-header">
-    <div class="flex items-center justify-between px-4 md:px-margin-desktop max-w-container-max mx-auto w-full gap-4">
+  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-3 sm:py-4 bg-surface-container/95 backdrop-blur-md border-b border-primary/10 shadow-sm" id="main-header">
+    <div class="flex items-center justify-between px-4 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto w-full gap-4 lg:gap-8">
       
-      <!-- Brand Logo + Title Container (Highly Responsive Sizing) -->
-      <div class="flex items-center gap-3 md:gap-5 cursor-pointer flex-shrink-0" onclick="navigateToPage('home')">
-        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-16 xs:h-20 sm:h-24 md:h-28 w-auto object-contain transition-all duration-500 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-        <span id="header-title" class="font-headline-md text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-primary tracking-widest uppercase font-semibold drop-shadow-sm transition-all duration-500 whitespace-nowrap">CASA BÚHO DORADO</span>
+      <!-- Brand Logo + Title Container (Harmonious & Refined Sizing) -->
+      <div class="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer flex-shrink-0" onclick="navigateToPage('home')">
+        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain transition-all duration-300 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+        <span id="header-title" class="font-headline-md text-sm sm:text-base md:text-lg lg:text-xl text-primary tracking-[0.2em] uppercase font-semibold transition-all duration-300 whitespace-nowrap">CASA BÚHO DORADO</span>
       </div>
       
       <!-- Nav Menu (Pushed to xl:flex to prevent overlap on smaller desktop screens) -->
-      <nav class="hidden xl:flex items-center gap-6 lg:gap-8 flex-shrink-0">
-        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-label-caps text-primary nav-active-line transition-all duration-300" id="nav-home" data-translate="nav-home">Inicio</button>
-        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-gallery" data-translate="nav-gallery">Galería</button>
-        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
-        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-services" data-translate="nav-services">Servicios</button>
-        <button onclick="navigateToPage('experiences')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-experiences" data-translate="nav-experiences">Experiencias</button>
-        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-label-caps text-[#1d1c16] hover:text-primary transition-all duration-300" id="nav-contact" data-translate="nav-contact">Contacto</button>
+      <nav class="hidden xl:flex items-center gap-5 lg:gap-6 xl:gap-7 flex-shrink-0">
+        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs text-primary nav-active-line transition-all duration-300 py-1" id="nav-home" data-translate="nav-home">Inicio</button>
+        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-gallery" data-translate="nav-gallery">Galería</button>
+        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
+        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-services" data-translate="nav-services">Servicios</button>
+        <button onclick="navigateToPage('experiences')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-experiences" data-translate="nav-experiences">Experiencias</button>
+        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-contact" data-translate="nav-contact">Contacto</button>
         
         <!-- English/Español Switcher desktop -->
-        <div class="h-5 w-[1px] bg-outline-variant/60 text-stone-300"></div>
-        <button onclick="toggleLanguage()" class="font-semibold text-xs tracking-widest font-label-caps text-stone-500 hover:text-primary transition-colors flex items-center gap-1" id="lang-btn-desktop">
+        <div class="h-4 w-[1px] bg-outline-variant/60"></div>
+        <button onclick="toggleLanguage()" class="font-semibold text-[11px] tracking-widest font-label-caps text-stone-600 hover:text-primary transition-colors flex items-center gap-1.5" id="lang-btn-desktop">
           <span class="material-symbols-outlined text-sm">language</span>
           <span>ENGLISH</span>
         </button>
@@ -224,7 +224,7 @@
       <!-- Hamburger toggle optimized for xl:hidden -->
       <div class="xl:hidden flex items-center gap-4">
         <button onclick="toggleMobileMenu()" class="text-primary p-2 focus:outline-none" aria-label="Menú">
-          <span class="material-symbols-outlined text-4xl" id="menu-icon">menu</span>
+          <span class="material-symbols-outlined text-3xl sm:text-4xl" id="menu-icon">menu</span>
         </button>
       </div>
     </div>
@@ -246,7 +246,7 @@
     </div>
   </header>
 
-  <main class="pt-24 md:pt-32">
+  <main class="pt-20 md:pt-24">
 
     <!-- ================= SECCIÓN: INICIO ================= -->
     <!-- -->
@@ -399,7 +399,7 @@
             <iframe 
               id="cinematic-video-player"
               class="w-full h-full absolute inset-0 border-0"
-              src="https://www.youtube-nocookie.com/embed/h6W6BbKsgK4?rel=0&modestbranding=1&playsinline=1"
+              src="https://www.youtube-nocookie.com/embed/47dlF0Of1yU?rel=0&modestbranding=1&playsinline=1"
               title="Atmósfera Casa Búho Dorado"
               referrerpolicy="strict-origin-when-cross-origin"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -408,7 +408,7 @@
           </div>
 
           <div class="text-center">
-            <a id="home-video-direct-link" href="https://youtu.be/h6W6BbKsgK4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-label-caps text-primary hover:underline font-semibold tracking-wider">
+            <a id="home-video-direct-link" href="https://youtu.be/47dlF0Of1yU" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-label-caps text-primary hover:underline font-semibold tracking-wider">
               <span class="material-symbols-outlined text-sm">open_in_new</span>
               <span data-translate="video-direct-link">Ver vídeo directamente en YouTube</span>
             </a>
@@ -521,8 +521,8 @@
       <!-- Video de la Bahía en Galería -->
       <div class="max-w-container-max mx-auto border-t border-stone-100 pt-16 mt-8">
         <div class="text-center mb-8">
-          <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-2 block" data-translate="cine-tag">Atmósfera de la Bahía</span>
-          <h2 class="font-headline-lg text-headline-lg text-on-surface text-center font-serif" data-translate="cine-title">Cine de Akumal</h2>
+          <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-2 block font-semibold" data-translate="cine-tag">SÉ PARTE DE ESTA EXPERIENCIA ÚNICA</span>
+          <h2 class="font-headline-lg text-3xl sm:text-headline-lg text-on-surface text-center font-serif" data-translate="cine-title">Vive, siente y descubre la naturaleza</h2>
         </div>
         
         <!-- Responsive Embedded YouTube Player for Gallery Video -->
@@ -1544,8 +1544,8 @@
         "cat-ext": "Exteriores",
         "cat-det": "Estilo y Detalles",
         "gal-load": "Mostrar Colección Completa",
-        "cine-tag": "Atmósfera de la Bahía",
-        "cine-title": "Cine de Akumal",
+        "cine-tag": "SÉ PARTE DE ESTA EXPERIENCIA ÚNICA",
+        "cine-title": "Vive, siente y descubre la naturaleza",
         "loc-tag": "Ubicación Privilegiada",
         "loc-title": "Conexión Inmediata",
         "loc-desc": "Ubicada estratégicamente en la idílica Bahía de Akumal, Casa Búho Dorado ofrece un acceso inigualable a los destinos más icónicos, playas místicas y zonas arqueológicas de la Riviera Maya.",
@@ -1718,8 +1718,8 @@
         "cat-ext": "Outdoors",
         "cat-det": "Style & Details",
         "gal-load": "Show Complete Collection",
-        "cine-tag": "Bay Atmosphere",
-        "cine-title": "Akumal Cinema",
+        "cine-tag": "BE PART OF THIS UNIQUE EXPERIENCE",
+        "cine-title": "Live, feel and discover nature",
         "loc-tag": "Privileged Location",
         "loc-title": "Immediate Connection",
         "loc-desc": "Strategically located in the idyllic Akumal Bay, Casa Búho Dorado offers unmatched access to the Riviera Maya's most iconic destinations, mystical beaches, and Mayan ruins.",
