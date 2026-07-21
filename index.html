@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
   <title>Casa Búho Dorado | Portal de Lujo y Reservas</title>
   
-  <!-- Apple and Multi-device High Definition Icons (Large, Multi-Browser Compatible) -->
+  <!-- Apple and Multi-device High Definition Icons -->
   <link rel="icon" type="image/png" sizes="512x512" href="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png"/>
   <link rel="icon" type="image/png" sizes="192x192" href="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png"/>
   <link rel="icon" type="image/png" sizes="96x96" href="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png"/>
@@ -26,7 +26,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <!-- CUSTOM STYLING (Luxury, Scroll & Clouds) -->
+  <!-- CUSTOM STYLING (Luxury, Header & Parallax Clouds) -->
   <style>
     html, body {
       max-width: 100vw !important;
@@ -41,10 +41,10 @@
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
     }
-    .glass-nav {
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      background-color: rgba(244, 239, 230, 0.95);
+    .glass-header {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background-color: rgba(254, 251, 246, 0.94);
     }
     .ken-burns:hover img {
       transform: scale(1.08);
@@ -65,7 +65,7 @@
     .nav-active-line::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: -6px;
       left: 0;
       width: 100%;
       height: 2px;
@@ -90,14 +90,10 @@
 
     .cloud-slow-1 { animation: drift-left-to-right 120s linear infinite; }
     .cloud-slow-2 { animation: drift-right-to-left 150s linear infinite; animation-delay: -35s; }
-    .cloud-slow-3 { animation: drift-left-to-right 180s linear infinite; animation-delay: -75s; }
-    .cloud-slow-4 { animation: drift-right-to-left 90s linear infinite; animation-delay: -15s; }
 
-    @media (max-w: 640px) {
+    @media (max-width: 640px) {
       .cloud-slow-1 { width: 280px !important; height: 110px !important; }
       .cloud-slow-2 { width: 340px !important; height: 130px !important; }
-      .cloud-slow-3 { width: 300px !important; height: 120px !important; }
-      .cloud-slow-4 { width: 240px !important; height: 90px !important; }
     }
   </style>
 
@@ -154,17 +150,16 @@
             "error": "#ba1a1a"
           },
           borderRadius: {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
           },
           spacing: {
-            "container-max": "1280px",
+            "container-max": "1380px",
             "margin-mobile": "24px",
-            "unit": "8px",
             "margin-desktop": "80px",
-            "section-gap": "120px",
+            "section-gap": "100px",
             "gutter": "32px"
           },
           fontFamily: {
@@ -193,30 +188,32 @@
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
-  <!-- ================= MASTER HEADER (Aesthetic, Zero Overlap Redesign) ================= -->
-  <!-- -->
-  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-3 sm:py-4 bg-surface-container/95 backdrop-blur-md border-b border-primary/10 shadow-sm" id="main-header">
-    <div class="flex items-center justify-between px-4 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto w-full gap-4 lg:gap-8">
+  <!-- ================= MASTER HEADER (Harmonious, Majestic & Larger Redesign) ================= -->
+  <header class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-4 sm:py-5 lg:py-6 glass-header border-b border-primary/20 shadow-md" id="main-header">
+    <div class="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 max-w-container-max mx-auto w-full gap-4 lg:gap-10">
       
-      <!-- Brand Logo + Title Container (Harmonious & Refined Sizing) -->
-      <div class="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer flex-shrink-0" onclick="navigateToPage('home')">
-        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain transition-all duration-300 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-        <span id="header-title" class="font-headline-md text-sm sm:text-base md:text-lg lg:text-xl text-primary tracking-[0.2em] uppercase font-semibold transition-all duration-300 whitespace-nowrap">CASA BÚHO DORADO</span>
+      <!-- Brand Logo + Title Container (Larger, Aesthetic & Proportionate) -->
+      <div class="flex items-center gap-3.5 sm:gap-4 lg:gap-5 cursor-pointer flex-shrink-0" onclick="navigateToPage('home')">
+        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-11 sm:h-14 md:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-sm" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+        <div class="flex flex-col">
+          <span id="header-title" class="font-headline-md text-base sm:text-xl md:text-2xl lg:text-3xl text-primary tracking-[0.22em] uppercase font-bold transition-colors duration-300 whitespace-nowrap drop-shadow-sm">CASA BÚHO DORADO</span>
+          <span class="text-[9px] sm:text-[10px] md:text-xs tracking-[0.3em] uppercase text-stone-500 font-sans font-semibold -mt-0.5 sm:-mt-1 block">Akumal · Quintana Roo</span>
+        </div>
       </div>
       
-      <!-- Nav Menu (Pushed to xl:flex to prevent overlap on smaller desktop screens) -->
-      <nav class="hidden xl:flex items-center gap-5 lg:gap-6 xl:gap-7 flex-shrink-0">
-        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs text-primary nav-active-line transition-all duration-300 py-1" id="nav-home" data-translate="nav-home">Inicio</button>
-        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-gallery" data-translate="nav-gallery">Galería</button>
-        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
-        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-services" data-translate="nav-services">Servicios</button>
-        <button onclick="navigateToPage('experiences')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-experiences" data-translate="nav-experiences">Experiencias</button>
-        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-xs text-[#1d1c16] hover:text-primary transition-all duration-300 py-1" id="nav-contact" data-translate="nav-contact">Contacto</button>
+      <!-- Nav Menu (Expanded & Spaced Elegantly for High Aesthetic) -->
+      <nav class="hidden xl:flex items-center gap-6 lg:gap-8 xl:gap-9 flex-shrink-0">
+        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-primary nav-active-line transition-all duration-300 py-2 hover:text-primary tracking-wider" id="nav-home" data-translate="nav-home">Inicio</button>
+        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-gallery" data-translate="nav-gallery">Galería</button>
+        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
+        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-services" data-translate="nav-services">Servicios</button>
+        <button onclick="navigateToPage('experiences')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-experiences" data-translate="nav-experiences">Experiencias</button>
+        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-contact" data-translate="nav-contact">Contacto</button>
         
         <!-- English/Español Switcher desktop -->
-        <div class="h-4 w-[1px] bg-outline-variant/60"></div>
-        <button onclick="toggleLanguage()" class="font-semibold text-[11px] tracking-widest font-label-caps text-stone-600 hover:text-primary transition-colors flex items-center gap-1.5" id="lang-btn-desktop">
-          <span class="material-symbols-outlined text-sm">language</span>
+        <div class="h-5 w-[1px] bg-outline-variant/60 mx-1"></div>
+        <button onclick="toggleLanguage()" class="font-bold text-xs tracking-widest font-label-caps text-stone-700 hover:text-primary transition-colors flex items-center gap-2 bg-primary/10 hover:bg-primary/20 px-3.5 py-1.5 rounded-full border border-primary/20" id="lang-btn-desktop">
+          <span class="material-symbols-outlined text-base">language</span>
           <span>ENGLISH</span>
         </button>
       </nav>
@@ -230,8 +227,8 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-xl border-t border-outline-variant flex flex-col p-6 gap-6">
-      <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-primary" data-translate="nav-home">Inicio</button>
+    <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-2xl border-t border-outline-variant/40 flex flex-col p-6 gap-5">
+      <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-primary font-semibold" data-translate="nav-home">Inicio</button>
       <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-gallery">Galería</button>
       <button onclick="navigateToPage('ubicacion'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-ubicacion">Ubicación</button>
       <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-services">Servicios</button>
@@ -246,14 +243,14 @@
     </div>
   </header>
 
-  <main class="pt-20 md:pt-24">
+  <!-- Content padding offset adjusted for the new larger header -->
+  <main class="pt-24 sm:pt-28 md:pt-32 lg:pt-36">
 
     <!-- ================= SECCIÓN: INICIO ================= -->
-    <!-- -->
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
       <!-- Hero Welcome section with verified assets and rich animations -->
-      <section class="relative h-[85vh] sm:h-[95vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center animate-fade-in" style="background-image: url('https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv');">
+      <section class="relative h-[85vh] sm:h-[92vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center animate-fade-in" style="background-image: url('https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv');">
         
         <!-- Drifting Clouds Parallax -->
         <div class="absolute inset-0 w-full h-full pointer-events-none z-[1] overflow-hidden opacity-95 select-none">
@@ -278,7 +275,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-background via-black/35 to-black/45 z-[2]"></div>
         
         <div class="relative z-10 text-center px-4 sm:px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
-          <span class="text-white/95 font-label-caps text-[10px] sm:text-label-caps uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-3 sm:mb-4 block drop-shadow-md text-primary font-bold" data-translate="hero-sub">Refugio Privado en Akumal</span>
+          <span class="text-white/95 font-label-caps text-[11px] sm:text-label-caps uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-3 sm:mb-4 block drop-shadow-md text-primary font-bold" data-translate="hero-sub">Refugio Privado en Akumal</span>
           <h1 class="font-display-lg text-3xl sm:text-display-lg-mobile md:text-display-lg text-primary mb-4 sm:mb-6 leading-tight drop-shadow-2xl font-semibold [text-shadow:_0_2px_12px_rgba(0,0,0,0.85),_0_4px_30px_rgba(181,138,61,0.6)]">
             We are not hosts, we are memory makers.
           </h1>
@@ -288,8 +285,7 @@
         </div>
       </section>
 
-      <!-- SECCIÓN: Historia de Casa Búho Dorado (Centrada con contenido original) -->
-      <!-- -->
+      <!-- SECCIÓN: Historia de Casa Búho Dorado -->
       <section class="bg-surface py-section-gap px-6 md:px-margin-desktop overflow-hidden border-b border-stone-100">
         <div class="max-w-container-max mx-auto">
           
@@ -306,7 +302,6 @@
               </div>
             </div>
 
-            <!-- Curated high aesthetic assets from Google Drive -->
             <div class="lg:col-span-5 grid grid-cols-2 gap-4 relative reveal-right">
               <div class="space-y-4">
                 <div class="aspect-[3/4] rounded-xl overflow-hidden shadow-lg border border-primary/10 bg-stone-100">
@@ -330,8 +325,7 @@
         </div>
       </section>
 
-      <!-- SECCIÓN: La Villa (Centrado) -->
-      <!-- -->
+      <!-- SECCIÓN: La Villa -->
       <section class="bg-surface-container-low py-section-gap px-6 md:px-margin-desktop overflow-hidden border-b border-stone-100">
         <div class="max-w-container-max mx-auto">
           
@@ -382,24 +376,23 @@
         </div>
       </section>
 
-      <!-- ================= SECCIÓN: VÍDEO ATMÓSFERA (EMBEBIDO YOUTUBE) ================= -->
-      <!-- -->
+      <!-- ================= SECCIÓN: VÍDEO ATMÓSFERA (LANGUAGE-DYNAMIC YOUTUBE LINK) ================= -->
       <section class="bg-surface-container-low py-16 px-6 md:px-margin-desktop border-t border-b border-neutral-100">
         <div class="max-w-container-max mx-auto text-center reveal-up">
-          <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block" data-translate="video-tag">Experiencia Visual</span>
+          <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block font-bold" data-translate="video-tag">Experiencia Visual</span>
           <h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 text-center" data-translate="video-title">Atmósfera Casa Búho Dorado</h2>
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto font-light leading-relaxed font-sans text-center" data-translate="video-desc">
             Sumérgete en la mística y el diseño orgánico de nuestro refugio privado a través de este exclusivo recorrido cinematográfico.
           </p>
 
-          <!-- Embedded YouTube Video Player with Language Support -->
-          <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-4">
-            <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
+          <!-- Embedded YouTube Video Player with Language Dynamic Switch -->
+          <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-6">
+            <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-80" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
             
             <iframe 
               id="cinematic-video-player"
               class="w-full h-full absolute inset-0 border-0"
-              src="https://www.youtube-nocookie.com/embed/47dlF0Of1yU?rel=0&modestbranding=1&playsinline=1"
+              src="https://www.youtube-nocookie.com/embed/h6W6BbKsgK4?rel=0&modestbranding=1&playsinline=1"
               title="Atmósfera Casa Búho Dorado"
               referrerpolicy="strict-origin-when-cross-origin"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -408,7 +401,7 @@
           </div>
 
           <div class="text-center">
-            <a id="home-video-direct-link" href="https://youtu.be/47dlF0Of1yU" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-label-caps text-primary hover:underline font-semibold tracking-wider">
+            <a id="home-video-direct-link" href="https://youtu.be/h6W6BbKsgK4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-label-caps text-primary hover:underline font-semibold tracking-wider">
               <span class="material-symbols-outlined text-sm">open_in_new</span>
               <span data-translate="video-direct-link">Ver vídeo directamente en YouTube</span>
             </a>
@@ -416,8 +409,7 @@
         </div>
       </section>
 
-      <!-- SECCIÓN: Testimonios Dinámicos (Carrusel Autoplay de 5 Slides) -->
-      <!-- -->
+      <!-- SECCIÓN: Testimonios Dinámicos -->
       <section class="bg-surface py-24 px-6 md:px-margin-desktop overflow-hidden border-t border-neutral-100">
         <div class="max-w-4xl mx-auto text-center reveal-up">
           <span class="material-symbols-outlined text-primary text-6xl mb-4">format_quote</span>
@@ -490,8 +482,7 @@
 
     </section>
 
-    <!-- ================= SECCIÓN: GALERÍA (SIMÉTRICA SIN HUECOS) ================= -->
-    <!-- -->
+    <!-- ================= SECCIÓN: GALERÍA ================= -->
     <section id="page-gallery" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-12 px-6 md:px-margin-desktop">
       <div class="max-w-container-max mx-auto mt-8 mb-12 text-center reveal-up">
         <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block" data-translate="gal-sub">Portafolio Visual</span>
@@ -525,7 +516,6 @@
           <h2 class="font-headline-lg text-3xl sm:text-headline-lg text-on-surface text-center font-serif" data-translate="cine-title">Vive, siente y descubre la naturaleza</h2>
         </div>
         
-        <!-- Responsive Embedded YouTube Player for Gallery Video -->
         <div class="aspect-video w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-surface-variant/40 bg-black relative group mb-4">
           <img loading="lazy" alt="Watermark Logo" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10 opacity-70" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
           
@@ -549,8 +539,7 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: UBICACIÓN (TOTALMENTE CENTRADA Y ESTÉTICA) ================= -->
-    <!-- -->
+    <!-- ================= SECCIÓN: UBICACIÓN ================= -->
     <section id="page-ubicacion" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface py-16 px-4 md:px-margin-desktop">
       <div class="max-w-container-max mx-auto mt-8">
         
@@ -562,7 +551,7 @@
           </p>
         </div>
 
-        <!-- ¿Qué significa Akumal? (Centrado y Estético) -->
+        <!-- ¿Qué significa Akumal? -->
         <div class="max-w-4xl mx-auto text-center py-12 border-b border-stone-100 reveal-up">
           <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8 text-center" data-translate="meaning-title">¿Qué significa Akumal?</h2>
           <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed text-center" data-translate="meaning-desc-1">
@@ -583,7 +572,7 @@
           </div>
         </div>
 
-        <!-- Exploración Exclusiva (Centrado y Estético) -->
+        <!-- Exploración Exclusiva -->
         <div class="py-16 border-b border-stone-100 reveal-up">
           <div class="flex flex-col justify-center items-center mb-12 gap-4 text-center">
             <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block font-semibold" data-translate="exp-tag">Maravillas Naturales</span>
@@ -638,7 +627,7 @@
           </div>
         </div>
 
-        <!-- Riviera Destinations surrounding the maps -->
+        <!-- Riviera Destinations -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-gutter items-center pt-16">
           
           <div class="space-y-6 md:space-y-8 lg:pr-6 reveal-left">
@@ -735,7 +724,6 @@
     </section>
 
     <!-- ================= SECCIÓN: SERVICIOS ================= -->
-    <!-- -->
     <section id="page-services" class="page-section hidden opacity-0 transition-opacity duration-300">
       
       <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
@@ -745,7 +733,7 @@
           <div class="absolute inset-0 bg-black/35"></div>
         </div>
         <div class="relative z-10 text-center px-6 mt-10">
-          <span class="font-label-caps text-label-caps text-white tracking-[0.4em] uppercase mb-4 block" data-translate="serv-tag">Hospitalidad de Firma</span>
+          <span class="font-label-caps text-label-caps text-white tracking-[0.4em] uppercase mb-4 block font-bold" data-translate="serv-tag">Hospitalidad de Firma</span>
           <h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-white mb-6 text-center" data-translate="serv-title">Servicios a tu Medida</h1>
           <p class="font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto font-light text-center" data-translate="serv-desc">
             Desde transportación VIP hasta chefs privados y yates de exploración. Valentina, tu concierge personal, asume el diseño de cada instante.
@@ -856,7 +844,6 @@
     </section>
 
     <!-- ================= SECCIÓN: EXPERIENCIAS ================= -->
-    <!-- -->
     <section id="page-experiences" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-container-max mx-auto mt-8">
         
@@ -870,7 +857,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 font-sans text-stone-700">
           
-          <!-- Experiencia 1: Masajes en la Villa -->
+          <!-- Experiencia 1 -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
               <img loading="lazy" alt="Santuario de masajes" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/masaje.png" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop'"/>
@@ -892,7 +879,7 @@
             </div>
           </div>
 
-          <!-- Experiencia 2: Mayordomo -->
+          <!-- Experiencia 2 -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
               <img loading="lazy" alt="Servicio de Mayordomo" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/mayor.png" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop'"/>
@@ -914,7 +901,7 @@
             </div>
           </div>
 
-          <!-- Experiencia 3: Limpieza -->
+          <!-- Experiencia 3 -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
               <img loading="lazy" alt="Servicio de limpieza diario" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/limpieza.png" onerror="this.src='https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=600&auto=format&fit=crop'"/>
@@ -936,7 +923,7 @@
             </div>
           </div>
 
-          <!-- Experiencia 4: Clases de Yoga -->
+          <!-- Experiencia 4 -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
               <img loading="lazy" alt="Clases de Yoga" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/yoga.png" onerror="this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop'"/>
@@ -958,7 +945,7 @@
             </div>
           </div>
 
-          <!-- Experiencia 5: Fotografía -->
+          <!-- Experiencia 5 -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
               <img loading="lazy" alt="Sesión de fotos" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/camara.png" onerror="this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=600&auto=format&fit=crop'"/>
@@ -980,7 +967,7 @@
             </div>
           </div>
 
-          <!-- Experiencia 6: Ceremonia -->
+          <!-- Experiencia 6 -->
           <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div class="relative aspect-[16/10] w-full overflow-hidden">
               <img loading="lazy" alt="Eventos y Ceremonias" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/celeb.png" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop'"/>
@@ -1008,7 +995,6 @@
     </section>
 
     <!-- ================= SECCIÓN: CONTACTO ================= -->
-    <!-- -->
     <section id="page-contact" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-container-max mx-auto mt-8">
         
@@ -1134,8 +1120,7 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN DE POLÍTICAS (OCULTA POR DEFECTO) ================= -->
-    <!-- -->
+    <!-- ================= SECCIÓN DE POLÍTICAS ================= -->
     <section id="page-politicas" class="page-section hidden opacity-0 transition-opacity duration-300 py-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-4xl mx-auto mt-8 font-sans text-stone-800">
         
@@ -1157,7 +1142,6 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <!-- -->
   <footer class="bg-surface-container dark:bg-surface-container-highest w-full py-20 border-t border-outline-variant/30">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 px-6 md:px-margin-desktop max-w-container-max mx-auto">
       
@@ -1209,7 +1193,6 @@
   </button>
 
   <!-- Quick Floating Reservation Panel -->
-  <!-- -->
   <div id="quick-contact-panel" class="hidden fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-32px)] sm:w-[340px] max-w-[340px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-neutral-100 flex-col overflow-hidden transition-all duration-300 scale-95 origin-bottom-right z-[90] font-sans text-stone-800">
     <div class="bg-primary p-4 text-white flex justify-between items-center">
       <div class="flex items-center gap-2">
@@ -1397,7 +1380,7 @@
     </div>
   </div>
 
-  <!-- Lightbox zoom system with background click safety closures -->
+  <!-- Lightbox zoom system -->
   <div id="lightbox-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300 cursor-pointer" onclick="closeLightbox()">
     <div class="relative max-w-4xl max-h-[85vh] w-[90%] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
       <button class="absolute -top-12 right-0 text-white hover:text-primary-container flex items-center gap-1 font-label-caps text-xs tracking-widest" onclick="closeLightbox()">
@@ -1431,7 +1414,6 @@
   </div>
 
   <!-- ================= MASTER DATA & LOGIC ================= -->
-  <!-- -->
   <script>
     const curatedGallery = [
       // RESIDENCIA (interiores)
@@ -1867,7 +1849,10 @@
     let activeLightboxIndex = 0;
     let isZoomed = false;
 
+    // Ensure every page change scrolls to the absolute top smoothly
     function navigateToPage(pageId) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      
       const pages = document.querySelectorAll('.page-section');
       pages.forEach(p => {
         p.classList.add('hidden', 'opacity-0');
@@ -1877,14 +1862,15 @@
       const targetPage = document.getElementById(`page-${pageId}`);
       if (targetPage) {
         targetPage.classList.remove('hidden');
-        gsap.to(targetPage, {
+        gsap.fromTo(targetPage, { opacity: 0, y: 15 }, {
           opacity: 1,
-          duration: 0.4,
+          y: 0,
+          duration: 0.45,
           ease: "power2.out"
         });
       }
 
-      // Update navbar links styling
+      // Update active menu link indicators
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('text-primary', 'nav-active-line');
         link.classList.add('text-[#1d1c16]');
@@ -1908,6 +1894,7 @@
       setLanguage(newLang);
     }
 
+    // Set language and update video source according to selected language
     function setLanguage(lang) {
       activeLanguage = lang;
 
@@ -1915,10 +1902,26 @@
       const btnMobile = document.getElementById('lang-btn-mobile');
       
       if (btnDesktop) {
-        btnDesktop.innerHTML = `<span class="material-symbols-outlined text-sm">language</span> <span>${lang === 'es' ? 'ENGLISH' : 'ESPAÑOL'}</span>`;
+        btnDesktop.innerHTML = `<span class="material-symbols-outlined text-base">language</span> <span>${lang === 'es' ? 'ENGLISH' : 'ESPAÑOL'}</span>`;
       }
       if (btnMobile) {
         btnMobile.innerHTML = `<span class="material-symbols-outlined text-base">language</span> <span>${lang === 'es' ? 'English' : 'Español'}</span>`;
+      }
+
+      // Dynamic video player URL swap based on Spanish vs English
+      const cinematicIframe = document.getElementById('cinematic-video-player');
+      const videoDirectLink = document.getElementById('home-video-direct-link');
+
+      if (cinematicIframe && videoDirectLink) {
+        if (lang === 'es') {
+          // Spanish Video
+          cinematicIframe.src = "https://www.youtube-nocookie.com/embed/h6W6BbKsgK4?rel=0&modestbranding=1&playsinline=1";
+          videoDirectLink.href = "https://youtu.be/h6W6BbKsgK4";
+        } else {
+          // English Video
+          cinematicIframe.src = "https://www.youtube-nocookie.com/embed/47dlF0Of1yU?rel=0&modestbranding=1&playsinline=1";
+          videoDirectLink.href = "https://youtu.be/47dlF0Of1yU";
+        }
       }
 
       const langDict = dictionary[lang] || dictionary['es'];
@@ -1994,7 +1997,7 @@
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">5. Humo y Fuego</h3>
-                <p class="text-sm font-sans">Queda strictly prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.</p>
+                <p class="text-sm font-sans">Queda estrictamente prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.</p>
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">6. Políticas de Cancelación y Depósito</h3>
@@ -2058,17 +2061,9 @@
       }
     }
 
-    function validateContactGuestsCapacity() {
-      validateCapacity('contact-adults', 'contact-children');
-    }
-
-    function validateQuickGuestsCapacity() {
-      validateCapacity('quick-adults', 'quick-children');
-    }
-
-    function validateBookingGuestsCapacity() {
-      validateCapacity('booking-adults', 'booking-children');
-    }
+    function validateContactGuestsCapacity() { validateCapacity('contact-adults', 'contact-children'); }
+    function validateQuickGuestsCapacity() { validateCapacity('quick-adults', 'quick-children'); }
+    function validateBookingGuestsCapacity() { validateCapacity('booking-adults', 'booking-children'); }
 
     function initScrollAnimations() {
       if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
@@ -2142,10 +2137,10 @@
       if (quickCheckInEl) quickCheckInEl.value = today.toISOString().split('T')[0];
       if (quickCheckOutEl) quickCheckOutEl.value = tomorrow.toISOString().split('T')[0];
 
-      // Initialize language text and dynamic sections
+      // Default language setup: ES (loads Spanish YouTube link)
       setLanguage('es');
 
-      // Setup Hero welcome transition
+      // Hero animation
       gsap.to(".reveal-hero", {
         opacity: 1,
         y: 0,
@@ -2156,8 +2151,6 @@
 
       renderInteractiveGallery();
       initScrollAnimations();
-      initVideoIntersectionObserver();
-      initVideoErrorHandler();
 
       const bookingModal = document.getElementById('booking-modal');
       if (bookingModal) {
@@ -2176,46 +2169,6 @@
         }
       });
     });
-
-    function initVideoErrorHandler() {
-      const videoPlayer = document.getElementById('cinematic-video-player');
-      if (videoPlayer && videoPlayer.tagName === 'VIDEO') {
-        videoPlayer.addEventListener('error', () => {
-          console.warn("Primary video stream failed, attempting fallback source...");
-          const sources = videoPlayer.getElementsByTagName('source');
-          if (sources.length > 1) {
-            videoPlayer.src = sources[1].src;
-            if (typeof videoPlayer.load === 'function') videoPlayer.load();
-            if (typeof videoPlayer.play === 'function') {
-              videoPlayer.play().catch(e => console.log("Autoplay failed on fallback load: ", e));
-            }
-          }
-        }, true);
-      }
-    }
-
-    function initVideoIntersectionObserver() {
-      const videoPlayer = document.getElementById('cinematic-video-player');
-      if (!videoPlayer || typeof videoPlayer.play !== 'function') return;
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (typeof videoPlayer.play === 'function') {
-              videoPlayer.play().catch(err => {
-                console.log("Autoplay prevented on scroll: ", err);
-              });
-            }
-          } else {
-            if (typeof videoPlayer.pause === 'function') {
-              videoPlayer.pause();
-            }
-          }
-        });
-      }, { threshold: 0.25 });
-
-      observer.observe(videoPlayer);
-    }
 
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
@@ -2709,44 +2662,7 @@
       }
     }
 
-    const slider = document.getElementById('estate-slider');
-    let autoplayInterval;
-
-    function startAutoplay() {
-      autoplayInterval = setInterval(() => {
-        if (!slider) return;
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        if (slider.scrollLeft >= maxScroll - 5) {
-          slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          slider.scrollBy({ left: 320, behavior: 'smooth' });
-        }
-      }, 3500);
-    }
-
-    function stopAutoplay() {
-      clearInterval(autoplayInterval);
-    }
-
-    if (slider) {
-      slider.addEventListener('mouseenter', stopAutoplay);
-      slider.addEventListener('mouseleave', startAutoplay);
-      slider.addEventListener('touchstart', stopAutoplay);
-      slider.addEventListener('touchend', startAutoplay);
-      
-      slider.addEventListener('wheel', (e) => {
-        if (e.deltaY !== 0) {
-          slider.scrollLeft += e.deltaY * 0.8;
-        }
-      });
-      
-      startAutoplay();
-    }
-
     let currentTestimonialSlide = 0;
-    const testimonialTrack = document.getElementById('testimonial-track');
-    const testimonialDotsContainer = document.getElementById('testimonial-dots');
-
     function setTestimonialSlide(index) {
       const track = document.getElementById('testimonial-track');
       const dotsContainer = document.getElementById('testimonial-dots');
