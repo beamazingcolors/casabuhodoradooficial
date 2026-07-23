@@ -26,7 +26,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <!-- CUSTOM STYLING (Luxury, Header & Parallax Clouds) -->
   <style>
     html, body {
       max-width: 100vw !important;
@@ -36,6 +35,7 @@
       margin: 0 !important;
       padding: 0 !important;
       touch-action: pan-y;
+      -webkit-tap-highlight-color: transparent;
     }
     
     .material-symbols-outlined {
@@ -192,15 +192,14 @@
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
-  <!-- ================= MASTER HEADER (Compact, Harmonic & Elegant) ================= -->
-  <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-2.5 sm:py-3 lg:py-3.5 glass-header border-b border-primary/20 shadow-sm" id="main-header">
+  <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-2 sm:py-2.5 lg:py-3 glass-header border-b border-primary/20 shadow-sm" id="main-header">
     <div class="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 max-w-container-max mx-auto w-full gap-4 lg:gap-10">
       
-      <!-- Brand Logo + Title Container (Simplified & Proportionate) -->
-      <div class="flex items-center gap-3 sm:gap-4 cursor-pointer flex-shrink-0" onclick="navigateToPage('home')">
-        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-8 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-sm" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+      <!-- Brand Logo + Title Container (Clean & Perfectly Aligned) -->
+      <div class="flex items-center gap-3 cursor-pointer flex-shrink-0 py-1" onclick="navigateToPage('home')">
+        <img id="header-logo" alt="Casa Búho Dorado Logo" class="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-sm" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
         <div class="flex flex-col justify-center">
-          <span id="header-title" class="font-headline-md text-base sm:text-lg md:text-xl lg:text-2xl text-primary tracking-[0.18em] uppercase font-bold transition-colors duration-300 whitespace-nowrap drop-shadow-sm leading-none">CASA BÚHO DORADO</span>
+          <span id="header-title" class="font-headline-md text-sm sm:text-base md:text-lg lg:text-xl text-primary tracking-[0.16em] uppercase font-bold transition-colors duration-300 whitespace-nowrap drop-shadow-sm leading-tight">CASA BÚHO DORADO</span>
         </div>
       </div>
       
@@ -215,31 +214,31 @@
         
         <!-- English/Español Switcher desktop -->
         <div class="h-5 w-[1px] bg-outline-variant/60 mx-1"></div>
-        <button onclick="toggleLanguage()" class="font-bold text-xs tracking-widest font-label-caps text-stone-700 hover:text-primary transition-colors flex items-center gap-2 bg-primary/10 hover:bg-primary/20 px-3.5 py-1.5 rounded-full border border-primary/20" id="lang-btn-desktop">
+        <button onclick="toggleLanguage()" class="font-bold text-xs tracking-widest font-label-caps text-stone-700 hover:text-primary transition-colors flex items-center gap-2 bg-primary/10 hover:bg-primary/20 px-3.5 py-1.5 rounded-full border border-primary/20 cursor-pointer" id="lang-btn-desktop">
           <span class="material-symbols-outlined text-base">language</span>
           <span>ENGLISH</span>
         </button>
       </nav>
 
       <!-- Hamburger toggle optimized for xl:hidden -->
-      <div class="xl:hidden flex items-center gap-4">
-        <button onclick="toggleMobileMenu()" class="text-primary p-2 focus:outline-none" aria-label="Menú">
+      <div class="xl:hidden flex items-center gap-2">
+        <button onclick="toggleMobileMenu()" class="text-primary p-2.5 focus:outline-none cursor-pointer" aria-label="Menú">
           <span class="material-symbols-outlined text-3xl sm:text-4xl" id="menu-icon">menu</span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-2xl border-t border-outline-variant/40 flex flex-col p-6 gap-5">
-      <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-primary font-semibold" data-translate="nav-home">Inicio</button>
-      <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-gallery">Galería</button>
-      <button onclick="navigateToPage('ubicacion'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-ubicacion">Ubicación</button>
-      <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-services">Servicios</button>
-      <button onclick="navigateToPage('experiences'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-experiences">Experiencias</button>
-      <button onclick="navigateToPage('contact'); toggleMobileMenu()" class="text-left font-label-caps text-lg py-2 border-b border-outline-variant/30 text-[#1d1c16]" data-translate="nav-contact">Contacto</button>
+    <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-surface-container-low shadow-2xl border-t border-outline-variant/40 flex flex-col p-6 gap-4 z-50">
+      <button onclick="navigateToPage('home'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-primary font-semibold cursor-pointer" data-translate="nav-home">Inicio</button>
+      <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-gallery">Galería</button>
+      <button onclick="navigateToPage('ubicacion'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-ubicacion">Ubicación</button>
+      <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-services">Servicios</button>
+      <button onclick="navigateToPage('experiences'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-experiences">Experiencias</button>
+      <button onclick="navigateToPage('contact'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-contact">Contacto</button>
       
       <!-- English/Español Switcher mobile -->
-      <button onclick="toggleLanguage(); toggleMobileMenu()" class="text-left font-semibold text-lg py-2 border-b border-outline-variant/30 text-primary uppercase flex items-center gap-2" id="lang-btn-mobile">
+      <button onclick="toggleLanguage(); toggleMobileMenu()" class="text-left font-semibold text-base py-3 text-primary uppercase flex items-center gap-2 cursor-pointer" id="lang-btn-mobile">
         <span class="material-symbols-outlined text-base">language</span>
         <span>English</span>
       </button>
@@ -249,7 +248,6 @@
   <!-- Content padding offset adjusted flush to header with no white gap -->
   <main class="pt-0">
 
-    <!-- ================= SECCIÓN: INICIO ================= -->
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
       <!-- Hero Welcome section with verified assets and rich animations -->
@@ -302,7 +300,7 @@
             
             <div class="lg:col-span-6 space-y-6 reveal-left">
               <div class="space-y-4 text-on-surface-variant text-left leading-relaxed text-stone-700 font-sans" id="history-content-area">
-                <!-- Swapped in script based on language -->
+                <!-- Dynamically populated -->
               </div>
             </div>
 
@@ -363,7 +361,7 @@
 
             <div class="lg:col-span-6 space-y-8 reveal-right">
               <div class="space-y-4 text-on-surface-variant text-left leading-relaxed text-stone-700 font-sans" id="villa-content-area">
-                <!-- Swapped dynamically -->
+                <!-- Dynamically populated -->
               </div>
 
               <!-- Interactive Key Metrics grid -->
@@ -392,7 +390,7 @@
         </div>
       </section>
 
-      <!-- ================= SECCIÓN: VÍDEO ATMÓSFERA (LANGUAGE-DYNAMIC YOUTUBE LINK) ================= -->
+      <!-- SECCIÓN: VÍDEO ATMÓSFERA -->
       <section class="bg-surface-container-low py-16 px-6 md:px-margin-desktop border-t border-b border-neutral-100">
         <div class="max-w-container-max mx-auto text-center reveal-up">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block font-bold" data-translate="video-tag">Experiencia Visual</span>
@@ -488,9 +486,9 @@
           </div>
 
           <div class="flex justify-center gap-2 mt-6" id="testimonial-dots">
-            <button class="w-2.5 h-2.5 rounded-full bg-primary transition-all duration-300" onclick="setTestimonialSlide(0)"></button>
-            <button class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300" onclick="setTestimonialSlide(1)"></button>
-            <button class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300" onclick="setTestimonialSlide(2)"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-primary transition-all duration-300 cursor-pointer" onclick="setTestimonialSlide(0)"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 cursor-pointer" onclick="setTestimonialSlide(1)"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-stone-300 transition-all duration-300 cursor-pointer" onclick="setTestimonialSlide(2)"></button>
           </div>
 
         </div>
@@ -498,7 +496,6 @@
 
     </section>
 
-    <!-- ================= SECCIÓN: GALERÍA ================= -->
     <section id="page-gallery" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface pt-20 sm:pt-24 pb-12 px-6 md:px-margin-desktop">
       <div class="max-w-container-max mx-auto mt-4 mb-12 text-center reveal-up">
         <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block" data-translate="gal-sub">Portafolio Visual</span>
@@ -508,19 +505,19 @@
         </p>
 
         <div class="flex flex-wrap justify-center gap-2 mt-8 max-w-xl mx-auto font-sans">
-          <button onclick="filterGallery('todos')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary text-white transition-all shadow-sm" data-category="todos" data-translate="cat-all">Todos</button>
-          <button onclick="filterGallery('residencia')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all" data-category="residencia" data-translate="cat-res">Residencia</button>
-          <button onclick="filterGallery('exteriores')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all" data-category="exteriores" data-translate="cat-ext">Exteriores</button>
-          <button onclick="filterGallery('detalles')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all" data-category="detalles" data-translate="cat-det">Estilo y Detalles</button>
+          <button onclick="filterGallery('todos')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary text-white transition-all shadow-sm cursor-pointer" data-category="todos" data-translate="cat-all">Todos</button>
+          <button onclick="filterGallery('residencia')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="residencia" data-translate="cat-res">Residencia</button>
+          <button onclick="filterGallery('exteriores')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="exteriores" data-translate="cat-ext">Exteriores</button>
+          <button onclick="filterGallery('detalles')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="detalles" data-translate="cat-det">Estilo y Detalles</button>
         </div>
       </div>
 
       <div class="max-w-container-max mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 reveal-up-stagger" id="dynamic-gallery-grid">
-        <!-- Rendered dynamically in Javascript -->
+        <!-- Rendered dynamically -->
       </div>
 
       <div class="text-center mt-12 mb-16">
-        <button id="gallery-load-more" onclick="showAllGalleryImages()" class="bg-primary text-on-primary hover:bg-primary-container px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase transition-all shadow-lg inline-block" data-translate="gal-load">
+        <button id="gallery-load-more" onclick="showAllGalleryImages()" class="bg-primary text-on-primary hover:bg-primary-container px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase transition-all shadow-lg inline-block cursor-pointer" data-translate="gal-load">
           Mostrar Colección Completa
         </button>
       </div>
@@ -555,7 +552,6 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: UBICACIÓN ================= -->
     <section id="page-ubicacion" class="page-section hidden opacity-0 transition-opacity duration-300 bg-surface pt-20 sm:pt-24 pb-16 px-4 md:px-margin-desktop">
       <div class="max-w-container-max mx-auto mt-4">
         
@@ -739,7 +735,6 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: SERVICIOS ================= -->
     <section id="page-services" class="page-section hidden opacity-0 transition-opacity duration-300">
       
       <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
@@ -786,7 +781,7 @@
               </div>
             </div>
             <div class="px-8 pb-8 font-sans">
-              <button onclick="requestConciergeService('Transporte Premium')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest" data-translate="btn-req">
+              <button onclick="requestConciergeService('Transporte Premium')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest cursor-pointer" data-translate="btn-req">
                 Solicitar Servicio
               </button>
             </div>
@@ -807,7 +802,7 @@
               </div>
             </div>
             <div class="px-8 pb-8 font-sans">
-              <button onclick="requestConciergeService('Expediciones Mayas')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest" data-translate="btn-res">
+              <button onclick="requestConciergeService('Expediciones Mayas')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest cursor-pointer" data-translate="btn-res">
                 Reservar Experiencia
               </button>
             </div>
@@ -828,7 +823,7 @@
                 Transforma cada comida en un hito sensorial. Menús de degustación personalizados basados en mariscos frescos del día y cocina contemporánea de autor directamente en la villa.
               </p>
               
-              <button onclick="requestConciergeService('Chef Privado Gourmet')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-4 font-label-caps text-xs hover:scale-102 transition-all uppercase tracking-widest text-center" data-translate="btn-res-chef">
+              <button onclick="requestConciergeService('Chef Privado Gourmet')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-4 font-label-caps text-xs hover:scale-102 transition-all uppercase tracking-widest text-center cursor-pointer" data-translate="btn-res-chef">
                 Reservar Chef Privado
               </button>
             </div>
@@ -848,7 +843,7 @@
                 Zarpa en un catamarán o yate de alta gama hacia arrecifes recónditos de la isla Cozumel o disfruta de la puesta de sol en alta mar con champaña y canapés de autor.
               </p>
               
-              <button onclick="requestConciergeService('Yate Privado Catamarán')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-4 font-label-caps text-xs hover:scale-102 transition-all uppercase tracking-widest text-center" data-translate="btn-res-yacht">
+              <button onclick="requestConciergeService('Yate Privado Catamarán')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-4 font-label-caps text-xs hover:scale-102 transition-all uppercase tracking-widest text-center cursor-pointer" data-translate="btn-res-yacht">
                 Consultar Flota y Yates
               </button>
             </div>
@@ -859,7 +854,6 @@
 
     </section>
 
-    <!-- ================= SECCIÓN: EXPERIENCIAS ================= -->
     <section id="page-experiences" class="page-section hidden opacity-0 transition-opacity duration-300 pt-20 sm:pt-24 pb-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-container-max mx-auto mt-4">
         
@@ -889,7 +883,7 @@
                   Terapeutas certificados trasladan la mística del bienestar a la privacidad de tu suite o terraza. Tratamientos con aceites esenciales orgánicos y técnicas mayas ancestrales para una restauración profunda.
                 </p>
               </div>
-              <button onclick="requestConciergeService('Masaje Premium en la Villa')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300" data-translate="btn-req-exp">
+              <button onclick="requestConciergeService('Masaje Premium en la Villa')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
                 Solicitar Experiencia
               </button>
             </div>
@@ -911,7 +905,7 @@
                   Atención ultra-personalizada y discreta para coordinar tus itinerarios, servir mixología de autor, desempacar equipajes y velar para que cada instante transcurra sin la menor preocupación.
                 </p>
               </div>
-              <button onclick="requestConciergeService('Servicio de Mayordomo')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300" data-translate="btn-req-exp">
+              <button onclick="requestConciergeService('Servicio de Mayordomo')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
                 Solicitar Experiencia
               </button>
             </div>
@@ -933,7 +927,7 @@
                   Ama de llaves diario bajo los más altos estándares hoteleros internacionales de lujo. Mantén el oasis de tu villa impecable, fresco y reluciente de forma totalmente silenciosa y respetuosa con tu privacidad.
                 </p>
               </div>
-              <button onclick="requestConciergeService('Servicio de Limpieza Diario')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300" data-translate="btn-req-exp">
+              <button onclick="requestConciergeService('Servicio de Limpieza Diario')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
                 Solicitar Experiencia
               </button>
             </div>
@@ -955,7 +949,7 @@
                   Instructores experimentados guían sesiones privadas de Hatha o Vinyasa Yoga y meditación al amanecer. Sincroniza tu respiración con el susurro de la selva maya para armonizar mente, cuerpo y espíritu.
                 </p>
               </div>
-              <button onclick="requestConciergeService('Sesiones de Yoga Privadas')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300" data-translate="btn-req-exp">
+              <button onclick="requestConciergeService('Sesiones de Yoga Privadas')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
                 Solicitar Experiencia
               </button>
             </div>
@@ -977,7 +971,7 @@
                   Perpetúa tus momentos más preciados en el paraíso. Un fotógrafo profesional coordinará una sesión artística capturando la esencia orgánica de la villa y los paisajes naturales de la costa de Akumal.
                 </p>
               </div>
-              <button onclick="requestConciergeService('Sesión de Fotografía Profesional')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300" data-translate="btn-req-exp">
+              <button onclick="requestConciergeService('Sesión de Fotografía Profesional')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
                 Solicitar Experiencia
               </button>
             </div>
@@ -999,7 +993,7 @@
                   Diseñamos entornos de ensueño para matrimonios íntimos, pedidas de mano mágicas o un ritual de convivencia y gratitud familiar, guiados por la belleza inmaculada de la selva y el mar sagrado.
                 </p>
               </div>
-              <button onclick="requestConciergeService('Ceremonias e Invitaciones')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300" data-translate="btn-req-exp">
+              <button onclick="requestConciergeService('Ceremonias e Invitaciones')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
                 Solicitar Experiencia
               </button>
             </div>
@@ -1010,7 +1004,6 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN: CONTACTO ================= -->
     <section id="page-contact" class="page-section hidden opacity-0 transition-opacity duration-300 pt-20 sm:pt-24 pb-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-container-max mx-auto mt-4">
         
@@ -1059,23 +1052,23 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-fullname">Nombre Completo</label>
-                  <input type="text" id="contact-name" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="Ingresa tu nombre completo" data-translate="placeholder-name" required/>
+                  <input type="text" id="contact-name" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" placeholder="Ingresa tu nombre completo" data-translate="placeholder-name" required/>
                 </div>
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-email">Correo Electrónico</label>
-                  <input type="email" id="contact-email" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="nombre@correo.com" required/>
+                  <input type="email" id="contact-email" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" placeholder="nombre@correo.com" required/>
                 </div>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-phone">Número de Teléfono / WhatsApp</label>
-                  <input type="tel" id="contact-phone" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="Ingresa tu número de teléfono" data-translate="placeholder-phone" required/>
+                  <input type="tel" id="contact-phone" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" placeholder="Ingresa tu número de teléfono" data-translate="placeholder-phone" required/>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                   <div class="space-y-1">
                     <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-adults">Adultos</label>
-                    <select id="contact-adults" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" onchange="validateContactGuestsCapacity()">
+                    <select id="contact-adults" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white cursor-pointer" onchange="validateContactGuestsCapacity()">
                       <option value="1" selected data-translate="opt-1a">1 Adulto</option>
                       <option value="2" data-translate="opt-2a">2 Adultos</option>
                       <option value="3" data-translate="opt-3a">3 Adultos</option>
@@ -1088,7 +1081,7 @@
                   </div>
                   <div class="space-y-1">
                     <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-children">Niños</label>
-                    <select id="contact-children" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" onchange="validateContactGuestsCapacity()">
+                    <select id="contact-children" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white cursor-pointer" onchange="validateContactGuestsCapacity()">
                       <option value="0" selected data-translate="opt-0c">0 Niños</option>
                       <option value="1" data-translate="opt-1c">1 Niño</option>
                       <option value="2" data-translate="opt-2c">2 Niños</option>
@@ -1106,24 +1099,24 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-checkin">Fecha de Arribo</label>
-                  <input type="date" id="contact-checkin" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" required/>
+                  <input type="date" id="contact-checkin" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" required/>
                 </div>
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-checkout">Fecha de Salida</label>
-                  <input type="date" id="contact-checkout" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" required/>
+                  <input type="date" id="contact-checkout" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" required/>
                 </div>
               </div>
 
               <div class="space-y-1">
                 <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-message">Mensaje o Solicitudes Especiales</label>
-                <textarea id="contact-message" rows="4" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3" placeholder="Cuéntanos cómo imaginas tu estadía ideal..." data-translate="placeholder-msg"></textarea>
+                <textarea id="contact-message" rows="4" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" placeholder="Cuéntanos cómo imaginas tu estadía ideal..." data-translate="placeholder-msg"></textarea>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <button type="button" onclick="sendContactRequest('whatsapp')" class="bg-[#25D366] text-white hover:bg-[#1ebd53] p-4 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2">
+                <button type="button" onclick="sendContactRequest('whatsapp')" class="bg-[#25D366] text-white hover:bg-[#1ebd53] p-4 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
                   <span data-translate="btn-send-wa">Enviar por WhatsApp</span>
                 </button>
-                <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container p-4 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2">
+                <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container p-4 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
                   <span data-translate="btn-send-mail">Enviar por Correo</span>
                 </button>
               </div>
@@ -1136,7 +1129,6 @@
       </div>
     </section>
 
-    <!-- ================= SECCIÓN DE POLÍTICAS ================= -->
     <section id="page-politicas" class="page-section hidden opacity-0 transition-opacity duration-300 pt-20 sm:pt-24 pb-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-4xl mx-auto mt-4 font-sans text-stone-800">
         
@@ -1149,7 +1141,7 @@
         </div>
 
         <div class="bg-white p-8 md:p-12 rounded-xl shadow-xl border border-neutral-100 space-y-8 leading-relaxed" id="pol-content-area">
-          <!-- Populated in JS -->
+          <!-- Populated dynamically -->
         </div>
 
       </div>
@@ -1157,7 +1149,6 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="bg-surface-container dark:bg-surface-container-highest w-full py-20 border-t border-outline-variant/30">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 px-6 md:px-margin-desktop max-w-container-max mx-auto">
       
@@ -1174,7 +1165,7 @@
           <h4 class="font-label-caps text-xs text-primary tracking-wider uppercase font-semibold" data-translate="footer-news">Newsletter Exclusivo</h4>
           <div class="flex border-b border-outline-variant py-2 items-center">
             <input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-sm placeholder:text-on-surface-variant/40 outline-none" placeholder="Escribe tu correo" type="email" id="newsletter-email" data-translate="placeholder-newsletter"/>
-            <button onclick="subscribeNewsletter()" class="material-symbols-outlined text-primary hover:translate-x-1 transition-transform">arrow_forward</button>
+            <button onclick="subscribeNewsletter()" class="material-symbols-outlined text-primary hover:translate-x-1 transition-transform cursor-pointer">arrow_forward</button>
           </div>
         </div>
       </div>
@@ -1183,18 +1174,18 @@
         <div class="space-y-4">
           <h4 class="font-label-caps text-xs text-primary tracking-wider uppercase font-semibold" data-translate="footer-nav-title">La Villa</h4>
           <ul class="space-y-3 font-sans">
-            <li><button onclick="navigateToPage('home')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left" data-translate="nav-home">Inicio</button></li>
-            <li><button onclick="navigateToPage('gallery')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left" data-translate="nav-gallery">Galería</button></li>
-            <li><button onclick="navigateToPage('ubicacion')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left" data-translate="nav-ubicacion">Ubicación</button></li>
-            <li><button onclick="navigateToPage('services')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left" data-translate="nav-services">Servicios</button></li>
-            <li><button onclick="navigateToPage('experiences')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left" data-translate="nav-experiences">Experiencias</button></li>
-            <li><button onclick="navigateToPage('contact')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left" data-translate="nav-contact">Contacto</button></li>
+            <li><button onclick="navigateToPage('home')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-home">Inicio</button></li>
+            <li><button onclick="navigateToPage('gallery')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-gallery">Galería</button></li>
+            <li><button onclick="navigateToPage('ubicacion')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-ubicacion">Ubicación</button></li>
+            <li><button onclick="navigateToPage('services')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-services">Servicios</button></li>
+            <li><button onclick="navigateToPage('experiences')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-experiences">Experiencias</button></li>
+            <li><button onclick="navigateToPage('contact')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-contact">Contacto</button></li>
           </ul>
         </div>
         
         <div class="pt-8 border-t border-outline-variant/20 md:border-t-0 md:pt-0 font-sans">
           <p class="font-body-md text-xs text-on-surface-variant leading-relaxed font-sans">
-            <button onclick="navigateToPage('politicas')" class="text-primary font-semibold hover:underline mb-2 block animate-pulse" data-translate="footer-link-pol">Políticas & Restricciones de Renta</button>
+            <button onclick="navigateToPage('politicas')" class="text-primary font-semibold hover:underline mb-2 block animate-pulse cursor-pointer" data-translate="footer-link-pol">Políticas & Restricciones de Renta</button>
             <span data-translate="footer-copy">© 2026 Casa Búho Dorado - Lugar de las Tortugas.<br>Desarrollado con excelencia en la Riviera Maya.</span>
           </p>
         </div>
@@ -1204,7 +1195,7 @@
   </footer>
 
   <!-- Floating widget action trigger -->
-  <button onclick="toggleQuickContact()" class="fixed bottom-6 right-6 z-[90] bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Contactar">
+  <button onclick="toggleQuickContact()" class="fixed bottom-6 right-6 z-[90] bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer" aria-label="Contactar">
     <span class="material-symbols-outlined text-3xl">calendar_month</span>
   </button>
 
@@ -1215,24 +1206,24 @@
         <span class="material-symbols-outlined">edit_calendar</span>
         <h4 class="font-label-caps text-xs tracking-wider uppercase font-semibold" data-translate="quick-title">Contacto & Reservas</h4>
       </div>
-      <button onclick="toggleQuickContact()" class="material-symbols-outlined text-white hover:rotate-90 transition-transform">close</button>
+      <button onclick="toggleQuickContact()" class="material-symbols-outlined text-white hover:rotate-90 transition-transform cursor-pointer">close</button>
     </div>
     
     <form class="p-5 space-y-4" onsubmit="handleQuickContactSubmit(event)">
       <div class="space-y-1">
         <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-fullname">Nombre Completo</label>
-        <input type="text" id="quick-name" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary" placeholder="Ingresa tu nombre completo" data-translate="placeholder-name" required/>
+        <input type="text" id="quick-name" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white" placeholder="Ingresa tu nombre completo" data-translate="placeholder-name" required/>
       </div>
       
       <div class="space-y-1">
         <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="quick-phone-label">Número de Teléfono</label>
-        <input type="tel" id="quick-phone" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary" placeholder="Ingresa tu número de teléfono" data-translate="placeholder-phone" required/>
+        <input type="tel" id="quick-phone" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white" placeholder="Ingresa tu número de teléfono" data-translate="placeholder-phone" required/>
       </div>
 
       <div class="grid grid-cols-2 gap-3">
         <div class="space-y-1">
           <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-adults">Adultos</label>
-          <select id="quick-adults" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white" onchange="validateQuickGuestsCapacity()">
+          <select id="quick-adults" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white cursor-pointer" onchange="validateQuickGuestsCapacity()">
             <option value="1" selected data-translate="opt-1a">1 Adulto</option>
             <option value="2" data-translate="opt-2a">2 Adultos</option>
             <option value="3" data-translate="opt-3a">3 Adultos</option>
@@ -1245,7 +1236,7 @@
         </div>
         <div class="space-y-1">
           <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-children">Niños</label>
-          <select id="quick-children" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white" onchange="validateQuickGuestsCapacity()">
+          <select id="quick-children" class="w-full text-xs border-neutral-200 rounded p-2 focus:border-primary focus:ring-primary bg-white cursor-pointer" onchange="validateQuickGuestsCapacity()">
             <option value="0" selected data-translate="opt-0c">0 Niños</option>
             <option value="1" data-translate="opt-1c">1 Niño</option>
             <option value="2" data-translate="opt-2c">2 Niños</option>
@@ -1262,15 +1253,15 @@
       <div class="grid grid-cols-2 gap-3">
         <div class="space-y-1">
           <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-checkin-short">Entrada</label>
-          <input type="date" id="quick-checkin" class="w-full text-[10px] border-neutral-200 rounded p-1.5 focus:border-primary focus:ring-primary" required/>
+          <input type="date" id="quick-checkin" class="w-full text-[10px] border-neutral-200 rounded p-1.5 focus:border-primary focus:ring-primary bg-white" required/>
         </div>
         <div class="space-y-1">
           <label class="font-label-caps text-[9px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-checkout-short">Salida</label>
-          <input type="date" id="quick-checkout" class="w-full text-[10px] border-neutral-200 rounded p-1.5 focus:border-primary focus:ring-primary" required/>
+          <input type="date" id="quick-checkout" class="w-full text-[10px] border-neutral-200 rounded p-1.5 focus:border-primary focus:ring-primary bg-white" required/>
         </div>
       </div>
       
-      <button type="submit" class="w-full bg-primary text-on-primary hover:bg-primary-container p-3 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md" data-translate="btn-quick-send">
+      <button type="submit" class="w-full bg-primary text-on-primary hover:bg-primary-container p-3 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md cursor-pointer" data-translate="btn-quick-send">
         Solicitar Información
       </button>
     </form>
@@ -1300,14 +1291,14 @@
 
       <div class="p-6 sm:p-8 w-full md:w-[60%] flex flex-col justify-between relative font-sans text-stone-800" id="booking-form-area">
         
-        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
 
         <form id="booking-form" class="space-y-4 sm:space-y-5" onsubmit="handleBookingSubmission(event)">
           <div class="space-y-1">
             <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" data-translate="modal-choose">Selecciona la Experiencia</label>
-            <select id="villa-selection" class="w-full text-sm border-outline-variant rounded focus:border-primary focus:ring-primary p-2.5 bg-surface-container-low">
+            <select id="villa-selection" class="w-full text-sm border-outline-variant rounded focus:border-primary focus:ring-primary p-2.5 bg-surface-container-low cursor-pointer" onchange="calculateDynamicPricing()">
               <option value="suite-tortuga" data-price="650" data-translate="opt-suite">Master Suite Tortuga — $650 USD / Noche</option>
               <option value="ocean-manor" data-price="1200" data-translate="opt-manor">Oceanfront Manor — $1,200 USD / Noche</option>
               <option value="jungle-sanctuary" data-price="1800" data-translate="opt-jungle">Jungle Nest Sanctuary — $1,800 USD / Noche</option>
@@ -1317,18 +1308,18 @@
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-1">
               <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" data-translate="label-checkin">Llegada</label>
-              <input type="date" id="checkin-date" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2" required onchange="calculateDynamicPricing()"/>
+              <input type="date" id="checkin-date" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white" required onchange="calculateDynamicPricing()"/>
             </div>
             <div class="space-y-1">
               <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" data-translate="label-checkout">Salida</label>
-              <input type="date" id="checkout-date" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2" required onchange="calculateDynamicPricing()"/>
+              <input type="date" id="checkout-date" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white" required onchange="calculateDynamicPricing()"/>
             </div>
           </div>
 
           <div class="grid grid-cols-3 gap-2">
             <div class="space-y-1">
               <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" data-translate="label-adults">Adultos</label>
-              <select id="booking-adults" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white" onchange="validateBookingGuestsCapacity()">
+              <select id="booking-adults" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white cursor-pointer" onchange="validateBookingGuestsCapacity()">
                 <option value="1" selected data-translate="opt-1a">1 Adulto</option>
                 <option value="2" data-translate="opt-2a">2 Adultos</option>
                 <option value="3" data-translate="opt-3a">3 Adultos</option>
@@ -1341,7 +1332,7 @@
             </div>
             <div class="space-y-1">
               <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" data-translate="label-children">Niños</label>
-              <select id="booking-children" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white" onchange="validateBookingGuestsCapacity()">
+              <select id="booking-children" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white cursor-pointer" onchange="validateBookingGuestsCapacity()">
                 <option value="0" selected data-translate="opt-0c">0 Niños</option>
                 <option value="1" data-translate="opt-1c">1 Niño</option>
                 <option value="2" data-translate="opt-2c">2 Niños</option>
@@ -1355,7 +1346,7 @@
             </div>
             <div class="space-y-1">
               <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block" data-translate="label-promo">Código</label>
-              <input type="text" id="promo-code" placeholder="Opcional" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2" data-translate="placeholder-promo"/>
+              <input type="text" id="promo-code" placeholder="Opcional" class="w-full text-xs border-outline-variant rounded focus:border-primary focus:ring-primary p-2 bg-white" data-translate="placeholder-promo"/>
             </div>
           </div>
 
@@ -1369,7 +1360,7 @@
             </div>
           </div>
 
-          <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg" data-translate="btn-confirm-res">
+          <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg cursor-pointer" data-translate="btn-confirm-res">
             Confirmar Reserva
           </button>
         </form>
@@ -1377,7 +1368,7 @@
       </div>
 
       <div class="hidden p-6 sm:p-8 w-full md:w-[60%] flex flex-col justify-center items-center text-center relative" id="booking-success-area">
-        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
         <span class="material-symbols-outlined text-6xl text-primary mb-4 animate-bounce">check_circle</span>
@@ -1388,7 +1379,7 @@
         <div class="bg-surface-container p-3 rounded text-xs font-mono text-primary select-all mb-4 sm:mb-6">
           CODE: <strong id="booking-code-tag">AKM-8201</strong>
         </div>
-        <button onclick="closeBookingModal()" class="border border-primary text-primary px-8 py-2.5 font-label-caps text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-colors" data-translate="btn-close">
+        <button onclick="closeBookingModal()" class="border border-primary text-primary px-8 py-2.5 font-label-caps text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-colors cursor-pointer" data-translate="btn-close">
           Cerrar
         </button>
       </div>
@@ -1399,14 +1390,14 @@
   <!-- Lightbox zoom system -->
   <div id="lightbox-modal" class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300 cursor-pointer" onclick="closeLightbox()">
     <div class="relative max-w-4xl max-h-[85vh] w-[90%] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
-      <button class="absolute -top-12 right-0 text-white hover:text-primary-container flex items-center gap-1 font-label-caps text-xs tracking-widest" onclick="closeLightbox()">
+      <button class="absolute -top-12 right-0 text-white hover:text-primary-container flex items-center gap-1 font-label-caps text-xs tracking-widest cursor-pointer" onclick="closeLightbox()">
         <span class="material-symbols-outlined">close</span> <span data-translate="btn-close-lightbox">CERRAR</span>
       </button>
 
-      <button onclick="navigateLightbox(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-container p-3 rounded-full bg-black/40 hover:bg-black/80 transition-all z-20">
+      <button onclick="navigateLightbox(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-container p-3 rounded-full bg-black/40 hover:bg-black/80 transition-all z-20 cursor-pointer">
         <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
       </button>
-      <button onclick="navigateLightbox(1)" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-container p-3 rounded-full bg-black/40 hover:bg-black/80 transition-all z-20">
+      <button onclick="navigateLightbox(1)" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary-container p-3 rounded-full bg-black/40 hover:bg-black/80 transition-all z-20 cursor-pointer">
         <span class="material-symbols-outlined text-3xl font-bold">arrow_forward_ios</span>
       </button>
 
@@ -1429,18 +1420,16 @@
     </div>
   </div>
 
-  <!-- Pure PNG Logo Cursor Follower (Enabled for both Desktop and Mobile Swipe) -->
-  <div id="cursor-follower" class="custom-cursor-follower fixed top-0 left-0 pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 ease-out select-none">
-    <img id="cursor-main-img" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.onerror=null; this.src='LLG.png';" alt="Casa Búho Dorado Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-[0_4px_12px_rgba(181,138,61,0.6)] pointer-events-none transition-transform duration-200"/>
+  <!-- Pure PNG Logo Cursor Follower (Desktop only, pointer-events none to prevent mobile obstruction) -->
+  <div id="cursor-follower" class="custom-cursor-follower fixed top-0 left-0 pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 ease-out select-none hidden md:block">
+    <img id="cursor-main-img" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.onerror=null; this.src='LLG.png';" alt="Casa Búho Dorado Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-[0_4px_12px_rgba(181,138,61,0.6)] pointer-events-none"/>
   </div>
 
   <!-- Container for flying owl particles trail -->
-  <div id="cursor-particles-container" class="fixed inset-0 pointer-events-none z-[9998] overflow-hidden"></div>
+  <div id="cursor-particles-container" class="fixed inset-0 pointer-events-none z-[9998] overflow-hidden hidden md:block"></div>
 
-  <!-- ================= MASTER DATA & LOGIC ================= -->
   <script>
     const curatedGallery = [
-      // RESIDENCIA (interiores)
       { name: "interior-1", id: "10h9hn20rHbmLWdJ4-36PigNqK3a6y2bs", category: "residencia" },
       { name: "interior-2", id: "10oYtmvgYbXeqM2nmNODvaveA2-g2fDpP", category: "residencia" },
       { name: "suite-detalle", id: "11jEYcQQ3eChnnR8MqA34huNeQkWv-1ZY", category: "residencia" },
@@ -1485,7 +1474,6 @@
       { name: "estancia-piedra", id: "1v40TNlZ59bey9WMmbph9ea9e9PUFxOId", category: "residencia" },
       { name: "lounge-noche", id: "1xozphpkG60UOtGOJ0FcJTYh59rgTkjs9", category: "residencia" },
 
-      // EXTERIORES
       { name: "alberca-jardin", id: "1-8RqlEQwxq5jG9qq0A0C4zEF8tw8JQz7", category: "exteriores" },
       { name: "area-asador", id: "1-jQ1LH_165yElFbti0KSOVg5F6VtYNtI", category: "exteriores" },
       { name: "asador-exterior", id: "11-KzEaBf1wwDtawz9RVNXqvus_O56URO", category: "exteriores" },
@@ -1501,7 +1489,6 @@
       { name: "palmeras-exterior", id: "1w3MRn_ghzeRJQ_bUmRdvTjW_kGbWql8n", category: "exteriores" },
       { name: "exterior-detalle", id: "1jqjlLvy5mFGUNzRGkrAWAVk9LBtCQERu", category: "exteriores" },
 
-      // ESTILO Y DETALLES
       { name: "amenidad-bano", id: "14xzh78Xoy7JGBrZKB3dXDcxIjl8AUD_2", category: "detalles" },
       { name: "jabones-organicos", id: "16CKh-JYSIXb4Dk9PVUcCMv8RS8mdiMJu", category: "detalles" },
       { name: "velas-decoracion", id: "16I5g1UhePn1OcJoyOP-dZym6Q64Q98Id", category: "detalles" },
@@ -1515,7 +1502,6 @@
       { name: "decoracion-rustica", id: "1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv", category: "detalles" }
     ];
 
-    // Comprehensive Translation Dictionary
     const dictionary = {
       es: {
         "nav-home": "Inicio",
@@ -1545,7 +1531,7 @@
         "t3-text": "\"La privacidad de Casa Búho Dorado es insuperable. El doble portón de seguridad y la atención minuciosa de Valentina hicieron que nos sintiéramos en nuestro propio paraíso privado.\"",
         "t3-author": "— FAMILIA CARTER, NUEVA YORK",
         "gal-sub": "Portafolio Visual",
-        "gal-title": "Dream Gallery",
+        "gal-title": "Galería de Ensueño",
         "gal-desc": "Nuestra colección de fotografía completa sin distracciones. Haz clic en las imágenes para sumergirte en el lujo de Casa Búho Dorado.",
         "cat-all": "Todos",
         "cat-res": "Residencia",
@@ -1877,7 +1863,6 @@
     let activeLightboxIndex = 0;
     let isZoomed = false;
 
-    // Ensure every page change scrolls to the absolute top smoothly
     function navigateToPage(pageId) {
       window.scrollTo({ top: 0, behavior: 'instant' });
       
@@ -1898,7 +1883,6 @@
         });
       }
 
-      // Update active menu link indicators
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('text-primary', 'nav-active-line');
         link.classList.add('text-[#1d1c16]');
@@ -1922,7 +1906,6 @@
       setLanguage(newLang);
     }
 
-    // Set language and update video source according to selected language
     function setLanguage(lang) {
       activeLanguage = lang;
 
@@ -1936,17 +1919,14 @@
         btnMobile.innerHTML = `<span class="material-symbols-outlined text-base">language</span> <span>${lang === 'es' ? 'English' : 'Español'}</span>`;
       }
 
-      // Dynamic video player URL swap based on Spanish vs English
       const cinematicIframe = document.getElementById('cinematic-video-player');
       const videoDirectLink = document.getElementById('home-video-direct-link');
 
       if (cinematicIframe && videoDirectLink) {
         if (lang === 'es') {
-          // Spanish Video
           cinematicIframe.src = "https://www.youtube-nocookie.com/embed/h6W6BbKsgK4?rel=0&modestbranding=1&playsinline=1";
           videoDirectLink.href = "https://youtu.be/h6W6BbKsgK4";
         } else {
-          // English Video
           cinematicIframe.src = "https://www.youtube-nocookie.com/embed/47dlF0Of1yU?rel=0&modestbranding=1&playsinline=1";
           videoDirectLink.href = "https://youtu.be/47dlF0Of1yU";
         }
@@ -2100,15 +2080,15 @@
 
       gsap.utils.toArray('.reveal-up').forEach(elem => {
         gsap.fromTo(elem, 
-          { y: 50, opacity: 0 },
+          { y: 40, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            duration: 1,
+            duration: 0.8,
             ease: "power3.out",
             scrollTrigger: {
               trigger: elem,
-              start: "top 85%",
+              start: "top 88%",
               toggleActions: "play none none none"
             }
           }
@@ -2117,15 +2097,15 @@
 
       gsap.utils.toArray('.reveal-left').forEach(elem => {
         gsap.fromTo(elem, 
-          { x: -50, opacity: 0 },
+          { x: -40, opacity: 0 },
           {
             x: 0,
             opacity: 1,
-            duration: 1,
+            duration: 0.8,
             ease: "power3.out",
             scrollTrigger: {
               trigger: elem,
-              start: "top 85%",
+              start: "top 88%",
               toggleActions: "play none none none"
             }
           }
@@ -2134,15 +2114,15 @@
 
       gsap.utils.toArray('.reveal-right').forEach(elem => {
         gsap.fromTo(elem, 
-          { x: 50, opacity: 0 },
+          { x: 40, opacity: 0 },
           {
             x: 0,
             opacity: 1,
-            duration: 1,
+            duration: 0.8,
             ease: "power3.out",
             scrollTrigger: {
               trigger: elem,
-              start: "top 85%",
+              start: "top 88%",
               toggleActions: "play none none none"
             }
           }
@@ -2165,16 +2145,14 @@
       if (quickCheckInEl) quickCheckInEl.value = today.toISOString().split('T')[0];
       if (quickCheckOutEl) quickCheckOutEl.value = tomorrow.toISOString().split('T')[0];
 
-      // Default language setup: ES (loads Spanish YouTube link)
       setLanguage('es');
 
-      // Hero animation
       gsap.to(".reveal-hero", {
         opacity: 1,
         y: 0,
-        duration: 1.6,
+        duration: 1.4,
         ease: "power4.out",
-        delay: 0.3
+        delay: 0.2
       });
 
       renderInteractiveGallery();
@@ -2206,7 +2184,7 @@
         if (menu.classList.contains('hidden')) {
           menu.classList.remove('hidden');
           icon.textContent = 'close';
-          gsap.fromTo(menu, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3 });
+          gsap.fromTo(menu, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.25 });
         } else {
           menu.classList.add('hidden');
           icon.textContent = 'menu';
@@ -2261,7 +2239,7 @@
         grid.insertAdjacentHTML('beforeend', cardHtml);
       });
 
-      gsap.fromTo(".gallery-item", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "power2.out" });
+      gsap.fromTo(".gallery-item", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.03, ease: "power2.out" });
     }
 
     function filterGallery(category) {
@@ -2307,8 +2285,8 @@
         modal.classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
         calculateDynamicPricing();
-        gsap.to(modal, { opacity: 1, duration: 0.3 });
-        gsap.to(card, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" });
+        gsap.to(modal, { opacity: 1, duration: 0.25 });
+        gsap.to(card, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" });
       }
     }
 
@@ -2330,10 +2308,10 @@
       const card = document.getElementById('booking-modal-card');
       
       if (card && modal) {
-        gsap.to(card, { opacity: 0, scale: 0.95, duration: 0.3 });
+        gsap.to(card, { opacity: 0, scale: 0.95, duration: 0.25 });
         gsap.to(modal, { 
           opacity: 0, 
-          duration: 0.3, 
+          duration: 0.25, 
           onComplete: () => {
             modal.classList.add('hidden');
             document.body.classList.remove('overflow-hidden');
@@ -2401,11 +2379,11 @@
       if (formArea && successArea) {
         gsap.to(formArea, {
           opacity: 0,
-          duration: 0.3,
+          duration: 0.25,
           onComplete: () => {
             formArea.classList.add('hidden');
             successArea.classList.remove('hidden');
-            gsap.fromTo(successArea, { opacity: 0 }, { opacity: 1, duration: 0.4 });
+            gsap.fromTo(successArea, { opacity: 0 }, { opacity: 1, duration: 0.3 });
           }
         });
       }
@@ -2450,7 +2428,7 @@
       showToastNotification(toastMsg, "chat");
       setTimeout(() => {
         window.open(waUrl, '_blank');
-      }, 800);
+      }, 600);
     }
 
     function toggleQuickContact() {
@@ -2459,7 +2437,7 @@
         if (panel.classList.contains('hidden')) {
           panel.classList.remove('hidden');
           panel.classList.add('flex');
-          gsap.fromTo(panel, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" });
+          gsap.fromTo(panel, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" });
         } else {
           gsap.to(panel, { 
             opacity: 0, 
@@ -2504,7 +2482,7 @@
       
       setTimeout(() => {
         window.open(waUrl, '_blank');
-      }, 800);
+      }, 600);
     }
 
     function openLightboxFromGallery(imageName) {
@@ -2524,7 +2502,7 @@
         resetLightboxZoom();
         modal.classList.remove('hidden');
         modal.classList.add('flex');
-        gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.3 });
+        gsap.fromTo(modal, { opacity: 0 }, { opacity: 1, duration: 0.25 });
         document.body.classList.add('overflow-hidden');
       }
     }
@@ -2651,7 +2629,7 @@
       if (modal) {
         gsap.to(modal, { 
           opacity: 0, 
-          duration: 0.3, 
+          duration: 0.25, 
           onComplete: () => {
             modal.classList.remove('flex');
             modal.classList.add('hidden');
@@ -2675,8 +2653,8 @@
       gsap.killTweensOf(toast);
       
       gsap.timeline()
-        .to(toast, { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" })
-        .to(toast, { x: 300, opacity: 0, duration: 0.4, delay: 3.5, ease: "power2.in" });
+        .to(toast, { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" })
+        .to(toast, { x: 300, opacity: 0, duration: 0.3, delay: 3, ease: "power2.in" });
     }
 
     function subscribeNewsletter() {
@@ -2724,14 +2702,15 @@
       const particlesContainer = document.getElementById('cursor-particles-container');
       if (!cursor || !particlesContainer) return;
 
+      // On mobile/coarse pointer devices, keep cursor completely hidden and inert to prevent touch obstruction
       if (window.matchMedia('(pointer: coarse)').matches) {
         cursor.style.display = 'none';
+        particlesContainer.style.display = 'none';
         return;
       }
 
       if (typeof gsap !== 'undefined') {
         gsap.set(cursor, { xPercent: -50, yPercent: -50 });
-        // Continuous dynamic floating and rotation animation for the main cursor logo so it's never static
         gsap.to(cursorImg, {
           y: "-=8",
           rotation: "+=6",
@@ -2766,7 +2745,7 @@
         particle.style.left = x + 'px';
         particle.style.top = y + 'px';
         particle.style.transform = 'translate(-50%, -50%)';
-        particle.style.filter = 'drop-shadow(0 4px 12px rgba(181, 138, 61, 0.7))';
+        particle.style.filter = 'drop-shadow(0 4px 12px rgba(181, 138, 61, 0.8))';
 
         particlesContainer.appendChild(particle);
 
