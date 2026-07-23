@@ -680,11 +680,11 @@
           
           <div class="relative aspect-square reveal-up flex items-center justify-center py-6">
             <div class="absolute inset-0 rounded-full border border-primary/20 scale-105 animate-pulse hidden lg:block"></div>
-            <div class="w-full h-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] aspect-square bg-white rounded-full overflow-hidden border border-primary/10 shadow-2xl relative">
+            <a href="https://maps.app.goo.gl/XkBCDTwvhjj8mxF77" target="_blank" rel="noopener noreferrer" class="w-full h-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] aspect-square bg-white rounded-full overflow-hidden border border-primary/10 shadow-2xl relative block group cursor-pointer" title="Abrir ubicación en Google Maps">
               <iframe 
                 title="Ubicación Casa Búho Dorado"
                 src="https://maps.google.com/maps?q=Akumal%20Bay,%20Quintana%20Roo,%20Mexico&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                class="w-full h-full border-0 absolute inset-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
+                class="w-full h-full border-0 absolute inset-0 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade">
@@ -692,7 +692,12 @@
               <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-primary/10 shadow-md text-center pointer-events-none z-10">
                 <p class="font-label-caps text-[9px] tracking-widest text-primary font-bold uppercase">CASA BÚHO DORADO</p>
               </div>
-            </div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span class="bg-primary text-white text-[10px] font-label-caps uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">open_in_new</span> Abrir Mapa
+                </span>
+              </div>
+            </a>
           </div>
           
           <div class="space-y-6 md:space-y-8 lg:pl-6 reveal-right">
