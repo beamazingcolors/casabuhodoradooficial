@@ -2960,12 +2960,7 @@
       const particlesContainer = document.getElementById('cursor-particles-container');
       if (!cursor || !particlesContainer) return;
 
-      if (window.matchMedia('(pointer: coarse)').matches) {
-        cursor.style.display = 'none';
-        particlesContainer.style.display = 'none';
-        return;
-      }
-
+      
       if (typeof gsap !== 'undefined') {
         gsap.set(cursor, { xPercent: -50, yPercent: -50 });
         gsap.to(cursorImg, {
@@ -3070,6 +3065,12 @@
       window.addEventListener('mousemove', (e) => {
         handlePointerMove(e.clientX, e.clientY);
       });
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
 
       document.addEventListener('mouseleave', () => {
         if (idleTimer) clearTimeout(idleTimer);
