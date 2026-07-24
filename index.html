@@ -195,15 +195,15 @@
   <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-1.5 glass-header border-b border-primary/20 shadow-sm" id="main-header">
     <div class="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 max-w-container-max mx-auto w-full gap-4 lg:gap-10">
       
-      <!-- Brand Logo + Title Container (Ajuste estético de máxima cercanía) -->
+      <!-- Brand Logo + Title Container (Exact 100px x 92px Logo) -->
       <div class="flex items-center gap-0 sm:gap-0.5 cursor-pointer flex-shrink-0 py-0.5" onclick="navigateToPage('home')">
-        <img id="header-logo" alt="Casa Búho Dorado Logo" class="w-[85px] sm:w-[95px] h-[78px] sm:h-[86px] object-contain object-right -mr-2 sm:-mr-3 transition-transform duration-300 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+        <img id="header-logo" alt="Casa Búho Dorado Logo" class="w-[100px] h-[92px] object-contain object-right -mr-2 sm:-mr-3 transition-transform duration-300 hover:scale-105" style="width: 100px; height: 92px;" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
         <div class="flex flex-col justify-center">
           <span id="header-title" class="font-headline-md text-sm sm:text-base md:text-lg lg:text-xl text-primary tracking-[0.14em] uppercase font-bold transition-colors duration-300 whitespace-nowrap drop-shadow-sm leading-tight">CASA BÚHO DORADO</span>
         </div>
       </div>
       
-      <!-- Nav Menu (Expanded & Spaced Elegantly for High Aesthetic) -->
+      <!-- Nav Menu -->
       <nav class="hidden xl:flex items-center gap-6 lg:gap-8 xl:gap-9 flex-shrink-0">
         <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-primary nav-active-line transition-all duration-300 py-2 hover:text-primary tracking-wider" id="nav-home" data-translate="nav-home">Inicio</button>
         <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-gallery" data-translate="nav-gallery">Galería</button>
@@ -249,7 +249,7 @@
 
     <section id="page-home" class="page-section opacity-100 transition-opacity duration-300">
       
-      <!-- Hero Welcome section with verified assets and rich animations -->
+      <!-- Hero Welcome section -->
       <section class="relative h-[88vh] sm:h-[92vh] w-full flex items-center justify-center overflow-hidden bg-cover bg-center animate-fade-in pt-20 sm:pt-24" style="background-image: url('https://lh3.googleusercontent.com/d/1t-lj9NOJaLt9IXHSCFtErgWJbLym-qCv');">
         
         <!-- Drifting Clouds Parallax -->
@@ -285,6 +285,7 @@
         </div>
       </section>
 
+      <!-- SECCIÓN: Historia de Casa Búho Dorado -->
       <section class="bg-surface py-20 lg:py-28 px-6 md:px-margin-desktop overflow-hidden border-b border-stone-100">
         <div class="max-w-container-max mx-auto">
           
@@ -327,6 +328,7 @@
         </div>
       </section>
 
+      <!-- SECCIÓN: La Villa -->
       <section class="bg-surface-container-low py-20 lg:py-28 px-6 md:px-margin-desktop overflow-hidden border-b border-stone-100">
         <div class="max-w-container-max mx-auto">
           
@@ -555,16 +557,36 @@
           </p>
         </div>
 
-        <!-- Mapa interactivo posicionado -->
-        <div class="relative w-full h-[400px] mb-12 rounded-xl shadow-2xl border border-primary/20 overflow-hidden reveal-up">
+        <!-- Mapa interactivo posicionado con diseño de lujo -->
+        <div class="relative w-full h-[450px] sm:h-[500px] mb-16 rounded-[2rem] shadow-[0_20px_50px_rgba(181,138,61,0.18)] border-2 border-primary/30 overflow-hidden reveal-up group">
+          
+          <!-- Insignia flotante de cristal con información -->
+          <div class="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-primary/20 flex items-center gap-3 z-10 pointer-events-none">
+            <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-xl">location_on</span>
+            </div>
+            <div>
+              <p class="font-label-caps text-[11px] font-bold text-primary uppercase tracking-wider">Casa Búho Dorado</p>
+              <p class="text-[11px] text-stone-600 font-sans">Rancho San Martín, Akumal, Q.R.</p>
+            </div>
+          </div>
+
+          <!-- Botón de acción directo para Google Maps -->
+          <a href="https://maps.app.goo.gl/XkBCDTwvhjj8mxF77" target="_blank" rel="noopener noreferrer" class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-primary text-white font-label-caps text-xs px-5 py-2.5 rounded-full shadow-xl hover:bg-primary-container hover:scale-105 transition-all flex items-center gap-2 z-10 font-semibold cursor-pointer">
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+            <span>Abrir en Google Maps</span>
+          </a>
+
           <iframe 
             title="Ubicación Casa Búho Dorado"
             src="https://maps.google.com/maps?q=20.428412,-87.315144&output=embed" 
-            class="w-full h-full border-0"
+            class="w-full h-full border-0 grayscale-[15%] contrast-[105%] group-hover:grayscale-0 transition-all duration-700"
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
+          
+          <div class="absolute inset-0 rounded-[2rem] pointer-events-none border border-primary/10"></div>
         </div>
 
         <!-- ¿Qué significa Akumal? -->
@@ -588,152 +610,167 @@
           </div>
         </div>
 
-        <!-- Exploración Exclusiva -->
-        <div class="py-16 border-b border-stone-100 reveal-up">
-          <div class="flex flex-col justify-center items-center mb-12 gap-4 text-center">
-            <span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block font-semibold" data-translate="exp-tag">Maravillas Naturales</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface text-center" data-translate="exp-title">Exploración Exclusiva</h2>
+        <!-- SECCIÓN: Exploración Exclusiva (Carrusel Automático Integrado para las 8 experiencias) -->
+        <div class="py-16 reveal-up">
+          <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
+            <div class="text-center sm:text-left">
+              <span class="text-primary font-label-caps text-xs sm:text-label-caps uppercase tracking-widest block font-semibold mb-1" data-translate="exp-tag">Maravillas Naturales</span>
+              <h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-on-surface" data-translate="exp-title">Exploración Exclusiva</h2>
+            </div>
+            
+            <!-- Controles de navegación del carrusel -->
+            <div class="flex items-center gap-3">
+              <button onclick="moveExplorationSlide(-1)" class="w-10 h-10 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer" aria-label="Anterior">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+              </button>
+              <button onclick="moveExplorationSlide(1)" class="w-10 h-10 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer" aria-label="Siguiente">
+                <span class="material-symbols-outlined text-xl">arrow_forward</span>
+              </button>
+            </div>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-up-stagger">
-            <div class="group cursor-pointer ken-burns" onclick="openBookingModal('Tour Chichén Itzá')">
-              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md relative">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Pirámide de Chichén Itzá bajo una luz dorada" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdxC6pOvN6V8a_ADMqkFy50Xz7IoLMypJs44Lh3LSijFWFOHEzG_LkpE4hEQRVAjlEKZ8sVD4P7QHOgZ4G68J2XW5fYq0imjtz0qV2GnrK_rXpXOhn801IL2QSc_WnRridakjXXI9czVVtZt7D3rCdk-M3JSr-_00mOIQk6Ko6aX1eUFDyZ_vPVUXm-X9CKFsjSzN8rfCaaAT7YosGZqMSBlxpKm3ENUnvez7OHoeb65nDshj2dkMLx77TEUXTVek8N1GgRXunwV0n"/>
+          <!-- Contenedor del Carrusel de 8 elementos con Pausa en Hover y Swipe táctil -->
+          <div class="relative overflow-hidden w-full py-4" id="exploration-carousel-container" onmouseenter="stopExplorationAutoplay()" onmouseleave="startExplorationAutoplay()">
+            <div class="flex transition-transform duration-700 ease-out gap-6" id="exploration-carousel-track">
+              
+              <!-- 1. Chichén Itzá -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Tour Chichén Itzá')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md" data-translate="exp-c1-time">2.5 HRS</span>
+                    <img loading="lazy" alt="Pirámide de Chichén Itzá bajo una luz dorada" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdxC6pOvN6V8a_ADMqkFy50Xz7IoLMypJs44Lh3LSijFWFOHEzG_LkpE4hEQRVAjlEKZ8sVD4P7QHOgZ4G68J2XW5fYq0imjtz0qV2GnrK_rXpXOhn801IL2QSc_WnRridakjXXI9czVVtZt7D3rCdk-M3JSr-_00mOIQk6Ko6aX1eUFDyZ_vPVUXm-X9CKFsjSzN8rfCaaAT7YosGZqMSBlxpKm3ENUnvez7OHoeb65nDshj2dkMLx77TEUXTVek8N1GgRXunwV0n"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="exp-c1-title">Chichén Itzá</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="exp-c1-desc">Visita privada a la Maravilla del Mundo Maya.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex justify-between items-start font-sans">
-                <h3 class="font-headline-md text-xl">Chichén Itzá</h3>
-                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">2.5 HRS</span>
+
+              <!-- 2. Cenote Dos Ojos -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Tour Cenotes')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md" data-translate="exp-c2-time">15 MINS</span>
+                    <img loading="lazy" alt="Eterio Cenote Dos Ojos con aguas de zafiro" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CNE.png" onerror="this.src='CNE.png'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="exp-c2-title">Cenote Dos Ojos</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="exp-c2-desc">Cavernas milenarias y buceo guiado en aguas cristalinas.</p>
+                  </div>
+                </div>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center" data-translate="exp-c1">Visita privada a la Maravilla del Mundo.</p>
-            </div>
-            <div class="group cursor-pointer" onclick="openBookingModal('Tour Cenotes')">
-              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md relative">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Eterio Cenote Dos Ojos con aguas de zafiro" class="w-full h-full object-cover transition-slow" src="https://beamazingcolors.github.io/casabuhodoradooficial/CNE.png" onerror="this.src='CNE.png'"/>
+
+              <!-- 3. Laguna Yal-Kú -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Reserva de Snorkel')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md" data-translate="exp-c3-time">5 MINS</span>
+                    <img loading="lazy" alt="Laguna Yal-Kú" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdpjMdgrDDBDa9Wfauzd2IGTcFTJ7FtSzotgcrICWNqI_Yz5jvvbAsWRPvlfZ_HOrCQr2UaCGa8jekVYMbSHPUojSq_CEs2zKDLj81F65h4kVhoc7Hjvrw110yXHxvUYgE2aplLBq4W3MXPcg6ASZsofoDApvhqqgbAgd43qGYBl0SpvwdQc2htJQPyDW4HjgmXQOExMgWoc1mQp_CaS7LOI2It-_fMLekWXjIj7eln-dpCxZDlmH6VcyJYH1cpj-YzuVE0O-HFbU9"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="yalku">Laguna Yal-Kú</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="exp-c3-desc">Un acuario natural privado donde la caleta abraza al mar.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex justify-between items-start font-sans">
-                <h3 class="font-headline-md text-xl">Dos Ojos</h3>
-                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">15 MINS</span>
+
+              <!-- 4. Bahía de Akumal -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('General')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md" data-translate="steps">15 MINS</span>
+                    <img loading="lazy" alt="Amanecer en la prístina playa de Bahía de Akumal" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxZqxN0Y1mMiqKILt8QqyfKDh1QFpdloO0IgSze-kXPTIan1kete7yEvM0t3caXenqhQhLQlSaNXLkY8wnnOsyiDzct4bOHQDrjGQ5T3wG-qaddph43T6eNQgXK_yRQtYkck3HVqXHPidMxc1bDoYXZSBiG4V8PfgRF429w-F8qSz3uXNo_YsxJUZdNnUZsRwi8OP5wyX3SL8Ded9ubN9BvTP27NQUpR9bM7bfvF1tMIvh7cWsThjr65hCRaDtis0ESU5asxsZnrLC"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="akumal">Bahía de Akumal</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="exp-c4-desc">Santuario protegido de tortugas marinas a la orilla de tu villa.</p>
+                  </div>
+                </div>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center" data-translate="exp-c2">Cavernas milenarias y buceo guiado.</p>
-            </div>
-            <div class="group cursor-pointer" onclick="openBookingModal('Reserva de Snorkel')">
-              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md relative">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Laguna Yal-Kú" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdpjMdgrDDBDa9Wfauzd2IGTcFTJ7FtSzotgcrICWNqI_Yz5jvvbAsWRPvlfZ_HOrCQr2UaCGa8jekVYMbSHPUojSq_CEs2zKDLj81F65h4kVhoc7Hjvrw110yXHxvUYgE2aplLBq4W3MXPcg6ASZsofoDApvhqqgbAgd43qGYBl0SpvwdQc2htJQPyDW4HjgmXQOExMgWoc1mQp_CaS7LOI2It-_fMLekWXjIj7eln-dpCxZDlmH6VcyJYH1cpj-YzuVE0O-HFbU9"/>
+
+              <!-- 5. Tulum -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Excursión Tulum')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md">25 MINS</span>
+                    <img loading="lazy" alt="Tulum Riviera Maya" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/tlm.png" onerror="this.src='tlm.png'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1504730030853-eff311f57d3c?q=80&w=600&auto=format&fit=crop'}"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="exp-c5-loc-title">Tulum</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="dest-tulum">Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex justify-between items-start font-sans">
-                <h3 class="font-headline-md text-xl" data-translate="yalku">Laguna Yal-Kú</h3>
-                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">5 MINS</span>
+
+              <!-- 6. Playa del Carmen -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Excursión Playa del Carmen')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md">30 MINS</span>
+                    <img loading="lazy" alt="Playa del Carmen" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/PLT.png" onerror="this.src='PLT.png'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="exp-c6-loc-title">Playa del Carmen</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="dest-playa">Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.</p>
+                  </div>
+                </div>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center" data-translate="exp-c3">Un acuario natural privado a tu disposición.</p>
-            </div>
-            <div class="group cursor-pointer" onclick="openBookingModal('General')">
-              <div class="aspect-[3/4] overflow-hidden bg-surface-container mb-4 rounded-sm shadow-md relative">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Amanecer en la prístina playa de Bahía de Akumal" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxZqxN0Y1mMiqKILt8QqyfKDh1QFpdloO0IgSze-kXPTIan1kete7yEvM0t3caXenqhQhLQlSaNXLkY8wnnOsyiDzct4bOHQDrjGQ5T3wG-qaddph43T6eNQgXK_yRQtYkck3HVqXHPidMxc1bDoYXZSBiG4V8PfgRF429w-F8qSz3uXNo_YsxJUZdNnUZsRwi8OP5wyX3SL8Ded9ubN9BvTP27NQUpR9bM7bfvF1tMIvh7cWsThjr65hCRaDtis0ESU5asxsZnrLC"/>
+
+              <!-- 7. Cenote Sac Actun -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Tour Sac Actun')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md">20 MINS</span>
+                    <img loading="lazy" alt="Cenote Sac Actun" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcxcEAzKzDw0VYdwV_bohsbTLx82KeG_pFdIt7hW3w5BcL_gj_SQ_E91K4w-Und11x9VnHKh3MLetG5aPRaPK9O7kqmx4epI2hD82QNeRe0gfxkiIyVnFt5AbTDYelYIGw0ZB-Mc5867Y6-zATqqrTX0BhTEarqh8k6HLwVKEEUZz6Mfi1cKnXN-F8HUVUcxq5Ryp8SuRjUUQgTngsUe_IQafTUPR5OqUabrZK72faLDqReugpKpnchQGzDGyAjtFt-41YIEngiVi"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="exp-c7-loc-title">Cenote Sac Actun</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="exp-c7-loc-desc">El río subterráneo más extenso del planeta con aguas de zafiro para buceo de élite.</p>
+                  </div>
+                </div>
               </div>
-              <div class="flex justify-between items-start font-sans">
-                <h3 class="font-headline-md text-xl" data-translate="akumal">Bahía de Akumal</h3>
-                <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded" data-translate="steps">A PASOS</span>
+
+              <!-- 8. Coba -->
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Excursión Coba')">
+                <div>
+                  <div class="relative aspect-[4/3] overflow-hidden">
+                    <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
+                    <span class="absolute top-3 right-3 z-10 bg-primary text-white font-label-caps text-[9px] sm:text-[10px] px-3 py-1 rounded-full uppercase tracking-wider font-semibold shadow-md">50 MINS</span>
+                    <img loading="lazy" alt="Coba Quintana Roo" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CB.png" onerror="this.src='CB.png'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  </div>
+                  <div class="p-5 font-sans">
+                    <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="exp-c8-loc-title">Coba</h3>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="dest-coba">La majestuosa pirámide Nohoch Mul rodeada de selva indómita.</p>
+                  </div>
+                </div>
               </div>
-              <p class="font-body-md text-sm text-on-surface-variant mt-2 font-sans text-center" data-translate="exp-c4">El umbral de tu santuario privado.</p>
+
             </div>
           </div>
+
+          <!-- Indicadores de puntos del carrusel -->
+          <div class="flex justify-center gap-2 mt-6" id="exploration-carousel-dots">
+            <!-- Rendered dynamically -->
+          </div>
+
         </div>
 
-        <!-- Riviera Destinations -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-gutter items-center pt-16">
-          
-          <div class="space-y-6 md:space-y-8 lg:pr-6 reveal-left">
-            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500 font-sans">
-              <div class="relative h-40 sm:h-44 overflow-hidden">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                <img loading="lazy" alt="Tulum Riviera Maya" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/tlm.png" onerror="this.src='tlm.png'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1504730030853-eff311f57d3c?q=80&w=600&auto=format&fit=crop'}"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Tulum</span>
-                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">25 MINS</span>
-                </div>
-              </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
-                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-translate="dest-tulum">
-                  Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.
-                </p>
-              </div>
-            </div>
-
-            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500 font-sans">
-              <div class="relative h-40 sm:h-44 overflow-hidden">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                <img loading="lazy" alt="Playa del Carmen" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/PLT.png" onerror="this.src='PLT.png'"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Playa del Carmen</span>
-                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">30 MINS</span>
-                </div>
-              </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
-                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-translate="dest-playa">
-                  Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="relative aspect-square reveal-up flex items-center justify-center py-6">
-            <div class="absolute inset-0 rounded-full border border-primary/20 scale-105 animate-pulse hidden lg:block"></div>
-            <a href="https://maps.app.goo.gl/XkBCDTwvhjj8mxF77" target="_blank" rel="noopener noreferrer" class="w-full h-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] aspect-square bg-white rounded-full overflow-hidden border border-primary/10 shadow-2xl relative block group cursor-pointer" title="Abrir ubicación en Google Maps">
-              <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" alt="Mapa" class="w-full h-full object-cover opacity-80" />
-              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-primary/10 shadow-md text-center pointer-events-none z-10">
-                <p class="font-label-caps text-[9px] tracking-widest text-primary font-bold uppercase">CASA BÚHO DORADO</p>
-              </div>
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <span class="bg-primary text-white text-[10px] font-label-caps uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-                  <span class="material-symbols-outlined text-xs">open_in_new</span> Abrir Mapa
-                </span>
-              </div>
-            </a>
-          </div>
-          
-          <div class="space-y-6 md:space-y-8 lg:pl-6 reveal-right">
-            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500 font-sans">
-              <div class="relative h-40 sm:h-44 overflow-hidden">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                <img loading="lazy" alt="Cenote Dos Ojos" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CNE.png" onerror="this.src='CNE.png'"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Cenote Dos Ojos</span>
-                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">15 MINS</span>
-                </div>
-              </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
-                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-translate="dest-cenote">
-                  Un sistema de cavernas semi-inundadas sagradas con aguas turquesas para buceo de élite.
-                </p>
-              </div>
-            </div>
-
-            <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition-all duration-500 font-sans">
-              <div class="relative h-40 sm:h-44 overflow-hidden">
-                <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
-                <img loading="lazy" alt="Coba Quintana Roo" class="w-full h-full object-cover transition-slow group-hover:scale-110" src="https://beamazingcolors.github.io/casabuhodoradooficial/CB.png" onerror="this.src='CB.png'"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                  <span class="font-headline-md text-white text-xl sm:text-2xl font-medium tracking-wide">Coba</span>
-                  <span class="font-label-caps text-[9px] sm:text-[10px] text-white bg-primary px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">50 MINS</span>
-                </div>
-              </div>
-              <div class="p-4 sm:p-5 font-sans text-stone-700 text-center">
-                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-translate="dest-coba">
-                  La majestuosa pirámide Nohoch Mul rodeada de selva indómita.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -1196,10 +1233,20 @@
     </div>
   </footer>
 
-  <!-- Floating widget action trigger -->
-  <button onclick="toggleQuickContact()" class="fixed bottom-6 right-6 z-[90] bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer" aria-label="Contactar">
-    <span class="material-symbols-outlined text-3xl">calendar_month</span>
-  </button>
+  <!-- Floating action widgets container -->
+  <div class="fixed bottom-6 right-6 z-[90] flex items-center gap-3">
+    <!-- WhatsApp Direct Floating Widget -->
+    <a href="https://wa.me/529842095468" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-[#20bd5a] active:scale-95 transition-all duration-300 cursor-pointer" aria-label="Contactar por WhatsApp" title="WhatsApp Directo">
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.003l-1.416 5.166 5.293-1.388c1.462.798 3.109 1.218 4.777 1.219h.004c5.505 0 9.989-4.478 9.99-9.985.001-2.668-1.034-5.176-2.919-7.062a9.924 9.924 0 00-7.071-2.937zm5.82 14.374c-.244.688-1.226 1.353-1.992 1.517-.525.112-1.21.202-3.513-.751-2.946-1.219-4.84-4.225-4.987-4.42-.147-.197-1.198-1.593-1.198-3.038 0-1.446.758-2.158 1.026-2.451.268-.293.585-.366.78-.366.195 0 .39.002.56.01.181.008.423-.069.662.505.244.585.83 2.025.903 2.172.073.147.122.318.024.513-.097.195-.146.318-.292.488-.147.171-.308.382-.44.513-.146.146-.298.305-.128.597.17.292.754 1.246 1.62 2.018 1.113.992 2.053 1.3 2.345 1.446.292.146.463.122.634-.073.17-.195.731-.853.926-1.146.195-.292.39-.244.658-.146.268.098 1.706.805 2.001.951.292.146.487.219.56.341.073.122.073.707-.171 1.395z"/>
+      </svg>
+    </a>
+
+    <!-- Quick Floating Reservation Panel Trigger -->
+    <button onclick="toggleQuickContact()" class="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer" aria-label="Contactar">
+      <span class="material-symbols-outlined text-3xl">calendar_month</span>
+    </button>
+  </div>
 
   <!-- Quick Floating Reservation Panel -->
   <div id="quick-contact-panel" class="hidden fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-32px)] sm:w-[340px] max-w-[340px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-neutral-100 flex-col overflow-hidden transition-all duration-300 scale-95 origin-bottom-right z-[90] font-sans text-stone-800">
@@ -1421,7 +1468,7 @@
     </div>
   </div>
 
-  <!-- Pure PNG Logo Cursor Follower (Desktop only) -->
+  <!-- Pure PNG Logo Cursor Follower -->
   <div id="cursor-follower" class="custom-cursor-follower fixed top-0 left-0 pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 ease-out select-none hidden md:block">
     <img id="cursor-main-img" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.onerror=null; this.src='LLG.png';" alt="Casa Búho Dorado Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-[0_4px_12px_rgba(181,138,61,0.6)] pointer-events-none"/>
   </div>
@@ -1542,7 +1589,7 @@
         "cine-title": "Vive, siente y descubre la naturaleza",
         "loc-tag": "Ubicación Privilegiada",
         "loc-title": "Conexión Inmediata",
-        "loc-desc": "Ubicada estratégicamente en la idílica Bahía de Akumal, Casa Búho Dorado ofrece un acceso inigualable a los destinos más icónicos, playas místicas y zonas arqueológicas de la Riviera Maya.",
+        "loc-desc": "Ubicada estratégicamente en el Rancho San Martín - Akumal, Casa Búho Dorado ofrece un acceso inigualable a los destinos más icónicos, playas místicas y zonas arqueológicas de la Riviera Maya.",
         "meaning-title": "¿Qué significa Akumal?",
         "meaning-desc-1": "Akumal significa <span class=\"text-primary italic font-semibold\">\"Lugar de las Tortugas\"</span> en la antigua lengua maya. Esta joya costera nació como una comunidad consagrada a proteger a las majestuosas tortugas marinas que habitan nuestras aguas cristalinas.",
         "meaning-desc-2": "En la actualidad, se mantiene como un paraíso reservado para el ecoturismo de lujo. Un universo donde la densa selva maya converge directamente con el vibrante Arrecife Mesoamericano.",
@@ -1551,14 +1598,22 @@
         "exp-title": "Exploración Exclusiva",
         "yalku": "Laguna Yal-Kú",
         "akumal": "Bahía de Akumal",
-        "steps": "A PASOS",
-        "exp-c1": "Visita privada a la Maravilla del Mundo.",
-        "exp-c2": "Cavernas milenarias y buceo guiado.",
-        "exp-c3": "Un acuario natural privado a tu disposición.",
-        "exp-c4": "El umbral de tu santuario privado.",
+        "steps": "15 MINS",
+        "exp-c1-title": "Chichén Itzá",
+        "exp-c1-time": "2.5 HRS",
+        "exp-c1-desc": "Visita privada a la Maravilla del Mundo Maya.",
+        "exp-c2-title": "Cenote Dos Ojos",
+        "exp-c2-time": "15 MINS",
+        "exp-c2-desc": "Cavernas milenarias y buceo guiado en aguas cristalinas.",
+        "exp-c3-desc": "Un acuario natural privado donde la caleta abraza al mar.",
+        "exp-c4-desc": "Santuario protegido de tortugas marinas a la orilla de tu villa.",
+        "exp-c5-loc-title": "Tulum",
         "dest-tulum": "Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.",
+        "exp-c6-loc-title": "Playa del Carmen",
         "dest-playa": "Exclusivos clubes de playa, la vibrante Quinta Avenida y marinas privadas de yates.",
-        "dest-cenote": "Un sistema de cavernas semi-inundadas sagradas con aguas turquesas para buceo de élite.",
+        "exp-c7-loc-title": "Cenote Sac Actun",
+        "exp-c7-loc-desc": "El río subterráneo más extenso del planeta con aguas de zafiro para buceo de élite.",
+        "exp-c8-loc-title": "Coba",
         "dest-coba": "La majestuosa pirámide Nohoch Mul rodeada de selva indómita.",
         "serv-tag": "Hospitalidad de Firma",
         "serv-title": "Servicios a tu Medida",
@@ -1717,7 +1772,7 @@
         "cine-title": "Live, feel and discover nature",
         "loc-tag": "Privileged Location",
         "loc-title": "Immediate Connection",
-        "loc-desc": "Strategically located in the idyllic Akumal Bay, Casa Búho Dorado offers unmatched access to the Riviera Maya's most iconic destinations, mystical beaches, and Mayan ruins.",
+        "loc-desc": "Strategically located in Rancho San Martín - Akumal, Casa Búho Dorado offers unmatched access to the Riviera Maya's most iconic destinations, mystical beaches, and Mayan ruins.",
         "meaning-title": "What does Akumal mean?",
         "meaning-desc-1": "Akumal means <span class=\"text-primary italic font-semibold\">\"Place of the Turtles\"</span> in the ancient Mayan language. This coastal gem was born as a community dedicated to protecting the majestic sea turtles that nest on our crystal-clear shores.",
         "meaning-desc-2": "Today, it remains a secluded paradise reserved for high-end luxury ecotourism. A universe where the dense Mayan jungle meets the vibrant Mesoamerican Barrier Reef.",
@@ -1726,14 +1781,22 @@
         "exp-title": "Exclusive Explorations",
         "yalku": "Yal-Kú Lagoon",
         "akumal": "Akumal Bay",
-        "steps": "STEPS AWAY",
-        "exp-c1": "Private expedition to the Wonder of the World.",
-        "exp-c2": "Ancient cavern systems and guided scuba diving.",
-        "exp-c3": "A pristine natural aquarium at your disposal.",
-        "exp-c4": "The threshold of your private sanctuary.",
+        "steps": "15 MINS",
+        "exp-c1-title": "Chichén Itzá",
+        "exp-c1-time": "2.5 HRS",
+        "exp-c1-desc": "Private expedition to the Wonder of the World.",
+        "exp-c2-title": "Cenote Dos Ojos",
+        "exp-c2-time": "15 MINS",
+        "exp-c2-desc": "Ancient cavern systems and guided scuba diving.",
+        "exp-c3-desc": "A pristine natural aquarium at your disposal.",
+        "exp-c4-desc": "The threshold of your private turtle sanctuary.",
+        "exp-c5-loc-title": "Tulum",
         "dest-tulum": "Bohemian luxury, cliffside ruins, and internationally acclaimed gastronomy.",
+        "exp-c6-loc-title": "Playa del Carmen",
         "dest-playa": "Exclusive beach clubs, the vibrant Fifth Avenue, and private yacht marinas.",
-        "dest-cenote": "A system of sacred semi-flooded caverns with turquoise waters for elite diving.",
+        "exp-c7-loc-title": "Sac Actun Cenote",
+        "exp-c7-loc-desc": "The largest underground river system on earth with sapphire waters for elite diving.",
+        "exp-c8-loc-title": "Coba",
         "dest-coba": "The majestic Nohoch Mul pyramid surrounded by wild, indomitable jungle.",
         "serv-tag": "Signature Hospitality",
         "serv-title": "Bespoke Services",
@@ -1862,6 +1925,106 @@
     let activeLightboxIndex = 0;
     let isZoomed = false;
 
+    /* Exploration Carousel Logic */
+    let explorationCurrentSlide = 0;
+    const explorationTotalCards = 8;
+    let explorationAutoplayTimer = null;
+
+    function getExplorationCardsPerPage() {
+      if (window.innerWidth >= 1280) return 4;
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 640) return 2;
+      return 1;
+    }
+
+    function updateExplorationCarousel() {
+      const track = document.getElementById('exploration-carousel-track');
+      if (!track) return;
+      
+      const cardsPerPage = getExplorationCardsPerPage();
+      const maxSlide = explorationTotalCards - cardsPerPage;
+
+      if (explorationCurrentSlide > maxSlide) explorationCurrentSlide = 0;
+      if (explorationCurrentSlide < 0) explorationCurrentSlide = maxSlide;
+
+      const card = track.children[0];
+      if (!card) return;
+
+      const cardWidth = card.getBoundingClientRect().width;
+      const gap = 24; // gap-6 in Tailwind = 24px
+      const moveDistance = (cardWidth + gap) * explorationCurrentSlide;
+
+      track.style.transform = `translateX(-${moveDistance}px)`;
+
+      renderExplorationDots(maxSlide);
+    }
+
+    function moveExplorationSlide(dir) {
+      const cardsPerPage = getExplorationCardsPerPage();
+      const maxSlide = explorationTotalCards - cardsPerPage;
+      
+      explorationCurrentSlide += dir;
+      if (explorationCurrentSlide > maxSlide) explorationCurrentSlide = 0;
+      if (explorationCurrentSlide < 0) explorationCurrentSlide = maxSlide;
+
+      updateExplorationCarousel();
+    }
+
+    function setExplorationSlide(index) {
+      explorationCurrentSlide = index;
+      updateExplorationCarousel();
+    }
+
+    function renderExplorationDots(maxSlide) {
+      const dotsContainer = document.getElementById('exploration-carousel-dots');
+      if (!dotsContainer) return;
+
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i <= maxSlide; i++) {
+        const dot = document.createElement('button');
+        dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === explorationCurrentSlide ? 'bg-primary w-6' : 'bg-stone-300'}`;
+        dot.onclick = () => setExplorationSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function startExplorationAutoplay() {
+      stopExplorationAutoplay();
+      explorationAutoplayTimer = setInterval(() => {
+        moveExplorationSlide(1);
+      }, 4000);
+    }
+
+    function stopExplorationAutoplay() {
+      if (explorationAutoplayTimer) {
+        clearInterval(explorationAutoplayTimer);
+        explorationAutoplayTimer = null;
+      }
+    }
+
+    function initExplorationCarouselTouch() {
+      const container = document.getElementById('exploration-carousel-container');
+      if (!container) return;
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopExplorationAutoplay();
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 40) {
+          moveExplorationSlide(1);
+        } else if (touchEndX - touchStartX > 40) {
+          moveExplorationSlide(-1);
+        }
+        startExplorationAutoplay();
+      }, { passive: true });
+    }
+
     function navigateToPage(pageId) {
       window.scrollTo({ top: 0, behavior: 'instant' });
       
@@ -1897,6 +2060,15 @@
 
       if (typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.refresh();
+      }
+
+      if (pageId === 'ubicacion') {
+        setTimeout(() => {
+          updateExplorationCarousel();
+          startExplorationAutoplay();
+        }, 300);
+      } else {
+        stopExplorationAutoplay();
       }
     }
 
@@ -1978,17 +2150,17 @@
             <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Ubicada en un terreno privado de 10,000 m², a pocos minutos del Caribe Mexicano, ofrece privacidad, tranquilidad y una ubicación ideal para explorar la Riviera Maya.</p>
             <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">La propiedad integra armoniosamente sus espacios interiores y exteriores, con una amplia terraza, alberca privada y materiales naturales que aportan calidez y luminosidad.</p>
             <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Cuenta con cuatro suites con baño privado, medio baño para visitas y dos cocinas totalmente equipadas: una interior y otra exterior con horno de leña, asador, comal y quemadores de gas.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">El acceso privado y el sistema de videovigilancia perimetral garantizan seguridad y privacidad durante toda la estancia.</p>
-            <p class="font-serif text-lg sm:text-xl text-primary mt-4 font-semibold">Un santuario donde el confort, la naturaleza y la hospitalidad se unen en una experiencia única.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">El acceso privado y el sistema de videovigilancia perimetral garantizan seguridad y privacidad.</p>
+            <p class="font-serif text-lg sm:text-xl text-primary mt-4 font-semibold">Cada detalle de Casa Búho Dorado está diseñado para ofrecer una estancia donde el confort, la naturaleza y la hospitalidad se unen en una experiencia única.</p>
           `;
         } else {
           villaArea.innerHTML = `
-            <p class="font-serif text-lg sm:text-xl text-stone-800 italic leading-relaxed mb-4">Majestically set across more than 10,000 sq meters of private jungle reserve, Casa Búho Dorado combines the elegance of historic Mexican haciendas with contemporary architecture.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Located just minutes from the Mexican Caribbean, the estate offers complete privacy, tranquility, and an ideal location to explore the Riviera Maya.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Featuring 4 luxury suites with private bathrooms, double-height ceilings, and floor-to-ceiling glass walls that seamlessly integrate interior and exterior spaces.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">The layout includes two fully equipped designer kitchens—one interior and one alfresco with wood-fire oven and grill—alongside a private swimming pool and open decks.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">A double-gated entry system and 24/7 security monitoring guarantee absolute peace of mind throughout your stay.</p>
-            <p class="font-serif text-lg sm:text-xl text-primary mt-4 font-semibold">A sanctuary where comfort, nature, and bespoke hospitality unite in a single experience.</p>
+            <p class="font-serif text-lg sm:text-xl text-stone-800 italic leading-relaxed mb-4">Casa Búho Dorado combines the elegance of historic Mexican haciendas with contemporary architecture, creating an exclusive sanctuary surrounded by the Mayan jungle.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Set across 10,000 m² of private estate, just minutes from the Mexican Caribbean, it offers complete privacy, peace, and an ideal location to explore the Riviera Maya.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">The estate seamlessly blends interior and exterior spaces with an expansive deck, private pool, and natural materials that bring warmth and light throughout.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Featuring four luxury suites with ensuite bathrooms, a powder room, and two fully equipped kitchens: an interior designer kitchen and an outdoor kitchen with wood-fired oven, grill, and gas burners.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Private gated access and 24/7 perimeter CCTV ensure absolute security and discretion.</p>
+            <p class="font-serif text-lg sm:text-xl text-primary mt-4 font-semibold">Every detail is crafted for an unforgettable stay where luxury, nature, and genuine hospitality meet.</p>
           `;
         }
       }
@@ -2169,6 +2341,11 @@
       renderInteractiveGallery();
       initScrollAnimations();
       initCustomCursor();
+      initExplorationCarouselTouch();
+
+      window.addEventListener('resize', () => {
+        updateExplorationCarousel();
+      });
 
       const bookingModal = document.getElementById('booking-modal');
       if (bookingModal) {
