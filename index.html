@@ -193,7 +193,7 @@
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
   <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-1.5 glass-header border-b border-primary/20 shadow-sm" id="main-header">
-    <div class="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 max-w-container-max mx-auto w-full gap-4 lg:gap-10">
+    <div class="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 max-w-container-max mx-auto w-full gap-4 lg:gap-8">
       
       <!-- Brand Logo + Title Container -->
       <div class="flex items-center gap-0 sm:gap-0.5 cursor-pointer flex-shrink-0 py-0.5" onclick="navigateToPage('home')">
@@ -205,12 +205,12 @@
       
       <!-- Nav Menu Desktop -->
       <nav class="hidden xl:flex items-center gap-5 lg:gap-6 xl:gap-7 flex-shrink-0">
-        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-primary nav-active-line transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-home" data-translate="nav-home">Inicio</button>
-        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-gallery" data-translate="nav-gallery">Galería</button>
-        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
-        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-services" data-translate="nav-services">Servicios & Experiencias</button>
-        <button onclick="navigateToPage('paquetes-plus')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-paquetes-plus" data-translate="nav-paquetes-plus">Paquetes Plus</button>
-        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-contact" data-translate="nav-contact">Contacto</button>
+        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-primary nav-active-line transition-all duration-300 py-2 tracking-wider" id="nav-home" data-translate="nav-home">Inicio</button>
+        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-gallery" data-translate="nav-gallery">Galería</button>
+        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
+        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-services" data-translate="nav-services">Servicios & Experiencias</button>
+        <button onclick="navigateToPage('paquetes-plus')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-paquetes-plus" data-translate="nav-paquetes-plus">Paquetes Plus</button>
+        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-contact" data-translate="nav-contact">Contacto</button>
         
         <!-- English/Español Switcher desktop -->
         <div class="h-5 w-[1px] bg-outline-variant/60 mx-1"></div>
@@ -610,7 +610,7 @@
           </div>
         </div>
 
-        <!-- SECCIÓN: Exploración Exclusiva -->
+        <!-- SECCIÓN: Exploración Exclusiva (Carrusel Automático Integrado para las 8 experiencias) -->
         <div class="py-16 reveal-up">
           <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
             <div class="text-center sm:text-left">
@@ -618,6 +618,7 @@
               <h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-on-surface" data-translate="exp-title">Exploración Exclusiva</h2>
             </div>
             
+            <!-- Controles de navegación del carrusel -->
             <div class="flex items-center gap-3">
               <button onclick="moveExplorationSlide(-1)" class="w-10 h-10 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer" aria-label="Anterior">
                 <span class="material-symbols-outlined text-xl">arrow_back</span>
@@ -628,6 +629,7 @@
             </div>
           </div>
           
+          <!-- Contenedor del Carrusel de 8 elementos -->
           <div class="relative overflow-hidden w-full py-4" id="exploration-carousel-container" onmouseenter="stopExplorationAutoplay()" onmouseleave="startExplorationAutoplay()">
             <div class="flex transition-transform duration-700 ease-out gap-6" id="exploration-carousel-track">
               
@@ -762,6 +764,7 @@
             </div>
           </div>
 
+          <!-- Indicadores de puntos del carrusel -->
           <div class="flex justify-center gap-2 mt-6" id="exploration-carousel-dots">
             <!-- Rendered dynamically -->
           </div>
@@ -771,6 +774,7 @@
       </div>
     </section>
 
+    <!-- SECCIÓN UNIFICADA: Servicios & Experiencias -->
     <section id="page-services" class="page-section hidden opacity-0 transition-opacity duration-300">
       
       <!-- Banner Hero Principal -->
@@ -1049,39 +1053,39 @@
 
     </section>
 
-    <section id="page-paquetes-plus" class="page-section hidden opacity-0 transition-opacity duration-300 relative min-h-[90vh] flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-surface">
-      <!-- Background transparent LLG.png logo covering the full page body -->
-      <div class="absolute inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden p-4">
-        <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" 
-             onerror="this.src='LLG.png'" 
-             alt="Fondo Casa Búho Dorado Logo" 
-             class="w-full h-full object-contain max-w-5xl max-h-[82vh] opacity-[0.12] filter drop-shadow-2xl select-none" />
+    <!-- SECCIÓN: Paquetes Plus -->
+    <section id="page-paquetes-plus" class="page-section hidden opacity-0 transition-opacity duration-300 relative pt-24 sm:pt-28 pb-20 px-6 min-h-screen flex items-center justify-center overflow-hidden bg-surface">
+      
+      <!-- Fondo con el Logo LLG.png Transparente cubriendo todo el cuerpo -->
+      <div class="absolute inset-0 pointer-events-none select-none z-0 flex items-center justify-center p-4">
+        <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'" alt="Casa Búho Dorado Logo Watermark" class="w-full h-full object-contain max-w-4xl opacity-[0.12] filter drop-shadow-2xl" />
       </div>
 
-      <!-- Luxury card container -->
-      <div class="relative z-10 max-w-3xl w-full mx-auto text-center bg-white/85 backdrop-blur-md p-8 sm:p-14 lg:p-16 rounded-3xl border border-primary/25 shadow-2xl reveal-up">
-        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shadow-inner">
-          <span class="material-symbols-outlined text-3xl sm:text-4xl">auto_awesome</span>
+      <!-- Contenido central superpuesto -->
+      <div class="relative z-10 max-w-3xl mx-auto text-center reveal-up p-8 sm:p-12 bg-white/60 backdrop-blur-md rounded-3xl border border-primary/20 shadow-2xl">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center border border-primary/30">
+          <span class="material-symbols-outlined text-primary text-4xl sm:text-5xl">inventory_2</span>
         </div>
-        <span class="text-primary font-label-caps text-xs sm:text-sm tracking-[0.3em] uppercase font-bold block mb-3" data-translate="pkg-plus-tag">PRÓXIMAMENTE</span>
-        <h1 class="font-display-lg text-3xl sm:text-5xl lg:text-6xl text-primary mb-6 font-serif" data-translate="pkg-plus-title">Paquetes Plus</h1>
-        <div class="w-20 h-0.5 bg-primary/60 mx-auto mb-8"></div>
+
+        <span class="text-primary font-label-caps text-xs sm:text-sm uppercase tracking-[0.3em] font-bold mb-3 block" data-translate="paquetes-plus-tag">EXPERIENCIAS Y PAQUETES EXCLUSIVOS</span>
         
-        <p class="font-headline-md text-xl sm:text-2xl lg:text-3xl text-on-surface font-serif italic mb-6 leading-relaxed" data-translate="pkg-plus-msg">
-          "Estamos trabajando para darte la mejor experiencia"
-        </p>
-        
-        <p class="font-body-lg text-sm sm:text-base text-stone-600 max-w-xl mx-auto font-sans font-light leading-relaxed mb-10" data-translate="pkg-plus-desc">
-          Muy pronto descubrirás beneficios exclusivos, itinerarios curados y paquetes diseñados para transformar tu estadía en un recuerdo inolvidable.
+        <h1 class="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-6 font-serif leading-tight" data-translate="paquetes-plus-title">
+          Estamos trabajando para darte la mejor experiencia
+        </h1>
+
+        <div class="w-24 h-0.5 bg-primary/60 mx-auto mb-6"></div>
+
+        <p class="font-body-lg text-stone-700 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto mb-8 font-sans" data-translate="paquetes-plus-desc">
+          Muy pronto podrás explorar nuestra selección de paquetes personalizados de estancia, gastronomía y aventura diseñados a la medida de tu viaje.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button onclick="requestConciergeService('Consultar Paquetes Plus')" class="w-full sm:w-auto bg-primary text-white hover:bg-primary-container px-8 py-3.5 font-label-caps text-xs uppercase tracking-widest transition-all shadow-lg inline-flex items-center justify-center gap-2 cursor-pointer font-semibold rounded-none">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button onclick="requestConciergeService('Consulta de Paquetes Especiales')" class="bg-primary text-white hover:bg-primary-container px-8 py-3.5 font-label-caps text-xs tracking-widest uppercase transition-all shadow-lg font-semibold rounded-full cursor-pointer flex items-center gap-2">
             <span class="material-symbols-outlined text-base">chat</span>
-            <span>Consultar con Valentina</span>
+            <span data-translate="paquetes-plus-btn-wa">Consultar Paquetes a Medida</span>
           </button>
-          <button onclick="navigateToPage('home')" class="w-full sm:w-auto border border-primary/40 text-primary hover:bg-primary/10 px-8 py-3.5 font-label-caps text-xs uppercase tracking-widest transition-all cursor-pointer font-semibold rounded-none">
-            <span>Volver al Inicio</span>
+          <button onclick="navigateToPage('contact')" class="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3.5 font-label-caps text-xs tracking-widest uppercase transition-all shadow-sm font-semibold rounded-full cursor-pointer">
+            <span data-translate="nav-contact">Contacto</span>
           </button>
         </div>
       </div>
@@ -1125,7 +1129,7 @@
               <span class="font-label-caps text-[10px] tracking-widest text-primary uppercase block mb-1" data-translate="benefits-title">Beneficios Exclusivos</span>
               <p class="text-xs text-on-surface-variant font-light mt-1" data-translate="benefit-1">✓ Coordinación de Traslados VIP</p>
               <p class="text-xs text-on-surface-variant font-light" data-translate="benefit-2">✓ Personalización de Menú de Chef</p>
-              <p class="text-xs text-on-surface-variant font-light" data-translate="benefit-3">✓ Coordinación con Valentina (Aforo máx. 8)</p>
+              <p class="text-xs text-on-surface-variant font-light" data-translate="benefit-3">✓ Coordinación con Valentina (Aforo máx. 10 huéspedes, máx. 8 adultos)</p>
             </div>
           </div>
 
@@ -1174,6 +1178,7 @@
                       <option value="6" data-translate="opt-6c">6 Niños</option>
                       <option value="7" data-translate="opt-7c">7 Niños</option>
                       <option value="8" data-translate="opt-8c">8 Niños</option>
+                      <option value="9" data-translate="opt-9c">9 Niños</option>
                     </select>
                   </div>
                 </div>
@@ -1339,6 +1344,7 @@
             <option value="6" data-translate="opt-6c">6 Niños</option>
             <option value="7" data-translate="opt-7c">7 Niños</option>
             <option value="8" data-translate="opt-8c">8 Niños</option>
+            <option value="9" data-translate="opt-9c">9 Niños</option>
           </select>
         </div>
       </div>
@@ -1434,6 +1440,7 @@
                 <option value="6" data-translate="opt-6c">6 Niños</option>
                 <option value="7" data-translate="opt-7c">7 Niños</option>
                 <option value="8" data-translate="opt-8c">8 Niños</option>
+                <option value="9" data-translate="opt-9c">9 Niños</option>
               </select>
             </div>
             <div class="space-y-1">
@@ -1704,10 +1711,10 @@
         "exp-c6-title": "Ceremonias y Eventos",
         "tag-ritual": "RITUALES",
         "exp-c6-desc": "Diseñamos entornos de ensueño para matrimonios íntimos, pedidas de mano mágicas o un ritual de convivencia y gratitud familiar, guiados por la belleza inmaculada de la selva y el mar sagrado.",
-        "pkg-plus-tag": "PRÓXIMAMENTE",
-        "pkg-plus-title": "Paquetes Plus",
-        "pkg-plus-msg": "\"Estamos trabajando para darte la mejor experiencia\"",
-        "pkg-plus-desc": "Muy pronto descubrirás beneficios exclusivos, itinerarios curados y paquetes diseñados para transformar tu estadía en un recuerdo inolvidable.",
+        "paquetes-plus-tag": "EXPERIENCIAS Y PAQUETES EXCLUSIVOS",
+        "paquetes-plus-title": "Estamos trabajando para darte la mejor experiencia",
+        "paquetes-plus-desc": "Muy pronto podrás explorar nuestra selección de paquetes personalizados de estancia, gastronomía y aventura diseñados a la medida de tu viaje.",
+        "paquetes-plus-btn-wa": "Consultar Paquetes a Medida",
         "contact-tag": "Reservaciones",
         "contact-title": "Solicita tu Estadía",
         "contact-desc": "Completa la solicitud formal de reservación. Valentina estructurará tu plan de llegada y confort.",
@@ -1717,7 +1724,7 @@
         "benefits-title": "Beneficios Exclusivos",
         "benefit-1": "✓ Coordinación de Traslados VIP",
         "benefit-2": "✓ Personalización de Menú de Chef",
-        "benefit-3": "✓ Coordinación con Valentina (Aforo máx. 8)",
+        "benefit-3": "✓ Coordinación con Valentina (Aforo máx. 10 huéspedes, máx. 8 adultos)",
         "label-fullname": "Nombre Completo",
         "placeholder-name": "Ingresa tu nombre completo",
         "label-email": "Correo Electrónico",
@@ -1742,6 +1749,7 @@
         "opt-6c": "6 Niños",
         "opt-7c": "7 Niños",
         "opt-8c": "8 Niños",
+        "opt-9c": "9 Niños",
         "label-checkin": "Fecha de Arribo",
         "label-checkout": "Fecha de Salida",
         "label-message": "Mensaje o Solicitudes Especiales",
@@ -1870,13 +1878,6 @@
         "tag-yacht": "EXCLUSIVE CHARTERS",
         "serv-c4-title": "Private Yacht Charter",
         "serv-c4-desc": "Set sail on a high-end catamaran or luxury yacht to enjoy the sunset on the open sea with champagne.",
-        "btn-res-yacht": "Request Experience",
-        "exp-lux-tag": "Quiet Luxury Experiences",
-        "exp-lux-title": "Wellness & Style at Hand",
-        "exp-lux-desc": "We have conceived a select range of exclusive experiences directly within the privacy of your villa, guaranteeing moments that nourish the soul and transcend relaxation.",
-        "exp-c1-title": "Massage Sanctuary",
-        "tag-well": "WELLNESS",
-        "exp-c1-desc": "Certified therapists bring the mysticism of wellness to the privacy of your suite or terrace. Treatments utilizing organic essential oils and ancestral Mayan techniques.",
         "btn-req-exp": "Request Experience",
         "exp-c2-title": "Butler Service",
         "tag-hosp": "HOSPITALITY",
@@ -1893,10 +1894,10 @@
         "exp-c6-title": "Ceremonies & Events",
         "tag-ritual": "RITUALS",
         "exp-c6-desc": "We design dreamlike environments for intimate weddings, magical marriage proposals, or a ritual of family gratitude, framed by the pristine jungle and sea.",
-        "pkg-plus-tag": "COMING SOON",
-        "pkg-plus-title": "Packages Plus",
-        "pkg-plus-msg": "\"We are working to give you the best experience\"",
-        "pkg-plus-desc": "Very soon you will discover exclusive benefits, curated itineraries, and bespoke packages designed to turn your stay into an unforgettable memory.",
+        "paquetes-plus-tag": "EXCLUSIVE PACKAGES & EXPERIENCES",
+        "paquetes-plus-title": "We are working to give you the best experience",
+        "paquetes-plus-desc": "Very soon you will be able to explore our selection of personalized stay, dining, and adventure packages tailored to your journey.",
+        "paquetes-plus-btn-wa": "Inquire Custom Packages",
         "contact-tag": "Reservations",
         "contact-title": "Request Your Stay",
         "contact-desc": "Complete the formal reservation request. Valentina will structure your arrival plan and comfort details.",
@@ -1906,7 +1907,7 @@
         "benefits-title": "Exclusive Benefits",
         "benefit-1": "✓ VIP Airport Transfers Coordination",
         "benefit-2": "✓ Custom Private Chef Menu Planning",
-        "benefit-3": "✓ Direct Support from Valentina (Max occupancy 8)",
+        "benefit-3": "✓ Direct Support from Valentina (Max capacity 10 guests, max 8 adults)",
         "label-fullname": "Full Name",
         "placeholder-name": "Enter your full name",
         "label-email": "Email Address",
@@ -1931,6 +1932,7 @@
         "opt-6c": "6 Children",
         "opt-7c": "7 Children",
         "opt-8c": "8 Children",
+        "opt-9c": "9 Children",
         "label-checkin": "Arrival Date",
         "label-checkout": "Departure Date",
         "label-message": "Message or Special Requests",
@@ -1981,7 +1983,6 @@
     let activeLightboxIndex = 0;
     let isZoomed = false;
 
-    /* Exploration Carousel Logic */
     let explorationCurrentSlide = 0;
     const explorationTotalCards = 8;
     let explorationAutoplayTimer = null;
@@ -2228,7 +2229,7 @@
             <div class="space-y-6 text-stone-700">
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">1. Ocupación y Aforo Máximo</h3>
-                <p class="text-sm font-sans">El aforo máximo estricto de Casa Búho Dorado es de <strong>8 huéspedes en total</strong> (combinación de adultos y niños). No se permiten visitas adicionales ni eventos multitudinarios no autorizados previamente por la administración.</p>
+                <p class="text-sm font-sans">El aforo máximo de Casa Búho Dorado es de <strong>10 huéspedes en total, con un límite máximo de 8 adultos</strong>. Se permiten variaciones con niños siempre que no se excedan los 8 adultos ni el total de 10 personas (por ejemplo: 8 adultos y 2 niños, 6 adultos y 4 niños, 4 adultos y 6 niños, etc.). No se permiten visitas adicionales ni eventos multitudinarios no autorizados previamente por la administración.</p>
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">2. Horarios de Check-in y Check-out</h3>
@@ -2244,7 +2245,7 @@
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">5. Humo y Fuego</h3>
-                <p class="text-sm font-sans">Queda estrictamente prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.</p>
+                <p class="text-sm font-sans">Queda strictly prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.</p>
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">6. Políticas de Cancelación y Depósito</h3>
@@ -2257,7 +2258,7 @@
             <div class="space-y-6 text-stone-700">
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">1. Occupancy & Maximum Capacity</h3>
-                <p class="text-sm font-sans">The strict maximum occupancy for Casa Búho Dorado is <strong>8 guests in total</strong> (adults and children combined). Unregistered day visitors or non-authorized large events are strictly prohibited.</p>
+                <p class="text-sm font-sans">The maximum capacity at Casa Búho Dorado is <strong>10 guests in total, with a strict limit of 8 adults max</strong>. Flexible variations with children are allowed as long as total occupancy does not exceed 10 guests and adults do not exceed 8 (e.g., 8 adults & 2 children, 6 adults & 4 children, 4 adults & 6 children, etc.). Unregistered day visitors or non-authorized large events are strictly prohibited.</p>
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">2. Check-in & Check-out Schedules</h3>
@@ -2290,21 +2291,26 @@
       const childrenEl = document.getElementById(childrenElId);
       if (!adultsEl || !childrenEl) return;
 
-      const adults = parseInt(adultsEl.value) || 0;
-      const children = parseInt(childrenEl.value) || 0;
+      let adults = parseInt(adultsEl.value) || 0;
+      let children = parseInt(childrenEl.value) || 0;
 
-      if (adults + children > 8) {
+      if (adults > 8) {
         const errorMsg = activeLanguage === 'es' 
-          ? "⚠️ El aforo máximo en Casa Búho Dorado es de 8 personas en total."
-          : "⚠️ The maximum total capacity at Casa Búho Dorado is 8 guests.";
+          ? "⚠️ El límite máximo es de 8 adultos por reservación."
+          : "⚠️ Maximum limit is 8 adults per reservation.";
+        showToastNotification(errorMsg, "warning");
+        adultsEl.value = "8";
+        adults = 8;
+      }
+
+      if (adults + children > 10) {
+        const maxChildren = Math.max(0, 10 - adults);
+        const errorMsg = activeLanguage === 'es' 
+          ? `⚠️ El aforo máximo es de 10 personas en total. Con ${adults} adulto(s), puedes llevar máximo ${maxChildren} niño(s).`
+          : `⚠️ Maximum occupancy is 10 guests total. With ${adults} adult(s), max allowed children is ${maxChildren}.`;
         showToastNotification(errorMsg, "warning");
         
-        if (children > 0 && adults + children > 8) {
-          childrenEl.value = Math.max(0, 8 - adults);
-        } else if (adults > 8) {
-          adultsEl.value = "8";
-          childrenEl.value = "0";
-        }
+        childrenEl.value = maxChildren.toString();
       }
     }
 
@@ -2613,8 +2619,8 @@
 
       const adults = parseInt(document.getElementById('booking-adults').value) || 0;
       const children = parseInt(document.getElementById('booking-children').value) || 0;
-      if (adults + children > 8) {
-        const errorMsg = activeLanguage === 'es' ? "⚠️ El aforo máximo permitido es de 8 personas en total." : "⚠️ The maximum occupancy allowed is 8 people in total.";
+      if (adults > 8 || (adults + children) > 10) {
+        const errorMsg = activeLanguage === 'es' ? "⚠️ La ocupación máxima es de 10 personas en total (máximo 8 adultos)." : "⚠️ Maximum total occupancy is 10 guests (max 8 adults).";
         showToastNotification(errorMsg, "warning");
         return;
       }
@@ -2647,8 +2653,8 @@
       const name = document.getElementById('contact-name').value;
       const email = document.getElementById('contact-email').value;
       const phone = document.getElementById('contact-phone').value;
-      const adults = document.getElementById('contact-adults').value;
-      const children = document.getElementById('contact-children').value;
+      const adults = parseInt(document.getElementById('contact-adults').value) || 0;
+      const children = parseInt(document.getElementById('contact-children').value) || 0;
       const checkin = document.getElementById('contact-checkin').value;
       const checkout = document.getElementById('contact-checkout').value;
       const customMsg = document.getElementById('contact-message').value;
@@ -2659,9 +2665,8 @@
         return;
       }
 
-      const totalGuests = parseInt(adults) + parseInt(children);
-      if (totalGuests > 8) {
-        const limitMsg = activeLanguage === 'es' ? "⚠️ El límite máximo es de 8 personas en total." : "⚠️ The maximum occupancy is 8 people in total.";
+      if (adults > 8 || (adults + children) > 10) {
+        const limitMsg = activeLanguage === 'es' ? "⚠️ La ocupación máxima es de 10 personas en total (máximo 8 adultos)." : "⚠️ Maximum total occupancy is 10 guests (max 8 adults).";
         showToastNotification(limitMsg, "warning");
         return;
       }
@@ -2706,14 +2711,13 @@
       e.preventDefault();
       const name = document.getElementById('quick-name').value;
       const phone = document.getElementById('quick-phone').value;
-      const adults = document.getElementById('quick-adults').value;
-      const children = document.getElementById('quick-children').value;
+      const adults = parseInt(document.getElementById('quick-adults').value) || 0;
+      const children = parseInt(document.getElementById('quick-children').value) || 0;
       const checkin = document.getElementById('quick-checkin').value;
       const checkout = document.getElementById('quick-checkout').value;
 
-      const totalGuests = parseInt(adults) + parseInt(children);
-      if (totalGuests > 8) {
-        const errorMsg = activeLanguage === 'es' ? "⚠️ El límite máximo es de 8 personas en total." : "⚠️ The maximum occupancy is 8 people in total.";
+      if (adults > 8 || (adults + children) > 10) {
+        const errorMsg = activeLanguage === 'es' ? "⚠️ La ocupación máxima es de 10 personas en total (máximo 8 adultos)." : "⚠️ Maximum total occupancy is 10 guests (max 8 adults).";
         showToastNotification(errorMsg, "warning");
         return;
       }
