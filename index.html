@@ -509,7 +509,7 @@
       </div>
 
       <div class="text-center mt-12 mb-16">
-        <button id="gallery-load-more" onclick="showAllGalleryImages()" class="bg-primary text-on-primary hover:bg-primary-container px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase transition-all shadow-lg inline-block cursor-pointer" data-translate="gal-load">
+        <button id="gallery-load-more" onclick="showAllGalleryImages()" class="bg-primary text-white hover:bg-primary-container px-10 py-4 font-label-caps text-label-caps tracking-widest uppercase transition-all shadow-lg inline-block cursor-pointer font-semibold" data-translate="gal-load">
           Mostrar Colección Completa
         </button>
       </div>
@@ -632,7 +632,7 @@
             <div class="flex transition-transform duration-700 ease-out gap-6" id="exploration-carousel-track">
               
               <!-- 1. Chichén Itzá -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Tour Chichén Itzá')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Tour Chichén Itzá')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
@@ -648,7 +648,7 @@
               </div>
 
               <!-- 2. Cenote Dos Ojos -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Tour Cenotes')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Tour Cenotes')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
@@ -664,7 +664,7 @@
               </div>
 
               <!-- 3. Laguna Yal-Kú -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Reserva de Snorkel')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Reserva de Snorkel')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
@@ -680,7 +680,7 @@
               </div>
 
               <!-- 4. Bahía de Akumal -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('General')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Santuario Bahía de Akumal')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
@@ -696,7 +696,7 @@
               </div>
 
               <!-- 5. Tulum -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Excursión Tulum')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Excursión Tulum')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
@@ -712,7 +712,7 @@
               </div>
 
               <!-- 6. Playa del Carmen -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Excursión Playa del Carmen')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Excursión Playa del Carmen')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
@@ -728,7 +728,7 @@
               </div>
 
               <!-- 7. Cenote Sac Actun -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Tour Sac Actun')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Tour Sac Actun')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
@@ -744,7 +744,7 @@
               </div>
 
               <!-- 8. Coba -->
-              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="openBookingModal('Excursión Coba')">
+              <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] flex-shrink-0 group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-neutral-100 transition-all duration-500 flex flex-col justify-between" onclick="requestConciergeService('Excursión Coba')">
                 <div>
                   <div class="relative aspect-[4/3] overflow-hidden">
                     <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-3 left-3 h-6 md:h-8 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
@@ -803,7 +803,7 @@
       <section class="px-6 md:px-margin-desktop max-w-container-max mx-auto space-y-16 pb-12 mt-8">
         <div class="text-center mb-8 reveal-up">
           <span class="text-primary font-label-caps text-xs tracking-[0.25em] uppercase font-bold block mb-2" data-translate="sub-serv-tag">ATENCIÓN Y TRASLADOS</span>
-          <h2 class="font-display-lg text-3xl md:text-4xl text-on-surface font-serif" data-translate="sub-serv-title">Servicios VIP</h2>
+          <h2 class="font-display-lg text-3xl md:text-4xl text-on-surface font-serif" data-translate="sub-serv-title">Servicios</h2>
         </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal-up-stagger">
@@ -813,19 +813,19 @@
             <div>
               <div class="aspect-[16/10] overflow-hidden ken-burns relative">
                 <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Camioneta de lujo" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDRVdqTjjeUCqngM8COuL-9NjCs_MGXZRxgpEiApidG8jlvUT4Pw05by1jOCwcEYqdHt7eYwTfVTm6iJzgbc9GFhMD2vrbxo2-FZRu9aqBL4N2CRICnanl61XsMQDWxR07etRP0gSskyVvZHcsU28qrTP-TFPmuuoJIyk8K5ySIBc9jzYFRQI2lTDQyqXzCanz2K_-6hPyOHivXhRhaRBWGF2NFdJ7oGqJ4itVaviAkjoC1d0GLyRa2OAT_9NleDLeqnkFvPLGwwmp"/>
+                <img loading="lazy" alt="Transportación Privada de Lujo" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/d/1mh-J_1s70KGIwvU_JRT-fGIVBrRaAu9j"/>
               </div>
               <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-essential">ESENCIALES</span>
                 <h3 class="font-headline-md text-2xl mb-4 text-on-surface" data-translate="serv-c1-title">Transportación Privada</h3>
                 <p class="font-body-md text-sm text-on-surface-variant leading-relaxed" data-translate="serv-c1-desc">
-                  Llegadas sin fricción. Choferes bilingües y camionetas Suburban de último modelo listos para traslados al aeropuerto de Cancún o Tulum, disponibles las 24 horas del día.
+                  Llegadas sin fricción. Choferes bilingües y camionetas de lujo listos para traslados al aeropuerto de Cancún o Tulum, disponibles las 24 horas del día.
                 </p>
               </div>
             </div>
             <div class="px-8 pb-8 font-sans">
-              <button onclick="requestConciergeService('Transporte Premium')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest cursor-pointer" data-translate="btn-req">
-                Solicitar Servicio
+              <button onclick="requestConciergeService('Transportación Privada')" class="bg-primary text-white hover:bg-primary-container px-8 py-3.5 w-full font-label-caps text-xs uppercase tracking-widest cursor-pointer shadow-md transition-all font-semibold rounded-none" data-translate="btn-req">
+                Solicitar Experiencia
               </button>
             </div>
           </div>
@@ -835,19 +835,19 @@
             <div>
               <div class="aspect-[16/10] overflow-hidden ken-burns relative">
                 <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img loading="lazy" alt="Cenote cerrado" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcxcEAzKzDw0VYdwV_bohsbTLx82KeG_pFdIt7hW3w5BcL_gj_SQ_E91K4w-Und11x9VnHKh3MLetG5aPRaPK9O7kqmx4epI2hD82QNeRe0gfxkiIyVnFt5AbTDYelYIGw0ZB-Mc5867Y6-zATqqrTX0BhTEarqh8k6HLwVKEEUZz6Mfi1cKnXN-F8HUVUcxq5Ryp8SuRjUUQgTngsUe_IQafTUPR5OqUabrZK72faLDqReugpKpnchQGzDGyAjtFt-41YIEngiVi"/>
+                <img loading="lazy" alt="Tours y Expediciones Arqueológicas" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcxcEAzKzDw0VYdwV_bohsbTLx82KeG_pFdIt7hW3w5BcL_gj_SQ_E91K4w-Und11x9VnHKh3MLetG5aPRaPK9O7kqmx4epI2hD82QNeRe0gfxkiIyVnFt5AbTDYelYIGw0ZB-Mc5867Y6-zATqqrTX0BhTEarqh8k6HLwVKEEUZz6Mfi1cKnXN-F8HUVUcxq5Ryp8SuRjUUQgTngsUe_IQafTUPR5OqUabrZK72faLDqReugpKpnchQGzDGyAjtFt-41YIEngiVi"/>
               </div>
               <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-explore">EXPLORACIÓN</span>
-                <h3 class="font-headline-md text-2xl mb-4 text-on-surface" data-translate="serv-c2-title">Expediciones Arqueológicas</h3>
+                <h3 class="font-headline-md text-2xl mb-4 text-on-surface" data-translate="serv-c2-title">Tours y Expediciones Arqueológicas</h3>
                 <p class="font-body-md text-sm text-on-surface-variant leading-relaxed" data-translate="serv-c2-desc">
-                  Descubre la herencia del misticismo maya. Acceso VIP exclusivo antes de la apertura al público a zonas sagradas guiados por historiadores certificados locales.
+                  Ofrecemos tours tanto Naturalista como arqueológica en Riviera Maya y península de Yucatan. Con posibilidad de tours privados.
                 </p>
               </div>
             </div>
             <div class="px-8 pb-8 font-sans">
-              <button onclick="requestConciergeService('Expediciones Mayas')" class="border border-on-surface px-8 py-3 w-full font-label-caps text-xs hover:bg-on-surface hover:text-surface transition-all duration-500 uppercase tracking-widest cursor-pointer" data-translate="btn-res">
-                Reservar Experiencia
+              <button onclick="requestConciergeService('Tours y Expediciones Arqueológicas')" class="bg-primary text-white hover:bg-primary-container px-8 py-3.5 w-full font-label-caps text-xs uppercase tracking-widest cursor-pointer shadow-md transition-all font-semibold rounded-none" data-translate="btn-res">
+                Solicitar Experiencia
               </button>
             </div>
           </div>
@@ -865,11 +865,11 @@
               <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-gourmet">ALTA GASTRONOMÍA</span>
               <h3 class="font-headline-md text-3xl mb-6 text-on-surface text-center sm:text-left" data-translate="serv-c3-title">Experiencia de Chef Privado</h3>
               <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed" data-translate="serv-c3-desc">
-                Transforma cada comida en un hito sensorial. Menús de degustación personalizados basados en mariscos frescos del día y cocina contemporánea de autor directamente en la villa.
+                Transforma cada comida en un hito sensorial. ofrecemos servicio de chef de cocina mexicana e internacional.
               </p>
               
-              <button onclick="requestConciergeService('Chef Privado Gourmet')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-4 font-label-caps text-xs hover:scale-102 transition-all uppercase tracking-widest text-center cursor-pointer" data-translate="btn-res-chef">
-                Reservar Chef Privado
+              <button onclick="requestConciergeService('Experiencia de Chef Privado')" class="bg-primary text-white hover:bg-primary-container px-8 py-4 font-label-caps text-xs uppercase tracking-widest text-center cursor-pointer shadow-md transition-all font-semibold rounded-none" data-translate="btn-res-chef">
+                Solicitar Experiencia
               </button>
             </div>
           </div>
@@ -886,11 +886,11 @@
               <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-yacht">NÁUTICA EXCLUSIVA</span>
               <h3 class="font-headline-md text-3xl mb-6 text-on-surface text-center sm:text-left" data-translate="serv-c4-title">Charter de Yates Privados</h3>
               <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed" data-translate="serv-c4-desc">
-                Zarpa en un catamarán o yate de alta gama hacia arrecifes recónditos de la isla Cozumel o disfruta de la puesta de sol en alta mar con champaña y canapés de autor.
+                Zarpa en un catamarán o yate de alta gama para disfrutar de la puesta de sol en alta mar con champaña.
               </p>
               
-              <button onclick="requestConciergeService('Yate Privado Catamarán')" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-4 font-label-caps text-xs hover:scale-102 transition-all uppercase tracking-widest text-center cursor-pointer" data-translate="btn-res-yacht">
-                Consultar Flota y Yates
+              <button onclick="requestConciergeService('Charter de Yates Privados')" class="bg-primary text-white hover:bg-primary-container px-8 py-4 font-label-caps text-xs uppercase tracking-widest text-center cursor-pointer shadow-md transition-all font-semibold rounded-none" data-translate="btn-res-yacht">
+                Solicitar Experiencia
               </button>
             </div>
           </div>
@@ -928,7 +928,7 @@
                     Terapeutas certificados trasladan la mística del bienestar a la privacidad de tu suite o terraza. Tratamientos con aceites esenciales orgánicos y técnicas mayas ancestrales para una restauración profunda.
                   </p>
                 </div>
-                <button onclick="requestConciergeService('Masaje Premium en la Villa')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
+                <button onclick="requestConciergeService('Santuario de Masajes')" class="bg-primary text-white hover:bg-primary-container py-3.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md font-semibold rounded-none" data-translate="btn-req-exp">
                   Solicitar Experiencia
                 </button>
               </div>
@@ -950,7 +950,7 @@
                     Atención ultra-personalizada y discreta para coordinar tus itinerarios, servir mixología de autor, desempacar equipajes y velar para que cada instante transcurra sin la menor preocupación.
                   </p>
                 </div>
-                <button onclick="requestConciergeService('Servicio de Mayordomo')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
+                <button onclick="requestConciergeService('Servicio de Mayordomo')" class="bg-primary text-white hover:bg-primary-container py-3.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md font-semibold rounded-none" data-translate="btn-req-exp">
                   Solicitar Experiencia
                 </button>
               </div>
@@ -972,7 +972,7 @@
                     Ama de llaves diario bajo los más altos estándares hoteleros internacionales de lujo. Mantén el oasis de tu villa impecable, fresco y reluciente de forma totalmente silenciosa y respetuosa con tu privacidad.
                   </p>
                 </div>
-                <button onclick="requestConciergeService('Servicio de Limpieza Diario')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
+                <button onclick="requestConciergeService('Servicio de Limpieza')" class="bg-primary text-white hover:bg-primary-container py-3.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md font-semibold rounded-none" data-translate="btn-req-exp">
                   Solicitar Experiencia
                 </button>
               </div>
@@ -994,7 +994,7 @@
                     Instructores experimentados guían sesiones privadas de Hatha o Vinyasa Yoga y meditación al amanecer. Sincroniza tu respiración con el susurro de la selva maya para armonizar mente, cuerpo y espíritu.
                   </p>
                 </div>
-                <button onclick="requestConciergeService('Sesiones de Yoga Privadas')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
+                <button onclick="requestConciergeService('Clases de Yoga')" class="bg-primary text-white hover:bg-primary-container py-3.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md font-semibold rounded-none" data-translate="btn-req-exp">
                   Solicitar Experiencia
                 </button>
               </div>
@@ -1016,7 +1016,7 @@
                     Perpetúa tus momentos más preciados en el paraíso. Un fotógrafo profesional coordinará una sesión artística capturando la esencia orgánica de la villa y los paisajes naturales de la costa de Akumal.
                   </p>
                 </div>
-                <button onclick="requestConciergeService('Sesión de Fotografía Profesional')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
+                <button onclick="requestConciergeService('Sesiones de Fotografía')" class="bg-primary text-white hover:bg-primary-container py-3.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md font-semibold rounded-none" data-translate="btn-req-exp">
                   Solicitar Experiencia
                 </button>
               </div>
@@ -1038,7 +1038,7 @@
                     Diseñamos entornos de ensueño para matrimonios íntimos, pedidas de mano mágicas o un ritual de convivencia y gratitud familiar, guiados por la belleza inmaculada de la selva y el mar sagrado.
                   </p>
                 </div>
-                <button onclick="requestConciergeService('Ceremonias e Invitaciones')" class="border border-primary/40 hover:bg-primary hover:text-white text-primary py-2.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer" data-translate="btn-req-exp">
+                <button onclick="requestConciergeService('Ceremonias y Eventos')" class="bg-primary text-white hover:bg-primary-container py-3.5 w-full font-label-caps text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-md font-semibold rounded-none" data-translate="btn-req-exp">
                   Solicitar Experiencia
                 </button>
               </div>
@@ -1160,10 +1160,10 @@
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <button type="button" onclick="sendContactRequest('whatsapp')" class="bg-[#25D366] text-white hover:bg-[#1ebd53] p-4 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+                <button type="button" onclick="sendContactRequest('whatsapp')" class="bg-[#25D366] text-white hover:bg-[#1ebd53] p-4 rounded-none font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer font-semibold">
                   <span data-translate="btn-send-wa">Enviar por WhatsApp</span>
                 </button>
-                <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container p-4 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+                <button type="submit" class="bg-primary text-white hover:bg-primary-container p-4 rounded-none font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer font-semibold">
                   <span data-translate="btn-send-mail">Enviar por Correo</span>
                 </button>
               </div>
@@ -1250,7 +1250,7 @@
     </a>
 
     <!-- Quick Floating Reservation Panel Trigger -->
-    <button onclick="toggleQuickContact()" class="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer" aria-label="Contactar">
+    <button onclick="toggleQuickContact()" class="bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer" aria-label="Contactar">
       <span class="material-symbols-outlined text-3xl">calendar_month</span>
     </button>
   </div>
@@ -1317,7 +1317,7 @@
         </div>
       </div>
       
-      <button type="submit" class="w-full bg-primary text-on-primary hover:bg-primary-container p-3 rounded font-label-caps text-xs uppercase tracking-widest transition-all shadow-md cursor-pointer" data-translate="btn-quick-send">
+      <button type="submit" class="w-full bg-primary text-white hover:bg-primary-container p-3 rounded-none font-label-caps text-xs uppercase tracking-widest transition-all shadow-md cursor-pointer font-semibold" data-translate="btn-quick-send">
         Solicitar Información
       </button>
     </form>
@@ -1415,7 +1415,7 @@
             </div>
           </div>
 
-          <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container px-8 py-3 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg cursor-pointer" data-translate="btn-confirm-res">
+          <button type="submit" class="bg-primary text-white hover:bg-primary-container px-8 py-3 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg cursor-pointer font-semibold rounded-none" data-translate="btn-confirm-res">
             Confirmar Reserva
           </button>
         </form>
@@ -1627,23 +1627,23 @@
         "conc-title": "Tu Concierge Dedicado",
         "conc-desc": "En Casa Búho Dorado, tú decides cómo vivir tu experiencia. Puedes reservar únicamente tu estancia y disfrutar de la privacidad y tranquilidad de la villa a tu propio ritmo, o dejar que Valentina, tu concierge personal, se encargue de crear unas vacaciones completamente a tu medida. Valentina puede organizar cada detalle de tu viaje: transporte privado, experiencias exclusivas, tours y excursiones por la Riviera Maya, reservaciones en restaurantes, compras previas a tu llegada, servicio de chef privado, masajes en la villa, cenas románticas bajo las estrellas y cualquier otro servicio que haga de tu estancia una experiencia inolvidable.",
         "sub-serv-tag": "ATENCIÓN Y TRASLADOS",
-        "sub-serv-title": "Servicios VIP",
+        "sub-serv-title": "Servicios",
         "tag-essential": "ESENCIALES",
         "serv-c1-title": "Transportación Privada",
-        "serv-c1-desc": "Llegadas sin fricción. Choferes bilingües y camionetas Suburban de último modelo listos para traslados al aeropuerto de Cancún o Tulum, disponibles las 24 horas del día.",
-        "btn-req": "Solicitar Servicio",
+        "serv-c1-desc": "Llegadas sin fricción. Choferes bilingües y camionetas de lujo listos para traslados al aeropuerto de Cancún o Tulum, disponibles las 24 horas del día.",
+        "btn-req": "Solicitar Experiencia",
         "tag-explore": "EXPLORACIÓN",
-        "serv-c2-title": "Expediciones Arqueológicas",
-        "serv-c2-desc": "Descubre la herencia del misticismo maya. Acceso VIP exclusivo antes de la apertura al público a zonas sagradas guiados por historiadores certificados locales.",
-        "btn-res": "Reservar Experiencia",
+        "serv-c2-title": "Tours y Expediciones Arqueológicas",
+        "serv-c2-desc": "Ofrecemos tours tanto Naturalista como arqueológica en Riviera Maya y península de Yucatan. Con posibilidad de tours privados.",
+        "btn-res": "Solicitar Experiencia",
         "tag-gourmet": "ALTA GASTRONOMÍA",
         "serv-c3-title": "Experiencia de Chef Privado",
-        "serv-c3-desc": "Transforma cada comida en un hito sensorial. Menús de degustación personalizados basados en mariscos frescos del día y cocina contemporánea de autor directamente en la villa.",
-        "btn-res-chef": "Reservar Chef Privado",
+        "serv-c3-desc": "Transforma cada comida en un hito sensorial. ofrecemos servicio de chef de cocina mexicana e internacional.",
+        "btn-res-chef": "Solicitar Experiencia",
         "tag-yacht": "NÁUTICA EXCLUSIVA",
         "serv-c4-title": "Charter de Yates Privados",
-        "serv-c4-desc": "Zarpa en un catamarán o yate de alta gama hacia arrecifes recónditos de la isla Cozumel o disfruta de la puesta de sol en alta mar con champaña y canapés de autor.",
-        "btn-res-yacht": "Consultar Flota y Yates",
+        "serv-c4-desc": "Zarpa en un catamarán o yate de alta gama para disfrutar de la puesta de sol en alta mar con champaña.",
+        "btn-res-yacht": "Solicitar Experiencia",
         "exp-lux-tag": "Quiet Luxury Experiences",
         "exp-lux-title": "Bienestar y Estilo a tu Alcance",
         "exp-lux-desc": "Hemos concebido un abanico de experiencias exclusivas directamente dentro de la intimidad de tu villa, garantizando instantes que alimentan el alma y trascienden el descanso.",
@@ -1811,23 +1811,23 @@
         "conc-title": "Your Dedicated Concierge",
         "conc-desc": "At Casa Búho Dorado, you decide how to experience your stay. You can reserve just your stay and enjoy the privacy and tranquility of the villa at your own pace, or let Valentina, your personal concierge, take care of crafting a fully tailored vacation. Valentina can organize every detail of your trip: private transportation, exclusive experiences, tours and excursions throughout the Riviera Maya, restaurant reservations, pre-arrival grocery shopping, private chef service, in-villa massages, romantic dinners under the stars, and any other service to make your stay unforgettable.",
         "sub-serv-tag": "CARE & TRANSFERS",
-        "sub-serv-title": "VIP Services",
+        "sub-serv-title": "Services",
         "tag-essential": "ESSENTIALS",
         "serv-c1-title": "Private Transportation",
-        "serv-c1-desc": "Frictionless arrivals. Bilingual drivers and latest-model Suburban vehicles ready for transfers to Cancun or Tulum airports, available 24 hours a day.",
-        "btn-req": "Request Service",
+        "serv-c1-desc": "Frictionless arrivals. Bilingual drivers and luxury vehicles ready for transfers to Cancun or Tulum airports, available 24 hours a day.",
+        "btn-req": "Request Experience",
         "tag-explore": "EXPLORATIONS",
-        "serv-c2-title": "Archaeological Expeditions",
-        "serv-c2-desc": "Discover the heritage of Mayan mysticism. Exclusive VIP access to sacred sites before public opening hours, guided by certified local historians.",
-        "btn-res": "Book Experience",
+        "serv-c2-title": "Tours & Archaeological Expeditions",
+        "serv-c2-desc": "We offer both Naturalist and archaeological tours throughout the Riviera Maya and the Yucatan Peninsula. Private tour options available.",
+        "btn-res": "Request Experience",
         "tag-gourmet": "HIGH GASTRONOMY",
         "serv-c3-title": "Private Chef Experience",
-        "serv-c3-desc": "Transform every meal into a sensory milestone. Customized tasting menus featuring fresh catch of the day and contemporary signature cuisine prepared directly at the villa.",
-        "btn-res-chef": "Book Private Chef",
+        "serv-c3-desc": "Transform every meal into a sensory milestone. We offer private chef services featuring Mexican and international cuisine.",
+        "btn-res-chef": "Request Experience",
         "tag-yacht": "EXCLUSIVE CHARTERS",
         "serv-c4-title": "Private Yacht Charter",
-        "serv-c4-desc": "Set sail on a premium catamaran or high-end yacht to secluded reefs off Cozumel island, or enjoy a sunset cruise with champagne and curated hors d'oeuvres.",
-        "btn-res-yacht": "View Yacht Fleet",
+        "serv-c4-desc": "Set sail on a high-end catamaran or luxury yacht to enjoy the sunset on the open sea with champagne.",
+        "btn-res-yacht": "Request Experience",
         "exp-lux-tag": "Quiet Luxury Experiences",
         "exp-lux-title": "Wellness & Style at Hand",
         "exp-lux-desc": "We have conceived a select range of exclusive experiences directly within the privacy of your villa, guaranteeing moments that nourish the soul and transcend relaxation.",
@@ -2488,16 +2488,21 @@
     }
 
     function requestConciergeService(serviceName) {
-      const toastMsg = activeLanguage === 'es' ? `Solicitud de ${serviceName} iniciada` : `Request for ${serviceName} initiated`;
-      showToastNotification(toastMsg, 'concierge_bell');
-      navigateToPage('contact');
+      const toastMsg = activeLanguage === 'es' 
+        ? `Contactando a Valentina por WhatsApp para ${serviceName}...` 
+        : `Contacting Valentina on WhatsApp for ${serviceName}...`;
+      showToastNotification(toastMsg, 'chat');
       
-      const customInputMsg = activeLanguage === 'es' 
-        ? `Hola Valentina, me gustaría agendar la experiencia de: ${serviceName} para mi próxima estadía en Casa Búho Dorado. Por favor envíame detalles.`
-        : `Hello Valentina, I would like to schedule the experience of: ${serviceName} for my upcoming stay at Casa Búho Dorado. Please send me details.`;
-      
-      const msgArea = document.getElementById('contact-message');
-      if (msgArea) msgArea.value = customInputMsg;
+      const rawTextMsg = activeLanguage === 'es' 
+        ? `¡Hola Valentina! Me gustaría solicitar información y agendar la experiencia: ${serviceName} para mi próxima estadía en Casa Búho Dorado.`
+        : `Hello Valentina! I would like to request information and schedule the experience: ${serviceName} for my upcoming stay at Casa Búho Dorado.`;
+
+      const targetPhone = "529842095468"; 
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(rawTextMsg)}`;
+
+      setTimeout(() => {
+        window.open(waUrl, '_blank');
+      }, 400);
     }
 
     function closeBookingModal() {
