@@ -500,9 +500,8 @@
 
         <div class="flex flex-wrap justify-center gap-2 mt-8 max-w-xl mx-auto font-sans">
           <button onclick="filterGallery('todos')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary text-white transition-all shadow-sm cursor-pointer" data-category="todos" data-translate="cat-all">Todos</button>
-          <button onclick="filterGallery('residencia')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="residencia" data-translate="cat-res">Residencia</button>
-          <button onclick="filterGallery('exteriores')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="exteriores" data-translate="cat-ext">Exteriores</button>
-          <button onclick="filterGallery('detalles')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="detalles" data-translate="cat-det">Estilo y Detalles</button>
+          <button onclick="filterGallery('exteriores')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="exteriores">Exterior</button>
+          <button onclick="filterGallery('estilo')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="estilo">Estilo & Detalles</button>
         </div>
       </div>
 
@@ -2449,8 +2448,10 @@
       grid.innerHTML = ""; 
 
       let filtered = curatedGallery;
-      if (activeFilter !== 'todos') {
-        filtered = curatedGallery.filter(item => item.category === activeFilter);
+      if (activeFilter === 'exteriores') {
+        filtered = curatedGallery.filter(item => item.category === 'exteriores');
+      } else if (activeFilter === 'estilo') {
+        filtered = curatedGallery.filter(item => item.category === 'residencia' || item.category === 'detalles');
       }
 
       const loadMoreBtn = document.getElementById('gallery-load-more');
