@@ -195,7 +195,7 @@
   <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out py-1.5 glass-header border-b border-primary/20 shadow-sm" id="main-header">
     <div class="flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 max-w-container-max mx-auto w-full gap-4 lg:gap-10">
       
-      <!-- Brand Logo + Title Container (Exact 100px x 92px Logo) -->
+      <!-- Brand Logo + Title Container -->
       <div class="flex items-center gap-0 sm:gap-0.5 cursor-pointer flex-shrink-0 py-0.5" onclick="navigateToPage('home')">
         <img id="header-logo" alt="Casa Búho Dorado Logo" class="w-[100px] h-[92px] object-contain object-right -mr-2 sm:-mr-3 transition-transform duration-300 hover:scale-105" style="width: 100px; height: 92px;" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" onerror="this.src='LLG.png'"/>
         <div class="flex flex-col justify-center">
@@ -203,13 +203,14 @@
         </div>
       </div>
       
-      <!-- Nav Menu -->
-      <nav class="hidden xl:flex items-center gap-6 lg:gap-8 xl:gap-9 flex-shrink-0">
-        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-primary nav-active-line transition-all duration-300 py-2 hover:text-primary tracking-wider" id="nav-home" data-translate="nav-home">Inicio</button>
-        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-gallery" data-translate="nav-gallery">Galería</button>
-        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
-        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-services" data-translate="nav-services">Servicios & Experiencias</button>
-        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider" id="nav-contact" data-translate="nav-contact">Contacto</button>
+      <!-- Nav Menu Desktop -->
+      <nav class="hidden xl:flex items-center gap-5 lg:gap-6 xl:gap-7 flex-shrink-0">
+        <button onclick="navigateToPage('home')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-primary nav-active-line transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-home" data-translate="nav-home">Inicio</button>
+        <button onclick="navigateToPage('gallery')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-gallery" data-translate="nav-gallery">Galería</button>
+        <button onclick="navigateToPage('ubicacion')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-ubicacion" data-translate="nav-ubicacion">Ubicación</button>
+        <button onclick="navigateToPage('services')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-services" data-translate="nav-services">Servicios & Experiencias</button>
+        <button onclick="navigateToPage('paquetes-plus')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-paquetes-plus" data-translate="nav-paquetes-plus">Paquetes Plus</button>
+        <button onclick="navigateToPage('contact')" class="nav-link font-label-caps text-xs sm:text-sm font-semibold text-[#1d1c16] hover:text-primary transition-all duration-300 py-2 tracking-wider cursor-pointer" id="nav-contact" data-translate="nav-contact">Contacto</button>
         
         <!-- English/Español Switcher desktop -->
         <div class="h-5 w-[1px] bg-outline-variant/60 mx-1"></div>
@@ -233,6 +234,7 @@
       <button onclick="navigateToPage('gallery'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-gallery">Galería</button>
       <button onclick="navigateToPage('ubicacion'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-ubicacion">Ubicación</button>
       <button onclick="navigateToPage('services'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-services">Servicios & Experiencias</button>
+      <button onclick="navigateToPage('paquetes-plus'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-paquetes-plus">Paquetes Plus</button>
       <button onclick="navigateToPage('contact'); toggleMobileMenu()" class="text-left font-label-caps text-base py-3 border-b border-outline-variant/30 text-[#1d1c16] cursor-pointer" data-translate="nav-contact">Contacto</button>
       
       <!-- English/Español Switcher mobile -->
@@ -608,7 +610,7 @@
           </div>
         </div>
 
-        <!-- SECCIÓN: Exploración Exclusiva (Carrusel Automático Integrado para las 8 experiencias) -->
+        <!-- SECCIÓN: Exploración Exclusiva -->
         <div class="py-16 reveal-up">
           <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
             <div class="text-center sm:text-left">
@@ -616,7 +618,6 @@
               <h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-on-surface" data-translate="exp-title">Exploración Exclusiva</h2>
             </div>
             
-            <!-- Controles de navegación del carrusel -->
             <div class="flex items-center gap-3">
               <button onclick="moveExplorationSlide(-1)" class="w-10 h-10 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer" aria-label="Anterior">
                 <span class="material-symbols-outlined text-xl">arrow_back</span>
@@ -627,7 +628,6 @@
             </div>
           </div>
           
-          <!-- Contenedor del Carrusel de 8 elementos con Pausa en Hover y Swipe táctil -->
           <div class="relative overflow-hidden w-full py-4" id="exploration-carousel-container" onmouseenter="stopExplorationAutoplay()" onmouseleave="startExplorationAutoplay()">
             <div class="flex transition-transform duration-700 ease-out gap-6" id="exploration-carousel-track">
               
@@ -762,7 +762,6 @@
             </div>
           </div>
 
-          <!-- Indicadores de puntos del carrusel -->
           <div class="flex justify-center gap-2 mt-6" id="exploration-carousel-dots">
             <!-- Rendered dynamically -->
           </div>
@@ -772,7 +771,6 @@
       </div>
     </section>
 
-    <!-- SECCIÓN UNIFICADA: Servicios & Experiencias -->
     <section id="page-services" class="page-section hidden opacity-0 transition-opacity duration-300">
       
       <!-- Banner Hero Principal -->
@@ -1051,6 +1049,44 @@
 
     </section>
 
+    <section id="page-paquetes-plus" class="page-section hidden opacity-0 transition-opacity duration-300 relative min-h-[90vh] flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-surface">
+      <!-- Background transparent LLG.png logo covering the full page body -->
+      <div class="absolute inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden p-4">
+        <img src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" 
+             onerror="this.src='LLG.png'" 
+             alt="Fondo Casa Búho Dorado Logo" 
+             class="w-full h-full object-contain max-w-5xl max-h-[82vh] opacity-[0.12] filter drop-shadow-2xl select-none" />
+      </div>
+
+      <!-- Luxury card container -->
+      <div class="relative z-10 max-w-3xl w-full mx-auto text-center bg-white/85 backdrop-blur-md p-8 sm:p-14 lg:p-16 rounded-3xl border border-primary/25 shadow-2xl reveal-up">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shadow-inner">
+          <span class="material-symbols-outlined text-3xl sm:text-4xl">auto_awesome</span>
+        </div>
+        <span class="text-primary font-label-caps text-xs sm:text-sm tracking-[0.3em] uppercase font-bold block mb-3" data-translate="pkg-plus-tag">PRÓXIMAMENTE</span>
+        <h1 class="font-display-lg text-3xl sm:text-5xl lg:text-6xl text-primary mb-6 font-serif" data-translate="pkg-plus-title">Paquetes Plus</h1>
+        <div class="w-20 h-0.5 bg-primary/60 mx-auto mb-8"></div>
+        
+        <p class="font-headline-md text-xl sm:text-2xl lg:text-3xl text-on-surface font-serif italic mb-6 leading-relaxed" data-translate="pkg-plus-msg">
+          "Estamos trabajando para darte la mejor experiencia"
+        </p>
+        
+        <p class="font-body-lg text-sm sm:text-base text-stone-600 max-w-xl mx-auto font-sans font-light leading-relaxed mb-10" data-translate="pkg-plus-desc">
+          Muy pronto descubrirás beneficios exclusivos, itinerarios curados y paquetes diseñados para transformar tu estadía en un recuerdo inolvidable.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="requestConciergeService('Consultar Paquetes Plus')" class="w-full sm:w-auto bg-primary text-white hover:bg-primary-container px-8 py-3.5 font-label-caps text-xs uppercase tracking-widest transition-all shadow-lg inline-flex items-center justify-center gap-2 cursor-pointer font-semibold rounded-none">
+            <span class="material-symbols-outlined text-base">chat</span>
+            <span>Consultar con Valentina</span>
+          </button>
+          <button onclick="navigateToPage('home')" class="w-full sm:w-auto border border-primary/40 text-primary hover:bg-primary/10 px-8 py-3.5 font-label-caps text-xs uppercase tracking-widest transition-all cursor-pointer font-semibold rounded-none">
+            <span>Volver al Inicio</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section id="page-contact" class="page-section hidden opacity-0 transition-opacity duration-300 pt-24 sm:pt-28 pb-16 px-6 md:px-margin-desktop bg-surface">
       <div class="max-w-container-max mx-auto mt-4">
         
@@ -1225,6 +1261,7 @@
             <li><button onclick="navigateToPage('gallery')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-gallery">Galería</button></li>
             <li><button onclick="navigateToPage('ubicacion')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-ubicacion">Ubicación</button></li>
             <li><button onclick="navigateToPage('services')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-services">Servicios & Experiencias</button></li>
+            <li><button onclick="navigateToPage('paquetes-plus')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-paquetes-plus">Paquetes Plus</button></li>
             <li><button onclick="navigateToPage('contact')" class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all text-left cursor-pointer" data-translate="nav-contact">Contacto</button></li>
           </ul>
         </div>
@@ -1563,6 +1600,7 @@
         "nav-gallery": "Galería",
         "nav-ubicacion": "Ubicación",
         "nav-services": "Servicios & Experiencias",
+        "nav-paquetes-plus": "Paquetes Plus",
         "nav-contact": "Contacto",
         "hero-sub": "Refugio Privado en Akumal",
         "hero-desc": "Vive la fusión perfecta entre la arquitectura orgánica de vanguardia y la majestuosidad de la selva a minutos del mar Caribe.",
@@ -1666,6 +1704,10 @@
         "exp-c6-title": "Ceremonias y Eventos",
         "tag-ritual": "RITUALES",
         "exp-c6-desc": "Diseñamos entornos de ensueño para matrimonios íntimos, pedidas de mano mágicas o un ritual de convivencia y gratitud familiar, guiados por la belleza inmaculada de la selva y el mar sagrado.",
+        "pkg-plus-tag": "PRÓXIMAMENTE",
+        "pkg-plus-title": "Paquetes Plus",
+        "pkg-plus-msg": "\"Estamos trabajando para darte la mejor experiencia\"",
+        "pkg-plus-desc": "Muy pronto descubrirás beneficios exclusivos, itinerarios curados y paquetes diseñados para transformar tu estadía en un recuerdo inolvidable.",
         "contact-tag": "Reservaciones",
         "contact-title": "Solicita tu Estadía",
         "contact-desc": "Completa la solicitud formal de reservación. Valentina estructurará tu plan de llegada y confort.",
@@ -1747,6 +1789,7 @@
         "nav-gallery": "Gallery",
         "nav-ubicacion": "Location",
         "nav-services": "Services & Experiences",
+        "nav-paquetes-plus": "Packages Plus",
         "nav-contact": "Contact",
         "hero-sub": "Private Sanctuary in Akumal",
         "hero-desc": "Experience the perfect harmony between cutting-edge organic architecture and the majesty of the forest, just moments from the Caribbean Sea.",
@@ -1850,6 +1893,10 @@
         "exp-c6-title": "Ceremonies & Events",
         "tag-ritual": "RITUALS",
         "exp-c6-desc": "We design dreamlike environments for intimate weddings, magical marriage proposals, or a ritual of family gratitude, framed by the pristine jungle and sea.",
+        "pkg-plus-tag": "COMING SOON",
+        "pkg-plus-title": "Packages Plus",
+        "pkg-plus-msg": "\"We are working to give you the best experience\"",
+        "pkg-plus-desc": "Very soon you will discover exclusive benefits, curated itineraries, and bespoke packages designed to turn your stay into an unforgettable memory.",
         "contact-tag": "Reservations",
         "contact-title": "Request Your Stay",
         "contact-desc": "Complete the formal reservation request. Valentina will structure your arrival plan and comfort details.",
@@ -1960,7 +2007,7 @@
       if (!card) return;
 
       const cardWidth = card.getBoundingClientRect().width;
-      const gap = 24; // gap-6 in Tailwind = 24px
+      const gap = 24;
       const moveDistance = (cardWidth + gap) * explorationCurrentSlide;
 
       track.style.transform = `translateX(-${moveDistance}px)`;
@@ -2197,7 +2244,7 @@
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">5. Humo y Fuego</h3>
-                <p class="text-sm font-sans">Queda strictly prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.</p>
+                <p class="text-sm font-sans">Queda estrictamente prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.</p>
               </div>
               <div>
                 <h3 class="font-headline-md text-xl text-primary font-serif mb-2">6. Políticas de Cancelación y Depósito</h3>
