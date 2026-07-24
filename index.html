@@ -338,7 +338,13 @@
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             
-            <div class="lg:col-span-6 order-last lg:order-first reveal-left">
+            <div class="lg:col-span-6 space-y-6 reveal-left">
+              <div class="space-y-4 text-on-surface-variant text-left leading-relaxed text-stone-700 font-sans" id="villa-content-area">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <div class="lg:col-span-6 space-y-6 reveal-right">
               <div class="relative">
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-primary/15 bg-stone-100 group">
                   <img loading="lazy" alt="Mampostería de lujo con piedra maya e interiores refinados" class="w-full h-full object-cover transition-slow group-hover:scale-105" src="https://lh3.googleusercontent.com/d/1lKsPIxFfBVLIdjx-MVidU1Tj30pO2kvh"/>
@@ -353,14 +359,6 @@
                   </div>
                   <p class="text-stone-600 text-xs font-light font-sans leading-relaxed">Maderas finas locales y mampostería maya certificada.</p>
                 </div>
-              </div>
-            </div>
-
-            <div class="lg:col-span-6 space-y-8 reveal-right">
-              <div class="space-y-4 text-on-surface-variant text-left leading-relaxed text-stone-700 font-sans" id="villa-content-area">
-                <p>Casa Búho Dorado combina la elegancia de las antiguas haciendas mexicanas con una arquitectura contemporánea, creando un refugio exclusivo rodeado por la selva maya. Ubicada en un terreno privado de 10,000 m², a pocos minutos del Caribe Mexicano, ofrece privacidad, tranquilidad y una ubicación ideal para explorar la Riviera Maya.</p>
-                <p>La propiedad integra armoniosamente sus espacios interiores y exteriores, con una amplia terraza, alberca privada y materiales naturales que aportan calidez y luminosidad. Cuenta con cuatro suites con baño privado, medio baño para visitas y dos cocinas totalmente equipadas: una interior y otra exterior con horno de leña, asador, comal y quemadores de gas.</p>
-                <p>El acceso privado y el sistema de videovigilancia perimetral garantizan seguridad y privacidad. Cada detalle de Casa Búho Dorado está diseñado para ofrecer una estancia donde el confort, la naturaleza y la hospitalidad se unen en una experiencia única.</p>
               </div>
 
               <!-- Interactive Key Metrics grid -->
@@ -1976,15 +1974,21 @@
       if (villaArea) {
         if (lang === 'es') {
           villaArea.innerHTML = `
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Casa Búho Dorado combina la elegancia de las antiguas haciendas mexicanas con una arquitectura contemporánea, creando un refugio exclusivo rodeado por la selva maya. Ubicada en un terreno privado de 10,000 m², a pocos minutos del Caribe Mexicano, ofrece privacidad, tranquilidad y una ubicación ideal para explorar la Riviera Maya.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">La propiedad integra armoniosamente sus espacios interiores y exteriores, con una amplia terraza, alberca privada y materiales naturales que aportan calidez y luminosidad. Cuenta con cuatro suites con baño privado, medio baño para visitas y dos cocinas totalmente equipadas: una interior y otra exterior con horno de leña, asador, comal y quemadores de gas.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base">El acceso privado y el sistema de videovigilancia perimetral garantizan seguridad y privacidad. Cada detalle de Casa Búho Dorado está diseñado para ofrecer una estancia donde el confort, la naturaleza y la hospitalidad se unen en una experiencia única.</p>
+            <p class="font-serif text-lg sm:text-xl text-stone-800 italic leading-relaxed mb-4">Casa Búho Dorado combina la elegancia de las antiguas haciendas mexicanas con una arquitectura contemporánea, creando un refugio exclusivo rodeado por la selva maya.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Ubicada en un terreno privado de 10,000 m², a pocos minutos del Caribe Mexicano, ofrece privacidad, tranquilidad y una ubicación ideal para explorar la Riviera Maya.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">La propiedad integra armoniosamente sus espacios interiores y exteriores, con una amplia terraza, alberca privada y materiales naturales que aportan calidez y luminosidad.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Cuenta con cuatro suites con baño privado, medio baño para visitas y dos cocinas totalmente equipadas: una interior y otra exterior con horno de leña, asador, comal y quemadores de gas.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">El acceso privado y el sistema de videovigilancia perimetral garantizan seguridad y privacidad durante toda la estancia.</p>
+            <p class="font-serif text-lg sm:text-xl text-primary mt-4 font-semibold">Un santuario donde el confort, la naturaleza y la hospitalidad se unen en una experiencia única.</p>
           `;
         } else {
           villaArea.innerHTML = `
-            <p class="font-serif text-lg sm:text-xl text-stone-800 italic leading-relaxed mb-4">Majestically set across more than 10,000 sq meters of private jungle reserve, the residence is a masterpiece of natural integration and supreme comfort.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Featuring 4 luxury suites with double-height ceilings, sustainable hardwoods, and floor-to-ceiling glass walls. The layout includes two fully equipped designer kitchens, a private swimming pool framed by exotic foliage, a boutique grill lounge, and open-air decks.</p>
-            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base">Ensuring absolute peace of mind, the estate features a double-gated entry system, 24/7 private security monitoring, and continuous support from Valentina, your personal concierge.</p>
+            <p class="font-serif text-lg sm:text-xl text-stone-800 italic leading-relaxed mb-4">Majestically set across more than 10,000 sq meters of private jungle reserve, Casa Búho Dorado combines the elegance of historic Mexican haciendas with contemporary architecture.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Located just minutes from the Mexican Caribbean, the estate offers complete privacy, tranquility, and an ideal location to explore the Riviera Maya.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">Featuring 4 luxury suites with private bathrooms, double-height ceilings, and floor-to-ceiling glass walls that seamlessly integrate interior and exterior spaces.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">The layout includes two fully equipped designer kitchens—one interior and one alfresco with wood-fire oven and grill—alongside a private swimming pool and open decks.</p>
+            <p class="leading-relaxed font-light text-stone-600 text-sm sm:text-base mb-4">A double-gated entry system and 24/7 security monitoring guarantee absolute peace of mind throughout your stay.</p>
+            <p class="font-serif text-lg sm:text-xl text-primary mt-4 font-semibold">A sanctuary where comfort, nature, and bespoke hospitality unite in a single experience.</p>
           `;
         }
       }
