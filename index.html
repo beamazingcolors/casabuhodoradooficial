@@ -508,8 +508,8 @@
 
         <div class="flex flex-wrap justify-center gap-2 mt-8 max-w-xl mx-auto font-sans">
           <button onclick="filterGallery('todos')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary text-white transition-all shadow-sm cursor-pointer" data-category="todos" data-translate="cat-all">Todos</button>
-          <button onclick="filterGallery('exteriores')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="exteriores">Exterior</button>
-          <button onclick="filterGallery('estilo')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="estilo">Estilo & Detalles</button>
+          <button onclick="filterGallery('exteriores')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="exteriores" data-translate="cat-ext">Exterior</button>
+          <button onclick="filterGallery('estilo')" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-surface-container hover:bg-primary-fixed text-[#1d1c16] transition-all cursor-pointer" data-category="estilo" data-translate="cat-det">Estilo & Detalles</button>
         </div>
       </div>
 
@@ -547,7 +547,7 @@
         <div class="text-center mb-12">
           <a href="https://youtu.be/jXKOwOTaVjg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-label-caps text-primary hover:underline font-semibold tracking-wider">
             <span class="material-symbols-outlined text-sm">open_in_new</span>
-            <span>Ver vídeo directamente en YouTube</span>
+            <span data-translate="video-direct-link">Ver vídeo directamente en YouTube</span>
           </a>
         </div>
       </div>
@@ -581,7 +581,7 @@
           <!-- Botón de acción directo para Google Maps -->
           <a href="https://maps.app.goo.gl/XkBCDTwvhjj8mxF77" target="_blank" rel="noopener noreferrer" class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-primary text-white font-label-caps text-xs px-5 py-2.5 rounded-full shadow-xl hover:bg-primary-container hover:scale-105 transition-all flex items-center gap-2 z-10 font-semibold cursor-pointer">
             <span class="material-symbols-outlined text-sm">open_in_new</span>
-            <span>Abrir en Google Maps</span>
+            <span data-translate="btn-gmaps">Abrir en Google Maps</span>
           </a>
 
           <iframe 
@@ -1114,7 +1114,7 @@
           <div class="lg:col-span-5 space-y-8 reveal-left bg-surface-container p-8 rounded-xl border border-primary/10 font-sans text-stone-800">
             <h2 class="font-headline-lg text-2xl text-primary text-center sm:text-left" data-translate="info-direct-title">Información Directa</h2>
             <p class="font-body-md text-sm text-on-surface-variant leading-relaxed" data-translate="info-direct-desc">
-              Para respuestas inmediatas sobre charters de yates o solicitudes especiales, nuestro canal de atención con Valentina se encuentra activo 24/7.
+              Para respuestas inmediatas sobre charters de yates o solicitudes especiales, nuestro canal de atención con Valentina.
             </p>
 
             <div class="space-y-4 font-sans text-stone-700">
@@ -1726,8 +1726,9 @@
         "contact-title": "Solicita tu Estadía",
         "contact-desc": "Completa la solicitud formal de reservación. Valentina estructurará tu plan de llegada y confort.",
         "info-direct-title": "Información Directa",
-        "info-direct-desc": "Para respuestas inmediatas sobre charters de yates o solicitudes especiales, nuestro canal de atención con Valentina se encuentra activo 24/7.",
+        "info-direct-desc": "Para respuestas inmediatas sobre charters de yates o solicitudes especiales, nuestro canal de atención con Valentina.",
         "location-text": "Bahía de las Tortugas, Akumal, Quintana Roo, México",
+        "btn-gmaps": "Abrir en Google Maps",
         "benefits-title": "Beneficios Exclusivos",
         "benefit-1": "✓ Coordinación de Traslados VIP",
         "benefit-2": "✓ Personalización de Menú de Chef",
@@ -1885,9 +1886,9 @@
         "tag-yacht": "EXCLUSIVE CHARTERS",
         "serv-c4-title": "Private Yacht Charter",
         "serv-c4-desc": "Set sail on a high-end catamaran or luxury yacht to enjoy the sunset on the open sea with champagne.",
-        "btn-req-exp": "Request Experience",
-        "exp-c2-title": "Butler Service",
-        "tag-hosp": "HOSPITALITY",
+        "btn-res-yacht": "Request Experience",
+        "exp-lux-tag": "Quiet Luxury Experiences",
+        "exp-lux-title": "Wellness & Style Within Reach",
         "exp-c2-desc": "Ultra-personalized and discreet attention to coordinate your itineraries, serve signature mixology, unpack luggage, and ensure every detail runs flawlessly.",
         "exp-c3-title": "Housekeeping Service",
         "tag-clean": "FLAWLESSNESS",
@@ -1909,8 +1910,9 @@
         "contact-title": "Request Your Stay",
         "contact-desc": "Complete the formal reservation request. Valentina will structure your arrival plan and comfort details.",
         "info-direct-title": "Direct Information",
-        "info-direct-desc": "For immediate answers about yacht charters or special requests, our direct channel with Valentina is active 24/7.",
+        "info-direct-desc": "For immediate answers about yacht charters or special requests, our direct channel with Valentina.",
         "location-text": "Turtle Bay, Akumal, Quintana Roo, Mexico",
+        "btn-gmaps": "Open in Google Maps",
         "benefits-title": "Exclusive Benefits",
         "benefit-1": "✓ VIP Airport Transfers Coordination",
         "benefit-2": "✓ Custom Private Chef Menu Planning",
