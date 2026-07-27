@@ -1157,7 +1157,7 @@
         
         <div class="text-center mb-12">
           <span class="text-primary font-label-caps text-label-caps uppercase tracking-[0.25em] mb-4 block" data-translate="pol-tag">Normas de la Casa</span>
-          <h1 class="font-display-lg text-4xl md:text-5xl text-primary mb-6" data-translate="pol-title">Políticas & Restricciones</h1>
+          <h1 class="font-display-lg text-4xl md:text-5xl text-primary mb-6" data-translate="pol-title">Políticas y Restricciones de la Villa</h1>
           <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed" data-translate="pol-desc">
             Para asegurar una experiencia idílica y preservar el delicado ecosistema de Akumal, todos los huéspedes deben adherirse a las siguientes normas.
           </p>
@@ -1689,20 +1689,8 @@
         "btn-send-wa": "Enviar por WhatsApp",
         "btn-send-mail": "Enviar por Correo",
         "pol-tag": "Normas de la Casa",
-        "pol-title": "Políticas & Restricciones",
+        "pol-title": "Políticas y Restricciones de la Villa",
         "pol-desc": "Para asegurar una experiencia idílica y preservar el delicado ecosistema de Akumal, todos los huéspedes deben adherirse a las siguientes normas.",
-        "pol-1-title": "1. Ocupación y Aforo Máximo",
-        "pol-1-desc": "El aforo máximo de Casa Búho Dorado es de 10 huéspedes en total, con un límite máximo de 8 adultos. Se permiten variaciones con niños siempre que no se excedan los 8 adultos ni el total de 10 personas (por ejemplo: 8 adultos y 2 niños, 6 adultos y 4 niños, 4 adultos y 6 niños, etc.). No se permiten visitas adicionales ni eventos multitudinarios no autorizados previamente por la administración.",
-        "pol-2-title": "2. Horarios de Check-in y Check-out",
-        "pol-2-desc": "El horario de entrada (Check-in) es a partir de las 3:00 PM y la salida (Check-out) debe realizarse antes de las 11:00 AM. Salidas tardías o entradas anticipadas están sujetas a disponibilidad y confirmación previa de Valentina.",
-        "pol-3-title": "3. Protección Ecosistémica y Tortugas Marinas",
-        "pol-3-desc": "Debido a que Akumal es un santuario protegido de anidación de tortugas marinas, se solicita apagar las luces exteriores directas hacia la playa después de las 10:00 PM durante la temporada de anidación y respetar en todo momento la flora y fauna de la reserva.",
-        "pol-4-title": "4. Normas de Convivencia y Ruido",
-        "pol-4-desc": "Para preservar la paz de la selva y las residencias vecinas, se aplica un horario de silencio moderado a partir de las 10:00 PM. No se permite música a volúmenes amplificados durante la noche.",
-        "pol-5-title": "5. Humo y Fuego",
-        "pol-5-desc": "Queda strictly prohibido fumar en las áreas interiores de las suites y salones. Se permite fumar exclusivamente en áreas exteriores designadas con ceniceros. Prohibido encender fogatas en la selva o áreas no acondicionadas.",
-        "pol-6-title": "6. Políticas de Cancelación y Depósito",
-        "pol-6-desc": "Las cancelaciones realizadas con más de 30 días de anticipación otorgan un reembolso completo del depósito. Cancelaciones posteriores estarán sujetas a la retención del anticipo conforme a las políticas del contrato de arrendamiento privado.",
         "footer-desc": "Un portal diseñado para viajeros que aprecian la sofisticación arquitectónica, el respeto ecológico absoluto y el silencio caribeño de la Bahía de Akumal.",
         "footer-news": "Newsletter Exclusivo",
         "placeholder-newsletter": "Escribe tu correo",
@@ -1891,20 +1879,8 @@
         "btn-send-wa": "Send via WhatsApp",
         "btn-send-mail": "Send via Email",
         "pol-tag": "House Rules",
-        "pol-title": "Policies & Restrictions",
+        "pol-title": "Villa Policies & Restrictions",
         "pol-desc": "To ensure an idyllic experience and preserve Akumal's delicate ecosystem, all guests must strictly adhere to the following rules.",
-        "pol-1-title": "1. Occupancy and Maximum Capacity",
-        "pol-1-desc": "Casa Búho Dorado has a maximum capacity of 10 guests, with a limit of 8 adults. Variations with children are allowed as long as the 8-adult limit and the 10-person total are not exceeded (e.g., 8 adults and 2 children, 6 adults and 4 children, etc.). No additional visitors or large unauthorized events are allowed.",
-        "pol-2-title": "2. Check-in and Check-out Times",
-        "pol-2-desc": "Check-in time is from 3:00 PM onwards, and check-out must be before 11:00 AM. Late departures or early arrivals are subject to availability and prior confirmation from Valentina.",
-        "pol-3-title": "3. Ecosystem Protection and Sea Turtles",
-        "pol-3-desc": "Because Akumal is a protected sea turtle nesting sanctuary, we request that you turn off direct exterior lights toward the beach after 10:00 PM during nesting season and respect the flora and fauna of the reserve at all times.",
-        "pol-4-title": "4. Community and Noise Rules",
-        "pol-4-desc": "To preserve the peace of the jungle and neighboring residences, moderate quiet hours apply from 10:00 PM. No amplified music is permitted at night.",
-        "pol-5-title": "5. Smoke and Fire",
-        "pol-5-desc": "Smoking is strictly prohibited inside the suites and halls. Smoking is allowed exclusively in designated exterior areas equipped with ashtrays. Starting fires in the jungle or non-designated areas is prohibited.",
-        "pol-6-title": "6. Cancellation and Deposit Policies",
-        "pol-6-desc": "Cancellations made more than 30 days in advance provide a full refund of the deposit. Subsequent cancellations are subject to the retention of the advance payment in accordance with the terms of the private lease contract.",
         "footer-desc": "A portal crafted for discerning travelers who appreciate refined organic architecture, absolute ecological respect, and the Caribbean silence of Akumal Bay.",
         "footer-news": "Exclusive Newsletter",
         "placeholder-newsletter": "Enter your email",
@@ -2196,21 +2172,484 @@
     function populatePoliticas(lang) {
       const polArea = document.getElementById('pol-content-area');
       if (!polArea) return;
-      const langDict = dictionary[lang];
-      polArea.innerHTML = `
-        <h3 class="font-headline-md text-xl text-primary font-bold">${langDict['pol-1-title']}</h3>
-        <p class="text-stone-700">${langDict['pol-1-desc']}</p>
-        <h3 class="font-headline-md text-xl text-primary font-bold">${langDict['pol-2-title']}</h3>
-        <p class="text-stone-700">${langDict['pol-2-desc']}</p>
-        <h3 class="font-headline-md text-xl text-primary font-bold">${langDict['pol-3-title']}</h3>
-        <p class="text-stone-700">${langDict['pol-3-desc']}</p>
-        <h3 class="font-headline-md text-xl text-primary font-bold">${langDict['pol-4-title']}</h3>
-        <p class="text-stone-700">${langDict['pol-4-desc']}</p>
-        <h3 class="font-headline-md text-xl text-primary font-bold">${langDict['pol-5-title']}</h3>
-        <p class="text-stone-700">${langDict['pol-5-desc']}</p>
-        <h3 class="font-headline-md text-xl text-primary font-bold">${langDict['pol-6-title']}</h3>
-        <p class="text-stone-700">${langDict['pol-6-desc']}</p>
-      `;
+
+      if (lang === 'es') {
+        polArea.innerHTML = `
+          <div class="space-y-8 font-sans text-stone-700">
+            <div class="p-6 bg-surface-container-low rounded-xl border-l-4 border-primary">
+              <h3 class="font-headline-md text-xl text-primary font-bold mb-2">Bienvenido a Casa Búho Dorado</h3>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Nuestro deseo es que disfrute de una estancia inolvidable en un entorno de privacidad, naturaleza y confort. Para garantizar una experiencia agradable para todos nuestros huéspedes y preservar la villa en las mejores condiciones, le solicitamos respetar las siguientes políticas.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">schedule</span>
+                  <h4 class="font-headline-md text-lg">Horarios</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li><strong>Check-in:</strong> A partir de las 3:00 p.m.</li>
+                  <li><strong>Check-out:</strong> Antes de las 11:00 a.m.</li>
+                  <li class="text-stone-500 pt-1">El check-in o check-out fuera del horario establecido estará sujeto a disponibilidad y podrá generar un cargo adicional.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">group</span>
+                  <h4 class="font-headline-md text-lg">Ocupación</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>La capacidad máxima de la villa es de <strong>8 adultos y 2 niños</strong>.</li>
+                  <li>No está permitido exceder el número de huéspedes registrados en la reserva sin autorización previa.</li>
+                  <li class="text-stone-500 pt-1">Disponemos de una cuna de viaje para niños pequeños, disponible sin costo adicional con solicitud previa y sujeta a disponibilidad.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">badge</span>
+                  <h4 class="font-headline-md text-lg">Visitantes</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>No se permiten visitantes externos sin autorización previa de la administración.</li>
+                  <li>Toda persona autorizada deberá registrarse antes de ingresar a la propiedad.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">celebration</span>
+                  <h4 class="font-headline-md text-lg">Fiestas y Eventos</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>No están permitidas fiestas, eventos o reuniones masivas sin autorización expresa.</li>
+                  <li class="text-error font-medium">El incumplimiento de esta política podrá ocasionar la cancelación inmediata de la estancia sin derecho a reembolso.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-primary/15 bg-white shadow-sm space-y-3">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <span class="material-symbols-outlined">volume_up</span>
+                <h4 class="font-headline-md text-lg">Música y Ruido</h4>
+              </div>
+              <ul class="text-xs sm:text-sm text-stone-600 space-y-2 leading-relaxed">
+                <li>• Se permite música ambiental durante el día.</li>
+                <li>• La música en las áreas exteriores está permitida únicamente hasta las <strong>10:00 p.m.</strong></li>
+                <li>• Después de las 10:00 p.m., únicamente se permite música a volumen bajo dentro de la villa, procurando mantener puertas y ventanas cerradas para no afectar la tranquilidad del entorno.</li>
+                <li class="text-stone-500 italic pt-1">• Le agradecemos respetar el descanso de los vecinos y el ambiente natural durante toda su estancia.</li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">smoke_free</span>
+                  <h4 class="font-headline-md text-lg">Prohibido Fumar</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>No está permitido fumar dentro de la villa.</li>
+                  <li>Se permite fumar únicamente en las áreas exteriores utilizando los ceniceros disponibles.</li>
+                  <li>No arroje colillas en jardines, alberca o áreas naturales.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">pets</span>
+                  <h4 class="font-headline-md text-lg">Mascotas</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>Las mascotas únicamente serán aceptadas con autorización previa.</li>
+                  <li>El huésped será responsable de cualquier daño ocasionado por su mascota, así como de mantener limpias las áreas utilizadas.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-primary/15 bg-white shadow-sm space-y-3">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <span class="material-symbols-outlined">home_repair_service</span>
+                <h4 class="font-headline-md text-lg">Cuidado de la Propiedad</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700">Los huéspedes se comprometen a:</p>
+              <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed pl-4">
+                <li>• Cuidar el mobiliario, decoración y equipamiento de la villa.</li>
+                <li>• Reportar inmediatamente cualquier daño o desperfecto.</li>
+                <li>• Utilizar las instalaciones de forma responsable.</li>
+              </ul>
+              <p class="text-xs sm:text-sm text-stone-500 italic pt-1">Los daños ocasionados por uso indebido serán cobrados al huésped responsable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">pool</span>
+                  <h4 class="font-headline-md text-lg">Alberca</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Profundidad entre 20 cm y 1.50 m.</li>
+                  <li>• Su uso es bajo la responsabilidad de los huéspedes.</li>
+                  <li>• Los menores de edad deberán permanecer supervisados por un adulto en todo momento.</li>
+                  <li>• No se permite el uso de vasos, botellas u otros objetos de vidrio dentro o alrededor de la alberca.</li>
+                  <li>• Se recomienda no correr en las áreas húmedas para evitar accidentes.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">outdoor_grill</span>
+                  <h4 class="font-headline-md text-lg">Cocina y Área de Asador</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Favor de dejar limpios los utensilios utilizados.</li>
+                  <li>• El horno de leña y el asador deberán utilizarse con responsabilidad.</li>
+                  <li>• No deje fuego o carbón encendido sin supervisión.</li>
+                  <li>• Antes de retirarse del área, asegúrese de apagar completamente el fuego.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-primary/15 bg-white shadow-sm space-y-3">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <span class="material-symbols-outlined">eco</span>
+                <h4 class="font-headline-md text-lg">Consumo Responsable de Energía</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700">Casa Búho Dorado se encuentra rodeada por un entorno natural que buscamos preservar. Le agradecemos su apoyo para hacer un uso responsable de los recursos:</p>
+              <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed pl-4">
+                <li>• Apague las luces cuando no sean necesarias.</li>
+                <li>• Mantenga cerradas puertas y ventanas mientras el aire acondicionado esté funcionando.</li>
+                <li>• Apague el aire acondicionado al salir de la villa por periodos prolongados.</li>
+                <li>• Evite dejar equipos eléctricos encendidos cuando no estén en uso.</li>
+              </ul>
+              <p class="text-xs sm:text-sm text-primary font-medium pt-1">El consumo responsable contribuye a la conservación del medio ambiente y al cuidado de la propiedad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">security</span>
+                  <h4 class="font-headline-md text-lg">Seguridad</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Mantenga puertas y portones cerrados al salir.</li>
+                  <li>• No deje objetos de valor en áreas exteriores.</li>
+                  <li>• Casa Búho Dorado no se hace responsable por pérdidas, robos o accidentes derivados del uso indebido.</li>
+                  <li>• En caso de emergencia, comuníquese inmediatamente con su concierge.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">block</span>
+                  <h4 class="font-headline-md text-lg">Uso Responsable</h4>
+                </div>
+                <p class="text-xs font-semibold text-stone-700 mb-1">No está permitido:</p>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1 leading-relaxed">
+                  <li>• Manipular equipos eléctricos o instalaciones de la villa.</li>
+                  <li>• Mover muebles entre habitaciones sin autorización.</li>
+                  <li>• Encender fogatas o utilizar pirotecnia / fuegos artificiales.</li>
+                  <li>• Realizar actividades ilegales dentro de la propiedad.</li>
+                  <li>• Molestar, perseguir, capturar o alimentar la fauna silvestre. Respetar la naturaleza es parte esencial de la experiencia en Casa Búho Dorado.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">delete</span>
+                  <h4 class="font-headline-md text-lg">Basura</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Depositar la basura en los recipientes correspondientes durante su estancia.</li>
+                  <li>• Al finalizar su estancia, colocar todas las bolsas de basura en los contenedores exteriores ubicados en la zona del asador.</li>
+                  <li>• Ayúdenos a mantener la villa limpia y a preservar el entorno natural.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">find_in_page</span>
+                  <h4 class="font-headline-md text-lg">Objetos Perdidos</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Los objetos olvidados serán resguardados durante un periodo de 30 días.</li>
+                  <li>• En caso de solicitar su envío, los gastos de embalaje y transporte correrán por cuenta del huésped.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-xl border border-error/20 bg-error/5 text-stone-700">
+              <div class="flex items-center gap-2 mb-2 text-error font-bold">
+                <span class="material-symbols-outlined">gavel</span>
+                <h4 class="font-headline-md text-lg">Incumplimiento</h4>
+              </div>
+              <p class="text-xs sm:text-sm mb-2 font-medium">El incumplimiento de cualquiera de estas políticas podrá ocasionar:</p>
+              <ul class="text-xs sm:text-sm space-y-1 pl-4 text-stone-700">
+                <li>• Cobro por daños ocasionados.</li>
+                <li>• Cancelación inmediata de la estancia.</li>
+                <li>• Pérdida del depósito de seguridad, cuando aplique.</li>
+                <li>• Restricción para futuras reservaciones.</li>
+              </ul>
+            </div>
+
+            <div class="p-6 bg-primary/10 rounded-2xl border border-primary/20 text-center space-y-3">
+              <div class="w-12 h-12 mx-auto rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">favorite</span>
+              </div>
+              <h3 class="font-headline-md text-xl text-primary font-bold">Nuestro Compromiso</h3>
+              <p class="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-2xl mx-auto">
+                Casa Búho Dorado fue concebida como un refugio donde la arquitectura, la naturaleza y la hospitalidad se encuentran para ofrecer una experiencia única.
+              </p>
+              <p class="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-2xl mx-auto">
+                Agradecemos profundamente su colaboración para cuidar este espacio y permitir que cada huésped disfrute de la tranquilidad, privacidad y belleza que hacen de Casa Búho Dorado un lugar verdaderamente especial.
+              </p>
+              <p class="font-serif text-base text-primary italic font-semibold pt-2">Gracias por ser parte de esta experiencia.</p>
+            </div>
+          </div>
+        `;
+      } else {
+        polArea.innerHTML = `
+          <div class="space-y-8 font-sans text-stone-700">
+            <div class="p-6 bg-surface-container-low rounded-xl border-l-4 border-primary">
+              <h3 class="font-headline-md text-xl text-primary font-bold mb-2">Welcome to Casa Búho Dorado</h3>
+              <p class="text-stone-700 text-sm leading-relaxed">
+                Our wish is for you to enjoy an unforgettable stay in an environment of privacy, nature, and comfort. To guarantee a pleasant experience for all our guests and preserve the villa in the best conditions, we kindly ask you to respect the following policies.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">schedule</span>
+                  <h4 class="font-headline-md text-lg">Hours & Schedule</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li><strong>Check-in:</strong> From 3:00 p.m.</li>
+                  <li><strong>Check-out:</strong> Before 11:00 a.m.</li>
+                  <li class="text-stone-500 pt-1">Check-in or check-out outside the established hours is subject to availability and may incur an additional fee.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">group</span>
+                  <h4 class="font-headline-md text-lg">Occupancy</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>The maximum capacity of the villa is <strong>8 adults and 2 children</strong>.</li>
+                  <li>Exceeding the number of guests registered in the reservation without prior authorization is not permitted.</li>
+                  <li class="text-stone-500 pt-1">A travel crib for small children is available at no extra cost upon request and subject to availability.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">badge</span>
+                  <h4 class="font-headline-md text-lg">Visitors</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>External visitors are not allowed without prior authorization from management.</li>
+                  <li>Every authorized person must register before entering the property.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">celebration</span>
+                  <h4 class="font-headline-md text-lg">Parties & Events</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>Parties, events, or mass gatherings are not allowed without express authorization.</li>
+                  <li class="text-error font-medium">Failure to comply with this policy may result in immediate cancellation of the stay without refund.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-primary/15 bg-white shadow-sm space-y-3">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <span class="material-symbols-outlined">volume_up</span>
+                <h4 class="font-headline-md text-lg">Music & Noise</h4>
+              </div>
+              <ul class="text-xs sm:text-sm text-stone-600 space-y-2 leading-relaxed">
+                <li>• Ambient music is permitted during the day.</li>
+                <li>• Outdoor music is allowed only until <strong>10:00 p.m.</strong></li>
+                <li>• After 10:00 p.m., only low-volume music is permitted inside the villa, keeping doors and windows closed so as not to disturb the surroundings.</li>
+                <li class="text-stone-500 italic pt-1">• We appreciate your respecting the rest of neighbors and the natural environment throughout your stay.</li>
+              </ul>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">smoke_free</span>
+                  <h4 class="font-headline-md text-lg">No Smoking</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>Smoking is not allowed inside the villa.</li>
+                  <li>Smoking is allowed exclusively in outdoor areas using the provided ashtrays.</li>
+                  <li>Do not throw cigarette butts in gardens, pool, or natural areas.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">pets</span>
+                  <h4 class="font-headline-md text-lg">Pets</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>Pets are accepted only with prior authorization.</li>
+                  <li>The guest is responsible for any damage caused by their pet and for keeping used areas clean.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-primary/15 bg-white shadow-sm space-y-3">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <span class="material-symbols-outlined">home_repair_service</span>
+                <h4 class="font-headline-md text-lg">Property Care</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700">Guests agree to:</p>
+              <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed pl-4">
+                <li>• Take care of the villa's furniture, decor, and equipment.</li>
+                <li>• Report any damage or defect immediately.</li>
+                <li>• Use facilities responsibly.</li>
+              </ul>
+              <p class="text-xs sm:text-sm text-stone-500 italic pt-1">Damages caused by improper use will be billed to the responsible guest.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">pool</span>
+                  <h4 class="font-headline-md text-lg">Swimming Pool</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Pool depth ranges between 20 cm and 1.50 m.</li>
+                  <li>• Use is under the sole responsibility of guests.</li>
+                  <li>• Minors must be supervised by an adult at all times.</li>
+                  <li>• No glass objects, bottles, or cups are allowed in or around the pool.</li>
+                  <li>• Running in wet areas is not recommended to prevent accidents.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">outdoor_grill</span>
+                  <h4 class="font-headline-md text-lg">Kitchen & BBQ Area</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Please leave used utensils clean.</li>
+                  <li>• The wood-fired oven and grill must be used responsibly.</li>
+                  <li>• Do not leave open flames or burning charcoal unattended.</li>
+                  <li>• Before leaving the area, make sure to completely extinguish the fire.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-xl border border-primary/15 bg-white shadow-sm space-y-3">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <span class="material-symbols-outlined">eco</span>
+                <h4 class="font-headline-md text-lg">Responsible Energy Consumption</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-700">Casa Búho Dorado is surrounded by a natural environment that we seek to preserve. We appreciate your support in using resources responsibly:</p>
+              <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed pl-4">
+                <li>• Turn off lights when not needed.</li>
+                <li>• Keep doors and windows closed while air conditioning is running.</li>
+                <li>• Turn off air conditioning when leaving the villa for extended periods.</li>
+                <li>• Avoid leaving electrical equipment turned on when not in use.</li>
+              </ul>
+              <p class="text-xs sm:text-sm text-primary font-medium pt-1">Responsible consumption contributes to environmental conservation and property care.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">security</span>
+                  <h4 class="font-headline-md text-lg">Security</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Keep doors and gates closed when leaving.</li>
+                  <li>• Do not leave valuable items in outdoor areas.</li>
+                  <li>• Casa Búho Dorado is not responsible for loss, theft, or accidents resulting from improper use of facilities.</li>
+                  <li>• In case of emergency, contact your concierge immediately.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">block</span>
+                  <h4 class="font-headline-md text-lg">Responsible Use</h4>
+                </div>
+                <p class="text-xs font-semibold text-stone-700 mb-1">Strictly forbidden:</p>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1 leading-relaxed">
+                  <li>• Tampering with electrical equipment or villa installations.</li>
+                  <li>• Moving furniture between rooms without authorization.</li>
+                  <li>• Lighting campfires or using pyrotechnics / fireworks.</li>
+                  <li>• Engaging in illegal activities inside the property.</li>
+                  <li>• Disturbing, chasing, capturing, or feeding wild fauna. Respecting nature is essential to the Casa Búho Dorado experience.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">delete</span>
+                  <h4 class="font-headline-md text-lg">Trash & Recycling</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Deposit trash in appropriate receptacles during your stay.</li>
+                  <li>• At the end of your stay, place all trash bags in the outdoor containers located in the BBQ area.</li>
+                  <li>• Help us keep the villa clean and preserve the natural environment.</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-xl border border-primary/15 bg-white shadow-sm">
+                <div class="flex items-center gap-2 mb-2 text-primary font-bold">
+                  <span class="material-symbols-outlined">find_in_page</span>
+                  <h4 class="font-headline-md text-lg">Lost Items</h4>
+                </div>
+                <ul class="text-xs sm:text-sm text-stone-600 space-y-1.5 leading-relaxed">
+                  <li>• Forgotten items will be stored for a period of 30 days.</li>
+                  <li>• If shipment is requested, packing and transport expenses will be covered by the guest.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-xl border border-error/20 bg-error/5 text-stone-700">
+              <div class="flex items-center gap-2 mb-2 text-error font-bold">
+                <span class="material-symbols-outlined">gavel</span>
+                <h4 class="font-headline-md text-lg">Non-Compliance</h4>
+              </div>
+              <p class="text-xs sm:text-sm mb-2 font-medium">Failure to comply with any of these policies may result in:</p>
+              <ul class="text-xs sm:text-sm space-y-1 pl-4 text-stone-700">
+                <li>• Charges for damages caused.</li>
+                <li>• Immediate cancellation of the stay.</li>
+                <li>• Loss of security deposit, where applicable.</li>
+                <li>• Restriction for future reservations.</li>
+              </ul>
+            </div>
+
+            <div class="p-6 bg-primary/10 rounded-2xl border border-primary/20 text-center space-y-3">
+              <div class="w-12 h-12 mx-auto rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">favorite</span>
+              </div>
+              <h3 class="font-headline-md text-xl text-primary font-bold">Our Commitment</h3>
+              <p class="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-2xl mx-auto">
+                Casa Búho Dorado was conceived as a sanctuary where architecture, nature, and hospitality meet to offer a unique experience.
+              </p>
+              <p class="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-2xl mx-auto">
+                We deeply appreciate your collaboration in caring for this space, allowing each guest to enjoy the peace, privacy, and beauty that make Casa Búho Dorado a truly special place.
+              </p>
+              <p class="font-serif text-base text-primary italic font-semibold pt-2">Thank you for being part of this experience.</p>
+            </div>
+          </div>
+        `;
+      }
     }
 
     function validateCapacity(adultsElId, childrenElId) {
