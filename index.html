@@ -179,6 +179,24 @@
       },
     }
   </script>
+
+  <style type="text/tailwindcss">
+    @layer base {
+      /* Estandarizar títulos y fuentes de cuerpo para imitar la sección de Inicio en todo el sitio */
+      h1, h2 {
+        @apply font-display-lg font-serif leading-tight;
+      }
+      h3 {
+        @apply font-headline-md font-serif font-medium;
+      }
+      p {
+        @apply font-sans;
+      }
+      .page-section:not(#page-home) h1, .page-section:not(#page-home) h2 {
+        @apply text-on-surface;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
@@ -633,7 +651,7 @@
                   </div>
                   <div class="p-5 font-sans">
                     <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="yalku">Laguna Yal-Kú</h3>
-                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="exp-c3-desc">Un acuario natural privado donde la caleta abraza al mar.</p>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="loc-yalku-desc">Caleta de singular belleza donde se mezclan aguas de cenotes y el Mar Caribe, ideal para un snorkel relajado.</p>
                   </div>
                 </div>
               </div>
@@ -647,7 +665,7 @@
                   </div>
                   <div class="p-5 font-sans">
                     <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface mb-2 font-medium" data-translate="akumal">Bahía de Akumal</h3>
-                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="exp-c4-desc">Santuario protegido de tortugas marinas a la orilla de tu villa.</p>
+                    <p class="font-body-md text-xs sm:text-sm text-stone-600 leading-relaxed" data-translate="loc-akumal-desc">Famosa bahía de arena blanca y aguas tranquilas, hogar natural de tortugas marinas verdes.</p>
                   </div>
                 </div>
               </div>
@@ -751,7 +769,7 @@
       <section class="relative h-[65vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
           <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-          <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Vista aérea de la villa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/d/15Fg766WvSk7RkdHZl5dvR03Aws1rKA2s"/>
+          <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Vista aérea de la villa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/d/1NaOckhfZ4UT13l6SVSGjiKn7L7dKGTU9"/>
           <div class="absolute inset-0 bg-black/40"></div>
         </div>
         <div class="relative z-10 text-center px-6 mt-10">
@@ -782,7 +800,7 @@
             <div>
               <div class="aspect-[16/10] overflow-hidden ken-burns relative">
                 <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Transportación Privada de Lujo" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/d/1MYLOEg6ZT_ufMdeboyCFoAjxl2O7mhW-"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Transportación Privada de Lujo" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/d/1mh-J_1s70KGIwvU_JRT-fGIVBrRaAu9j"/>
               </div>
               <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-essential">ESENCIALES</span>
@@ -803,7 +821,7 @@
             <div>
               <div class="aspect-[16/10] overflow-hidden ken-burns relative">
                 <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Tours y Expediciones Arqueológicas" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/d/1yx26NixTwpCgqWmoRaif2t9zxlgeeQfB"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Tours y Expediciones Arqueológicas" class="w-full h-full object-cover transition-slow" src="https://beamazingcolors.github.io/casabuhodoradooficial/CNE.png"/>
               </div>
               <div class="p-8 font-sans">
                 <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-explore">EXPLORACIÓN</span>
@@ -826,7 +844,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12">
             <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
               <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-              <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Chef preparando platillos" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/d/1VJX_HsVcxgzFVNg-A2OQXdryqj-bQrs1"/>
+              <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Chef preparando platillos" class="w-full h-full object-cover transition-slow" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
             </div>
             <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center font-sans">
               <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-gourmet">ALTA GASTRONOMÍA</span>
@@ -846,7 +864,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12">
             <div class="lg:col-span-7 overflow-hidden ken-burns aspect-[16/10] lg:aspect-auto relative">
               <img loading="lazy" alt="Logo Casa Búho Dorado" class="absolute top-4 left-4 h-8 md:h-12 w-auto object-contain pointer-events-none drop-shadow-md z-10" src="https://beamazingcolors.github.io/casabuhodoradooficial/LLG.png" />
-              <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Yate" class="w-full h-full object-cover transition-slow" src="https://lh3.googleusercontent.com/d/1whiJ81K9D8QZLPAfsR44eJHaux5U-ABE"/>
+              <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Yate" class="w-full h-full object-cover transition-slow" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
             </div>
             <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center font-sans">
               <span class="font-label-caps text-xs text-primary tracking-widest mb-3 block" data-translate="tag-yacht">NÁUTICA EXCLUSIVA</span>
@@ -879,7 +897,7 @@
             
             <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
               <div class="relative aspect-[16/10] w-full overflow-hidden">
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Santuario de masajes" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/d/1YF-3I6O3s0dvJrPOzlz8ckKLjtf-t92z"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Santuario de masajes" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/masaje.png"/>
                 <div class="absolute inset-0 bg-black/10"></div>
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
@@ -900,7 +918,7 @@
 
             <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
               <div class="relative aspect-[16/10] w-full overflow-hidden">
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Servicio de Mayordomo" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/d/1CuqbEj3nXM-9-1T8NdOObHoog18YS22A"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Servicio de Mayordomo" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/mayor.png"/>
                 <div class="absolute inset-0 bg-black/10"></div>
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
@@ -921,7 +939,7 @@
 
             <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
               <div class="relative aspect-[16/10] w-full overflow-hidden">
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Servicio de limpieza diario" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/d/135OXOAMM3TM_-Q7-orJkIjVpWNr1opQd"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Servicio de limpieza diario" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/limpieza.png"/>
                 <div class="absolute inset-0 bg-black/10"></div>
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
@@ -942,7 +960,7 @@
 
             <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
               <div class="relative aspect-[16/10] w-full overflow-hidden">
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Clases de Yoga" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/d/1mV5ciufIEeCP6jwa4Vid1D4nx-Y1pY82"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Clases de Yoga" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/yoga.png"/>
                 <div class="absolute inset-0 bg-black/10"></div>
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
@@ -963,7 +981,7 @@
 
             <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
               <div class="relative aspect-[16/10] w-full overflow-hidden">
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Sesión de fotos" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/d/1u380c-h_SfaRls9lcTq9zNXlh3QhvDLa"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Sesión de fotos" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/camara.png"/>
                 <div class="absolute inset-0 bg-black/10"></div>
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
@@ -984,7 +1002,7 @@
 
             <div class="bg-surface-container-low border border-neutral-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
               <div class="relative aspect-[16/10] w-full overflow-hidden">
-                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Eventos y Ceremonias" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/d/1yYQ-AW_m2eZt0do89FtfaNCuqWid1Idw"/>
+                <img onerror="this.onerror=null; this.src='LLG.png';" loading="lazy" alt="Eventos y Ceremonias" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://beamazingcolors.github.io/casabuhodoradooficial/celeb.png"/>
                 <div class="absolute inset-0 bg-black/10"></div>
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
@@ -1606,8 +1624,6 @@
         "exp-c2-title": "Cenote Dos Ojos",
         "exp-c2-time": "15 MINS",
         "exp-c2-desc": "Cavernas milenarias y buceo guiado en aguas cristalinas.",
-        "exp-c3-desc": "Un acuario natural privado donde la caleta abraza al mar.",
-        "exp-c4-desc": "Santuario protegido de tortugas marinas a la orilla de tu villa.",
         "exp-c5-loc-title": "Tulum",
         "dest-tulum": "Lujo bohemio, ruinas arqueológicas sobre el acantilado y gastronomía galardonada.",
         "exp-c6-loc-title": "Playa del Carmen",
@@ -1796,8 +1812,6 @@
         "exp-c2-title": "Cenote Dos Ojos",
         "exp-c2-time": "15 MINS",
         "exp-c2-desc": "Ancient cavern systems and guided scuba diving.",
-        "exp-c3-desc": "A pristine natural aquarium at your disposal.",
-        "exp-c4-desc": "The threshold of your private turtle sanctuary.",
         "exp-c5-loc-title": "Tulum",
         "dest-tulum": "Bohemian luxury, cliffside ruins, and internationally acclaimed gastronomy.",
         "exp-c6-loc-title": "Playa del Carmen",
