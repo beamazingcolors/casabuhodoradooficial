@@ -1,5 +1,9 @@
 ```html
-<!DOCTYPE html>
+    function handleContactSubmission(e) {
+      e.preventDefault();
+      const method = e.submitter?.getAttribute('data-method') || 'whatsapp';
+      sendContactRequest(method);
+    }<!DOCTYPE html>
 <html class="scroll-smooth" lang="es">
 <head>
   <meta charset="utf-8"/>
@@ -278,7 +282,7 @@
         
         <div class="relative z-10 text-center px-4 sm:px-margin-mobile max-w-4xl opacity-0 translate-y-12 reveal-hero mt-8">
           <span class="text-white/95 font-label-caps text-[11px] sm:text-label-caps uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-3 sm:mb-4 block drop-shadow-md text-primary font-bold" data-translate="hero-sub">Refugio Privado en Akumal</span>
-          <h1 class="font-display-lg text-3xl sm:text-4xl lg:text-5xl text-primary mb-8 sm:mb-8 leading-tight drop-shadow-2xl font-semibold [text-shadow:_0_2px_12px_rgba(0,0,0,0.85),_0_4px_30px_rgba(181,138,61,0.6)]">
+          <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary mb-8 sm:mb-8 leading-tight drop-shadow-2xl font-bold [text-shadow:_0_2px_12px_rgba(0,0,0,0.85),_0_4px_30px_rgba(181,138,61,0.6)]">
             We are not hosts, we are memory makers.
           </h1>
           <p class="font-body-lg text-sm sm:text-body-lg text-white mb-8 sm:mb-10 max-w-2xl mx-auto drop-shadow-md font-light" data-translate="hero-desc">
@@ -351,7 +355,7 @@
                   <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
                 </div>
                 
-                <div class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-xl border border-primary/20 max-w-[200px] sm:max-w-[240px] hidden xs:block">
+<div class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-xl border border-primary/20 max-w-[200px] sm:max-w-[240px] hidden xs:block">
                   <div class="flex items-center gap-2.5 mb-1">
                     <span class="material-symbols-outlined text-primary text-xl">verified</span>
                     <span class="font-label-caps text-[10px] tracking-widest text-primary uppercase font-bold">100% Sostenible</span>
@@ -904,7 +908,7 @@
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <div class="flex items-center justify-between mb-4">
+                  <div class="flex flex-col-reverse items-start gap-3 mb-4">
                     <h3 class="font-headline-md text-2xl text-on-surface" data-translate="exp-c1-title">Santuario de Masajes</h3>
                     <span class="font-label-caps text-[9px] bg-primary-fixed text-primary px-3 py-1 rounded-full uppercase tracking-widest font-semibold" data-translate="tag-well">BIENESTAR</span>
                   </div>
@@ -925,7 +929,7 @@
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <div class="flex items-center justify-between mb-4">
+                  <div class="flex flex-col-reverse items-start gap-3 mb-4">
                     <h3 class="font-headline-md text-2xl text-on-surface" data-translate="exp-c2-title">Servicio de Mayordomo</h3>
                     <span class="font-label-caps text-[9px] bg-primary-fixed text-primary px-3 py-1 rounded-full uppercase tracking-widest font-semibold" data-translate="tag-hosp">HOSPITALIDAD</span>
                   </div>
@@ -946,7 +950,7 @@
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <div class="flex items-center justify-between mb-4">
+                  <div class="flex flex-col-reverse items-start gap-3 mb-4">
                     <h3 class="font-headline-md text-2xl text-on-surface" data-translate="exp-c3-title">Servicio de Limpieza</h3>
                     <span class="font-label-caps text-[9px] bg-primary-fixed text-primary px-3 py-1 rounded-full uppercase tracking-widest font-semibold" data-translate="tag-clean">IMPECABILIDAD</span>
                   </div>
@@ -967,7 +971,7 @@
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <div class="flex items-center justify-between mb-4">
+                  <div class="flex flex-col-reverse items-start gap-3 mb-4">
                     <h3 class="font-headline-md text-2xl text-on-surface" data-translate="exp-c4-title">Clases de Yoga</h3>
                     <span class="font-label-caps text-[9px] bg-primary-fixed text-primary px-3 py-1 rounded-full uppercase tracking-widest font-semibold" data-translate="tag-yoga">YOGA</span>
                   </div>
@@ -988,7 +992,7 @@
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <div class="flex items-center justify-between mb-4">
+                  <div class="flex flex-col-reverse items-start gap-3 mb-4">
                     <h3 class="font-headline-md text-2xl text-on-surface" data-translate="exp-c5-title">Sesiones de Fotografía</h3>
                     <span class="font-label-caps text-[9px] bg-primary-fixed text-primary px-3 py-1 rounded-full uppercase tracking-widest font-semibold" data-translate="tag-memo">MEMORIAS</span>
                   </div>
@@ -1009,7 +1013,7 @@
               </div>
               <div class="p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <div class="flex items-center justify-between mb-4">
+                  <div class="flex flex-col-reverse items-start gap-3 mb-4">
                     <h3 class="font-headline-md text-2xl text-on-surface" data-translate="exp-c6-title">Ceremonias y Eventos</h3>
                     <span class="font-label-caps text-[9px] bg-primary-fixed text-primary px-3 py-1 rounded-full uppercase tracking-widest font-semibold" data-translate="tag-ritual">RITUALES</span>
                   </div>
@@ -1175,10 +1179,10 @@
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <button type="button" onclick="sendContactRequest('whatsapp')" class="bg-[#25D366] text-white hover:bg-[#1ebd53] p-4 rounded-none font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer font-semibold">
+                <button type="submit" data-method="whatsapp" class="bg-[#25D366] text-white hover:bg-[#1ebd53] p-4 rounded-none font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer font-semibold">
                   <span data-translate="btn-send-wa">Enviar por WhatsApp</span>
                 </button>
-                <button type="submit" class="bg-primary text-white hover:bg-primary-container p-4 rounded-none font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer font-semibold">
+                <button type="submit" data-method="email" class="bg-primary text-white hover:bg-primary-container p-4 rounded-none font-label-caps text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer font-semibold">
                   <span data-translate="btn-send-mail">Enviar por Correo</span>
                 </button>
               </div>
@@ -1229,6 +1233,8 @@
             <button onclick="subscribeNewsletter()" class="material-symbols-outlined text-primary hover:translate-x-1 transition-transform cursor-pointer">arrow_forward</button>
           </div>
         </div>
+        
+
       </div>
 
       <div class="flex flex-col justify-between space-y-12 md:space-y-0 md:pl-12">
@@ -1428,7 +1434,7 @@
             </div>
           </div>
 
-          <button type="submit" class="bg-primary text-white hover:bg-primary-container px-8 py-3 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg cursor-pointer font-semibold rounded-none" data-translate="btn-confirm-res">
+          <button type="submit" data-method="email" class="bg-primary text-white hover:bg-primary-container px-8 py-3 w-full font-label-caps text-xs uppercase tracking-widest transition-colors shadow-lg cursor-pointer font-semibold rounded-none" data-translate="btn-confirm-res">
             Confirmar Reserva
           </button>
         </form>
@@ -1574,6 +1580,18 @@
 
     const dictionary = {
       es: {
+
+        "time-yalku": "20 MINS",
+        "time-akumal": "10 MINS",
+        "time-xpuha": "15 MINS",
+        "time-paamul": "20 MINS",
+        "time-xcacel": "15 MINS",
+        "time-soliman": "20 MINS",
+        "time-tulum": "30 MINS",
+        "time-playa": "40 MINS",
+        "time-coba": "1H 15 MINS",
+        "time-sacactun": "30 MINS",
+
 
         "exp-xpuha-desc": "Arenas blancas y aguas turquesas para un descanso perfecto.",
         "exp-paamul-desc": "Una bahía tranquila con arrecifes ideales para el snorkel.",
@@ -1778,6 +1796,18 @@
         "lightbox-zoom-msg": "Haz clic en la imagen para hacer Zoom. Haz clic fuera para cerrar."
       },
       en: {
+
+        "time-yalku": "20 MINS",
+        "time-akumal": "10 MINS",
+        "time-xpuha": "15 MINS",
+        "time-paamul": "20 MINS",
+        "time-xcacel": "15 MINS",
+        "time-soliman": "20 MINS",
+        "time-tulum": "30 MINS",
+        "time-playa": "40 MINS",
+        "time-coba": "1 HR 15 MINS",
+        "time-sacactun": "30 MINS",
+
 
         "exp-xpuha-desc": "White sands and turquoise waters for a perfect rest.",
         "exp-paamul-desc": "A quiet bay with ideal reefs for snorkeling.",
@@ -3095,6 +3125,14 @@
     function handleBookingSubmission(e) {
       e.preventDefault();
 
+      const checkin = document.getElementById('booking-checkin').value;
+      const checkout = document.getElementById('booking-checkout').value;
+      if (checkin && checkout && new Date(checkin) > new Date(checkout)) {
+        const dateError = activeLanguage === 'es' ? "La fecha de arribo no puede ser mayor que la de salida." : "Check-in date cannot be later than check-out date.";
+        showToastNotification(dateError, "warning");
+        return;
+      }
+
       const adults = parseInt(document.getElementById('booking-adults').value) || 0;
       const children = parseInt(document.getElementById('booking-children').value) || 0;
       if (adults > 8 || (adults + children) > 10) {
@@ -3124,7 +3162,8 @@
 
     function handleContactSubmission(e) {
       e.preventDefault();
-      sendContactRequest('whatsapp');
+      const method = window.contactSubmitMethod || 'whatsapp';
+      sendContactRequest(method);
     }
 
     function sendContactRequest(method) {
@@ -3149,12 +3188,31 @@
         return;
       }
 
+      
+      const checkinDate = new Date(checkin);
+      const checkoutDate = new Date(checkout);
+      if (checkinDate > checkoutDate) {
+        const dateError = activeLanguage === 'es' ? "La fecha de arribo no puede ser mayor que la de salida." : "Check-in date cannot be later than check-out date.";
+        showToastNotification(dateError, "warning");
+        return;
+      }
+
       const rawTextMsg = activeLanguage === 'es' 
         ? `¡Hola Valentina!\n\nMe gustaría realizar una solicitud de reservación para Casa Búho Dorado:\n• Nombre: ${name}\n• Correo: ${email}\n• WhatsApp: ${phone}\n• Huéspedes: ${adults} Adultos, ${children} Niños\n• Arribo: ${checkin}\n• Salida: ${checkout}\n• Mensaje: ${customMsg}`
         : `Hello Valentina!\n\nI would like to make a reservation inquiry for Casa Búho Dorado:\n• Name: ${name}\n• Email: ${email}\n• WhatsApp: ${phone}\n• Guests: ${adults} Adults, ${children} Children\n• Check-in: ${checkin}\n• Check-out: ${checkout}\n• Message: ${customMsg}`;
 
       const targetPhone = "529842095468"; 
       const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(rawTextMsg)}`;
+      
+      
+      if (method === 'email') {
+        const emailSubject = "Solicitud de Reservación - Casa Búho Dorado";
+        window.location.href = `mailto:info@casabuhodorado.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(rawTextMsg)}`;
+        const toastMsg = activeLanguage === 'es' ? "Abriendo cliente de correo..." : "Opening email client...";
+        showToastNotification(toastMsg, "mail");
+        return;
+      }
+
       
       const toastMsg = activeLanguage === 'es' ? "Abriendo canal con Valentina..." : "Opening chat with Valentina...";
       showToastNotification(toastMsg, "chat");
@@ -3393,6 +3451,7 @@
       if (email && email.includes('@')) {
         const successMsg = activeLanguage === 'es' ? "Te has suscrito con éxito al Newsletter Privado" : "You have successfully subscribed to the Private Newsletter";
         showToastNotification(successMsg, "mark_email_read");
+        window.location.href = `mailto:info@casabuhodorado.com?subject=${encodeURIComponent("Suscripción al Newsletter Privado")}&body=${encodeURIComponent("Deseo suscribirme al newsletter con el correo: " + email)}`;
         document.getElementById('newsletter-email').value = "";
       } else {
         const errorMsg = activeLanguage === 'es' ? "Por favor introduce una dirección válida" : "Please provide a valid email address";
