@@ -1,4 +1,3 @@
-```html
     function handleContactSubmission(e) {
       e.preventDefault();
       const method = e.submitter?.getAttribute('data-method') || 'whatsapp';
@@ -202,6 +201,15 @@
       }
     }
   </style>
+
+  <!-- Google Analytics Placeholder -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
@@ -1165,11 +1173,11 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-checkin">Fecha de Arribo</label>
-                  <input type="date" id="contact-checkin" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" required/>
+                  <input type="date" id="contact-checkin" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:border-red-500/50 p-3 bg-white" required/>
                 </div>
                 <div class="space-y-1">
                   <label class="font-label-caps text-[10px] tracking-widest text-on-surface-variant uppercase block font-semibold" data-translate="label-checkout">Fecha de Salida</label>
-                  <input type="date" id="contact-checkout" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary p-3 bg-white" required/>
+                  <input type="date" id="contact-checkout" class="w-full text-sm border-neutral-200 rounded focus:border-primary focus:ring-primary focus:invalid:border-red-500 focus:invalid:ring-red-500 invalid:border-red-500/50 p-3 bg-white" required/>
                 </div>
               </div>
 
@@ -1235,6 +1243,18 @@
         </div>
         
 
+
+        <div class="space-y-4 max-w-md pt-6 border-t border-outline-variant/30">
+          <div class="flex items-start gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-lg">location_on</span>
+            <span class="text-xs font-sans">Bahía Soliman, Akumal, Quintana Roo, México.<br>C.P. 77776</span>
+          </div>
+          <div class="flex items-center gap-4 pt-4 opacity-70">
+            <span class="material-symbols-outlined text-2xl" title="Pagos Seguros">lock</span>
+            <span class="material-symbols-outlined text-2xl" title="Certificado SSL">verified_user</span>
+            <span class="material-symbols-outlined text-2xl" title="Soporte 24/7">support_agent</span>
+          </div>
+        </div>
       </div>
 
       <div class="flex flex-col justify-between space-y-12 md:space-y-0 md:pl-12">
@@ -2157,8 +2177,20 @@
       }, { passive: true });
     }
 
-    function navigateToPage(pageId) {
+    function navigateToPage(pageId, updateHistory = true) {
       window.scrollTo({ top: 0, behavior: 'instant' });
+      
+      const titles = {
+        'home': 'Inicio', 'gallery': 'Galería', 'ubicacion': 'Ubicación', 
+        'services': 'Servicios', 'paquetes-plus': 'Paquetes', 'contact': 'Contacto'
+      };
+      document.title = `Casa Búho Dorado - ${titles[pageId] || 'Exclusividad'}`;
+      
+      if (updateHistory) {
+        const url = pageId === 'home' ? '/' : `/${pageId}`;
+        window.history.pushState({ pageId }, '', url);
+      }
+
       
       const pages = document.querySelectorAll('.page-section');
       pages.forEach(p => {
@@ -3636,7 +3668,16 @@
     }
   </script>
 
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-surface-container-high border-t border-primary/20 p-4 md:p-6 shadow-2xl z-[100] transform translate-y-full transition-transform duration-500 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="text-sm font-sans text-stone-700 max-w-4xl">
+      <span data-translate="cookie-text">Utilizamos cookies para garantizar la mejor experiencia en nuestro sitio web, personalizar el contenido y analizar el tráfico. Al hacer clic en "Aceptar", consientes el uso de todas las cookies.</span>
+    </div>
+    <div class="flex gap-3 whitespace-nowrap">
+      <button onclick="acceptCookies()" class="bg-primary text-white px-6 py-2 rounded font-label-caps text-xs uppercase tracking-widest hover:bg-primary-container transition-colors">Aceptar</button>
+      <button onclick="declineCookies()" class="border border-primary text-primary px-6 py-2 rounded font-label-caps text-xs uppercase tracking-widest hover:bg-primary/10 transition-colors">Rechazar</button>
+    </div>
+  </div>
 </body>
 </html>
-
-```
