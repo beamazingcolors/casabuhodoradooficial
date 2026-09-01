@@ -5,7 +5,7 @@
     }<!DOCTYPE html>
 <html class="scroll-smooth" lang="es">
 <head>
-  <meta charset="utf-8"/> 
+  <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
   <title>Casa Búho Dorado | Portal de Lujo y Reservas</title>
   
@@ -1243,7 +1243,6 @@
         </div>
         
 
-
         <div class="space-y-4 max-w-md pt-6 border-t border-outline-variant/30">
           <div class="flex items-start gap-2 text-on-surface-variant">
             <span class="material-symbols-outlined text-primary text-lg">location_on</span>
@@ -1612,14 +1611,12 @@
         "time-coba": "1H 15 MINS",
         "time-sacactun": "30 MINS",
 
-
         "exp-xpuha-desc": "Arenas blancas y aguas turquesas para un descanso perfecto.",
         "exp-paamul-desc": "Una bahía tranquila con arrecifes ideales para el snorkel.",
         "loc-yalku-desc": "Caleta de singular belleza donde se mezclan aguas de cenotes y el Mar Caribe, ideal para un snorkel relajado.",
         "loc-akumal-desc": "Famosa bahía de arena blanca y aguas tranquilas, hogar natural de tortugas marinas verdes.",
         "exp-xcacel-desc": "Reserva natural virgen y santuario de anidación de tortugas.",
         "exp-soliman-desc": "Exclusiva bahía escondida, rodeada de selva y arrecifes.",
-
 
         "exp-xpuha-title": "Playa Xpu-ha",
         "exp-paamul-title": "Playa Paamul",
@@ -1828,14 +1825,12 @@
         "time-coba": "1 HR 15 MINS",
         "time-sacactun": "30 MINS",
 
-
         "exp-xpuha-desc": "White sands and turquoise waters for a perfect rest.",
         "exp-paamul-desc": "A quiet bay with ideal reefs for snorkeling.",
         "loc-yalku-desc": "An inlet of unique beauty where cenote waters mix with the Caribbean Sea, ideal for relaxed snorkeling.",
         "loc-akumal-desc": "Famous bay of white sand and calm waters, natural home of green sea turtles.",
         "exp-xcacel-desc": "Virgin nature reserve and turtle nesting sanctuary.",
         "exp-soliman-desc": "Exclusive hidden bay, surrounded by jungle and reefs.",
-
 
         "exp-xpuha-title": "Xpu-ha Beach",
         "exp-paamul-title": "Paamul Beach",
@@ -2160,7 +2155,6 @@
         e.preventDefault();
       });
 
-
       container.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
         stopExplorationAutoplay();
@@ -2187,8 +2181,8 @@
       document.title = `Casa Búho Dorado - ${titles[pageId] || 'Exclusividad'}`;
       
       if (updateHistory) {
-        const url = pageId === 'home' ? '/' : `/${pageId}`;
-        window.history.pushState({ pageId }, '', url);
+        const hash = pageId === 'home' ? '' : `#${pageId}`;
+        window.history.pushState({ pageId }, '', window.location.pathname + hash);
       }
 
       
@@ -3667,7 +3661,6 @@
       });
     }
   </script>
-
 
   <!-- Cookie Banner -->
   <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-surface-container-high border-t border-primary/20 p-4 md:p-6 shadow-2xl z-[100] transform translate-y-full transition-transform duration-500 flex flex-col md:flex-row items-center justify-between gap-4">
